@@ -26,14 +26,14 @@
 	<div class="page-header">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
-				<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - Dashboard</h4>
+				<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - @yield('title')</h4>
 				<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 			</div>
 
 			<div class="header-elements d-none py-0 mb-3 mb-md-0">
 				<div class="breadcrumb">
 					<a href="index.html" class="breadcrumb-item"><i class="icon-home2 mr-2"></i> Home</a>
-					<span class="breadcrumb-item active">Dashboard</span>
+					<span class="breadcrumb-item active">@yield('title')</span>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 		
 
 	<!-- Page content -->
-	<div class="page-content pt-0">
+	<div class="page-content pt-0" id="app">
 
 		<!-- Main content -->
 		<div class="content-wrapper">
@@ -82,6 +82,7 @@
 		</div>
 	</div>
 	<!-- /footer -->
-		
+
+    @include('parts.scripts')
 </body>
 </html>

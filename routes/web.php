@@ -24,6 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->middleware('web')->group(function(){
     Route::prefix('users')->group(function(){
         Route::get('/','Admin\UsersController@index');
+        Route::prefix('perfil')->group(function(){
+            Route::get('/','Admin\UsersController@perfil')->name('admin.perfil');
+        });
 
     });
 });
