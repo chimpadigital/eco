@@ -14,4 +14,10 @@ class PaymentMethod extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function details()
+    {
+        return $this->hasOne('App\PaymentMethodDetail');
+    }
+
 }
