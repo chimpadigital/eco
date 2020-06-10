@@ -9,6 +9,6 @@ class UsersController extends Controller
 {
     public function index()
     {
-        return 'test';
+        return View('admins.users.users');
     }
 }
