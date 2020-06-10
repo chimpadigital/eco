@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -26,4 +26,16 @@ Route::prefix('admin')->middleware('web')->group(function(){
         Route::get('/','Admin\UsersController@index');
 
     });
+});
+
+
+Route::prefix('payments')->group(function(){
+
+    Route::get('/payment-method','PaymentMethodController@paymentMethodIndex');
+    
+    Route::post('/payment-method/paypal/create/order','PayPalController@createOrder')->name('paypal.create.order');
+    Route::post('/payment-method/paypal/capture/order','PayPalController@captureOrder')->name('paypal.capture.order');
+
+    Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
+    Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
 });
