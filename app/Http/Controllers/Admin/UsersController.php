@@ -14,6 +14,10 @@ class UsersController extends Controller
 
     public function perfil()
     {
+        return View('admins.users.perfil');
+    }
+
+    public function inforPerfil(){
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => true,

@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-md navbar-dark">
     <div class="navbar-brand wmin-0 mr-5">
         <a href="index.html" class="d-inline-block">
-            <img src="../../../../global_assets/images/logo_light.png" alt="">
+            <img src="/images/logo_light.png" alt="">
         </a>
     </div>
 
@@ -30,7 +30,7 @@
                         <ul class="media-list">
                             <li class="media">
                                 <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
                                 <div class="media-body">
                                     <a href="#" class="media-title font-weight-semibold">Jordana Ansley</a>
@@ -41,7 +41,7 @@
 
                             <li class="media">
                                 <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
                                 <div class="media-body">
                                     <a href="#" class="media-title font-weight-semibold">Will Brason</a>
@@ -52,7 +52,7 @@
 
                             <li class="media">
                                 <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
                                 <div class="media-body">
                                     <a href="#" class="media-title font-weight-semibold">Hanna Walden</a>
@@ -63,7 +63,7 @@
 
                             <li class="media">
                                 <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
                                 <div class="media-body">
                                     <a href="#" class="media-title font-weight-semibold">Dori Laperriere</a>
@@ -74,7 +74,7 @@
 
                             <li class="media">
                                 <div class="mr-3">
-                                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
+                                    <img src="/images/placeholders/placeholder.jpg" width="36" height="36" class="rounded-circle" alt="">
                                 </div>
                                 <div class="media-body">
                                     <a href="#" class="media-title font-weight-semibold">Vanessa Aurelius</a>
@@ -191,22 +191,22 @@
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
-                    <img src="../../../../global_assets/images/lang/gb.png" class="img-flag mr-2" alt="">
+                    <img src="/images/lang/gb.png" class="img-flag mr-2" alt="">
                     English
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item english"><img src="../../../../global_assets/images/lang/gb.png" class="img-flag" alt=""> English</a>
-                    <a href="#" class="dropdown-item ukrainian"><img src="../../../../global_assets/images/lang/ua.png" class="img-flag" alt=""> Українська</a>
-                    <a href="#" class="dropdown-item deutsch"><img src="../../../../global_assets/images/lang/de.png" class="img-flag" alt=""> Deutsch</a>
-                    <a href="#" class="dropdown-item espana"><img src="../../../../global_assets/images/lang/es.png" class="img-flag" alt=""> España</a>
-                    <a href="#" class="dropdown-item russian"><img src="../../../../global_assets/images/lang/ru.png" class="img-flag" alt=""> Русский</a>
+                    <a href="#" class="dropdown-item english"><img src="/images/lang/gb.png" class="img-flag" alt=""> English</a>
+                    <a href="#" class="dropdown-item ukrainian"><img src="/images/lang/ua.png" class="img-flag" alt=""> Українська</a>
+                    <a href="#" class="dropdown-item deutsch"><img src="/images/lang/de.png" class="img-flag" alt=""> Deutsch</a>
+                    <a href="#" class="dropdown-item espana"><img src="/images/lang/es.png" class="img-flag" alt=""> España</a>
+                    <a href="#" class="dropdown-item russian"><img src="/images/lang/ru.png" class="img-flag" alt=""> Русский</a>
                 </div>
             </li>
 
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
-                    <img src="../../../../global_assets/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
+                    <img src="/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
                     <span>Victoria</span>
                 </a>
 

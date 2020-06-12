@@ -26,6 +26,7 @@ Route::prefix('admin')->middleware('web')->group(function(){
         Route::get('/','Admin\UsersController@index');
         Route::prefix('perfil')->group(function(){
             Route::get('/','Admin\UsersController@perfil')->name('admin.perfil');
+            Route::post('/','Admin\UsersController@inforPerfil')->name('admin.pedir.perfil');
         });
 
     });
