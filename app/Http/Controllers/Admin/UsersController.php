@@ -81,7 +81,6 @@ class UsersController extends Controller
                 'apellido' => $user->lastname,
                 'email' => $user->email,
                 'telefono' => '',
-
                 'fechaNacimiento' => '',
                 'ciudad' => 'Cordoba',
                 'pais' => 'Argenitina',
@@ -118,12 +117,41 @@ class UsersController extends Controller
         //Actualizando el Usuario
 
         
-        $user = User::whereId($request->id)->update([
+        User::whereId($request->id)->update([
             'name' => $request->data['inforPerfil']['nombre'],
             'lastname' => $request->data['inforPerfil']['apellido'],
             'email' => $request->data['inforPerfil']['email']
         ]);
+
+        $user = User::whereId($request->id)->first();
+        $user->userInformation()->updateOrCreate([
+            'id' => 1,
+        ],[
         
-        return 'success';
+        
+            // otraInfo
+        
+            'phone' => $request->data['inforPerfil']['telefono'],
+            'birth_date' => $request->data['inforPerfil']['fechaNacimiento'],
+            'city' =>       $request->data['inforPerfil']['ciudad'],
+            'country' =>    $request->data['inforPerfil']['pais'],
+            'occupation' => $request->data['inforPerfil']['ocupacion'],
+            'facebook' =>   $request->data['redes']['facebook'],
+            'linkedin' =>   $request->data['redes']['linkedin'],
+            'instagram' =>  $request->data['redes']['instagram'],
+            'others' =>     $request->data['redes']['otras'],
+            'motivation' => $request->data['sobreFundacion']['motivacion'],
+            'did_you_know_foundation' => $request->data['sobreFundacion']['conociasFundacion'],
+            'ong' => $request->data['otraInfo']['ong'],
+            'name_ogn' => $request->data['otraInfo']['nombreOgn'],
+            'web_page' => $request->data['otraInfo']['paginaWeb'],
+            'allies_to_implement' => $request->data['otraInfo']['aliadosParaImplementar'],
+            'implementation_ant' => $request->data['otraInfo']['ImplementacionAnt'],
+            'implementation_name' => $request->data['otraInfo']['ImplementacionName'],
+            'impact_class' => $request->data['cladeDeInpacto'],
+            'extra_information' => $request->data['informacionExtra'],
+        ]
+    );
+        return 'table agregada';
     }
 }
