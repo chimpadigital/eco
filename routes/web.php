@@ -24,9 +24,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')->middleware('web')->group(function(){
     Route::prefix('users')->group(function(){
         Route::get('/','Admin\UsersController@index');
+        Route::post('/list-users','Admin\UsersController@listUsers');
         Route::prefix('perfil')->group(function(){
             Route::get('/','Admin\UsersController@perfil')->name('admin.perfil');
             Route::post('/','Admin\UsersController@inforPerfil')->name('admin.pedir.perfil');
+            Route::post('/update','Admin\UsersController@updateInforPerfil');
         });
 
     });

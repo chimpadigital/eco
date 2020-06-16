@@ -11,35 +11,47 @@ export default {
                     fechaNacimiento: "",
                     ciudad: "",
                     pais: "",
-                    ocupacion: "",
+                    ocupacion: ""
                 },
                 redes: {
                     facebook: "",
                     linkedin: "",
                     instagram: "",
-                    otras: " ",
+                    otras: " "
                 },
                 sobreFundacion: {
                     motivacion: "",
-                    conociasFundacion: "",
+                    conociasFundacion: ""
                 },
-                cladeDeInpacto: "",
-                informacionExtra: "",
-            },
+                claseDeImpacto: "",
+                informacionExtra: ""
+            }
         };
     },
     methods: {
         perdirDatosPerfil() {
             axios
                 .post(this.routePerfil, {
-                    id: this.$store.getters.perfil.id,
+                    id: this.$store.getters.perfil.id
                 })
-                .then((res) => {
+                .then(res => {
                     this.data = res.data;
                 });
         },
+        guardar() {
+            axios
+                .post(this.routePerfil + "/update", {
+                    id: this.$store.getters.perfil.id,
+                    data: this.data
+                })
+                .then(res => {
+                    console.log(res.data);
+                    // this.data = res.data;
+                    this.perdirDatosPerfil();
+                });
+        }
     },
     mounted() {
         this.perdirDatosPerfil();
-    },
+    }
 };

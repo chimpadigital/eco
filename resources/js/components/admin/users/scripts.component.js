@@ -1,23 +1,24 @@
+const url = "/admin/users/";
 export default {
     props: ["routePerfil"],
     data() {
         return {
-            users: [
-                {
-                    id: 1,
-                    nombre: "NombreVue",
-                    apellido: "ApellidoVue",
-                    email: "corre@vue",
-                    telefono: "0230123",
-                    pais: "Chile",
-                    descuento: "PROMOECO",
-                    primerSesion: "10/23/2020",
-                    segundaSesion: "01/24/2020"
-                }
-            ]
+            typeFiltro: "",
+            search: "",
+            users: []
         };
     },
     methods: {
+        getUsers(typeFiltro, search) {
+            axios
+                .post(url + "list-users", {
+                    typeFiltro: typeFiltro,
+                    search: search
+                })
+                .then(res => {
+                    this.users = res.data.users;
+                });
+        },
         redirecAPerfil(item) {
             this.$store.commit("setIdPerfil", item.id);
             location.href =
@@ -26,5 +27,8 @@ export default {
                 item.nombre.trim() +
                 item.apellido.trim();
         }
+    },
+    mounted() {
+        this.getUsers(this.typeFiltro, this.search);
     }
 };

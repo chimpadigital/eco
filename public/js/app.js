@@ -1933,7 +1933,7 @@ __webpack_require__.r(__webpack_exports__);
           motivacion: "",
           conociasFundacion: ""
         },
-        cladeDeInpacto: "",
+        claseDeImpacto: "",
         informacionExtra: ""
       }
     };
@@ -1946,6 +1946,18 @@ __webpack_require__.r(__webpack_exports__);
         id: this.$store.getters.perfil.id
       }).then(function (res) {
         _this.data = res.data;
+      });
+    },
+    guardar: function guardar() {
+      var _this2 = this;
+
+      axios.post(this.routePerfil + "/update", {
+        id: this.$store.getters.perfil.id,
+        data: this.data
+      }).then(function (res) {
+        console.log(res.data); // this.data = res.data;
+
+        _this2.perdirDatosPerfil();
       });
     }
   },
@@ -1965,28 +1977,34 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+var url = "/admin/users/";
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["routePerfil"],
   data: function data() {
     return {
-      users: [{
-        id: 1,
-        nombre: "NombreVue",
-        apellido: "ApellidoVue",
-        email: "corre@vue",
-        telefono: "0230123",
-        pais: "Chile",
-        descuento: "PROMOECO",
-        primerSesion: "10/23/2020",
-        segundaSesion: "01/24/2020"
-      }]
+      typeFiltro: "",
+      search: "",
+      users: []
     };
   },
   methods: {
+    getUsers: function getUsers(typeFiltro, search) {
+      var _this = this;
+
+      axios.post(url + "list-users", {
+        typeFiltro: typeFiltro,
+        search: search
+      }).then(function (res) {
+        _this.users = res.data.users;
+      });
+    },
     redirecAPerfil: function redirecAPerfil(item) {
       this.$store.commit("setIdPerfil", item.id);
       location.href = this.routePerfil + "?user=" + item.nombre.trim() + item.apellido.trim();
     }
+  },
+  mounted: function mounted() {
+    this.getUsers(this.typeFiltro, this.search);
   }
 });
 
@@ -2004,7 +2022,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, "\n.divider {\r\n    width: 100%;\r\n    background-color: #00b49d;\r\n    height: 2px;\r\n    margin: 20px 0px;\n}\r\n", ""]);
+exports.push([module.i, "\n.divider {\r\n  width: 100%;\r\n  background-color: #00b49d;\r\n  height: 2px;\r\n  margin: 20px 0px;\n}\r\n", ""]);
 
 // exports
 
@@ -22526,7 +22544,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: { type: "text" },
+                    attrs: { type: "date" },
                     domProps: { value: _vm.data.inforPerfil.fechaNacimiento },
                     on: {
                       input: function($event) {
@@ -22780,10 +22798,10 @@ var render = function() {
               "div",
               { staticClass: "form-group row justify-content-center" },
               [
-                _c("div", { staticClass: "col-12 col-sm-6 " }, [
+                _c("div", { staticClass: "col-12 col-sm-6" }, [
                   _c("label", { attrs: { for: "" } }, [
                     _vm._v(
-                      "¿Por qué estas interesado en frabricar\n                                eco-ladrillos? ¿Cual es tu\n                                Motivación?"
+                      "\n                ¿Por qué estas interesado en frabricar\n                eco-ladrillos? ¿Cual es tu\n                Motivación?\n              "
                     )
                   ]),
                   _vm._v(" "),
@@ -22820,7 +22838,7 @@ var render = function() {
                   [
                     _c("label", { attrs: { for: "" } }, [
                       _vm._v(
-                        "¿Ya conocías a la fundación\n                                previamente?"
+                        "\n                ¿Ya conocías a la fundación\n                previamente?\n              "
                       )
                     ]),
                     _vm._v(" "),
@@ -22831,7 +22849,7 @@ var render = function() {
                           rawName: "v-model",
                           value: _vm.data.sobreFundacion.conociasFundacion,
                           expression:
-                            "\n                                    data.sobreFundacion.conociasFundacion\n                                "
+                            "\n                                      data.sobreFundacion.conociasFundacion\n                                  "
                         }
                       ],
                       staticClass: "form-control",
@@ -22982,7 +23000,7 @@ var render = function() {
                 _c("div", { staticClass: "col-6 col-sm-6 col-md-3" }, [
                   _c("label", { attrs: { for: "ong" } }, [
                     _vm._v(
-                      "Tienes aliados para implementar este\n                                proyecto?"
+                      "\n                Tienes aliados para implementar este\n                proyecto?\n              "
                     )
                   ]),
                   _vm._v(" "),
@@ -22993,7 +23011,7 @@ var render = function() {
                         rawName: "v-model",
                         value: _vm.data.otraInfo.aliadosParaImplementar,
                         expression:
-                          "\n                                    data.otraInfo.aliadosParaImplementar\n                                "
+                          "\n                                      data.otraInfo.aliadosParaImplementar\n                                  "
                       }
                     ],
                     staticClass: "form-control",
@@ -23035,7 +23053,7 @@ var render = function() {
                             rawName: "v-model",
                             value: _vm.data.otraInfo.ImplementacionAnt,
                             expression:
-                              "\n                                        data.otraInfo.ImplementacionAnt\n                                    "
+                              "\n                                          data.otraInfo.ImplementacionAnt\n                                      "
                           }
                         ],
                         attrs: { type: "checkbox", name: "", id: "" },
@@ -23090,7 +23108,7 @@ var render = function() {
                             rawName: "v-model",
                             value: _vm.data.otraInfo.ImplementacionName,
                             expression:
-                              "\n                                        data.otraInfo.ImplementacionName\n                                    "
+                              "\n                                          data.otraInfo.ImplementacionName\n                                      "
                           }
                         ],
                         staticClass: "form-control",
@@ -23121,10 +23139,10 @@ var render = function() {
               "div",
               { staticClass: "form-group row justify-content-center" },
               [
-                _c("div", { staticClass: "col-12 col-sm-6 " }, [
+                _c("div", { staticClass: "col-12 col-sm-6" }, [
                   _c("label", { attrs: { for: "" } }, [
                     _vm._v(
-                      "¿De qué tipo? ¿Qué clase de impacto\n                                tuvo?"
+                      "\n                ¿De qué tipo? ¿Qué clase de impacto\n                tuvo?\n              "
                     )
                   ]),
                   _vm._v(" "),
@@ -23187,7 +23205,26 @@ var render = function() {
                   })
                 ])
               ]
-            )
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group row" }, [
+              _c("div", { staticClass: "col-2" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-success",
+                    attrs: { type: "button" },
+                    on: {
+                      click: function($event) {
+                        $event.preventDefault()
+                        return _vm.guardar($event)
+                      }
+                    }
+                  },
+                  [_vm._v("Guardar")]
+                )
+              ])
+            ])
           ])
         ])
       ])
