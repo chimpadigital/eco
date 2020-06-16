@@ -23,6 +23,14 @@ export default {
                     motivacion: "",
                     conociasFundacion: ""
                 },
+                otraInfo: {
+                    ong: "",
+                    nombreOgn: "",
+                    paginaWeb: "",
+                    aliadosParaImplementar: "",
+                    ImplementacionAnt: "",
+                    ImplementacionName: ""
+                },
                 claseDeImpacto: "",
                 informacionExtra: ""
             }
@@ -45,9 +53,14 @@ export default {
                     data: this.data
                 })
                 .then(res => {
-                    console.log(res.data);
-                    // this.data = res.data;
-                    this.perdirDatosPerfil();
+                    if (res.data.sucess) {
+                        this.$notify({
+                            group: "userInforSave",
+                            title: "Exito!",
+                            text: "Usuario Actualizado Exitosamente!"
+                        });
+                        this.perdirDatosPerfil();
+                    }
                 });
         }
     },

@@ -152,6 +152,6 @@ class UsersController extends Controller
             'extra_information' => $request->data['informacionExtra'],
         ]
     );
-        return 'table agregada';
+        return response()->json(['success' => true]);
     }
 }
