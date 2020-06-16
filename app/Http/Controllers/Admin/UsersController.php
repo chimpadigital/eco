@@ -80,32 +80,32 @@ class UsersController extends Controller
                 'nombre' => $user->name,
                 'apellido' => $user->lastname,
                 'email' => $user->email,
-                'telefono' => '',
-                'fechaNacimiento' => '',
-                'ciudad' => 'Cordoba',
-                'pais' => 'Argenitina',
-                'ocupacion' => 'Gerente de ventas',
+                'telefono' => $user->userInformation == null ? '': $user->userInformation->phone,
+                'fechaNacimiento' => $user->userInformation == null ? '': $user->userInformation->birth_date,
+                'ciudad' => $user->userInformation == null ? '': $user->userInformation->city,
+                'pais' => $user->userInformation == null ? '': $user->userInformation->country,
+                'ocupacion' => $user->userInformation == null ? '': $user->userInformation->occupation,
             ],
             'redes' => [
-                'facebook' => 'Facebook',
-                'linkedin' => 'Linkedin',
-                'instagram' => 'Instagram',
-                'otras' => 'Otras'
+                'facebook' => $user->userInformation == null ? '': $user->userInformation->facebook,
+                'linkedin' => $user->userInformation == null ? '': $user->userInformation->linkedin,
+                'instagram' => $user->userInformation == null ? '': $user->userInformation->instagram,
+                'otras' => $user->userInformation == null ? '': $user->userInformation->others
             ],
             'sobreFundacion' => [
-                'motivacion' => 'Personal',
-                'conociasFundacion' => 'no'
+                'motivacion' =>$user->userInformation == null ? '': $user->userInformation->motivation,
+                'conociasFundacion' =>$user->userInformation == null ? '': $user->userInformation->did_you_know_foundation,
             ],
             'otraInfo' => [
-                'ong' => true,
-                'nombreOgn' => 'Nombre',
-                'paginaWeb' => '',
-                'aliadosParaImplementar' => 'definición',
-                'ImplementacionAnt' => true,
-                'ImplementacionName' => 'Desarrollo'
+                'ong' =>$user->userInformation == null ? '': $user->userInformation->ong,
+                'nombreOgn' =>$user->userInformation == null ? '': $user->userInformation->name_ogn,
+                'paginaWeb' =>$user->userInformation == null ? '': $user->userInformation->web_page,
+                'aliadosParaImplementar' =>$user->userInformation == null ? '': $user->userInformation->allies_to_implement,
+                'ImplementacionAnt' =>$user->userInformation == null ? '': $user->userInformation->implementation_ant,
+                'ImplementacionName' =>$user->userInformation == null ? '': $user->userInformation->implementation_name,
             ],
-            'cladeDeInpacto' => '' ,
-            'informacionExtra' => '',
+            'cladeDeInpacto' =>$user->userInformation == null ? '': $user->userInformation->impact_class,
+            'informacionExtra' =>$user->userInformation == null ? '': $user->userInformation->extra_information,
 
         ];
 
