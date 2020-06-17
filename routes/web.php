@@ -20,8 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+//Rutas Admin
 Route::prefix('admin')->middleware('web')->group(function(){
+    //Rutas Users
     Route::prefix('users')->group(function(){
         Route::get('/','Admin\UsersController@index');
         Route::post('/list-users','Admin\UsersController@listUsers');
@@ -32,6 +33,14 @@ Route::prefix('admin')->middleware('web')->group(function(){
         });
 
     });
+    //Rutas PromoCode
+    Route::prefix('promo')->group(function(){
+        Route::get('/','Admin\PromoCodeController@index');
+        Route::post('/','Admin\PromoCodeController@listado')->name('admin.promo');
+        Route::post('/store','Admin\PromoCodeController@store')->name('admin.promo.store');
+        Route::post('/delete','Admin\PromoCodeController@delete')->name('admin.promo.delete');
+    });
+
 });
 
 Route::group(['middleware' => ['role:User','auth']],function(){
