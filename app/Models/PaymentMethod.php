@@ -17,7 +17,7 @@ class PaymentMethod extends Model
 
     public function details()
     {
-        return $this->hasOne('App\PaymentMethodDetail');
+        return $this->hasOne('App\Models\PaymentMethodDetail');
     }
 
 }

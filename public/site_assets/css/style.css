@@ -1,0 +1,362 @@
+.btn.focus, .btn:focus, .custom {
+    outline: none !important; /* Elimina Outline que agrega Bootstrap a los botones e inputs */
+    box-shadow: none !important; /* Elimina Sombra que agrega Bootstrap a los botones e inputs */
+}
+/* ===== */
+
+p {
+    font-size: 19px;
+    color: #636466;
+}
+
+.box-login {
+    padding: 30px;
+    margin-top: 100px;
+    text-align: center;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+        -moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+            box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
+
+}
+
+.box-content {
+    margin-top: 90px;
+}
+
+.input-custom {
+    border: 1px solid #0097D6 !important;
+    border-radius: 24px 24px 5px 24px !important;
+    background: rgba(0, 151, 214, 0.05) !important;
+}
+
+.input-custom:hover {
+    opacity: 0.8;
+}
+.circle {
+    width: 100px;
+    height: 100px;
+    margin: -80px auto;
+    border-radius: 100%;
+    background: green;
+}
+
+.custom-bar {
+    height: 99px;
+    margin-bottom: 56px;
+    -webkit-box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
+        -moz-box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
+            box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
+}
+
+
+.custom-btn-group .btn-custom:first-child {
+    border-radius: 20px;
+}
+
+ .custom-btn-group .btn-custom:last-child {
+    border-radius: 20px;
+}
+
+
+/* Btn Estados */
+.custom-btn-group .btn-custom {
+    height: 43px;
+    color: #636466;
+    line-height: 28px;
+    margin-right: 3px;
+    background: #EEEEEE;
+}
+
+.custom-btn-group .btn-custom:hover {
+    
+    color: #7c7c7c;
+    background: #dddddd;
+}
+
+.custom-btn-group .active {
+    color: white;
+    background: #00B49D;
+}
+
+.custom-btn-group .visited {
+    color: white;
+    background: #80C342;
+}
+
+/* Icons Estados */
+
+.custom-btn-group .icon {
+    left: 35px;
+    width: 28px;
+    height: 28px;
+    padding: 6px;
+    position: absolute;
+    background: white;
+    border-radius: 100%;
+}
+
+.custom-btn-group .icon-arrow {
+    right: 35px;
+    margin: 5px;
+    position: absolute;
+}
+
+.custom-btn-group .icon .active {
+    filter: invert(54%) sepia(91%) saturate(2680%) hue-rotate(136deg) brightness(93%) contrast(101%);
+}
+
+.custom-btn-group .icon .visited {
+    filter: invert(75%) sepia(20%) saturate(1253%) hue-rotate(47deg) brightness(90%) contrast(90%);
+}
+
+
+
+
+/* Icon Manual */
+.icon-manual {
+    width: 114px;
+    height: 114px;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    border-radius: 100%;
+    margin: 0 0 20px 80px;
+    background: #00B49D;
+}
+
+.manual-text h2 {
+    font-size: 30px;
+    color: #00B49D;
+    margin-bottom: 30px;
+}
+
+.manual-text p {
+    line-height: 30px;
+}
+
+
+/* Box Pay */
+.box-pay {
+    width: 445px;
+    margin: 100px 0;
+    border-radius: 17px;
+    background: #F5F5F5;
+    padding: 47px 34px 40px 36px;
+}
+
+.box-pay h3 {
+    font-size: 30px;
+    color: #636466;
+}
+.back {
+    width: 149px;
+    height: 149px;
+    border-radius: 100%;
+    background: white;
+    margin: -130px auto 0;
+}
+
+.icon-business {
+    width: 96px;
+    height: 96px;
+    padding: 20px;
+    display: block;
+    text-align: center;
+    border-radius: 100%;
+    margin: -122px auto 0;
+    background: #00B49D;
+}
+
+.content-pay, .agreement-pay {
+    border-bottom: 2px solid #0097D6;
+}
+
+.subtotal-pay {
+    border-bottom: 1px solid #0097D6;   
+}
+
+.content-pay, .subtotal-pay {
+    margin-top: 20px;
+    display: flow-root;
+    margin-bottom: 25px;
+}
+
+.content-pay p {
+    color: #0097D6;
+}
+
+.subtotal-pay p:first-child {
+    color: #515150;
+}
+
+.subtotal-pay p:last-child {
+    color: #0097D6;
+}
+
+.content-pay p, .subtotal-pay p {
+    font-size: 20px; 
+    margin-bottom: 25px;
+}
+
+.content-pay p:first-child, .subtotal-pay p:first-child {
+    float: left;
+    
+}
+
+.content-pay p:last-child, .subtotal-pay p:last-child {
+    font-weight: 700;
+    float: right;
+}
+
+.box-pay .form-group {
+    margin-top: 33px;
+    margin-bottom: 33px;
+}
+
+.box-pay .form-check {
+    display: flex;
+    margin: 10px 0;
+}
+
+.box-pay .form-check object {
+    margin-left: 14px;
+}
+.agreement-pay .form-check {
+    margin-bottom: 20px;
+}
+
+.agreement-pay a {
+    color: #515150;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.agreement-pay a:hover {
+    color: #0097D6;
+}
+
+.pay-now {
+    margin-top: 20px;
+}
+
+.pay-now p {
+    float: left;    
+    display: flex;
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.pay-now object {
+    margin-right: 10px;
+}
+
+.btn-green-apple {
+    float: right;
+    border: none;
+    color: white;
+    font-size: 19px;
+    font-weight: 700;
+    padding: 6px 20px;
+    line-height: normal;
+    border-radius: 20px;
+    background: #80C342;
+}
+
+.btn-green-apple:hover {
+    color: #f1f1f1;
+    opacity: 0.9;
+}
+
+.background-pago-manual {
+    height: 100vh;
+    background-image: url('../img/block.png'), url('../img/mundo.png');
+    background-position: -235px, 1450px;
+    background-repeat: no-repeat;
+}
+
+/* Pago Exitoso */
+.banner {
+    margin-top: 200px;
+    text-align: center;
+    padding: 100px 0 50px;
+    background-image: url(../img/background-banner.png);
+}
+
+.banner .back {
+    width: 170px;
+    height: 170px;
+    border-radius: 100%;
+    background: white;
+    margin: -190px auto 0;
+}
+
+.banner .icon-banner {
+    width: 130px;
+    height: 130px;
+    padding: 26px;
+    display: block;
+    text-align: center;
+    border-radius: 100%;
+    margin: -150px auto 0;
+    background: #00B49D;
+}
+
+.banner .icon-download {
+    padding: 28px 25px;
+}
+
+.banner h1 {
+    color: white;
+    font-size: 30px;
+    margin-top: 50px;    
+    text-decoration: underline;
+}
+
+.banner p {
+    color: white;
+    margin-bottom: 0;
+}
+
+.box-meet {
+    margin-top: 80px;
+    text-align: center;
+}
+
+.box-meet p:first-child {
+    margin-bottom: 10px;
+    font-size: 21px;
+}
+
+.box-meet h2 {
+    color: #0097D6;
+    font-size: 30px;
+}
+
+.form-meet {
+    margin: 20px 0;
+}
+
+.form-meet input, .form-meet select {
+    height: 47px;
+    font-size: 15px;
+    padding: 0 30px;
+    margin-bottom: 20px;
+}
+
+.form-meet textarea.form-control {
+    min-height: 88px;
+    padding: 10px 30px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.form-meet p { 
+    font-size: 16px;
+    color: #0097D6;
+    display: inline-flex;
+}
+
+.form-meet p img {
+    margin-right: 20px;
+} 

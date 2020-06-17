@@ -1,62 +1,70 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    
-    <!-- CSRF Token -->
+    <title>Eco Inclusión - Pago del manual</title>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Pricing example · Bootstrap</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/pricing/">
-
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
-    <meta name="theme-color" content="#563d7c">
+    <link rel="stylesheet" href="{{ asset('site_assets/css/style.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('site_assets/bootstrap/css/bootstrap.min.css') }}">
 
+  </head>
+  <body>
+    <div class="background-pago-manual">
+        <nav class="navbar navbar-expand-lg navbar-light custom-bar">
+            <div class="container">
+            
+              <a class="navbar-brand" href="index.html"><img src="{{ asset('site_assets/img/logo.svg') }}" width="150" alt="logo"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Ingresar <object data="{{ asset('site_assets/img/icon-open-account-login.svg') }}" type="image/svg+xml"></object></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Volver al sitio <object data="{{ asset('site_assets/img/icon-feather-home.svg') }}" type="image/svg+xml"></object></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Español
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Ingles</a>
+                            </div>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group btn-group-toggle d-flex custom-btn-group" data-toggle="buttons">
+                        <a href="#" class="btn btn-custom active" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-feather-dollar-sign.svg') }}" type="image/svg+xml" class="icon"></object>Pago del manual<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
+                        <a href="perfil-replicador.html" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-feather-user.svg') }}" type="image/svg+xml" class="icon"></object>Perfil replicado<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
+                        <a href="descarga-manual.html" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-open-data-transfer-download.svg') }}" type="image/svg+xml" class="icon"></object>Descarga de manual<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
+                        <a href="#" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-awesome-comment-dots.svg') }}" type="image/svg+xml" class="icon"></object>Sesiones de asistencia<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+       @yield('content')
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    <link href="pricing.css" rel="stylesheet">
-</head>
-<body>
-    <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
-  <h5 class="my-0 mr-md-auto font-weight-normal">LAYOUT FOR TESTING</h5>
-  <nav class="my-2 my-md-0 mr-md-3">
-    <a class="p-2 text-dark" href="#">Features</a>
-    <a class="p-2 text-dark" href="#">Enterprise</a>
-    <a class="p-2 text-dark" href="#">Support</a>
-    <a class="p-2 text-dark" href="#">Pricing</a>
-  </nav>
-  <a class="btn btn-outline-primary" href="#">Sign up</a>
-</div>
-
-@yield('content')
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-
-@yield('scripts')
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    @yield('scripts')
 </body>
 </html>

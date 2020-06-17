@@ -4,8 +4,17 @@ paypal.Buttons({
 
     createOrder: function(data,actions){
 
+        let terms = document.getElementById('terms_conditions');
+        
+        if(!terms.checked){
+          return alert('debes aceptar los términos y condiciones');
+        }
+
         return fetch(urlCreateOrder, {
             method: 'post',
+            body: JSON.stringify({
+              discount_code: document.getElementById('discount_code').value
+            }),
             headers: {
               'content-type': 'application/json',
               'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
@@ -101,16 +110,28 @@ function changeButtonPayment(){
     if($result == 'mercadoPago'){
         
         document.querySelector('#btn-payment').style.display = "block";
+        
+        document.getElementById('amount_payment1').innerText = `${amountMP} U$D`;
+        document.getElementById('amount_payment2').innerText = `${amountMP} U$D`;
+        
         document.querySelector('#paypal-button-container').style.display = "none";
         
     }
     else if ($result == 'paypal'){
         document.querySelector('#btn-payment').style.display = "none";
+        
+        document.getElementById('amount_payment1').innerText = `${amountPaypal} U$D`;
+        document.getElementById('amount_payment2').innerText = `${amountPaypal} U$D`;
+        
         document.querySelector('#paypal-button-container').style.display = "block";
     }
     else{
 
         document.querySelector('#btn-payment').style.display = "block";
+
+        document.getElementById('amount_payment1').innerText = `${amountMP} U$D`;
+        document.getElementById('amount_payment2').innerText = `${amountMP} U$D`;
+        
         document.querySelector('#paypal-button-container').style.display = "none";
 
     }

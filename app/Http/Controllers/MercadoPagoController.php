@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use MercadoPago\SDK;
 use Illuminate\Http\Request;
+use App\Models\PaymentMethod;
 
 class MercadoPagoController extends Controller
 {    
@@ -19,30 +20,33 @@ class MercadoPagoController extends Controller
     
     }
 
+
         
     /**
      * createOrder
      *
      * @return void
      */
-    public function createOrder(){
+    public function createOrder(Request $request){
+
+        $paymentMethod = $this->getPaymethod();
 
         # Create a preference object
         $preference = new \MercadoPago\Preference();
         # Create an item object
         $item = new \MercadoPago\Item();
         $item->id = '1';
-        $item->title = 'Pago fundacion Eco';
+        $item->title = $paymentMethod->details->description;
         $item->quantity = 1;
-        $item->currency_id = "ARS";
-        $item->unit_price = '220.00';
+        $item->currency_id = "USD";
+        $item->unit_price = $paymentMethod->details->amount;
         # Create a payer object
         $payer = new \MercadoPago\Payer();
         $payer->email = 'prueba@prueba.com';
         # Setting preference properties
         $preference->items = array($item);
         $preference->payer = $payer;
-        $preference->external_reference = '123123';
+        $preference->external_reference = $this->generateToken();
 
         $preference->payment_methods = array(
           "installments" => 1
@@ -59,5 +63,27 @@ class MercadoPagoController extends Controller
         $preference->save();
 
         return redirect($preference->sandbox_init_point); //init_point to prod
+    }
+
+    
+    /**
+     * getPaymethod
+     *
+     * @return void
+     */
+    public function getPaymethod()
+    {
+        return PaymentMethod::with('details')->find(2);
+    }
+
+    
+    /**
+     * generateToken
+     *
+     * @return void
+     */
+    public function generateToken()
+    {
+        return md5(rand(1, 10) . microtime());
     }
 }
