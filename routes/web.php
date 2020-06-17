@@ -37,8 +37,15 @@ Route::prefix('payments')->group(function(){
 
     Route::get('/payment-method','PaymentMethodController@paymentMethodIndex');
     
+    // Rutas PayPal
     Route::post('/payment-method/paypal/create/order','PayPalController@createOrder')->name('paypal.create.order');
     Route::post('/payment-method/paypal/capture/order','PayPalController@captureOrder')->name('paypal.capture.order');
+
+    // Rutas MercadoPago
+
+    Route::get('/payment-method/mercado-pago/create/order','MercadoPagoController@createOrder')->name('mercado.pago.create.order');
+    Route::get('/payment-method/mercado-pago/capture/order','MercadoPagoController@captureOrder')->name('mercado.pago.capture.order');
+
 
     Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
     Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
