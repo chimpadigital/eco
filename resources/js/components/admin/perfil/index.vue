@@ -78,7 +78,7 @@
                     <form action="#">
                         <div class="form-group row justify-content-center">
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Nombre</label>
+                                <label for>Nombre</label>
                                 <input
                                     v-model="data.inforPerfil.nombre"
                                     type="text"
@@ -86,7 +86,7 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Apellido</label>
+                                <label for>Apellido</label>
                                 <input
                                     v-model="data.inforPerfil.apellido"
                                     type="text"
@@ -94,7 +94,7 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Email</label>
+                                <label for>Email</label>
                                 <input
                                     v-model="data.inforPerfil.email"
                                     type="text"
@@ -102,7 +102,7 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Telefono</label>
+                                <label for>Telefono</label>
                                 <input
                                     v-model="data.inforPerfil.telefono"
                                     type="text"
@@ -112,15 +112,15 @@
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Fecha de Nacimiento</label>
+                                <label for>Fecha de Nacimiento</label>
                                 <input
                                     v-model="data.inforPerfil.fechaNacimiento"
-                                    type="text"
+                                    type="date"
                                     class="form-control"
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Ciudad de Residencia</label>
+                                <label for>Ciudad de Residencia</label>
                                 <input
                                     v-model="data.inforPerfil.ciudad"
                                     type="text"
@@ -128,7 +128,7 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Pais</label>
+                                <label for>Pais</label>
                                 <input
                                     v-model="data.inforPerfil.pais"
                                     type="text"
@@ -136,7 +136,7 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Ocupacion</label>
+                                <label for>Ocupacion</label>
                                 <input
                                     v-model="data.inforPerfil.ocupacion"
                                     type="text"
@@ -146,7 +146,7 @@
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-12 col-sm-6 col-md-3">
-                                <label for="">Redes Sociales</label>
+                                <label for>Redes Sociales</label>
                                 <input
                                     v-model="data.redes.facebook"
                                     type="text"
@@ -189,45 +189,43 @@
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
-                            <div class="col-12 col-sm-6 ">
-                                <label for=""
-                                    >¿Por qué estas interesado en frabricar
-                                    eco-ladrillos? ¿Cual es tu
-                                    Motivación?</label
-                                >
+                            <div class="col-12 col-sm-6">
+                                <label for>
+                                    ¿Por qué estas interesado en frabricar
+                                    eco-ladrillos? ¿Cual es tu Motivación?
+                                </label>
                                 <input
                                     v-model="data.sobreFundacion.motivacion"
                                     type="text"
                                     class="form-control"
-                                    placeholder=""
+                                    placeholder
                                 />
                             </div>
                             <div class="col-12 col-sm-6 justify-content-end">
-                                <label for=""
-                                    >¿Ya conocías a la fundación
-                                    previamente?</label
-                                >
+                                <label for>
+                                    ¿Ya conocías a la fundación previamente?
+                                </label>
                                 <input
                                     v-model="
                                         data.sobreFundacion.conociasFundacion
                                     "
                                     type="text"
                                     class="form-control"
-                                    placeholder=""
+                                    placeholder
                                 />
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-6 col-sm-6 col-md-3">
-                                <label for="ong">Pertenece a una ONG</label>
+                                <label>Pertenece a una ONG</label>
                                 <div
                                     class="group-inputs d-flex flex-row align-items-center"
                                 >
                                     <input
                                         v-model="data.otraInfo.ong"
                                         type="checkbox"
-                                        name=""
-                                        id=""
+                                        name
+                                        id
                                     />
                                     <input
                                         v-model="data.otraInfo.nombreOgn"
@@ -237,7 +235,7 @@
                                 </div>
                             </div>
                             <div class="col-6 col-sm-6 col-md-3">
-                                <label for="ong">Tienes página web?</label>
+                                <label>Tienes página web?</label>
                                 <input
                                     v-model="data.otraInfo.paginaWeb"
                                     type="text"
@@ -245,10 +243,10 @@
                                 />
                             </div>
                             <div class="col-6 col-sm-6 col-md-3">
-                                <label for="ong"
-                                    >Tienes aliados para implementar este
-                                    proyecto?</label
-                                >
+                                <label>
+                                    Tienes aliados para implementar este
+                                    proyecto?
+                                </label>
                                 <input
                                     v-model="
                                         data.otraInfo.aliadosParaImplementar
@@ -258,7 +256,7 @@
                                 />
                             </div>
                             <div class="col-6 col-sm-6 col-md-3">
-                                <label for="ong"
+                                <label
                                     >Implementación anterior de proyectos</label
                                 >
                                 <div
@@ -269,8 +267,8 @@
                                             data.otraInfo.ImplementacionAnt
                                         "
                                         type="checkbox"
-                                        name=""
-                                        id=""
+                                        name
+                                        id
                                     />
                                     <input
                                         v-model="
@@ -283,32 +281,43 @@
                             </div>
                         </div>
                         <div class="form-group row justify-content-center">
-                            <div class="col-12 col-sm-6 ">
-                                <label for=""
-                                    >¿De qué tipo? ¿Qué clase de impacto
-                                    tuvo?</label
-                                >
+                            <div class="col-12 col-sm-6">
+                                <label for>
+                                    ¿De qué tipo? ¿Qué clase de impacto tuvo?
+                                </label>
                                 <input
                                     v-model="data.cladeDeInpacto"
                                     type="text"
                                     class="form-control"
-                                    placeholder=""
+                                    placeholder
                                 />
                             </div>
                             <div class="col-12 col-sm-6">
-                                <label for="">información Extra</label>
+                                <label for>información Extra</label>
                                 <input
                                     v-model="data.informacionExtra"
                                     type="text"
                                     class="form-control"
-                                    placeholder=""
+                                    placeholder
                                 />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <div class="col-2">
+                                <button
+                                    class="btn btn-success"
+                                    @click.prevent="guardar"
+                                    type="button"
+                                >
+                                    Guardar
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+        <notifications group="userInforSave" />
     </div>
 </template>
 
