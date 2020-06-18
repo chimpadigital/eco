@@ -69,7 +69,7 @@ paypal.Buttons({
         
       }).then(function(details) {
 
-        alert('Transaction funds captured from ' + details.payer_given_name);
+        console.log(details);
 
       })
     }

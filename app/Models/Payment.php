@@ -19,4 +19,8 @@ class Payment extends Model
         'order_id',
         'external_reference',
     ];
+
+    public function status_payment(){
+        return $this->belongsTo('App\Models\StatusPayment');
+    }
 }
