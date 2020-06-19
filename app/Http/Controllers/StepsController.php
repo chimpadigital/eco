@@ -2,13 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class StepsController extends Controller
 {
     public function stepRouter(){
 
-        return $this->step1();
+        $user = auth()->user();
+        if($user->can('verifyPayment',PaymentMethod::class))
+        {
+            return $this->step1();
+            
+        }elseif (true) {
+
+            return $this->step2();
+        }
 
     }
 
@@ -20,6 +29,15 @@ class StepsController extends Controller
 
     public function step2(){
         
+        $countries = Country::all();
+
+        $user = auth()->user();
+
+        return view('steps.step2',[
+            'countries'=>$countries,
+            'user'=>$user,
+        ]);
+
     }
 
     public function step3(){
