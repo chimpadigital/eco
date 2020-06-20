@@ -26,6 +26,15 @@ export default {
                 "?user=" +
                 item.nombre.trim() +
                 item.apellido.trim();
+        },
+        eliminarUsuario(item) {
+            axios
+                .post(url + "delete-user", {
+                    id: item.id
+                })
+                .then(res => {
+                    this.getUsers(this.typeFiltro, this.search);
+                });
         }
     },
     mounted() {

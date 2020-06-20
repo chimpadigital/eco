@@ -2073,6 +2073,15 @@ var url = "/admin/users/";
     redirecAPerfil: function redirecAPerfil(item) {
       this.$store.commit("setIdPerfil", item.id);
       location.href = this.routePerfil + "?user=" + item.nombre.trim() + item.apellido.trim();
+    },
+    eliminarUsuario: function eliminarUsuario(item) {
+      var _this2 = this;
+
+      axios.post(url + "delete-user", {
+        id: item.id
+      }).then(function (res) {
+        _this2.getUsers(_this2.typeFiltro, _this2.search);
+      });
     }
   },
   mounted: function mounted() {
@@ -23857,7 +23866,28 @@ var render = function() {
                               ]
                             ),
                             _vm._v(" "),
-                            _vm._m(3, true)
+                            _c(
+                              "a",
+                              {
+                                staticClass: "btn btn-danger my-1",
+                                attrs: { href: "#" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.eliminarUsuario(item)
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                                    Borrar\n                                                    "
+                                ),
+                                _c("i", {
+                                  staticClass: "icon-bin",
+                                  attrs: { "aria-hidden": "true" }
+                                })
+                              ]
+                            )
                           ])
                         ])
                       }),
@@ -23997,21 +24027,6 @@ var staticRenderFns = [
         _c("th", [_vm._v("Acciones")])
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      { staticClass: "btn btn-danger my-1", attrs: { href: "#" } },
-      [
-        _vm._v(
-          "\n                                                    Borrar\n                                                    "
-        ),
-        _c("i", { staticClass: "icon-bin", attrs: { "aria-hidden": "true" } })
-      ]
-    )
   }
 ]
 render._withStripped = true

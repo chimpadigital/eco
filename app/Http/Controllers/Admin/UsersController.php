@@ -151,7 +151,16 @@ class UsersController extends Controller
             'impact_class' => $request->data['cladeDeInpacto'],
             'extra_information' => $request->data['informacionExtra'],
         ]
-    );
+        );
         return response()->json(['success' => true]);
+    }
+
+    public function DeleteUser(Request $request)
+    {
+        User::whereId($request->id)->delete();
+        return response()->json(['success' => true],200);
+
+
+
     }
 }
