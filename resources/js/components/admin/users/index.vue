@@ -134,6 +134,7 @@
                                                     <a
                                                         href="#"
                                                         class="btn btn-danger my-1"
+                                                        @click.prevent="eliminarUsuario(item)"
                                                     >
                                                         Borrar
                                                         <i

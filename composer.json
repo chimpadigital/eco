@@ -16,6 +16,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "mercadopago/dx-php": "^2.0",
+        "nesbot/carbon": "^2.35",
         "paypal/paypal-checkout-sdk": "^1.0",
         "spatie/laravel-permission": "^3.13"
     },
