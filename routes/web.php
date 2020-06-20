@@ -65,4 +65,11 @@ Route::group(['middleware' => ['role:User','auth']],function(){
         Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
     });
 
+    //Rutas de Citar
+    Route::prefix('quotes')->group(function(){
+        Route::get('/','QuoteController@index');
+        Route::post('/consulta-fecha','QuoteController@consultarFecha');
+        Route::post('/reservar-fecha','QuoteController@reservarFecha');
+    });
+
 });
