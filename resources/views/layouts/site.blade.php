@@ -15,6 +15,7 @@
 
   </head>
   <body>
+    <div style="visibility:hidden;" class="loader-page"></div>
     <div class="{{ (request()->is('payments/*')) ? 'background-pago-manual' : '' }}">
         <nav class="navbar navbar-expand-lg navbar-light custom-bar">
             <div class="container">

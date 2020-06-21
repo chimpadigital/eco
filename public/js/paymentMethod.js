@@ -42,6 +42,8 @@ paypal.Buttons({
     },
     onApprove: function(data) {
       
+      $(".loader-page").css({visibility:"visible",opacity:"0.5"});
+
       return fetch(urlCaptureOrder, {
         method: 'post',
         headers: {
@@ -58,7 +60,7 @@ paypal.Buttons({
           return res.json();
         
         } else {
-          $("#fakeloader").hide(1);
+          $(".loader-page").css({visibility:"hidden",opacity:"0"});
 
           alert("error");
 
@@ -69,6 +71,8 @@ paypal.Buttons({
         
       }).then(function(details) {
 
+        $(".loader-page").css({visibility:"hidden",opacity:"0"});
+        
         window.location.replace(URL_REDIRECT);
 
       })
