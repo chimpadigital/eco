@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'VAG';
+    src: url('../lib/fonts/vagroundedbt-regular.woff2') format('woff2'),
+            url('../lib/fonts/vagroundedbt-regular.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN Pro';
+    src: url('../lib/fonts/DINPro-Medium.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+  
 .btn.focus, .btn:focus, .custom {
     outline: none !important; /* Elimina Outline que agrega Bootstrap a los botones e inputs */
     box-shadow: none !important; /* Elimina Sombra que agrega Bootstrap a los botones e inputs */
@@ -5,16 +20,29 @@
 /* ===== */
 
 p {
-    font-size: 19px;
     color: #636466;
+    font: 19px 'DIN Pro', Arial, Helvetica, sans-serif;
 }
 
+a {
+    font-family: 'DIN Pro', Arial, Helvetica, sans-serif;   
+}
+
+h1, h2, h3 {
+    font-family: 'VAG', Arial, Helvetica, sans-serif;
+}
 .nav-item .icon-nav img {
     margin-bottom: 6px;
 }
 
 .box-content {
     margin-top: 90px;
+}
+
+.custom-select {
+    border: 1px solid #0097D6 !important;
+    border-radius: 24px 24px 5px 24px !important;
+    background: rgba(0, 151, 214, 0.05) url('../img/Icon-feather-chevron-down-select.svg') no-repeat right 1.5rem center/8px 10px !important;
 }
 
 .input-custom {
@@ -198,8 +226,8 @@ p {
 }
 
 .content-pay p:last-child, .subtotal-pay p:last-child {
-    font-weight: 700;
     float: right;
+    font-weight: 700;
 }
 
 .box-pay .form-group {
@@ -344,7 +372,8 @@ p {
     margin-bottom: 20px;
 }
 
-.form-meet p { 
+.form-meet p {
+    font-family: 'VAG', Arial, Helvetica, sans-serif;
     font-size: 16px;
     color: #0097D6;
     display: inline-flex;
@@ -424,4 +453,127 @@ p {
 .arrow-green {
     float: right;
     margin: 7px -20px 0 0;
+}
+
+/* ===> Jalendar <=== */
+/* 
+.jalendar-title {
+    display: flex;
+} */
+
+.jalendar-title h1 {
+    float: left;
+    width: 62px;
+    height: 63px;
+    font-size: 28px;
+    color: #00B49D;
+    line-height: 64px;
+    text-align: center;
+    margin: 0 10px 0 0;
+    border-radius: 50px;
+    background: #EEEEEE;
+    font-family: 'DIN Pro', Arial, Helvetica, sans-serif;
+}
+
+.jalendar-title h2 {
+    font-size: 30px;
+    margin-bottom: 0;
+    color: #00B49D;
+    line-height: 38px;
+    
+}
+
+.jalendar {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages {
+    border-radius: 20px 20px 0 0 !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages > .header h1 {
+    margin: 0 0 15px 0 !important;
+    text-shadow: none !important;
+    text-transform: none !important;
+    font: 24px 'VAG', Arial, Helvetica, sans-serif !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .days .day.today span{
+    background-color: #00B49D !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .days .day.have-event.event span:before {
+    top: 3px !important;
+    width: 8px !important;
+    height: 8px !important;
+    right: -3px !important;    
+    background: #00B49D !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .total-bar {
+    background: #00B49D !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .total-bar {
+    top: 0px !important;
+    width: 20px !important;
+    right: -25px !important;
+    height: 20px !important;
+    padding: 3px 0 0 0 !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .days .day span {
+    margin: 0 !important;
+    width: 35px !important;
+    height: 35px !important;
+    font-size: 17px !important;
+    font-weight: 100 !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .add-event .events .events-list .event-single a {
+    color: #00B49D !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .add-event .events .events-list .event-single a.event:before {
+    background: #00B49D !important;
+}
+
+.jalendar .jalendar-container .jalendar-pages .add-event .close-button {
+    background: none !important;
+    border-radius: 0px !important;
+    
+    border-bottom: 1px solid #00B49D !important;
+}
+
+/* === /Fin Jalendar/ === */
+
+.jalendar-extended {
+    padding: 20px;
+    background: #FBF9F9;
+    border-radius: 0 0 20px 20px;
+}
+
+.jalendar-extended .jalendar-date p:first-child {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #00B49D;
+    font: 22px 'DIN Pro', Arial, Helvetica, sans-serif;
+}
+
+.jalendar-extended .jalendar-date p:last-child {
+    margin: 0;
+    font-size: 18px;
+}
+
+.jalendar-extended .jalendar-hour p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #00B49D;  
+}
+
+.jalendar-extended .btn-green-apple {
+    font-size: 12px;
+    background: #00B49D;
 }

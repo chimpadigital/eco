@@ -84,9 +84,9 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
 
     let urlCreateOrder = "{{ route('paypal.create.order') }}";
     let urlCaptureOrder = "{{ route('paypal.capture.order') }}";
-    let amountPaypal = "{{ $paymentsMethods[0]->details->amount }}";
-    let amountMP = "{{ $paymentsMethods[1]->details->amount }}";
-
+    const amountPaypal = "{{ $paymentsMethods[0]->details->amount }}";
+    const amountMP = "{{ $paymentsMethods[1]->details->amount }}";
+    const URL_REDIRECT = "{{ route('steps') }}";
 
     
 

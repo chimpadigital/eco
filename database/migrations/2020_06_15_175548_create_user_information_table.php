@@ -18,7 +18,8 @@ class CreateUserInformationTable extends Migration
             $table->string('phone')->nullable();
             $table->date('birth_date')->nullable();
             $table->string('city')->nullable();
-            $table->string('country')->nullable();
+            $table->bigInteger('country_id')->unsigned()->nullable();
+            $table->foreign('country_id')->references('id')->on('countries');
             $table->string('occupation')->nullable();
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();
@@ -34,6 +35,7 @@ class CreateUserInformationTable extends Migration
             $table->string('implementation_name')->nullable();
             $table->string('impact_class')->nullable();
             $table->string('extra_information')->nullable();
+
             //Relations
 
             $table->unsignedBigInteger('user_id');

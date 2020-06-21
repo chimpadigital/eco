@@ -64,6 +64,11 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     
         Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
         Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
+
+        // Rutas de formulario de inscripcion
+
+        Route::post('inscription-form','RegistrationFormController@store')->name('inscription.form');
+
     });
 
     //Rutas de Citar

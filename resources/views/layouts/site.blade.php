@@ -11,11 +11,11 @@
     
     <link rel="stylesheet" href="{{ asset('site_assets/css/style.css') }}">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="{{ asset('site_assets/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('site_assets/lib/bootstrap/css/bootstrap.min.css') }}">
 
   </head>
   <body>
-    <div class="background-pago-manual">
+    <div class="{{ (request()->is('payments/*')) ? 'background-pago-manual' : '' }}">
         <nav class="navbar navbar-expand-lg navbar-light custom-bar">
             <div class="container">
             
@@ -49,10 +49,22 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="btn-group btn-group-toggle d-flex custom-btn-group" data-toggle="buttons">
-                        <a href="#" class="btn btn-custom active" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-feather-dollar-sign.svg') }}" type="image/svg+xml" class="icon"></object>Pago del manual<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
-                        <a href="perfil-replicador.html" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-feather-user.svg') }}" type="image/svg+xml" class="icon"></object>Perfil replicado<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
-                        <a href="descarga-manual.html" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-open-data-transfer-download.svg') }}" type="image/svg+xml" class="icon"></object>Descarga de manual<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
-                        <a href="#" class="btn btn-custom" role="button" aria-pressed="true"><object data="{{ asset('site_assets/img/icon-awesome-comment-dots.svg') }}" type="image/svg+xml" class="icon"></object>Sesiones de asistencia<object data="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" type="image/svg+xml" class="icon-arrow"></object></a>
+                        <a href="pago-del-manual.html" class="btn btn-custom" role="button" aria-pressed="true">
+                            <img src="{{ asset('site_assets/img/icon-feather-dollar-sign.svg') }}" class="icon">Pago del manual
+                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
+                        </a>
+                        <a href="#" class="btn btn-custom active" role="button" aria-pressed="true">
+                            <img src="{{ asset('site_assets/img/icon-feather-user.svg') }}" class="icon">Perfil replicado
+                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
+                        </a>
+                        <a href="descarga-manual.html" class="btn btn-custom" role="button" aria-pressed="true">
+                            <img src="{{ asset('site_assets/img/icon-open-data-transfer-download.svg') }}" class="icon">Descarga de manual
+                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
+                        </a>
+                        <a href="sesiones-asistencia.html" class="btn btn-custom" role="button" aria-pressed="true">
+                            <img src="{{ asset('site_assets/img/icon-awesome-comment-dots.svg') }}" class="icon">Sesiones de asistencia
+                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
+                        </a>
                     </div>
                 </div>
             </div>

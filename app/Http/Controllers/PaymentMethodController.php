@@ -14,13 +14,22 @@ class PaymentMethodController extends Controller
      */
     public function paymentMethodIndex()
     {
-        $paymentsMethods = PaymentMethod::with('details')->get();
-
-        return view('payments.paymentMethodIndex',[
-            
-            'paymentsMethods'=>$paymentsMethods,
+        $user = auth()->user();
         
-        ]);
+        if($user->can('verifyPayment',PaymentMethod::class))
+        {
+            $paymentsMethods = PaymentMethod::with('details')->get();
+
+            return view('payments.paymentMethodIndex',[
+                
+                'paymentsMethods'=>$paymentsMethods,
+            
+            ]);
+        } else {
+
+            return redirect()->route('steps');
+
+        }
     }
     
     /**
@@ -30,7 +39,7 @@ class PaymentMethodController extends Controller
      */
     public function paymentSuccess()
     {
-        return view('payments.paymentSuccess');
+        return redirect()->route('steps');
     }
     
     /**

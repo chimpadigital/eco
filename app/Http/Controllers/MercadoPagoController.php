@@ -67,7 +67,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = "https://f4c96a692262.ngrok.io/mp/notification/".$authUser->id."/webhook";
+        $preference->notification_url = "https://fceacf13b1a4.ngrok.io/mp/notification/".$authUser->id."/webhook";
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -124,7 +124,8 @@ class MercadoPagoController extends Controller
 
 			$paid_amount = 0;
 
-		    foreach ($merchant_order->payments as $payment) {
+            $payment = $paymentNotification;
+		    //foreach ($merchant_order->payments as $payment) {
                 
                 if ($payment->status == 'approved'){
 
@@ -151,7 +152,7 @@ class MercadoPagoController extends Controller
                     }
 
                 }
-            }
+            //}
 		    // If the payment's transaction amount is equal (or bigger) than the merchant_order's amount you can release your items
 
 		    if($paid_amount >= $merchant_order->total_amount && $merchant_order->external_reference != null){

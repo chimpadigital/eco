@@ -65,14 +65,15 @@ paypal.Buttons({
         
         }
 
-        console.log(res);
+        window.location.replace(URL_REDIRECT);
         
       }).then(function(details) {
 
-        console.log(details);
+        window.location.replace(URL_REDIRECT);
 
       })
     }
+
 
 }).render('#paypal-button-container');
 
