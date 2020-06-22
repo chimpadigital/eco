@@ -1,12 +1,22 @@
 
 
-function donwloadFile(that, page_url, urlNotification) {
+function donwloadFile(that, page_url, urlNotification,elementProgress) {
 
     var req = new XMLHttpRequest();   
     req.open("POST", page_url, true);
     req.addEventListener("progress", function (evt) {
         if(evt.lengthComputable) {
             var percentComplete = evt.loaded / evt.total;
+            percentComplete.toFixed(2);   
+            
+
+            percentComplete = Math.trunc( percentComplete * 100 ) ;
+
+            
+      
+            elementProgress.css('width', percentComplete+'%').attr('aria-valuenow', percentComplete).text(percentComplete+'%');
+            
+            
             console.log(percentComplete);
         }
     }, false);

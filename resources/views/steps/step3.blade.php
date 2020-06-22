@@ -52,6 +52,10 @@
                         
                             </a>
 
+                            <div id="progress-content-1" class="progress" style="visibility: hidden;">
+                                <div id="progress-a1" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            </div>
+
                         @endif
                         
                         <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
@@ -77,6 +81,10 @@
                                 <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                         
                             </a>
+
+                            <div id="progress-content-2" class="progress" style="visibility: hidden;">
+                                <div id="progress-a2" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            </div>
 
                         @endif
                     
@@ -105,6 +113,10 @@
                         
                             </a>
 
+                            <div id="progress-content-3" class="progress" style="visibility: hidden;">
+                                <div id="progress-a3" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            </div>
+
 
                         @endif
                     
@@ -131,6 +143,10 @@
                                 <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                         
                             </a>
+
+                            <div id="progress-content-4" class="progress" style="visibility: hidden;">
+                                <div id="progress-a4" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                            </div>
 
 
                         @endif
@@ -168,31 +184,47 @@
     document.getElementById('step3').classList.add("active");
 
     $('#a1').click(function() {
+        $('#a1').css('display','none');
+
         var that = this;
         const page_url = '{{ route('download.content',1) }}';
         const urlNotification = '{{ route('download.notification',1) }}';
-        donwloadFile(that, page_url,urlNotification);
+        let elementProgress = $('#progress-a1');
+        $('#progress-content-1').css('visibility','visible');
+        donwloadFile(that, page_url,urlNotification,elementProgress);
     });
 
     $('#a2').click(function() {
+        $('#a2').css('display','none');
+        
         var that = this;
         const page_url = '{{ route('download.content',2) }}';
         const urlNotification = '{{ route('download.notification',2) }}';
-        donwloadFile(that, page_url,urlNotification);
+        let elementProgress = $('#progress-a2');
+        $('#progress-content-2').css('visibility','visible');
+        donwloadFile(that, page_url,urlNotification,elementProgress);
     });
 
     $('#a3').click(function() {
+        $('#a3').css('display','none');
+        
         var that = this;
         const page_url = '{{ route('download.content',3) }}';
         const urlNotification = '{{ route('download.notification',3) }}';
-        donwloadFile(that, page_url,urlNotification);
+        let elementProgress = $('#progress-a3');
+        $('#progress-content-3').css('visibility','visible');
+        donwloadFile(that, page_url,urlNotification,elementProgress);
     });
 
     $('#a4').click(function() {
+        $('#a4').css('display','none');
+
         var that = this;
         const page_url = '{{ route('download.content',4) }}';
         const urlNotification = '{{ route('download.notification',4) }}';
-        donwloadFile(that, page_url,urlNotification);
+        let elementProgress = $('#progress-a4');
+        $('#progress-content-4').css('visibility','visible');
+        donwloadFile(that, page_url,urlNotification,elementProgress);
     });
 </script>
 <script src="{{ asset('js/downloadFiles.js') }}"></script>
