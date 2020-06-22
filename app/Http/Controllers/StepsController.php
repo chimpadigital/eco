@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
+use App\Models\DownloadControl;
 use App\Models\UserInformation;
 
 class StepsController extends Controller
@@ -21,10 +22,12 @@ class StepsController extends Controller
 
             return $this->step2();
         
-        } elseif (true){
+        } elseif ($user->can('verifyDownloads',DownloadControl::class)){
 
             return $this->step3();
         
+        } else { 
+            return redirect()->route('quotes');
         }
 
     }
@@ -56,7 +59,14 @@ class StepsController extends Controller
 
     public function step3(){
 
-        return view('steps.step3');
+        $downloadControl = DownloadControl::where('user_id',auth()->user()->id)
+            ->firstOrCreate([
+                'user_id'=>auth()->user()->id,
+            ]);
+        
+        return view('steps.step3',[
+            'downloadControl'=>$downloadControl,
+        ]);
     
     }
 

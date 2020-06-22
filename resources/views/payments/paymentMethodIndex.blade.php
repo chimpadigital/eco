@@ -88,6 +88,7 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
     const amountMP = "{{ $paymentsMethods[1]->details->amount }}";
     const URL_REDIRECT = "{{ route('steps') }}";
 
+    document.getElementById('step1').classList.add("active");
     
 
 </script>

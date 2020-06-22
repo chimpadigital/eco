@@ -161,3 +161,11 @@
 
 
 @endsection
+
+@section('scripts')
+
+<script type="text/javascript">
+    document.getElementById('step2').classList.add("active");
+</script>
+    
+@endsection
