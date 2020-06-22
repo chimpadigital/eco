@@ -82,37 +82,37 @@ class DownloadControlController extends Controller
 
     public function notification(Request $request,$id){
 
-        // switch ($id) {
-        //     case 1:
-        //         $this->downloadControl->update([
-        //             'element_1'=>true,
-        //         ]);
-        //         return response()->json([],200);
-        //         break;
-        //     case 2:
-        //         $this->downloadControl->update([
-        //             'element_2'=>true,
-        //         ]);
-        //         return response()->json([],200);
-        //         break;
-        //     case 3:
-        //         $this->downloadControl->update([
-        //             'element_3'=>true,
-        //         ]);
-        //         return response()->json([],200);
-        //         break;
-        //     case 4:
-        //         $this->downloadControl->update([
-        //             'element_4'=>true,
-        //         ]);
-        //         return response()->json([],200);
-        //         break;
+        switch ($id) {
+            case 1:
+                $this->downloadControl->update([
+                    'element_1'=>true,
+                ]);
+                return response()->json([],200);
+                break;
+            case 2:
+                $this->downloadControl->update([
+                    'element_2'=>true,
+                ]);
+                return response()->json([],200);
+                break;
+            case 3:
+                $this->downloadControl->update([
+                    'element_3'=>true,
+                ]);
+                return response()->json([],200);
+                break;
+            case 4:
+                $this->downloadControl->update([
+                    'element_4'=>true,
+                ]);
+                return response()->json([],200);
+                break;
             
-        //     default:
-        //         return response()->json([],200);
+            default:
+                return response()->json([],200);
 
-        //         break;
-        // }
+                break;
+        }
 
         return response()->json([],200);
 
