@@ -128,7 +128,6 @@ class MercadoPagoController extends Controller
 		    //foreach ($merchant_order->payments as $payment) {
                 
                 if ($payment->status == 'approved'){
-
 		            $paid_amount += $payment->transaction_amount;
                 
                 } else if ($payment->status == 'pending') {

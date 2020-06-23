@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Traits;
 
 use App\Mail\DownloadManual;
 use App\Mail\SuccessPayment;
@@ -9,12 +9,16 @@ use App\Mail\WithoutSessions;
 use App\Mail\FinishedSessions;
 use Illuminate\Support\Facades\Mail;
 
-class sendEmailsController extends Controller
+
+/**
+ * 
+ */
+trait SendEmails
 {
+    
     public function successPayment()
     {
         Mail::to('devsignhost@gmail.com')->send(new SuccessPayment);
-        return 'success';
         
     }
 
@@ -37,4 +41,6 @@ class sendEmailsController extends Controller
         Mail::to('devsignhost@gmail.com')->send(new FinishedSessions);
         return 'success';
     }
+
 }
+

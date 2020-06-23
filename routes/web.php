@@ -14,16 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('calendar','gCalendarController@index');
-Route::get('oauth', ['as' => 'oauthCallback', 'uses' => 'gCalendarController@oauth']);
-
-// test email
-Route::get('success-email','sendEmailsController@successPayment');
-Route::get('download-manual','sendEmailsController@downloadManual');
-Route::get('without-sessions','sendEmailsController@withoutSessions');
-Route::get('finished-sessions','sendEmailsController@finishedSessions');
-
-
 
 Route::get('/', function () {
     return view('welcome');
