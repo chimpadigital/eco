@@ -4,18 +4,32 @@ namespace App\Http\Controllers;
 
 use Sample\PayPalClient;
 use Illuminate\Http\Request;
+use App\Models\PaymentMethod;
+use App\Traits\PaymentMethodTrait;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
 
 class PayPalController extends Controller
 {
+    use PaymentMethodTrait;
+
+    public $paymentMethod;
+
+    public function __construct(){
+
+        $this->paymentMethod = $this->getPaymentMethod(2);
+
+    }
+
     public function createOrder($debug=false)
     {
+        $this->authorize('verifyPayment',PaymentMethod::class);
+           
         $request = new OrdersCreateRequest();
        
         $request->prefer('return=representation');
        
-        $request->body = self::buildRequestBody();
+        $request->body = $this->buildRequestBody();
        
         // 3. Call PayPal to set up a transaction
        
@@ -55,7 +69,7 @@ class PayPalController extends Controller
         return \Response::json($response->result,200);
     }
 
-    private static function buildRequestBody()
+    private function buildRequestBody()
     {
         return array(
             'intent' => 'CAPTURE',
@@ -71,13 +85,13 @@ class PayPalController extends Controller
                             'amount' =>
                                 array(
                                     'currency_code' => 'USD',
-                                    'value' => '220.00',
+                                    'value' => $this->paymentMethod->details->amount,
                                     'breakdown' => 
                                         array(
                                             'item_total' =>
                                                 array(
                                                     'currency_code' => 'USD',
-                                                    'value' => '220.00',
+                                                    'value' => $this->paymentMethod->details->amount,
                                                 ),
                                         ),
                                 ),
@@ -85,11 +99,11 @@ class PayPalController extends Controller
                             	array(
                                     array(
                                     'name' => 'Fundacion Eco',
-                                    'description' => 'Pago de Manuales',
+                                    'description' => $this->paymentMethod->details->description,
                                     'unit_amount' =>
                                         array(
                                         'currency_code' => 'USD',
-                                        'value' => '220.00',
+                                        'value' => $this->paymentMethod->details->amount,
                                         ),
                                     'quantity' => '1',
                                     )
@@ -108,8 +122,10 @@ class PayPalController extends Controller
    *@param debug
    *@returns
    */
-  public static function captureOrder(Request $request, $debug=false)
+  public function captureOrder(Request $request, $debug=false)
   {
+    $this->authorize('verifyPayment',PaymentMethod::class);
+    
     $requestPaypal = new OrdersCaptureRequest($request->json('orderID'));
 
     $client = PayPalClient::client();
@@ -137,6 +153,38 @@ class PayPalController extends Controller
       // echo json_encode($response->result, JSON_PRETTY_PRINT);
     }
 
-    return \Response::json($response->result,200);
+    if($response->result->status == 'COMPLETED' || $response->result->status == 'PENDING'){
+
+        if($response->result->status == 'COMPLETED'){
+            
+            $status = 'approved';
+        
+        }else{
+
+            $status = 'pending';
+
+        }
+
+        $invoice = $this->getInvoice($this->paymentMethod->id);
+
+        $captures = $response->result->purchase_units[0]->payments->captures;
+
+        foreach($captures as $capture){
+
+            $data = [
+                'invoice_id'=>$invoice->id,
+                'payment_id'=>$capture->id,
+                'order_id'=>$response->result->id,
+                'payment_method_id'=>$this->paymentMethod->id,
+            ];
+
+            $this->createPaymentOrUpdate($data,$status);
+        
+        }
+
+    }
+
+
+    return \Response::json($response,200);
   }
 }

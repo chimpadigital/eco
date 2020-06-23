@@ -86,7 +86,7 @@
             data-toggle="buttons"
           >
             <a
-              href="pago-del-manual.html"
+              href="#"
               class="btn btn-custom"
               role="button"
               aria-pressed="true"
@@ -101,7 +101,7 @@
               />
             </a>
             <a
-              href="perfil-replicador.html"
+              href="#"
               class="btn btn-custom"
               role="button"
               aria-pressed="true"
@@ -114,7 +114,7 @@
               />
             </a>
             <a
-              href="descarga-manual.html"
+              href="#"
               class="btn btn-custom"
               role="button"
               aria-pressed="true"

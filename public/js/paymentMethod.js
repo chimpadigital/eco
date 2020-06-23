@@ -42,6 +42,8 @@ paypal.Buttons({
     },
     onApprove: function(data) {
       
+      $(".loader-page").css({visibility:"visible",opacity:"0.5"});
+
       return fetch(urlCaptureOrder, {
         method: 'post',
         headers: {
@@ -58,21 +60,24 @@ paypal.Buttons({
           return res.json();
         
         } else {
-          $("#fakeloader").hide(1);
+          $(".loader-page").css({visibility:"hidden",opacity:"0"});
 
           alert("error");
 
         
         }
 
-        console.log(res);
+        window.location.replace(URL_REDIRECT);
         
       }).then(function(details) {
 
-        alert('Transaction funds captured from ' + details.payer_given_name);
+        $(".loader-page").css({visibility:"hidden",opacity:"0"});
+        
+        window.location.replace(URL_REDIRECT);
 
       })
     }
+
 
 }).render('#paypal-button-container');
 

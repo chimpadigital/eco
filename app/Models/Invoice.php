@@ -14,4 +14,10 @@ class Invoice extends Model
     protected $fillable = [
         'description', 'total', 'user_id',
     ];
+
+    public function payment(){
+
+        return $this->hasOne('App\Models\Payment')->latest();
+    
+    }
 }

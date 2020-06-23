@@ -76,13 +76,26 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     
         Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
         Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
+
     });
+
+      // Rutas de formulario de inscripcion
+
+      Route::post('inscription-form','RegistrationFormController@store')->name('inscription.form');
+
+      //Rutas de descarga
+
+      Route::post('descarcar/{id}/contenido','DownloadControlController@download')->name('download.content');
+      Route::post('descarcar/{id}/notificar','DownloadControlController@notification')->name('download.notification');
+      
 
     //Rutas de Citar
     Route::prefix('quotes')->group(function(){
-        Route::get('/','QuoteController@index');
+        Route::get('/','QuoteController@index')->name('quotes');
         Route::post('/consulta-fecha','QuoteController@consultarFecha');
         Route::post('/reservar-fecha','QuoteController@reservarFecha');
     });
 
 });
+
+Route::post('/mp/notification/{userid}/webhook', 'MercadoPagoController@webhook')->name('notification.mp');
