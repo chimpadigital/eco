@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Models\Quote;
+use App\Models\UserInformation;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Models\UserInformation;
 
 class User extends Authenticatable
 {
@@ -42,5 +43,10 @@ class User extends Authenticatable
     public function userInformation()
     {
         return $this->hasOne(UserInformation::class);
+    }
+
+    public function quote()
+    {
+        return $this->hasOne(Quote::class);
     }
 }

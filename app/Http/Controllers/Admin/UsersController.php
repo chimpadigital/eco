@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use Carbon\Carbon;
 class UsersController extends Controller
 {
     public function index()
@@ -15,7 +15,7 @@ class UsersController extends Controller
 
     public function listUsers(Request $request)
     {
-        $usersAll = User::all();
+        $usersAll = User::where('id','!=',1)->get();
         $users = collect();
         foreach($usersAll as $key => $user){
             if($user->userInformation){
@@ -24,11 +24,11 @@ class UsersController extends Controller
                     'nombre' => $user->name,
                     'apellido' => $user->lastname,
                     'email' => $user->email,
-                    'telefono' => '000000',
+                    'telefono' => $user->userInformation->phone,
                     'pais' => 'VE',
                     'descuento' => 'DESCUENTO',
-                    'primerSesion' => 'fechas',
-                    'segundaSesion' => 'fechas',
+                    'primerSesion' => $user->quote->first_session,
+                    'segundaSesion' => $user->quote->second_session,
                 ];
             }else{
                 $data = [
@@ -36,11 +36,11 @@ class UsersController extends Controller
                     'nombre' => $user->name,
                     'apellido' => $user->lastname,
                     'email' => $user->email,
-                    'telefono' => '',
+                    'telefono' => '00',
                     'pais' => '',
                     'descuento' => '',
-                    'primerSesion' => '',
-                    'segundaSesion' => '',
+                    'primerSesion' => $user->quote->first_session,
+                    'segundaSesion' => $user->quote->second_session,
                 ];
             }
             
@@ -61,15 +61,20 @@ class UsersController extends Controller
     public function inforPerfil(Request $request){
         // return $request->id;
         $user = User::whereId($request->id)->first();
+        /* Fecha Sessiones */
+        $fecha_sesion_1 = Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->first_session)->format('Y-m-d');
+        $fecha_sesion_2 = Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->second_session)->format('Y-m-d');
+
+        //end 
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => true,
                 'descuento' => false,
 
-                'primerSesionFecha' => '02/05/2020',
+                'primerSesionFecha' => $fecha_sesion_1,
                 'primerSesion' => true,
 
-                'segunSesionFecha' => '02/05/2020',
+                'segunSesionFecha' => $fecha_sesion_2,
                 'segunSesion' => false,
 
                 'condicionesGenerales' => true,

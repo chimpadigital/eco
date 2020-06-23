@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="{{asset('/')}}assets/css/style.css" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{asset('/')}}assets/lib/bootstrap/css/bootstrap.min.css" />
-
+    {{-- toas --}}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <!-- Jalendar CSS -->
     <link
       rel="stylesheet"
@@ -184,21 +185,17 @@
             <h2>Sesión</h2>
             <p>de asistencia virtual</p>
           </div>
+  
           <div id="Calendar-1" class="jalendar">
+            @foreach ($reservas as $item)
             <div
-              class="added-event"
-              data-type="event"
-              data-link="#"
-              data-date="19-06-2020"
-              data-title="Evento"
-            ></div>
-            <div
-              class="added-event"
-              data-type="event"
-              data-link="#"
-              data-date="17-06-2020"
-              data-title="Titulo del evento viejo"
-            ></div>
+            class="added-event"
+            data-type="event"
+            data-link="#"
+            data-date="{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->first_session)->format('d-m-Y')}}"
+            data-title="Evento"
+          ></div>
+            @endforeach
           </div>
           <div class="jalendar-extended">
             <div class="row">
@@ -235,20 +232,16 @@
             <p>de asistencia virtual</p>
           </div>
           <div id="Calendar-2" class="jalendar">
-            <div
+            @foreach ($reservas as $item)
+              
+              <div
               class="added-event"
               data-type="event"
               data-link="#"
-              data-date="19-06-2020"
-              data-title="Titulo del evento"
+              data-date="{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->second_session)->format('d-m-Y')}}"
+              data-title="Evento"
             ></div>
-            <div
-              class="added-event"
-              data-type="event"
-              data-link="#"
-              data-date="17-06-2020"
-              data-title="Titulo del evento viejo"
-            ></div>
+            @endforeach
           </div>
           <div class="jalendar-extended">
             <div class="row">
@@ -304,6 +297,7 @@
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha256-ZsWP0vT+akWmvEMkNYgZrPHKU9Ke8nYBPC3dqONp1mY=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/es.min.js" integrity="sha256-TaYFETQITAuqJfL0mn0Mxcq6cM1uFvNOC3JcOaCGAs0=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script
       type="text/javascript"
       src="{{asset('/')}}assets/lib/jalendar/js/jalendar.js"

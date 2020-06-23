@@ -41,13 +41,14 @@
         </div>
         <div class="col-12 col-sm-6 col-md-2">
           <label for="cantidad_aplicada">Cantidad Aplicada</label>
-          <input
+          <p>10</p>
+          <!-- <input
             v-model="promo.quantity_applied"
             class="form-control"
             type="text"
             name="cantidad_aplicada"
             id="cantidad_aplicada"
-          />
+          />-->
         </div>
         <div
           class="col-12 col-sm-6 col-md-2 d-flex align-items-end justify-content-start my-3 my-md-0"
@@ -61,7 +62,7 @@
             v-else
             @click.prevent="cambiarStado(promo,i)"
             class="btn btn-warning btn-small mr-1"
-          >Desarivado</button>
+          >Desactivado</button>
           <button @click.prevent="eliminarPromo(promo,i)" class="btn btn-danger btn-small">
             <i class="icon-bin" aria-hidden="true"></i>
           </button>

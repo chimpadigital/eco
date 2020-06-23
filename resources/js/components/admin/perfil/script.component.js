@@ -1,8 +1,25 @@
+// import DatePicker from "vue2-datepicker";
+// import "vue2-datepicker/index.css";
+import moment from "moment";
 export default {
+    // components: { DatePicker },
     props: ["routePerfil"],
     data() {
         return {
             data: {
+                procesoSesion: {
+                    pago: false,
+                    descuento: false,
+
+                    primerSesionFecha: "",
+                    primerSesion: false,
+
+                    segunSesionFecha: "",
+                    segunSesion: true,
+
+                    condicionesGenerales: false,
+                    acuerdoConfidencialidad: false
+                },
                 inforPerfil: {
                     nombre: "",
                     apellido: "",

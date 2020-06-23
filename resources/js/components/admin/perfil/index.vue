@@ -17,53 +17,92 @@
         </div>
         <div class="card-body">
             <div class="row">
-                <div class="col-12 col-sm-6 col-md-1 d-flex flex-column">
+                <div class="col-12 col-sm-6 col-md-1">
                     <label for="pago">Pago</label>
-                    <input type="checkbox" name="pago" id="pago" />
+                    <input
+                        class="form-control"
+                        type="checkbox"
+                        name="pago"
+                        id="pago"
+                    />
                 </div>
-                <div class="col-12 col-sm-6 col-md-1 d-flex flex-column">
+                <div class="col-12 col-sm-6 col-md-1">
                     <label for="descargas">Descargas</label>
-                    <input type="checkbox" name="descargas" id="descargas" />
-                </div>
-                <div class="col-12 col-sm-6 col-md-2 d-flex flex-column">
-                    <label for="primer_sesion">Primer Sesión</label>
                     <input
-                        type="date"
-                        name="primer_sesion"
-                        id="primer_sesion"
+                        class="form-control"
+                        type="checkbox"
+                        name="descargas"
+                        id="descargas"
                     />
                 </div>
-                <div class="col-12 col-sm-6 col-md-2 d-flex flex-column">
-                    <label for="segunda_sesion">Segunda Sesión</label>
+                <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
+                    <div class="input-fecha" style="margin-right:2px;">
+                        <label for="primer_sesion">Primer Sesión</label>
+                        <input
+                            class="form-control"
+                            :value="data.procesoSesion.primerSesionFecha"
+                            type="date"
+                            name="primer_sesion"
+                            id="primer_sesion"
+                        />
+                    </div>
                     <input
-                        type="date"
-                        name="segunda_sesion"
-                        id="segunda_sesion"
+                        class="form-control"
+                        v-model="data.procesoSesion.primerSesion"
+                        type="checkbox"
+                        name="descargas"
+                        id="descargas"
                     />
                 </div>
-                <div class="col-12 col-sm-6 col-md-2 d-flex flex-column">
+
+                <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
+                    <div class="input-fecha" style="margin-right:2px;">
+                        <label for="segunda_sesion">Segunda Sesión</label>
+                        <input
+                            class="form-control"
+                            :value="data.procesoSesion.segunSesionFecha"
+                            type="date"
+                            name="segunda_sesion"
+                            id="segunda_sesion"
+                        />
+                    </div>
+                    <input
+                        class="form-control"
+                        v-model="data.procesoSesion.segunSesion"
+                        type="checkbox"
+                        name="descargas"
+                        id="descargas"
+                    />
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-2">
                     <label for="condiciones_uso"
                         >Condiciones Generales de Uso</label
                     >
                     <input
+                        class="form-control"
+                        v-model="data.procesoSesion.condicionesGenerales"
                         type="checkbox"
                         name="condiciones_uso"
                         id="condiciones_uso"
                     />
                 </div>
-                <div class="col-12 col-sm-6 col-md-2 d-flex flex-column">
+                <div class="col-12 col-sm-6 col-md-2">
                     <label for="acuerdo_confidencialidad"
                         >Acuerdo de Confidencialidad</label
                     >
                     <input
+                        class="form-control"
+                        v-model="data.procesoSesion.acuerdoConfidencialidad"
                         type="checkbox"
                         name="acuerdo_confidencialidad"
                         id="acuerdo_confidencialidad"
                     />
                 </div>
-                <div class="col-12 col-sm-6 col-md-2 d-flex flex-column">
+                <div class="col-12 col-sm-6 col-md-2">
                     <label for="cupon_descuento">Cupón Descuento</label>
                     <input
+                        class="form-control"
                         type="text"
                         name="cupon_descuento"
                         id="cupon_descuento"
@@ -202,9 +241,10 @@
                                 />
                             </div>
                             <div class="col-12 col-sm-6 justify-content-end">
-                                <label for>
-                                    ¿Ya conocías a la fundación previamente?
-                                </label>
+                                <label for
+                                    >¿Ya conocías a la fundación
+                                    previamente?</label
+                                >
                                 <input
                                     v-model="
                                         data.sobreFundacion.conociasFundacion
@@ -282,9 +322,10 @@
                         </div>
                         <div class="form-group row justify-content-center">
                             <div class="col-12 col-sm-6">
-                                <label for>
-                                    ¿De qué tipo? ¿Qué clase de impacto tuvo?
-                                </label>
+                                <label for
+                                    >¿De qué tipo? ¿Qué clase de impacto
+                                    tuvo?</label
+                                >
                                 <input
                                     v-model="data.cladeDeInpacto"
                                     type="text"
