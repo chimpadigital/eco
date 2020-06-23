@@ -13,39 +13,80 @@ class QuoteController extends Controller
 {
     public function index()
     {
-        return View('quotes.quotes');
+        $reservas = Quote::all();
+        return View('quotes.quotes',compact('reservas'));
     }
 
     public function consultarFecha(Request $request)
     {
-       
-        $consulta_fecha = $request->date;
+        
         // return response()->json($fecha->format('Y-m-d H:i:s'));
         $horarios_disponibles = collect();
         // $quotes = Quote;
-        $horarios = collect([
-            '10:00:00',
-            '11:00:00',
-            '12:00:00',
-            '13:00:00',
-            '14:00:00',
-        ]);
+        $horarios = collect(
+           [
+            [
+                'horario' => '10:00:00',
+                'hora' => '10:00 am'
+            ],
+            [
+                'horario' => '11:00:00',
+                'hora' => '11:00 am'
+            ],
+            [
+                'horario' => '12:00:00',
+                'hora' => '12:00 pm'
+            ],
+            [
+                'horario' => '13:00:00',
+                'hora' => '13:00 pm'
+            ],
+            [
+                'horario' => '14:00:00',
+                'hora' => '14:00 pm'
+            ]
+           ]
+           );
 
+       if($request->date){
+        $consulta_fecha = $request->date;
         foreach($horarios as $key  => $horario){
             
-            $fecha = DateTime::createFromFormat('d-m-Y H:i:s', $consulta_fecha.' '.$horario);
+            $fecha = DateTime::createFromFormat('d-m-Y H:i:s', $consulta_fecha.' '.$horario['horario']);
             // return response()->json($fecha->format('Y-m-d H:i:s'));
 
             $quote = Quote::whereDate('first_session',$fecha->format('Y-m-d'))
-                    ->whereTime('first_session',$horario)
+                    ->whereTime('first_session',$horario['horario'])
+                    ->orWhereDate('second_session',$fecha->format('Y-m-d'))
+                    ->whereTime('second_session',$horario['horario'])
                     ->first();
             if(!$quote){
-                $horarios_disponibles->push(['horario' => $horario]);
+                $horarios_disponibles->push(['horario' => $horario['horario'],'hora' => $horario['hora']]);
+            }
+            
+        }
+        return response()->json($horarios_disponibles);
+       }else{
+        foreach($horarios as $key  => $horario){
+        $consulta_fecha = $request->second_date;
+            
+            $fecha = DateTime::createFromFormat('d-m-Y H:i:s', $consulta_fecha.' '.$horario['horario']);
+            // return response()->json($fecha->format('Y-m-d H:i:s'));
+
+            $quote = Quote::whereDate('second_session',$fecha->format('Y-m-d'))
+                    ->whereTime('second_session',$horario['horario'])
+                    ->orWhereDate('first_session',$fecha->format('Y-m-d'))
+                    ->whereTime('first_session',$horario['horario'])
+                    ->first();
+            if(!$quote){
+                $horarios_disponibles->push(['horario' => $horario['horario'],'hora' => $horario['hora']]);
             }
         }
+        return response()->json($horarios_disponibles);
+       }
 
         
-        return response()->json($horarios_disponibles);
+        
     }
     
     public function reservarFecha(Request $request)

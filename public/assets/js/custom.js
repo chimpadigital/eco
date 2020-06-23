@@ -89,7 +89,7 @@ $(function() {
                 $.each(res, function(i, item) {
                     console.log(item, i);
                     $("#first_sesion_time").append(
-                        new Option(item.horario, item.horario)
+                        new Option(item.hora, item.horario)
                     );
                 });
             }
@@ -110,12 +110,12 @@ $(function() {
         $.ajax({
             url: "/quotes/consulta-fecha",
             type: "POST",
-            data: { date: fechaSelect },
+            data: { second_date: fechaSelect },
             success: function(res) {
                 $.each(res, function(i, item) {
                     console.log(item, i);
                     $("#second_sesion_time").append(
-                        new Option(item.horario, item.horario)
+                        new Option(item.hora, item.horario)
                     );
                 });
             }
@@ -134,6 +134,7 @@ $(function() {
             type: "POST",
             data: { fecha: fecha_reserva },
             success: function(res) {
+                toastr.success("Fecha Reservada");
                 console.log(res);
             }
         });
@@ -149,6 +150,7 @@ $(function() {
             type: "POST",
             data: { segunda_fecha: fecha_reserva },
             success: function(res) {
+                toastr.success("Fecha Reservada");
                 console.log(res);
             }
         });
