@@ -3,12 +3,15 @@ export default {
     props: ["routePerfil"],
     data() {
         return {
-            typeFiltro: "",
+            typeFiltro: 1,
             search: "",
             users: []
         };
     },
     methods: {
+        filtrarUsers() {
+            this.getUsers(this.typeFiltro, this.search);
+        },
         getUsers(typeFiltro, search) {
             axios
                 .post(url + "list-users", {

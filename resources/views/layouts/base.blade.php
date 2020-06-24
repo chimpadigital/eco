@@ -13,7 +13,7 @@
 <body>
 
 	<!-- Main navbar -->
-	@include('parts.mainNavbar')
+	{{-- @include('parts.mainNavbar') --}}
 	<!-- /main navbar -->
 
 

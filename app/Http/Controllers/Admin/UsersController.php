@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use App\User;
+use Carbon\Carbon;
+use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
+
+use App\Traits\SendEmailsTrait;
+
 class UsersController extends Controller
 {
+    use SendEmailsTrait;
     public function index()
     {
         return View('admins.users.users');
@@ -15,7 +20,22 @@ class UsersController extends Controller
 
     public function listUsers(Request $request)
     {
-        $usersAll = User::where('id','!=',1)->get();
+        
+
+        if($request->typeFiltro == 1){
+            $usersAll = User::where('id','!=',1)
+        ->email($request->search)
+        ->get();
+        }elseif($request->typeFiltro == 3){
+            $usersAll = User::where('id','!=',1)
+            ->lastname($request->search)
+            ->get();
+        }else{
+            $usersAll = User::where('id','!=',1)
+        ->phone($request->search)
+        ->get();
+        }
+
         $users = collect();
         foreach($usersAll as $key => $user){
             if($user->userInformation){
@@ -25,8 +45,8 @@ class UsersController extends Controller
                     'apellido' => $user->lastname,
                     'email' => $user->email,
                     'telefono' => $user->userInformation->phone,
-                    'pais' => 'VE',
-                    'descuento' => 'DESCUENTO',
+                    'pais' => $user->userInformation->country->name,
+                    'descuento' => '',
                     'primerSesion' => $user->quote->first_session,
                     'segundaSesion' => $user->quote->second_session,
                 ];
@@ -36,7 +56,7 @@ class UsersController extends Controller
                     'nombre' => $user->name,
                     'apellido' => $user->lastname,
                     'email' => $user->email,
-                    'telefono' => '00',
+                    'telefono' => '',
                     'pais' => '',
                     'descuento' => '',
                     'primerSesion' => $user->quote->first_session,
@@ -72,10 +92,10 @@ class UsersController extends Controller
                 'descuento' => false,
 
                 'primerSesionFecha' => $fecha_sesion_1,
-                'primerSesion' => true,
+                'primerSesion' => $user->quote->first_session_assistance,
 
                 'segunSesionFecha' => $fecha_sesion_2,
-                'segunSesion' => false,
+                'segunSesion' => $user->quote->second_session_assistance,
 
                 'condicionesGenerales' => true,
                 'acuerdoConfidencialidad' => true,
@@ -88,7 +108,7 @@ class UsersController extends Controller
                 'telefono' => $user->userInformation == null ? '': $user->userInformation->phone,
                 'fechaNacimiento' => $user->userInformation == null ? '': $user->userInformation->birth_date,
                 'ciudad' => $user->userInformation == null ? '': $user->userInformation->city,
-                'pais' => $user->userInformation == null ? '': $user->userInformation->country,
+                'pais' => $user->userInformation == null ? '': $user->userInformation->country_id,
                 'ocupacion' => $user->userInformation == null ? '': $user->userInformation->occupation,
             ],
             'redes' => [
@@ -130,16 +150,13 @@ class UsersController extends Controller
 
         $user = User::whereId($request->id)->first();
         $user->userInformation()->updateOrCreate([
-            'id' => 1,
+            'user_id' => $user->id,
         ],[
-        
-        
             // otraInfo
-        
             'phone' => $request->data['inforPerfil']['telefono'],
             'birth_date' => $request->data['inforPerfil']['fechaNacimiento'],
             'city' =>       $request->data['inforPerfil']['ciudad'],
-            'country' =>    $request->data['inforPerfil']['pais'],
+            'country_id' =>    $request->data['inforPerfil']['pais'],
             'occupation' => $request->data['inforPerfil']['ocupacion'],
             'facebook' =>   $request->data['redes']['facebook'],
             'linkedin' =>   $request->data['redes']['linkedin'],
@@ -155,9 +172,30 @@ class UsersController extends Controller
             'implementation_name' => $request->data['otraInfo']['ImplementacionName'],
             'impact_class' => $request->data['cladeDeInpacto'],
             'extra_information' => $request->data['informacionExtra'],
-        ]
-        );
+        ]);
+
+
+        $user->quote()->updateOrCreate(
+            [
+            'user_id' => $user->id,
+            ],
+            [
+                'first_session_assistance' => $request->data['procesoSesion']['primerSesion'],
+                'second_session_assistance' => $request->data['procesoSesion']['segunSesion'],
+
+            ]
+            );
+            if($request->data['procesoSesion']['segunSesion']){
+
+                $this->finishedSessions();
+            }
+
         return response()->json(['success' => true]);
+    }
+
+    public function countries()
+    {
+        return Country::select('id','name')->get();
     }
 
     public function DeleteUser(Request $request)

@@ -34,6 +34,11 @@ export default {
         },
 
         guardarPromo() {
+            this.$notify({
+                group: "InforSave",
+                title: "Exito",
+                text: "Se ha guardado exitosamente!"
+            });
             axios
                 .post(this.routePromo + "/store", this.$data.promos)
                 .then(res => {

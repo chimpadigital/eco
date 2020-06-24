@@ -49,4 +49,30 @@ class User extends Authenticatable
     {
         return $this->hasOne(Quote::class);
     }
+
+   
+     
+    //Scope
+    public function scopeEmail($q,$value){
+        if(isset($value)){
+            $q->where('email','LIKE','%'.$value.'%');
+        }
+
+    }
+
+    public function scopeLastname($q,$value){
+        if(isset($value)){
+            $q->where('lastname','LIKE','%'.$value.'%');
+        }
+
+    }
+
+    public function scopePhone($q,$value){
+        if(isset($value)){
+            $q->whereHas('userInformation',function($query) use ($value){
+                return $query->where('phone','LIKE','%'.$value.'%');
+            });
+        }
+
+    }
 }
