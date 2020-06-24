@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Mail;
 /**
  * 
  */
-trait SendEmails
+trait SendEmailsTrait
 {
     
     public function successPayment()

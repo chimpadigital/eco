@@ -23,22 +23,24 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Rutas Admin
-Route::prefix('admin')->middleware('web')->group(function(){
+Route::prefix('admin')->middleware('role:Administrator','auth')->group(function(){
     //Rutas Users
     Route::prefix('users')->group(function(){
-        Route::get('/','Admin\UsersController@index');
+        Route::get('/','Admin\UsersController@index')->name('index.users');
         Route::post('/list-users','Admin\UsersController@listUsers');
         Route::post('/delete-user','Admin\UsersController@DeleteUser');
         Route::prefix('perfil')->group(function(){
             Route::get('/','Admin\UsersController@perfil')->name('admin.perfil');
             Route::post('/','Admin\UsersController@inforPerfil')->name('admin.pedir.perfil');
             Route::post('/update','Admin\UsersController@updateInforPerfil');
+            Route::post('/countries','Admin\UsersController@countries');
+            
         });
 
     });
     //Rutas PromoCode
     Route::prefix('promo')->group(function(){
-        Route::get('/','Admin\PromoCodeController@index');
+        Route::get('/','Admin\PromoCodeController@index')->name('index.promo');
         Route::post('/','Admin\PromoCodeController@listado')->name('admin.promo');
         Route::post('/store','Admin\PromoCodeController@store')->name('admin.promo.store');
         Route::post('/delete','Admin\PromoCodeController@delete')->name('admin.promo.delete');

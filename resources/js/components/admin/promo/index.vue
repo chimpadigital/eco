@@ -6,10 +6,11 @@
           <div class="icon">
             <span class="icon-user" style="font-size: 3rem;"></span>
           </div>
-          <h4 class="card-title">Perfil {{ "Nombre Apellido" }}</h4>
+          <h4 class="card-title">Cupones de descuentos</h4>
         </div>
         <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
-          <a href="#" class="btn btn-success">Regresar</a>
+          <a href="#" class="btn btn-info mr-3">Regresar</a>
+          <button class="btn btn-success" @click.prevent="agregarPromo">Agregar</button>
         </div>
       </div>
     </div>
@@ -73,14 +74,11 @@
       </div>
       <div class="row">
         <div class="col-2">
-          <button class="btn btn-info" @click.prevent="agregarPromo">Agregar</button>
-        </div>
-        <div class="col-2">
           <button class="btn btn-success" @click.prevent="guardarPromo">Guardar</button>
         </div>
       </div>
     </div>
-    <notifications group="userInforSave" />
+    <notifications group="InforSave" />
   </div>
 </template>
 

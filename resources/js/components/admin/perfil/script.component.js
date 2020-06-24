@@ -6,6 +6,7 @@ export default {
     props: ["routePerfil"],
     data() {
         return {
+            countries: [],
             data: {
                 procesoSesion: {
                     pago: false,
@@ -15,7 +16,7 @@ export default {
                     primerSesion: false,
 
                     segunSesionFecha: "",
-                    segunSesion: true,
+                    segunSesion: false,
 
                     condicionesGenerales: false,
                     acuerdoConfidencialidad: false
@@ -63,6 +64,14 @@ export default {
                     this.data = res.data;
                 });
         },
+        getCountries() {
+            axios.post(this.routePerfil + "/countries").then(res => {
+                this.countries = res.data;
+            });
+        },
+        asistenciaFirstSesion() {
+            alert(this.data.primerSesion);
+        },
         guardar() {
             axios
                 .post(this.routePerfil + "/update", {
@@ -70,18 +79,19 @@ export default {
                     data: this.data
                 })
                 .then(res => {
-                    if (res.data.sucess) {
+                    if (res.data.success) {
+                        this.perdirDatosPerfil();
                         this.$notify({
                             group: "userInforSave",
                             title: "Exito!",
                             text: "Usuario Actualizado Exitosamente!"
                         });
-                        this.perdirDatosPerfil();
                     }
                 });
         }
     },
     mounted() {
         this.perdirDatosPerfil();
+        this.getCountries();
     }
 };
