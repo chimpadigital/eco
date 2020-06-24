@@ -67,7 +67,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = "https://fceacf13b1a4.ngrok.io/mp/notification/".$authUser->id."/webhook";
+        $preference->notification_url = route('notification.mp',$authUser->id);
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
