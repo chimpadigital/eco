@@ -299,9 +299,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/locale/es.min.js" integrity="sha256-TaYFETQITAuqJfL0mn0Mxcq6cM1uFvNOC3JcOaCGAs0=" crossorigin="anonymous"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script
-      type="text/javascript"
-      src="{{asset('/')}}assets/lib/jalendar/js/jalendar.js"
+      
+      src="{{asset('assets/lib/jalendar/js/jalendar.js')}}"
     ></script>
-    <script type="text/javascript" src="{{asset('/')}}assets/js/custom.js"></script>
+    <script  src="{{asset('/')}}assets/js/custom.js"></script>
   </body>
 </html>

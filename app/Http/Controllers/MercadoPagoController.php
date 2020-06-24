@@ -162,6 +162,8 @@ class MercadoPagoController extends Controller
 
                     $this->createPaymentOrUpdate($data,'approved');  
 
+                    // Correos
+
 
 		    } else {
 
