@@ -90,4 +90,4 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 
 });
 
-Route::post('/mp/notification/{userid}/webhook', 'MercadoPagoController@webhook')->name('notification.mp');
+Route::post('/mp/notification/webhook', 'MercadoPagoController@webhook')->name('notification.mp');

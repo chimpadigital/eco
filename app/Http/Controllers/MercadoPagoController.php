@@ -6,6 +6,7 @@ use App\User;
 use MercadoPago\SDK;
 use App\Models\Invoice;
 use App\Models\Payment;
+use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Traits\PaymentMethodTrait;
@@ -42,6 +43,18 @@ class MercadoPagoController extends Controller
 
         $authUser = auth()->user();
 
+        $promoCodeAmount = 0;
+        $promoCodeId = null;
+
+        $promoCode = PromoCode::where('code_name',$request->input('discount_code'))
+        ->where('state',true)
+        ->first();
+
+        if($promoCode){
+            $promoCodeAmount = $promoCode->amount;
+            $promoCodeId = $promoCode->id;
+        } 
+
         # Create a preference object
         $preference = new \MercadoPago\Preference();
         # Create an item object
@@ -50,7 +63,7 @@ class MercadoPagoController extends Controller
         $item->title = $paymentMethod->details->description;
         $item->quantity = 1;
         $item->currency_id = "USD";
-        $item->unit_price = $paymentMethod->details->amount;
+        $item->unit_price = $paymentMethod->details->amount - $promoCodeAmount;
         # Create a payer object
         $payer = new \MercadoPago\Payer();
         $payer->email = $authUser->email;
@@ -59,7 +72,7 @@ class MercadoPagoController extends Controller
         # Setting preference properties
         $preference->items = array($item);
         $preference->payer = $payer;
-        $preference->external_reference = $this->generateToken();
+        $preference->external_reference = $this->generateToken($authUser->id,$promoCodeId);
 
         $preference->payment_methods = array(
           "installments" => 1
@@ -67,7 +80,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = route('notification.mp',$authUser->id);
+        $preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -98,18 +111,21 @@ class MercadoPagoController extends Controller
      *
      * @return void
      */
-    public function generateToken()
+    public function generateToken($user_id,$code_discount_id)
     {
-        return md5(rand(1, 10) . microtime());
+        $data = array([
+            'user_id'=>$user_id,
+            'code_discount_id'=>$code_discount_id,
+        ]);
+
+        return base64_encode(json_encode($data));
+        // return md5(rand(1, 10) . microtime());
     }
 
 
-    public function webhook(Request $request,$id)
+    public function webhook(Request $request)
 	{
 
-        if(!$user = User::find($id)){
-            return \Response::json('forbidden',403);
-        }
 
 		$merchant_order = null;
 
@@ -122,7 +138,13 @@ class MercadoPagoController extends Controller
 			
 			$merchant_order = \MercadoPago\MerchantOrder::find_by_id($order_id);
 
-			$paid_amount = 0;
+            $paid_amount = 0;
+            
+            $data = json_decode(base64_decode($merchant_order->external_reference));
+
+            if(!$user = User::find($data['user_id'])){
+                return \Response::json('forbidden',403);
+            }
 
             $payment = $paymentNotification;
 		    //foreach ($merchant_order->payments as $payment) {
@@ -153,6 +175,7 @@ class MercadoPagoController extends Controller
                 }
             //}
 		    // If the payment's transaction amount is equal (or bigger) than the merchant_order's amount you can release your items
+
 
 		    if($paid_amount >= $merchant_order->total_amount && $merchant_order->external_reference != null){
 
