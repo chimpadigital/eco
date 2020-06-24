@@ -9,15 +9,21 @@
     <div class="navbar-collapse collapse" id="navbar-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="{{route('index.users')}}" class="navbar-nav-link active">
+                <a href="{{route('admin.index.home')}}" class="navbar-nav-link active">
                     <i class="icon-home4 mr-2"></i>
-                    Usuarios
+                    Inicio
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('index.promo')}}" class="navbar-nav-link">
+                <a href="{{route('admin.index.users')}}" class="navbar-nav-link">
                     <i class="icon-home4 mr-2"></i>
-                    Promo
+                    Replicadores
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.index.promo')}}" class="navbar-nav-link">
+                    <i class="icon-home4 mr-2"></i>
+                    Cupón de descuento
                 </a>
             </li>
 

@@ -24,9 +24,10 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Rutas Admin
 Route::prefix('admin')->middleware('role:Administrator','auth')->group(function(){
+    Route::get('/','Admin\AdminDashController@index')->name('admin.index.home');
     //Rutas Users
     Route::prefix('users')->group(function(){
-        Route::get('/','Admin\UsersController@index')->name('index.users');
+        Route::get('/','Admin\UsersController@index')->name('admin.index.users');
         Route::post('/list-users','Admin\UsersController@listUsers');
         Route::post('/delete-user','Admin\UsersController@DeleteUser');
         Route::prefix('perfil')->group(function(){
@@ -40,7 +41,7 @@ Route::prefix('admin')->middleware('role:Administrator','auth')->group(function(
     });
     //Rutas PromoCode
     Route::prefix('promo')->group(function(){
-        Route::get('/','Admin\PromoCodeController@index')->name('index.promo');
+        Route::get('/','Admin\PromoCodeController@index')->name('admin.index.promo');
         Route::post('/','Admin\PromoCodeController@listado')->name('admin.promo');
         Route::post('/store','Admin\PromoCodeController@store')->name('admin.promo.store');
         Route::post('/delete','Admin\PromoCodeController@delete')->name('admin.promo.delete');
