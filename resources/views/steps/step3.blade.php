@@ -204,6 +204,8 @@
     $('.service').click(function(e) {
         e.preventDefault();
     });
+    document.getElementById('step1').classList.add("visited");
+    document.getElementById('step2').classList.add("visited");
     document.getElementById('step3').classList.add("active");
 
     $('#a1').click(function() {
