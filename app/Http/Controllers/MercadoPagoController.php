@@ -80,7 +80,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = route('notification.mp');
+        $preference->notification_url = 'https://a4a874c7d2d1.ngrok.io/mp/notification/webhook';
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -113,10 +113,10 @@ class MercadoPagoController extends Controller
      */
     public function generateToken($user_id,$code_discount_id)
     {
-        $data = array([
+        $data = array(
             'user_id'=>$user_id,
             'code_discount_id'=>$code_discount_id,
-        ]);
+        );
 
         return base64_encode(json_encode($data));
         // return md5(rand(1, 10) . microtime());
@@ -140,9 +140,10 @@ class MercadoPagoController extends Controller
 
             $paid_amount = 0;
             
-            $data = json_decode(base64_decode($merchant_order->external_reference));
-
-            if(!$user = User::find($data['user_id'])){
+            $data_json = base64_decode($merchant_order->external_reference);
+            $data = json_decode($data_json);
+            
+            if(!$user = User::find($data->user_id)){
                 return \Response::json('forbidden',403);
             }
 
