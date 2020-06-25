@@ -6,11 +6,14 @@ use App\Models\Invoice;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Models\DownloadControl;
+use App\Traits\SendEmailsTrait;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DownloadControlController extends Controller
 {
+    use SendEmailsTrait;
+    
     public $userAuth;
 
     public $downloadControl;
@@ -84,9 +87,12 @@ class DownloadControlController extends Controller
 
         switch ($id) {
             case 1:
+                $this->downloadManual($this->userAuth->email);
+
                 $this->downloadControl->update([
                     'element_1'=>true,
                 ]);
+                
                 return response()->json([],200);
                 break;
             case 2:

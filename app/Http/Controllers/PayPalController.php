@@ -10,6 +10,7 @@ use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
 use PayPal\Api\WebhookEvent;
 use App\Models\PaymentMethod;
+use App\Traits\SendEmailsTrait;
 use App\Traits\PaymentMethodTrait;
 use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Api\VerifyWebhookSignature;
@@ -18,7 +19,7 @@ use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
 
 class PayPalController extends Controller
 {
-    use PaymentMethodTrait;
+    use PaymentMethodTrait,SendEmailsTrait;
 
     public $paymentMethod;
 
@@ -244,6 +245,10 @@ class PayPalController extends Controller
             
             }
 
+            if($status == "approved"){
+                $this->successPayment(auth()->user()->email);
+            }
+
         }
 
 
@@ -331,6 +336,11 @@ class PayPalController extends Controller
                             'status_payment_id'=>1,
                         ]);
                         
+                        $invoice = Invoice::find($payment->invoice_id);
+
+                        $user = User::find($invoice->user_id);
+
+                        $this->successPayment($user->email);
                     }
 
                 //subscription payment recieved: agreement id = $responseArray['webhook_event']['resource']['billing_agreement_id']

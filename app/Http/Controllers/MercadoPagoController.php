@@ -10,10 +10,11 @@ use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Traits\PaymentMethodTrait;
+use App\Traits\SendEmailsTrait;
 
 class MercadoPagoController extends Controller
 {
-    use PaymentMethodTrait;
+    use PaymentMethodTrait,SendEmailsTrait;
 
     public $paymentMethod;
     /**
@@ -186,6 +187,8 @@ class MercadoPagoController extends Controller
                     $this->createPaymentOrUpdate($data,'approved');  
 
                     // Correos
+
+                    $this->successPayment($user->email);
 
 
 		    } else {
