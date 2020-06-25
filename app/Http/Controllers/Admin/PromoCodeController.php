@@ -37,7 +37,6 @@ class PromoCodeController extends Controller
                 'code_name' => $promo['code_name'],
                 'expiration_date' => $promo['expiration_date'],
                 'amount' => $promo['amount'],
-                'quantity_applied' => $promo['quantity_applied'],
                 'state' => $promo['state']
             ]);
         }

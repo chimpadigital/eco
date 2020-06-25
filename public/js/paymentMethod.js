@@ -43,7 +43,7 @@ paypal.Buttons({
     onApprove: function(data) {
       
       $(".loader-page").css({visibility:"visible",opacity:"0.5"});
-
+      console.log(data.orderID);
       return fetch(urlCaptureOrder, {
         method: 'post',
         headers: {

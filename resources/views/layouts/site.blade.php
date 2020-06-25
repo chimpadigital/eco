@@ -20,56 +20,54 @@
         <nav class="navbar navbar-expand-lg navbar-light custom-bar">
             <div class="container">
             
-              <a class="navbar-brand" href="index.html"><img src="{{ asset('site_assets/img/logo.svg') }}" width="150" alt="logo"></a>
+            <a class="navbar-brand" href="{{ route('/') }}"><img src="{{ asset('site_assets/img/logo.svg') }}" width="150" alt="logo"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
         
                 <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Ingresar <object data="{{ asset('site_assets/img/icon-open-account-login.svg') }}" type="image/svg+xml"></object></a>
+                        @auth
+                        <li class="nav-item active landing-active">
+
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">
+                                Cerrar sesión
+                                <img src="{{ asset('site_') }}assets/img/icon-open-account-login-green.svg">
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+
                         </li>
+                        @endauth
+                        @guest
+                            <li class="nav-item active landing-active">
+                                <a class="nav-link" href="{{ route('login') }}" active>Ingresar
+                                    <img src="{{ asset('site_') }}assets/img/icon-open-account-login-green.svg">
+                                </a>
+                            </li>
+                        @endguest
+                        
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Volver al sitio <object data="{{ asset('site_assets/img/icon-feather-home.svg') }}" type="image/svg+xml"></object></a>
+                            <a class="nav-link icon-nav" href="{{ route('/') }}">Volver al sitio
+                                <img src="{{ asset('site_') }}assets/img/icon-feather-home.svg">
+                            </a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Español
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Español <img src="{{ asset('site_') }}assets/img/idioma1.svg">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Ingles</a>
+                                <a class="dropdown-item" href="#">English <img src="{{ asset('site_') }}assets/img/idioma2.svg"></a>
                             </div>
                         </li> 
                     </ul>
                 </div>
             </div>
         </nav>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="btn-group btn-group-toggle d-flex custom-btn-group" data-toggle="buttons">
-                        <a href="#" id="step1" class="btn btn-custom" role="button" aria-pressed="true">
-                            <img src="{{ asset('site_assets/img/icon-feather-dollar-sign.svg') }}" class="icon">Pago del manual
-                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
-                        </a>
-                        <a href="#" id="step2" class="btn btn-custom" role="button" aria-pressed="true">
-                            <img src="{{ asset('site_assets/img/icon-feather-user.svg') }}" class="icon">Perfil replicado
-                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
-                        </a>
-                        <a href="#" id="step3" class="btn btn-custom" role="button" aria-pressed="true">
-                            <img src="{{ asset('site_assets/img/icon-open-data-transfer-download.svg') }}" class="icon">Descarga de manual
-                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
-                        </a>
-                        <a href="#" id="step4" class="btn btn-custom" role="button" aria-pressed="true">
-                            <img src="{{ asset('site_assets/img/icon-awesome-comment-dots.svg') }}" class="icon">Sesiones de asistencia
-                            <img src="{{ asset('site_assets/img/icon-feather-chevron-down.svg') }}" class="icon-arrow">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
     
        @yield('content')
 

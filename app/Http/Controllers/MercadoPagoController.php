@@ -80,7 +80,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = 'https://a4a874c7d2d1.ngrok.io/mp/notification/webhook';
+        $preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -106,21 +106,6 @@ class MercadoPagoController extends Controller
     }
 
     
-    /**
-     * generateToken
-     *
-     * @return void
-     */
-    public function generateToken($user_id,$code_discount_id)
-    {
-        $data = array(
-            'user_id'=>$user_id,
-            'code_discount_id'=>$code_discount_id,
-        );
-
-        return base64_encode(json_encode($data));
-        // return md5(rand(1, 10) . microtime());
-    }
 
 
     public function webhook(Request $request)
@@ -147,6 +132,20 @@ class MercadoPagoController extends Controller
                 return \Response::json('forbidden',403);
             }
 
+            $promoCode = PromoCode::find($data->code_discount_id);
+            
+            $promoCodeAmount = 0;
+            
+            if($promoCode){
+            
+                $promoCodeAmount = $promoCode->amount;
+            
+                $promoCode->update([
+                    'quantity_applied'=> ++$promoCode->quantity_applied,
+                ]);
+
+            }
+
             $payment = $paymentNotification;
 		    //foreach ($merchant_order->payments as $payment) {
                 
@@ -155,7 +154,7 @@ class MercadoPagoController extends Controller
                 
                 } else if ($payment->status == 'pending') {
 
-                    $invoice = $this->getInvoice($this->paymentMethod->id,$user);
+                    $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
                     $data = $this->buildDataForPayment($invoice,$merchant_order);
 
@@ -180,7 +179,7 @@ class MercadoPagoController extends Controller
 
 		    if($paid_amount >= $merchant_order->total_amount && $merchant_order->external_reference != null){
 
-                    $invoice = $this->getInvoice($this->paymentMethod->id,$user);
+                    $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
                     $data = $this->buildDataForPayment($invoice,$merchant_order);
 

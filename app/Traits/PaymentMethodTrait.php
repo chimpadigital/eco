@@ -33,7 +33,7 @@ trait PaymentMethodTrait {
         
     } 
 
-    public function getInvoice($paymentMethodId,$user = null)
+    public function getInvoice($paymentMethodId,$user = null,$discountCodeAmount = 0)
     {
         if(is_null($user)){
 
@@ -45,7 +45,7 @@ trait PaymentMethodTrait {
         return Invoice::where('user_id',$user->id)
         ->latest()
         ->firstOrCreate([
-            'total'=>$paymentMethod->details->amount,
+            'total'=>$paymentMethod->details->amount - $discountCodeAmount,
             'user_id'=>$user->id,
             'description'=>$paymentMethod->details->description,
         ]);
@@ -56,6 +56,23 @@ trait PaymentMethodTrait {
         return PaymentMethod::with('details')
         ->find($id);
     
+    }
+
+
+    /**
+     * generateToken
+     *
+     * @return void
+     */
+    public function generateToken($user_id,$code_discount_id)
+    {
+        $data = array(
+            'user_id'=>$user_id,
+            'code_discount_id'=>$code_discount_id,
+        );
+
+        return base64_encode(json_encode($data));
+        // return md5(rand(1, 10) . microtime());
     }
 
 

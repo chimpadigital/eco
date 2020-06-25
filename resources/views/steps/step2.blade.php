@@ -1,8 +1,9 @@
 @extends('layouts.site')
 
+
 @section('content')
 
-
+@include('steps.step_bar')
 
 <div class="container-fluid">
     <div class="row">

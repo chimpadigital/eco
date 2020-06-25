@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Sample\PayPalClient;
+use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Traits\PaymentMethodTrait;
@@ -15,27 +16,49 @@ class PayPalController extends Controller
 
     public $paymentMethod;
 
+    public $promoCodeAmount;
+    
+    public $promoCodeId;
+    
+    public $userAuth;
+
+
+
     public function __construct(){
 
         $this->paymentMethod = $this->getPaymentMethod(2);
 
     }
 
-    public function createOrder($debug=false)
+    public function createOrder(Request $request,$debug=false)
     {
         $this->authorize('verifyPayment',PaymentMethod::class);
-           
-        $request = new OrdersCreateRequest();
+        
+        $this->userAuth = auth()->user();
+        
+        $requestPaypal = new OrdersCreateRequest();
+
+        $this->promoCodeAmount = 0;
+        $this->promoCodeId = null;
+
+        $promoCode = PromoCode::where('code_name',$request->input('discount_code'))
+        ->where('state',true)
+        ->first();
+
+        if($promoCode){
+            $this->promoCodeAmount = $promoCode->amount;
+            $this->promoCodeId = $promoCode->id;
+        } 
        
-        $request->prefer('return=representation');
+        $requestPaypal->prefer('return=representation');
        
-        $request->body = $this->buildRequestBody();
+        $requestPaypal->body = $this->buildRequestBody();
        
         // 3. Call PayPal to set up a transaction
        
         $client = PayPalClient::client();
        
-        $response = $client->execute($request);
+        $response = $client->execute($requestPaypal);
        
         if ($debug)
         {
@@ -82,16 +105,17 @@ class PayPalController extends Controller
                 array(
                     0 =>
                         array(
+                            'reference_id'=>$this->generateToken($this->userAuth->id,$this->promoCodeId),
                             'amount' =>
                                 array(
                                     'currency_code' => 'USD',
-                                    'value' => $this->paymentMethod->details->amount,
+                                    'value' => $this->paymentMethod->details->amount - $this->promoCodeAmount,
                                     'breakdown' => 
                                         array(
                                             'item_total' =>
                                                 array(
                                                     'currency_code' => 'USD',
-                                                    'value' => $this->paymentMethod->details->amount,
+                                                    'value' => $this->paymentMethod->details->amount - $this->promoCodeAmount,
                                                 ),
                                         ),
                                 ),
@@ -103,7 +127,7 @@ class PayPalController extends Controller
                                     'unit_amount' =>
                                         array(
                                         'currency_code' => 'USD',
-                                        'value' => $this->paymentMethod->details->amount,
+                                        'value' => $this->paymentMethod->details->amount - $this->promoCodeAmount,
                                         ),
                                     'quantity' => '1',
                                     )
@@ -125,7 +149,7 @@ class PayPalController extends Controller
   public function captureOrder(Request $request, $debug=false)
   {
     $this->authorize('verifyPayment',PaymentMethod::class);
-    
+   
     $requestPaypal = new OrdersCaptureRequest($request->json('orderID'));
 
     $client = PayPalClient::client();
@@ -152,6 +176,23 @@ class PayPalController extends Controller
       // To print the whole response body, uncomment the following line
       // echo json_encode($response->result, JSON_PRETTY_PRINT);
     }
+    $reference_id = $response->result->purchase_units[0]->reference_id;
+    $data_json = base64_decode($reference_id);
+    $data = json_decode($data_json);
+
+    $promoCode = PromoCode::find($data->code_discount_id);
+    
+    $promoCodeAmount = 0;
+
+    if($promoCode){
+
+        $promoCodeAmount = $promoCode->amount;
+
+        $promoCode->update([
+            'quantity_applied'=> ++$promoCode->quantity_applied,
+        ]);
+
+    }
 
     if($response->result->status == 'COMPLETED' || $response->result->status == 'PENDING'){
 
@@ -165,7 +206,7 @@ class PayPalController extends Controller
 
         }
 
-        $invoice = $this->getInvoice($this->paymentMethod->id);
+        $invoice = $this->getInvoice($this->paymentMethod->id,null,$promoCodeAmount);
 
         $captures = $response->result->purchase_units[0]->payments->captures;
 

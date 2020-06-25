@@ -1,7 +1,10 @@
 @extends('layouts.site')
 
+
 @section('content')
-    
+
+@include('steps.step_bar')
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
