@@ -38,7 +38,7 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
                 window.navigator.msSaveBlob(blob, filename);
             } else {
                 // Firefox version
-                var file = new File([req.response], filename, { type: 'application/force-download' });
+                var file = new File([req.response], filename, { type: 'application/download' });
                 window.open(URL.createObjectURL(file));
             }
 
