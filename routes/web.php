@@ -91,4 +91,4 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 });
 
 Route::post('/mp/notification/webhook', 'MercadoPagoController@webhook')->name('notification.mp');
-Route::post('/paypal/notification/webhook', 'PayPalController@webhook')->name('notification.mp');
+Route::post('/paypal/notification/webhook', 'PayPalController@webhook')->name('notification.paypal');
