@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     
+    <link rel="stylesheet" href="{{ asset('css/payment.css') }}">
     <link rel="stylesheet" href="{{ asset('site_assets/css/style.css') }}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('site_assets/lib/bootstrap/css/bootstrap.min.css') }}">

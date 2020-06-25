@@ -43,6 +43,14 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
             }
 
             notifyDownload(urlNotification);
+
+            var img = document.createElement("img");
+
+            img.src = "assets/img/icon-check-download.svg";
+
+            var elementReplace= document.getElementById(elementProgress.attr('id')).parentElement;
+
+            elementReplace.parentNode.replaceChild(img,elementReplace);
         }
     };
     req.send();
