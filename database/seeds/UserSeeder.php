@@ -1,6 +1,7 @@
 <?php
 
 use App\User;
+use App\Administrator;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::create([
+        $user = Administrator::create([
             'name'=>'admin',
             'lastname'=>' one',
             'email'=>'admin@admin.com',
