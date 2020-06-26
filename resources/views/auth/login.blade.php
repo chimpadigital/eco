@@ -25,7 +25,7 @@
                             @enderror
                         </div>
 
-                        <div class="form-group">
+                        {{-- <div class="form-group">
 
                             <input type="password" class="form-control input-custom @error('password') is-invalid @enderror" name="password" placeholder="Password" required autocomplete="current-password">
                             
@@ -46,16 +46,16 @@
                                     </label>
                                 </div>
                             
-                        </div>
+                        </div> --}}
                     
                         <button type="submit" class="btn-green-apple">Ingresar</button>
 
-                        @if (Route::has('password.request'))
+                        {{-- @if (Route::has('password.request'))
                             <br>
                             <a class="btn btn-link" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
-                        @endif
+                        @endif --}}
                     
                     </form>
                 </div>

@@ -260,25 +260,6 @@
                                         @enderror
                                     </div>
 
-                                    <div class="col p-0">
-                                   
-                                        <div class="form-group">
-                                   
-                                            <input type="password" class="form-control input-custom" name="password" placeholder="Password" required>
-                                            
-                                            @error('password')
-                                                
-                                                <span class="invalid-feedback" role="alert">
-                                                
-                                                    <strong>{{ $message }}</strong>
-                                                
-                                                </span>
-                                            
-                                            @enderror
-                                        </div>
-                                   
-                                    </div>
-
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                         <label class="form-check-label" for="defaultCheck1">
