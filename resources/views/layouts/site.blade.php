@@ -104,7 +104,12 @@
     
     src="{{asset('assets/lib/jalendar/js/jalendar.js')}}"
   ></script>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <script  src="{{asset('/')}}assets/js/custom.js"></script>
-    @yield('scripts')
+    
+  @include('sweet::alert')
+    
+  @yield('scripts')
 </body>
 </html>

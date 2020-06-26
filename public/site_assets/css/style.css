@@ -13,6 +13,10 @@
     font-style: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+  }
+
 html, body {
     height:100%;
 } 
@@ -114,8 +118,8 @@ h1 {
 
 /* Btn Estados */
 .custom-btn-group .btn-custom {
-    margin-top: 56px;
     height: 43px;
+    margin-top: 56px;
     color: #636466;
     line-height: 28px;
     margin-right: 3px;
@@ -127,23 +131,11 @@ h1 {
     background: #dddddd;
 }
 
-.custom-btn-group .active {
-    color: white;
-    background: #00B49D;
-}
-
-.custom-btn-group .visited {
-    color: white;
-    background: #80C342;
-}
-
-/* Icons Estados */
-
 .custom-btn-group .icon {
-    left: 35px;
-    width: 28px;
-    height: 28px;
-    padding: 6px;
+    left: 30px;
+    width: 30px;
+    height: 30px;
+    line-height: 25px;
     position: absolute;
     background: white;
     border-radius: 100%;
@@ -151,16 +143,45 @@ h1 {
 
 .custom-btn-group .icon-arrow {
     right: 35px;
-    margin: 5px;
+    margin-top: -1px;
     position: absolute;
 }
 
-.custom-btn-group .icon .active {
-    filter: invert(54%) sepia(91%) saturate(2680%) hue-rotate(136deg) brightness(93%) contrast(101%);
+/* === Normal === */
+.custom-btn-group .icon svg {
+    stroke: #707070;
 }
 
-.custom-btn-group .icon .visited {
-    filter: invert(75%) sepia(20%) saturate(1253%) hue-rotate(47deg) brightness(90%) contrast(90%);
+.custom-btn-group .icon-arrow svg {
+    stroke: #707070;
+}
+
+/* === Active === */
+.custom-btn-group .active {
+    color: white;
+    background: #00B49D;
+}
+
+.custom-btn-group .active .icon svg {
+    stroke: #00B49D;
+}
+
+.custom-btn-group .active .icon-arrow svg {
+    stroke: white;
+}
+
+/* === Visited === */
+.custom-btn-group .visited {
+    color: white;
+    background: #80C342;
+}
+
+.custom-btn-group .visited .icon svg {
+    stroke: #80C342;
+}
+
+.custom-btn-group .visited .icon-arrow svg {
+    stroke: white;
 }
 
 
@@ -330,6 +351,7 @@ h1 {
     border-radius: 50px;
     background: #0097D6;
 }
+
 .btn-blue:hover {
     opacity: 0.9;
     color: white;
@@ -338,6 +360,22 @@ h1 {
 
 .btn-blue img {
     margin: -1px 5px 0 0;
+}
+
+.btn-green {
+    border: none;
+    color: white;
+    font-size: 16px;
+    padding: 9px 20px;
+    line-height: normal;
+    border-radius: 50px;
+    background: #00B49D;
+}
+
+.btn-green:hover {
+    opacity: 0.9;
+    color: white;
+    text-decoration: none;
 }
 
 #pago-manual {
@@ -351,7 +389,8 @@ h1 {
     margin-top: 200px;
     text-align: center;
     padding: 100px 0 80px;
-    background: url(../img/background-banner.png);
+    background: url('../img/background-banner.png') no-repeat center center;
+    background-size: cover;
 }
 
 .banner .back {
@@ -379,6 +418,7 @@ h1 {
 
 .banner h1 {
     color: white;
+    font-size: 30px;
     margin-top: 50px;    
     text-decoration: underline;
 }
@@ -687,7 +727,7 @@ h1 {
 }
 
 #handbook {
-    background:     url('../img/img-bottle-landing.png') left 45% no-repeat,
+    background: url('../img/img-bottle-landing.png') left 45% no-repeat,
                     url('../img/img-block-landing.png') right 45% no-repeat;
     background-size: 16%;
 }
@@ -806,7 +846,8 @@ h1 {
 
 .box-eco-inversion {
     margin-top: 50px;
-    background: url('../img/background-inversion.png') no-repeat;
+    background: url('../img/background-inversion.png') no-repeat center center;
+    background-size: cover;
 }
 
 .box-eco-inversion h1 {
@@ -1166,11 +1207,11 @@ h1 {
     margin-top: -2px;
     transform: rotate(180deg);
 }
-#terms-of-use {
+#terms-of-use, #confidentiality {
     margin-bottom: 150px;
 }
 
-#terms-of-use h1 {
+#terms-of-use h1, #confidentiality h1 {
     margin: 50px 0;
     text-align: center;
 }
@@ -1179,11 +1220,15 @@ h1 {
     color: #707070;
 }
 
-#terms-of-use h2 {
+#terms-of-use h2, #confidentiality h2  {
     font-size: 21px;
     color: #0097D6;
     margin-top: 50px;
     display: inline-flex;
+}
+
+#confidentiality .manifiesto li {
+    margin-top: 20px;
 }
 
 #terms-of-use ol { 
@@ -1223,4 +1268,56 @@ h1 {
 
 #terms-of-use .form-check a:hover {
     color: #0097D6;
+}
+
+#finalized-payment .background {
+    height: 50vh;
+    background: url('../img/img-bottle.png') left 100% no-repeat,
+                    url('../img/img-plant.png') right no-repeat;
+    background-size: 9%, 7%;
+}
+
+#finalized-payment .icon-banner {
+    padding: 34px 0px;
+}
+
+#finalized-payment .banner {
+    padding: 100px 0 20px;
+}
+
+#finalized-payment .blue-banner {
+    padding: 20px;
+    margin: 30px 0;
+    text-align: center;
+    border-radius: 50px;
+    background: #0097D6;
+}
+
+#finalized-payment .blue-banner p {
+    margin: 0;
+    color: white;
+}
+
+#confidentiality {
+    background: url('../img/img-plant-confidentiality.png') right 20% no-repeat,
+                    url('../img/img-recycle-confidentiality.png') left no-repeat,
+                        url('../img/img-bottle-confidentiality.png') right 90% no-repeat;
+
+    background-size: 9%, 9%, 10%;                    }
+
+#confidentiality ol { 
+    list-style-type: upper-roman;
+}
+
+#confidentiality li { 
+    font-size: 19px;
+    color: #707070;
+    margin-top: 65px;
+}
+#confidentiality .alpha {
+    list-style-type: upper-alpha
+}
+
+#confidentiality .alpha li {
+    margin-top: 20px;
 }

@@ -87,7 +87,7 @@
                 <a href="">ACEPTO TÉRMINOS Y CONDICIONES DE USO</a>
             </label>
         </div>
-        <a class="btn-blue" href="{{route('login')}}"><img src="{{ asset('site_') }}assets/img/icon-feather-chevron-left.png"> Volver</a>
+        <a class="btn-blue" href="{{ route('/') }}"><img src="{{asset('site_')}}assets/img/icon-feather-chevron-left.png"> Volver</a>
     </div>
 </section>
     

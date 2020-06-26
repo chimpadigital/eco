@@ -17,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'SiteController@index')->name("/");
 
-Route::view('terminos-y-condiciones','term')->name('terms');
+Route::view('terminos','term')->name('terms');
+Route::view('condiciones','condition')->name('condition');
 
 Auth::routes();
 
@@ -96,6 +97,10 @@ Route::group(['middleware' => ['role:User','auth']],function(){
         Route::post('/consulta-fecha','QuoteController@consultarFecha');
         Route::post('/reservar-fecha','QuoteController@reservarFecha');
     });
+
+    //Verificar paso actual
+    Route::post('verificar/{id}/step','StepsController@verifyStep')->name('step.verify');
+      
 
 });
 
