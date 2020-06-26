@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Limitless - @yield('title')</title>
+	<title>Eco - @yield('title')</title>
 
 	@include('parts.head')
 
@@ -23,7 +23,7 @@
 
 
 	<!-- Page header -->
-	<div class="page-header">
+	{{-- <div class="page-header">
 		<div class="page-header-content header-elements-md-inline">
 			<div class="page-title d-flex">
 				<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Home</span> - @yield('title')</h4>
@@ -37,7 +37,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> --}}
 	<!-- /page header -->
 		
 
@@ -48,7 +48,7 @@
 		<div class="content-wrapper">
 
 			<!-- Content area -->
-			<div class="content">
+			<div class="content mt-5">
                 @yield('content')
 			</div>
 			<!-- /content area -->

@@ -9,15 +9,21 @@
     <div class="navbar-collapse collapse" id="navbar-navigation">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="{{route('index.users')}}" class="navbar-nav-link active">
+                <a href="{{route('admin.index.home')}}" class="navbar-nav-link active">
                     <i class="icon-home4 mr-2"></i>
-                    Usuarios
+                    Inicio
                 </a>
             </li>
             <li class="nav-item">
-                <a href="{{route('index.promo')}}" class="navbar-nav-link">
+                <a href="{{route('admin.index.users')}}" class="navbar-nav-link">
                     <i class="icon-home4 mr-2"></i>
-                    Promo
+                    Replicadores
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="{{route('admin.index.promo')}}" class="navbar-nav-link">
+                    <i class="icon-home4 mr-2"></i>
+                    Cupón de descuento
                 </a>
             </li>
 
@@ -33,7 +39,15 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item"><i class="icon-user-lock"></i> Salir</a>
+                    <a href="#" class="dropdown-item"  href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="icon-user-lock"></i> Salir</a>
+                    
+                
+
+                                    <form id="logout-form" action="{{ route('admin.post.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                     {{-- <a href="#" class="dropdown-item"><i class="icon-statistics"></i> Analytics</a> --}}
                     {{-- <a href="#" class="dropdown-item"><i class="icon-accessibility"></i> Accessibility</a> --}}
                     {{-- <div class="dropdown-divider"></div> --}}
