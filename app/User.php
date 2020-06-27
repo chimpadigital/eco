@@ -3,6 +3,8 @@
 namespace App;
 
 use App\Models\Quote;
+use App\Models\Invoice;
+use App\Models\DownloadControl;
 use App\Models\UserInformation;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
@@ -48,6 +50,16 @@ class User extends Authenticatable
     public function quote()
     {
         return $this->hasOne(Quote::class);
+    }
+
+    public function invoice()
+    {
+        return $this->hasOne(Invoice::class);
+    }
+
+    public function download()
+    {
+        return $this->hasOne(DownloadControl::class);
     }
 
    

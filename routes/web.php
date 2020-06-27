@@ -95,7 +95,10 @@ Route::group(['middleware' => ['role:User','auth']],function(){
         Route::get('/','QuoteController@index')->name('quotes');
         Route::post('/consulta-fecha','QuoteController@consultarFecha');
         Route::post('/reservar-fecha','QuoteController@reservarFecha');
+        Route::post('check-sessions','QuoteController@checkSession');
     });
+    Route::get('finalizar','FinalizarController@index');
+
 
 });
 

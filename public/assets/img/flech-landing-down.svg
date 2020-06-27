@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="41.26" height="21.043" viewBox="0 0 41.26 21.043">
+  <g id="flech-landing" transform="translate(50.26 -17) rotate(90)">
+    <path id="Trazado_6625" data-name="Trazado 6625" d="M17,11,36.8,29.98,17,48.959" transform="translate(0 -0.35)" fill="#fff"/>
+    <g id="Grupo_303" data-name="Grupo 303" transform="translate(17 22.16)">
+      <path id="Trazado_6626" data-name="Trazado 6626" d="M17,39.888V24.948l7.794,7.47Zm1.65-11.072v7.2l3.759-3.6Z" transform="translate(-17 -24.948)" fill="#00b49d"/>
+    </g>
+    <g id="Grupo_304" data-name="Grupo 304" transform="translate(17 9)">
+      <path id="Trazado_6627" data-name="Trazado 6627" d="M17,50.26v-3.3L35.016,29.63,17,12.3V9L37.661,28.736a1.238,1.238,0,0,1,0,1.787Z" transform="translate(-17 -9)" fill="#00b49d"/>
+    </g>
+  </g>
+</svg>

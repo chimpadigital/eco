@@ -85,7 +85,8 @@ class UsersController extends Controller
         //end 
         $jsonFormate = [
             'procesoSesion'=> [
-                'pago' => true,
+                'pago' => isset($user->invoice)?true:false,
+                'descargar' => isset($user->download)?true:false,
                 'descuento' => false,
 
                 'primerSesionFecha' => $fecha_sesion_1,
