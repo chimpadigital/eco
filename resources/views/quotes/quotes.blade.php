@@ -1,7 +1,7 @@
 @extends('layouts.site')
     
 
-    @section('content')
+  @section('content')
     @include('steps.step_bar')
     <div class="container-fluid">
       <div class="row">
@@ -142,10 +142,10 @@
         
     <script type="text/javascript">
 
-      document.getElementById('step1').classList.add("visited");
-      document.getElementById('step2').classList.add("visited");
-      document.getElementById('step3').classList.add("visited");
-      document.getElementById('step4').classList.add("active");
+    $('.step1').addClass("visited");
+    $('.step2').addClass("visited");
+    $('.step3').addClass("visited");
+    $('.step4').addClass("active");
   
       </script>
     @endsection

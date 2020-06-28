@@ -166,8 +166,9 @@
 @section('scripts')
 
 <script type="text/javascript">
-    document.getElementById('step1').classList.add("visited");
-    document.getElementById('step2').classList.add("active");
+    
+    $('.step1').addClass("visited");
+    $('.step2').addClass("active");
 </script>
     
 @endsection
