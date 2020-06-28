@@ -14,14 +14,14 @@ class PromoCodeController extends Controller
     }
 
     public function listado(){
-        $promos = PromoCode::select(
+        $promos = PromoCode::select([
             'id',
             'code_name',
             'expiration_date',
             'amount',
             'quantity_applied',
             'state',
-            )->get();
+        ])->get();
             return response()->json($promos);
     }
 
@@ -37,7 +37,6 @@ class PromoCodeController extends Controller
                 'code_name' => $promo['code_name'],
                 'expiration_date' => $promo['expiration_date'],
                 'amount' => $promo['amount'],
-                'quantity_applied' => $promo['quantity_applied'],
                 'state' => $promo['state']
             ]);
         }

@@ -1,7 +1,10 @@
 @extends('layouts.site')
 
+
 @section('content')
-    
+
+@include('steps.step_bar')
+
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -14,13 +17,15 @@
 </div>
 
 
+
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12 p-0">
             <div class="banner banner-download">
                 <div class="back"></div>
                 <div class="icon-banner icon-download">
-                    <img src="{{ asset('site_assets/img/icon-download.svg') }}" alt="">
+                    <img src="{{ asset('site_') }}assets/img/icon-download.svg" alt="">
                 </div>
                 <h1>DESCARGAR MANUAL</h1>
                 <p>Una vez descargados los 4 elementos que conforman el manual</br>
@@ -30,128 +35,138 @@
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="box-download-files">
-                <div class="row">
-                    <div class="col-md-3 text-center">
-                        <div class="icon-download">
-                            <img src="{{ asset('site_assets/img/icon-feather-book.svg') }}">
-                        </div>
+<section id="download-files">
 
-                        @if ($downloadControl->element_1)
-
-                            <img src="assets/img/icon-check-download.svg">
-
-                        @else
-
-                            <a href="#" id="a1" data-filename="download1.deb" class="btn btn-download">Descargar Manuales
-                        
-                                <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
-                        
-                            </a>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="row">
+                        <div class="col-md-3 text-center">
+                            <div class="icon-download">
+                                <img src="{{ asset('site_assets/img/icon-feather-book.svg') }}">
+                            </div>
+    
+                            @if ($downloadControl->element_1)
+    
+                                <img src="assets/img/icon-check-download.svg">
+    
+                            @else
+    
+                                <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">Descargar Manuales
+                            
+                                    <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                            
+                                </a>
+    
+                            @endif
+                            
+                            <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
+                            
                             <div id="progress-content-1" class="progress" style="visibility: hidden;">
+                            
                                 <div id="progress-a1" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            
                             </div>
 
-                        @endif
-                        
-                        <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
-                    
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                    
-                        <div class="icon-download">
-                    
-                            <img src="{{ asset('site_assets/img/icon-feather-video.svg') }}">
-                    
                         </div>
-
-                        @if ($downloadControl->element_2)
-
-                            <img src="assets/img/icon-check-download.svg">
-
-                        @else
-
-                            <a href="#" id="a2" data-filename="download2.deb" class="btn btn-download">Descargar Videos
                         
-                                <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                        <div class="col-md-3 text-center">
                         
-                            </a>
-
+                            <div class="icon-download">
+                        
+                                <img src="{{ asset('site_assets/img/icon-feather-video.svg') }}">
+                        
+                            </div>
+    
+                            @if ($downloadControl->element_2)
+    
+                                <img src="assets/img/icon-check-download.svg">
+    
+                            @else
+    
+                                <a href="#" id="a2" data-filename="download2.deb" class="service btn btn-download">Descargar Videos
+                            
+                                    <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                            
+                                </a>
+    
+                            @endif
+                        
+                            
+                            <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
+                            
                             <div id="progress-content-2" class="progress" style="visibility: hidden;">
+                                
                                 <div id="progress-a2" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            
                             </div>
 
-                        @endif
-                    
-                        
-                        <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
-                    
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                    
-                        <div class="icon-download">
-                    
-                            <img src="{{ asset('site_assets/img/icon-awesome-question.svg') }}">
-                    
                         </div>
-
-                        @if ($downloadControl->element_3)
-
-                            <img src="assets/img/icon-check-download.svg">
-
-                        @else
-
-                            <a href="#" id="a3" data-filename="download3.deb" class="btn btn-download">Descargar FAQs
                         
-                                <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                        <div class="col-md-3 text-center">
                         
-                            </a>
-
+                            <div class="icon-download">
+                        
+                                <img src="{{ asset('site_assets/img/icon-awesome-question.svg') }}">
+                        
+                            </div>
+    
+                            @if ($downloadControl->element_3)
+    
+                                <img src="assets/img/icon-check-download.svg">
+    
+                            @else
+    
+                                <a href="#" id="a3" data-filename="download3.deb" class="service btn btn-download">Descargar FAQs
+                            
+                                    <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                            
+                                </a>
+    
+    
+                            @endif
+                        
+                            <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
+                            
                             <div id="progress-content-3" class="progress" style="visibility: hidden;">
+                                
                                 <div id="progress-a3" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%"></div>
+                            
                             </div>
-
-
-                        @endif
-                    
-                        <img class="arrow-green" src="assets/img/Icon-feather-chevron-green.svg">
-                    
-                    </div>
-                    
-                    <div class="col-md-3 text-center">
-                    
-                        <div class="icon-download">
-                    
-                            <img src="{{ asset('site_assets/img/icon-feather-file-plus.svg') }}">
-                    
+                        
                         </div>
-
-                        @if ($downloadControl->element_4)
-
-                            <img src="assets/img/icon-check-download.svg">
-
-                        @else
-
-                            <a href="#" id="a4" data-filename="download4.deb" class="btn btn-download">Descargar anexos
-                    
-                                <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                         
-                            </a>
-
-                            <div id="progress-content-4" class="progress" style="visibility: hidden;">
-                                <div id="progress-a4" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                        <div class="col-md-3 text-center">
+                        
+                            <div class="icon-download">
+                        
+                                <img src="{{ asset('site_assets/img/icon-feather-file-plus.svg') }}">
+                        
                             </div>
-
-
-                        @endif
-                    
+    
+                            @if ($downloadControl->element_4)
+    
+                                <img src="assets/img/icon-check-download.svg">
+    
+                            @else
+    
+                                <a href="#" id="a4" data-filename="download4.deb" class="service btn btn-download">Descargar anexos
                         
+                                    <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
+                            
+                                </a>
+    
+                            @endif
+                            
+                            <div id="progress-content-4" class="progress" style="visibility: hidden;">
+                                
+                                <div id="progress-a4" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                            
+                            </div>
+                            
+                        
+                        </div>
                     
                     </div>
                 
@@ -163,24 +178,34 @@
     
     </div>
 
-</div>
+
+</section>
+
 
 <div class="container">
     <div class="row mb-5">
         <div class="col-md-12">
             <div class="box-next-step float-right">
                 <span>Siguiente paso</span>
-                <a href="{{ route('steps') }}" type="submit" class="btn-green-apple">Registrar sesiones <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></a>
+                <a href="{{ route('steps') }}" class="btn-green-apple next-step">Registrar sesiones <img src="{{ asset('site_') }}assets/img/icon-feather-chevron-down-white.svg"></a>
             </div>
         </div>
     </div>
 </div>
 
 
+
+
 @endsection
 @section('scripts')
 
 <script type="text/javascript">
+
+    $('.service').click(function(e) {
+        e.preventDefault();
+    });
+    document.getElementById('step1').classList.add("visited");
+    document.getElementById('step2').classList.add("visited");
     document.getElementById('step3').classList.add("active");
 
     $('#a1').click(function() {
@@ -226,6 +251,8 @@
         $('#progress-content-4').css('visibility','visible');
         donwloadFile(that, page_url,urlNotification,elementProgress);
     });
+
+    const URL_VERIFICATION_STEP = "{{ route('step.verify',3) }}";
 </script>
 <script src="{{ asset('js/downloadFiles.js') }}"></script>
     

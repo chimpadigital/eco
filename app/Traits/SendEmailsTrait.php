@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Mail;
 trait SendEmailsTrait
 {
     
-    public function successPayment()
+    public function successPayment($email)
     {
-        Mail::to('devsignhost@gmail.com')->send(new SuccessPayment);
+        Mail::to($email)->send(new SuccessPayment);
         
     }
 
-    public function downloadManual()
+    public function downloadManual($email)
     {
-        Mail::to('devsignhost@gmail.com')->send(new DownloadManual);
+        Mail::to($email)->send(new DownloadManual);
         return 'success';
         
     }

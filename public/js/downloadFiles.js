@@ -38,11 +38,19 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
                 window.navigator.msSaveBlob(blob, filename);
             } else {
                 // Firefox version
-                var file = new File([req.response], filename, { type: 'application/force-download' });
+                var file = new File([req.response], filename, { type: 'application/download' });
                 window.open(URL.createObjectURL(file));
             }
 
             notifyDownload(urlNotification);
+
+            var img = document.createElement("img");
+
+            img.src = "assets/img/icon-check-download.svg";
+
+            var elementReplace= document.getElementById(elementProgress.attr('id')).parentElement;
+
+            elementReplace.parentNode.replaceChild(img,elementReplace);
         }
     };
     req.send();
@@ -67,3 +75,28 @@ function notifyDownload(urlNotification){
     })
 
 }
+
+
+
+$('.next-step').click(function(e) {
+    e.preventDefault();
+    
+    fetch(URL_VERIFICATION_STEP,{
+        method: 'post',
+        headers: {
+            'content-type': 'application/json',
+            'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+        },
+        body: JSON.stringify({})
+    }).then(function(res){
+        
+        
+        if(res.status == 200 ){
+            window.location.href = e.target.href;
+        }else{
+            swal("Alerta!", "Descarga todo el material para continuar!", "error");
+        }
+
+    })
+    
+});

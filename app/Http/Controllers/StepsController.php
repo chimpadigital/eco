@@ -73,4 +73,30 @@ class StepsController extends Controller
     public function step4(){
         
     }
+
+
+    public function verifyStep($step){
+        
+        $user = auth()->user();
+
+        switch ($step) {
+            case 3:
+                if(!$user->can('verifyDownloads',DownloadControl::class)){
+                
+                    return response()->json(false,200);
+                
+                } else {
+                
+                    return response()->json(false,403);
+                
+                }
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+
+    }
 }
