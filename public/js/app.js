@@ -43707,9 +43707,105 @@ var render = function() {
       _vm._v(" "),
       _c("div", { staticClass: "card-body" }, [
         _c("div", { staticClass: "row" }, [
-          _vm._m(2),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-1" }, [
+            _c("label", { attrs: { for: "pago" } }, [_vm._v("Pago")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.data.procesoSesion.pago,
+                  expression: "data.procesoSesion.pago"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "checkbox", name: "pago", id: "pago" },
+              domProps: {
+                checked: Array.isArray(_vm.data.procesoSesion.pago)
+                  ? _vm._i(_vm.data.procesoSesion.pago, null) > -1
+                  : _vm.data.procesoSesion.pago
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.data.procesoSesion.pago,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 &&
+                        _vm.$set(
+                          _vm.data.procesoSesion,
+                          "pago",
+                          $$a.concat([$$v])
+                        )
+                    } else {
+                      $$i > -1 &&
+                        _vm.$set(
+                          _vm.data.procesoSesion,
+                          "pago",
+                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                        )
+                    }
+                  } else {
+                    _vm.$set(_vm.data.procesoSesion, "pago", $$c)
+                  }
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
-          _vm._m(3),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-1" }, [
+            _c("label", { attrs: { for: "descargas" } }, [_vm._v("Descargas")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.data.procesoSesion.descargar,
+                  expression: "data.procesoSesion.descargar"
+                }
+              ],
+              staticClass: "form-control",
+              attrs: { type: "checkbox", name: "descargas", id: "descargas" },
+              domProps: {
+                checked: Array.isArray(_vm.data.procesoSesion.descargar)
+                  ? _vm._i(_vm.data.procesoSesion.descargar, null) > -1
+                  : _vm.data.procesoSesion.descargar
+              },
+              on: {
+                change: function($event) {
+                  var $$a = _vm.data.procesoSesion.descargar,
+                    $$el = $event.target,
+                    $$c = $$el.checked ? true : false
+                  if (Array.isArray($$a)) {
+                    var $$v = null,
+                      $$i = _vm._i($$a, $$v)
+                    if ($$el.checked) {
+                      $$i < 0 &&
+                        _vm.$set(
+                          _vm.data.procesoSesion,
+                          "descargar",
+                          $$a.concat([$$v])
+                        )
+                    } else {
+                      $$i > -1 &&
+                        _vm.$set(
+                          _vm.data.procesoSesion,
+                          "descargar",
+                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
+                        )
+                    }
+                  } else {
+                    _vm.$set(_vm.data.procesoSesion, "descargar", $$c)
+                  }
+                }
+              }
+            })
+          ]),
           _vm._v(" "),
           _c(
             "div",
@@ -43997,9 +44093,9 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(4),
+          _vm._m(2),
           _vm._v(" "),
-          _vm._m(5)
+          _vm._m(3)
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
@@ -44464,9 +44560,7 @@ var render = function() {
                     { staticClass: "col-12 col-sm-6 justify-content-end" },
                     [
                       _c("label", { attrs: { for: "" } }, [
-                        _vm._v(
-                          "\n                ¿Ya conocías a la fundación\n                previamente?\n              "
-                        )
+                        _vm._v("¿Ya conocías a la fundación previamente?")
                       ]),
                       _vm._v(" "),
                       _c("input", {
@@ -44768,9 +44862,7 @@ var render = function() {
                 [
                   _c("div", { staticClass: "col-12 col-sm-6" }, [
                     _c("label", { attrs: { for: "" } }, [
-                      _vm._v(
-                        "\n                ¿De qué tipo? ¿Qué clase de impacto\n                tuvo?\n              "
-                      )
+                      _vm._v("¿De qué tipo? ¿Qué clase de impacto tuvo?")
                     ]),
                     _vm._v(" "),
                     _c("input", {
@@ -44890,32 +44982,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-1" }, [
-      _c("label", { attrs: { for: "pago" } }, [_vm._v("Pago")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "checkbox", name: "pago", id: "pago" }
-      })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-1" }, [
-      _c("label", { attrs: { for: "descargas" } }, [_vm._v("Descargas")]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "checkbox", name: "descargas", id: "descargas" }
-      })
-    ])
   },
   function() {
     var _vm = this

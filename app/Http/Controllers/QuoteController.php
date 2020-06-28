@@ -109,4 +109,22 @@ class QuoteController extends Controller
        
         return response()->json(['success' => true]);
     }
+
+    public function checkSession(Request $request)
+    {   
+        $user = auth()->user();
+        $sessions = Quote::where('user_id',$user->id)->first();
+        
+        if($sessions){
+            if($sessions->first_session != null && $sessions->second_session != null){
+                
+                 return response()->json(['finish' => true]);
+            }else{
+             return response()->json(['finish' => false]);
+
+            }
+        }else{
+            return response()->json(['finish' => false]);
+        }
+    }
 }
