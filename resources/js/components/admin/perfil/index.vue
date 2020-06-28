@@ -17,11 +17,23 @@
       <div class="row">
         <div class="col-12 col-sm-6 col-md-1">
           <label for="pago">Pago</label>
-          <input class="form-control" type="checkbox" name="pago" id="pago" />
+          <input
+            v-model="data.procesoSesion.pago"
+            class="form-control"
+            type="checkbox"
+            name="pago"
+            id="pago"
+          />
         </div>
         <div class="col-12 col-sm-6 col-md-1">
           <label for="descargas">Descargas</label>
-          <input class="form-control" type="checkbox" name="descargas" id="descargas" />
+          <input
+            v-model="data.procesoSesion.descargar"
+            class="form-control"
+            type="checkbox"
+            name="descargas"
+            id="descargas"
+          />
         </div>
         <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
           <div class="input-fecha" style="margin-right:2px;">
@@ -126,10 +138,10 @@
                 <label for>Pais</label>
                 <select v-model="data.inforPerfil.pais" type="text" class="form-control">
                   <option
-                    v-for="(country,i) in countries"
+                    v-for="(country, i) in countries"
                     :key="i"
                     :value="country.id"
-                  >{{country.name}}</option>
+                  >{{ country.name }}</option>
                 </select>
               </div>
               <div class="col-12 col-sm-6 col-md-3">
@@ -189,10 +201,7 @@
                 />
               </div>
               <div class="col-12 col-sm-6 justify-content-end">
-                <label for>
-                  ¿Ya conocías a la fundación
-                  previamente?
-                </label>
+                <label for>¿Ya conocías a la fundación previamente?</label>
                 <input
                   v-model="
                                         data.sobreFundacion.conociasFundacion
@@ -251,10 +260,7 @@
             </div>
             <div class="form-group row justify-content-center">
               <div class="col-12 col-sm-6">
-                <label for>
-                  ¿De qué tipo? ¿Qué clase de impacto
-                  tuvo?
-                </label>
+                <label for>¿De qué tipo? ¿Qué clase de impacto tuvo?</label>
                 <input v-model="data.cladeDeInpacto" type="text" class="form-control" placeholder />
               </div>
               <div class="col-12 col-sm-6">

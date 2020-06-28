@@ -47,7 +47,7 @@
             class="added-event"
             data-type="event"
             data-link="#"
-            data-date="{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->first_session)->format('d-m-Y')}}"
+            data-date="{{isset($item->first_session) ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->first_session)->format('d-m-Y'):''}}"
             data-title="Evento"
           ></div>
             @endforeach
@@ -92,7 +92,9 @@
               class="added-event"
               data-type="event"
               data-link="#"
-              data-date="{{ isset($item->second_session) ? Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->second_session)->format('d-m-Y') : null}}"
+
+              data-date="{{isset($item->second_session)?Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$item->second_session)->format('d-m-Y'):''}}"
+
               data-title="Evento"
             ></div>
             @endforeach
@@ -126,9 +128,10 @@
           </div>
         </div>
         <div class="col-md-12 mb-5 mt-5">
-          <button type="submit" class="btn-green-apple">
+          <button type="button" id="finish" class="btn-green-apple">
             Finalizar
             <img src="{{asset('/')}}assets/img/icon-feather-chevron-down-white.svg" />
+
           </button>
         </div>
       </div>
