@@ -74,9 +74,11 @@
                             </div>
                         </li> 
                     </ul>
+                    
                 </div>
             </div>
         </nav>
+        
     
        @yield('content')
 

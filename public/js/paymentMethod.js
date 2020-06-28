@@ -156,3 +156,56 @@ for (var i = 0 ; i < method.length; i++) {
  
 }
 
+
+
+document.querySelector('#discount_code').addEventListener('keyup',function(e){
+
+  if(e.target.value.length > 2){
+
+    fetch(URL_DICOUNT_CODE, {
+      method: 'post',
+      body: JSON.stringify({
+        discount_code: document.getElementById('discount_code').value
+      }),
+      headers: {
+        'content-type': 'application/json',
+        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+      }
+    }).then(function(res) {
+      
+      if (res.ok) {
+
+        return res.json();
+      
+      }
+
+    }).then(function(data){
+      
+      amountPaypal = constAmountPaypal;
+      amountMP = constAmountMP;
+
+      if(!isEmpty(data)){
+
+      
+        amountPaypal -= data.amount;
+        amountMP -= data.amount;
+      
+      }
+
+      changeButtonPayment();
+
+    })
+  }
+
+});
+
+
+function isEmpty(obj) {
+  for(var prop in obj) {
+    if(obj.hasOwnProperty(prop)) {
+      return false;
+    }
+  }
+
+  return JSON.stringify(obj) === JSON.stringify({});
+}

@@ -66,6 +66,7 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 
         Route::get('/payment-method','PaymentMethodController@paymentMethodIndex')->name('payment.methods');
         
+        Route::post('/dicount-code','PaymentMethodController@getDicountCode')->name('get.promo.code');
         // Rutas PayPal
         Route::post('/payment-method/paypal/create/order','PayPalController@createOrder')->name('paypal.create.order');
         Route::post('/payment-method/paypal/capture/order','PayPalController@captureOrder')->name('paypal.capture.order');
