@@ -100,6 +100,10 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 
     //Verificar paso actual
     Route::post('verificar/{id}/step','StepsController@verifyStep')->name('step.verify');
+    
+    //Encuesta
+
+    Route::get('survey','SurveyController@create')->name('survey.create');
       
 
 });
