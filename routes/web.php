@@ -66,6 +66,7 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 
         Route::get('/payment-method','PaymentMethodController@paymentMethodIndex')->name('payment.methods');
         
+        Route::post('/dicount-code','PaymentMethodController@getDicountCode')->name('get.promo.code');
         // Rutas PayPal
         Route::post('/payment-method/paypal/create/order','PayPalController@createOrder')->name('paypal.create.order');
         Route::post('/payment-method/paypal/capture/order','PayPalController@captureOrder')->name('paypal.capture.order');
@@ -103,6 +104,10 @@ Route::group(['middleware' => ['role:User','auth']],function(){
 
     //Verificar paso actual
     Route::post('verificar/{id}/step','StepsController@verifyStep')->name('step.verify');
+    
+    //Encuesta
+
+    Route::get('survey','SurveyController@create')->name('survey.create');
       
 
 });

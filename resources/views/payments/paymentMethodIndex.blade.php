@@ -85,11 +85,14 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
 
     let urlCreateOrder = "{{ route('paypal.create.order') }}";
     let urlCaptureOrder = "{{ route('paypal.capture.order') }}";
-    const amountPaypal = "{{ $paymentsMethods[0]->details->amount }}";
-    const amountMP = "{{ $paymentsMethods[1]->details->amount }}";
+    const constAmountPaypal = "{{ $paymentsMethods[0]->details->amount }}";
+    let amountPaypal = "{{ $paymentsMethods[0]->details->amount }}";
+    const constAmountMP = "{{ $paymentsMethods[1]->details->amount }}";
+    let amountMP = "{{ $paymentsMethods[1]->details->amount }}";
     const URL_REDIRECT = "{{ route('steps') }}";
+    const URL_DICOUNT_CODE = "{{ route('get.promo.code') }}";
 
-    document.getElementById('step1').classList.add("active");
+    $('.step1').addClass("active");
     
 
 </script>
