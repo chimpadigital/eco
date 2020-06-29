@@ -272,7 +272,7 @@
           </div>
         </div>
         <div class="col-md-12 mb-5 mt-5">
-          <button type="button" id="finish" class="btn-green-apple">
+          <button type="button" id="finalizarReserva" class="btn-green-apple">
             Finalizar
             <img src="{{asset('/')}}assets/img/icon-feather-chevron-down-white.svg" />
 
