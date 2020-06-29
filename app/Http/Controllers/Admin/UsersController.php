@@ -44,8 +44,8 @@ class UsersController extends Controller
                     'telefono' => $user->userInformation->phone,
                     'pais' => $user->userInformation->country->name,
                     'descuento' => '',
-                    'primerSesion' => $user->quote->first_session,
-                    'segundaSesion' => $user->quote->second_session,
+                    'primerSesion' => isset($user->quote->first_session) ?$user->quote->first_session:'',
+                    'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session:'',
                 ];
             }else{
                 $data = [
