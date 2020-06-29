@@ -23,13 +23,16 @@ class UsersController extends Controller
         
 
         if($request->typeFiltro == 1){
-            $usersAll = User::email($request->search)
+            $usersAll = User::where('id','!=',1)
+        ->email($request->search)
         ->get();
         }elseif($request->typeFiltro == 3){
-            $usersAll = User::lastname($request->search)
+            $usersAll = User::where('id','!=',1)
+            ->lastname($request->search)
             ->get();
         }else{
-            $usersAll = User::phone($request->search)
+            $usersAll = User::where('id','!=',1)
+        ->phone($request->search)
         ->get();
         }
 
