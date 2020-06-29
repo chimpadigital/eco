@@ -8,6 +8,7 @@ use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
 use App\Traits\SendEmailsTrait;
 
 class UsersController extends Controller
@@ -193,7 +194,7 @@ class UsersController extends Controller
             );
             if($request->data['procesoSesion']['segunSesion']){
 
-                $this->finishedSessions();
+                $this->finishedSessions($user->email);
             }
 
         return response()->json(['success' => true]);
