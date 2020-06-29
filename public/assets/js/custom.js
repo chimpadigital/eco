@@ -172,7 +172,7 @@ $(function() {
                 if (res.finish) {
                     location.href = "/finalizar";
                 } else {
-                    toastr.error("Fecha Reservada");
+                    toastr.error("No se ha reservado las sesiones");
                 }
             }
         });

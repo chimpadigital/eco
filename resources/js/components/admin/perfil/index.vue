@@ -38,14 +38,15 @@
         <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
           <div class="input-fecha" style="margin-right:2px;">
             <label for="primer_sesion">Primer Sesión</label>
-            <input
+            <p style="width: 154px;">{{data.procesoSesion.primerSesionFecha}}</p>
+            <!-- <input
               class="form-control"
               :value="data.procesoSesion.primerSesionFecha"
               @change.prevent="asistenciaFirstSesion()"
               type="date"
               name="primer_sesion"
               id="primer_sesion"
-            />
+            />-->
           </div>
           <input
             class="form-control"
@@ -59,13 +60,15 @@
         <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
           <div class="input-fecha" style="margin-right:2px;">
             <label for="segunda_sesion">Segunda Sesión</label>
-            <input
+            <p style="width: 154px;">{{data.procesoSesion.segunSesionFecha}}</p>
+
+            <!-- <input
               class="form-control"
               :value="data.procesoSesion.segunSesionFecha"
               type="date"
               name="segunda_sesion"
               id="segunda_sesion"
-            />
+            />-->
           </div>
           <input
             class="form-control"
@@ -216,7 +219,9 @@
               <div class="col-6 col-sm-6 col-md-3">
                 <label>Pertenece a una ONG</label>
                 <div class="group-inputs d-flex flex-row align-items-center">
-                  <input v-model="data.otraInfo.ong" type="checkbox" name id />
+                  <span v-if="data.otraInfo.ong" class="mr-1">SI</span>
+                  <span v-else class="mr-1">NO</span>
+                  <!-- <input v-model="data.otraInfo.ong" type="checkbox" name id /> -->
                   <input v-model="data.otraInfo.nombreOgn" type="text" class="form-control" />
                 </div>
               </div>
@@ -240,14 +245,16 @@
               <div class="col-6 col-sm-6 col-md-3">
                 <label>Implementación anterior de proyectos</label>
                 <div class="group-inputs d-flex flex-row align-items-center">
-                  <input
+                  <span v-if="data.otraInfo.ImplementacionAnt" class="mr-1">SI</span>
+                  <span v-else class="mr-1">NO</span>
+                  <!-- <input
                     v-model="
                                             data.otraInfo.ImplementacionAnt
                                         "
                     type="checkbox"
                     name
                     id
-                  />
+                  />-->
                   <input
                     v-model="
                                             data.otraInfo.ImplementacionName

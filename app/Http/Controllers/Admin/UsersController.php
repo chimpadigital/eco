@@ -79,14 +79,22 @@ class UsersController extends Controller
         // return $request->id;
         $user = User::whereId($request->id)->first();
         /* Fecha Sessiones */
-        $fecha_sesion_1 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->first_session)->format('Y-m-d') : "";
-        $fecha_sesion_2 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->second_session)->format('Y-m-d') : "";
+        $fecha_sesion_1 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->first_session)->format('d-m-Y H:i') : "";
+        $fecha_sesion_2 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->second_session)->format('d-m-Y H:i') : "";
 
         //end 
+        //Controlador de descargar
+            $descarga = $user->download;
+            if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
+               $descargarManuales = true; 
+            }else{
+                $descargarManuales = false;
+            }
+        //end
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => isset($user->invoice)?true:false,
-                'descargar' => isset($user->download)?true:false,
+                'descargar' => $descargarManuales,
                 'descuento' => false,
 
                 'primerSesionFecha' => $fecha_sesion_1,

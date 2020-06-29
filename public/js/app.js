@@ -43822,23 +43822,9 @@ var render = function() {
                     _vm._v("Primer Sesión")
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "date",
-                      name: "primer_sesion",
-                      id: "primer_sesion"
-                    },
-                    domProps: {
-                      value: _vm.data.procesoSesion.primerSesionFecha
-                    },
-                    on: {
-                      change: function($event) {
-                        $event.preventDefault()
-                        return _vm.asistenciaFirstSesion()
-                      }
-                    }
-                  })
+                  _c("p", { staticStyle: { width: "154px" } }, [
+                    _vm._v(_vm._s(_vm.data.procesoSesion.primerSesionFecha))
+                  ])
                 ]
               ),
               _vm._v(" "),
@@ -43905,15 +43891,9 @@ var render = function() {
                     _vm._v("Segunda Sesión")
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "date",
-                      name: "segunda_sesion",
-                      id: "segunda_sesion"
-                    },
-                    domProps: { value: _vm.data.procesoSesion.segunSesionFecha }
-                  })
+                  _c("p", { staticStyle: { width: "154px" } }, [
+                    _vm._v(_vm._s(_vm.data.procesoSesion.segunSesionFecha))
+                  ])
                 ]
               ),
               _vm._v(" "),
@@ -44610,52 +44590,9 @@ var render = function() {
                           "group-inputs d-flex flex-row align-items-center"
                       },
                       [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.data.otraInfo.ong,
-                              expression: "data.otraInfo.ong"
-                            }
-                          ],
-                          attrs: { type: "checkbox", name: "", id: "" },
-                          domProps: {
-                            checked: Array.isArray(_vm.data.otraInfo.ong)
-                              ? _vm._i(_vm.data.otraInfo.ong, null) > -1
-                              : _vm.data.otraInfo.ong
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = _vm.data.otraInfo.ong,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      _vm.data.otraInfo,
-                                      "ong",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      _vm.data.otraInfo,
-                                      "ong",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(_vm.data.otraInfo, "ong", $$c)
-                              }
-                            }
-                          }
-                        }),
+                        _vm.data.otraInfo.ong
+                          ? _c("span", { staticClass: "mr-1" }, [_vm._v("SI")])
+                          : _c("span", { staticClass: "mr-1" }, [_vm._v("NO")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -44765,62 +44702,9 @@ var render = function() {
                           "group-inputs d-flex flex-row align-items-center"
                       },
                       [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.data.otraInfo.ImplementacionAnt,
-                              expression:
-                                "\n                                          data.otraInfo.ImplementacionAnt\n                                      "
-                            }
-                          ],
-                          attrs: { type: "checkbox", name: "", id: "" },
-                          domProps: {
-                            checked: Array.isArray(
-                              _vm.data.otraInfo.ImplementacionAnt
-                            )
-                              ? _vm._i(
-                                  _vm.data.otraInfo.ImplementacionAnt,
-                                  null
-                                ) > -1
-                              : _vm.data.otraInfo.ImplementacionAnt
-                          },
-                          on: {
-                            change: function($event) {
-                              var $$a = _vm.data.otraInfo.ImplementacionAnt,
-                                $$el = $event.target,
-                                $$c = $$el.checked ? true : false
-                              if (Array.isArray($$a)) {
-                                var $$v = null,
-                                  $$i = _vm._i($$a, $$v)
-                                if ($$el.checked) {
-                                  $$i < 0 &&
-                                    _vm.$set(
-                                      _vm.data.otraInfo,
-                                      "ImplementacionAnt",
-                                      $$a.concat([$$v])
-                                    )
-                                } else {
-                                  $$i > -1 &&
-                                    _vm.$set(
-                                      _vm.data.otraInfo,
-                                      "ImplementacionAnt",
-                                      $$a
-                                        .slice(0, $$i)
-                                        .concat($$a.slice($$i + 1))
-                                    )
-                                }
-                              } else {
-                                _vm.$set(
-                                  _vm.data.otraInfo,
-                                  "ImplementacionAnt",
-                                  $$c
-                                )
-                              }
-                            }
-                          }
-                        }),
+                        _vm.data.otraInfo.ImplementacionAnt
+                          ? _c("span", { staticClass: "mr-1" }, [_vm._v("SI")])
+                          : _c("span", { staticClass: "mr-1" }, [_vm._v("NO")]),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
