@@ -219,8 +219,13 @@
               <div class="col-6 col-sm-6 col-md-3">
                 <label>Pertenece a una ONG</label>
                 <div class="group-inputs d-flex flex-row align-items-center">
-                  <span v-if="data.otraInfo.ong" class="mr-1">SI</span>
-                  <span v-else class="mr-1">NO</span>
+                  <span
+                    style="cursor:pointer"
+                    v-if="data.otraInfo.ong"
+                    class="mr-1"
+                    @click.prevent="changeOng"
+                  >SI</span>
+                  <span style="cursor:pointer" v-else class="mr-1" @click.prevent="changeOng">NO</span>
                   <!-- <input v-model="data.otraInfo.ong" type="checkbox" name id /> -->
                   <input v-model="data.otraInfo.nombreOgn" type="text" class="form-control" />
                 </div>
@@ -245,8 +250,18 @@
               <div class="col-6 col-sm-6 col-md-3">
                 <label>Implementación anterior de proyectos</label>
                 <div class="group-inputs d-flex flex-row align-items-center">
-                  <span v-if="data.otraInfo.ImplementacionAnt" class="mr-1">SI</span>
-                  <span v-else class="mr-1">NO</span>
+                  <span
+                    style="cursor:pointer"
+                    v-if="data.otraInfo.ImplementacionAnt"
+                    class="mr-1"
+                    @click.prevent="changeImplementacion"
+                  >SI</span>
+                  <span
+                    style="cursor:pointer"
+                    v-else
+                    class="mr-1"
+                    @click.prevent="changeImplementacion"
+                  >NO</span>
                   <!-- <input
                     v-model="
                                             data.otraInfo.ImplementacionAnt
