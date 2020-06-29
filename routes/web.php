@@ -15,9 +15,10 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@index')->name("/");
+
+Route::view('terminos','term')->name('terms');
+Route::view('condiciones','condition')->name('condition');
 
 Auth::routes();
 
@@ -100,6 +101,11 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     Route::get('finalizar','FinalizarController@index');
 
 
+    //Verificar paso actual
+    Route::post('verificar/{id}/step','StepsController@verifyStep')->name('step.verify');
+      
+
 });
 
-Route::post('/mp/notification/{userid}/webhook', 'MercadoPagoController@webhook')->name('notification.mp');
+Route::post('/mp/notification/webhook', 'MercadoPagoController@webhook')->name('notification.mp');
+Route::post('/paypal/notification/webhook', 'PayPalController@webhook')->name('notification.paypal');

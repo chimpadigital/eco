@@ -18,7 +18,7 @@ class CreatePromoCodesTable extends Migration
             $table->string('code_name');
             $table->date('expiration_date');
             $table->decimal('amount', 8, 2);
-            $table->integer('quantity_applied')->nullable();
+            $table->integer('quantity_applied')->default(0);
             $table->boolean('state');
             $table->timestamps();
         });

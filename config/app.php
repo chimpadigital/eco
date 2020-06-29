@@ -166,6 +166,7 @@ return [
          * Package Service Providers...
          */
         Spatie\Permission\PermissionServiceProvider::class,
+        UxWeb\SweetAlert\SweetAlertServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -192,6 +193,7 @@ return [
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,
+        'Alert' => UxWeb\SweetAlert\SweetAlert::class,
         'Arr' => Illuminate\Support\Arr::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,

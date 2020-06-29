@@ -2,6 +2,7 @@
 
 @section('content')
 
+@include('steps.step_bar')
 
 <div class="container">
   <div class="row">
@@ -51,7 +52,7 @@
                   <p id="amount_payment2">150 U$D</p>
               </div>
               <div class="agreement-pay">
-                  <p>Para poder continuar debes leer y aceptar el <a href="">Acuerdo de Confidencialidad</a></p>
+                  <p>Para poder continuar debes leer y aceptar el <a href="{{route('condition')}}">Acuerdo de Confidencialidad</a></p>
                   <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="terms_conditions" required>
                       <label class="form-check-label" for="terms_conditions">

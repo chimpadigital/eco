@@ -6,13 +6,15 @@ use App\User;
 use MercadoPago\SDK;
 use App\Models\Invoice;
 use App\Models\Payment;
+use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Traits\PaymentMethodTrait;
+use App\Traits\SendEmailsTrait;
 
 class MercadoPagoController extends Controller
 {
-    use PaymentMethodTrait;
+    use PaymentMethodTrait,SendEmailsTrait;
 
     public $paymentMethod;
     /**
@@ -42,6 +44,18 @@ class MercadoPagoController extends Controller
 
         $authUser = auth()->user();
 
+        $promoCodeAmount = 0;
+        $promoCodeId = null;
+
+        $promoCode = PromoCode::where('code_name',$request->input('discount_code'))
+        ->where('state',true)
+        ->first();
+
+        if($promoCode){
+            $promoCodeAmount = $promoCode->amount;
+            $promoCodeId = $promoCode->id;
+        } 
+
         # Create a preference object
         $preference = new \MercadoPago\Preference();
         # Create an item object
@@ -50,7 +64,7 @@ class MercadoPagoController extends Controller
         $item->title = $paymentMethod->details->description;
         $item->quantity = 1;
         $item->currency_id = "USD";
-        $item->unit_price = $paymentMethod->details->amount;
+        $item->unit_price = $paymentMethod->details->amount - $promoCodeAmount;
         # Create a payer object
         $payer = new \MercadoPago\Payer();
         $payer->email = $authUser->email;
@@ -59,7 +73,7 @@ class MercadoPagoController extends Controller
         # Setting preference properties
         $preference->items = array($item);
         $preference->payer = $payer;
-        $preference->external_reference = $this->generateToken();
+        $preference->external_reference = $this->generateToken($authUser->id,$promoCodeId);
 
         $preference->payment_methods = array(
           "installments" => 1
@@ -67,7 +81,7 @@ class MercadoPagoController extends Controller
         $preference->auto_return = "all";
         
         //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = "https://fceacf13b1a4.ngrok.io/mp/notification/".$authUser->id."/webhook";
+        $preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -93,23 +107,11 @@ class MercadoPagoController extends Controller
     }
 
     
-    /**
-     * generateToken
-     *
-     * @return void
-     */
-    public function generateToken()
-    {
-        return md5(rand(1, 10) . microtime());
-    }
 
 
-    public function webhook(Request $request,$id)
+    public function webhook(Request $request)
 	{
 
-        if(!$user = User::find($id)){
-            return \Response::json('forbidden',403);
-        }
 
 		$merchant_order = null;
 
@@ -122,7 +124,28 @@ class MercadoPagoController extends Controller
 			
 			$merchant_order = \MercadoPago\MerchantOrder::find_by_id($order_id);
 
-			$paid_amount = 0;
+            $paid_amount = 0;
+            
+            $data_json = base64_decode($merchant_order->external_reference);
+            $data = json_decode($data_json);
+            
+            if(!$user = User::find($data->user_id)){
+                return \Response::json('forbidden',403);
+            }
+
+            $promoCode = PromoCode::find($data->code_discount_id);
+            
+            $promoCodeAmount = 0;
+            
+            if($promoCode){
+            
+                $promoCodeAmount = $promoCode->amount;
+            
+                $promoCode->update([
+                    'quantity_applied'=> ++$promoCode->quantity_applied,
+                ]);
+
+            }
 
             $payment = $paymentNotification;
 		    //foreach ($merchant_order->payments as $payment) {
@@ -132,7 +155,7 @@ class MercadoPagoController extends Controller
                 
                 } else if ($payment->status == 'pending') {
 
-                    $invoice = $this->getInvoice($this->paymentMethod->id,$user);
+                    $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
                     $data = $this->buildDataForPayment($invoice,$merchant_order);
 
@@ -154,13 +177,18 @@ class MercadoPagoController extends Controller
             //}
 		    // If the payment's transaction amount is equal (or bigger) than the merchant_order's amount you can release your items
 
+
 		    if($paid_amount >= $merchant_order->total_amount && $merchant_order->external_reference != null){
 
-                    $invoice = $this->getInvoice($this->paymentMethod->id,$user);
+                    $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
                     $data = $this->buildDataForPayment($invoice,$merchant_order);
 
                     $this->createPaymentOrUpdate($data,'approved');  
+
+                    // Correos
+
+                    $this->successPayment($user->email);
 
 
 		    } else {

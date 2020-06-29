@@ -44,8 +44,8 @@ class UsersController extends Controller
                     'telefono' => $user->userInformation->phone,
                     'pais' => $user->userInformation->country->name,
                     'descuento' => '',
-                    'primerSesion' => isset($user->quote->first_session) ?$user->quote->first_session:'',
-                    'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session:'',
+                    'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
+                    'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
                 ];
             }else{
                 $data = [
@@ -56,8 +56,8 @@ class UsersController extends Controller
                     'telefono' => '',
                     'pais' => '',
                     'descuento' => '',
-                    'primerSesion' => $user->quote->first_session,
-                    'segundaSesion' => $user->quote->second_session,
+                    'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
+                    'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
                 ];
             }
             
@@ -79,8 +79,8 @@ class UsersController extends Controller
         // return $request->id;
         $user = User::whereId($request->id)->first();
         /* Fecha Sessiones */
-        $fecha_sesion_1 = isset($user->quote->second_session)?Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->first_session)->format('Y-m-d'):'';
-        $fecha_sesion_2 = isset($user->quote->second_session)?Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->second_session)->format('Y-m-d'):'';
+        $fecha_sesion_1 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->first_session)->format('Y-m-d') : "";
+        $fecha_sesion_2 = isset($user->quote->second_session) ?  Carbon::createFromFormat('Y-m-d H:i:s',$user->quote->second_session)->format('Y-m-d') : "";
 
         //end 
         $jsonFormate = [
@@ -89,11 +89,11 @@ class UsersController extends Controller
                 'descargar' => isset($user->download)?true:false,
                 'descuento' => false,
 
-                'primerSesionFecha' => isset($fecha_sesion_1) ? $fecha_sesion_1:'',
-                'primerSesion' => isset($user->quote->first_session_assistance) ? $user->quote->first_session_assistance:'',
+                'primerSesionFecha' => $fecha_sesion_1,
+                'primerSesion' => isset($user->quote->first_session_assistance) ? $user->quote->first_session_assistance : "",
 
-                'segunSesionFecha' => isset($fecha_sesion_2) ? $fecha_sesion_2:'',
-                'segunSesion' => isset($user->quote->second_session_assistance) ? $user->quote->second_session_assistance:'',
+                'segunSesionFecha' => $fecha_sesion_2,
+                'segunSesion' => isset($user->quote->second_session_assistance) ? $user->quote->second_session_assistance : "",
 
                 'condicionesGenerales' => true,
                 'acuerdoConfidencialidad' => true,
