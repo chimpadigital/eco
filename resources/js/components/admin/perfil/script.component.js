@@ -55,6 +55,13 @@ export default {
         };
     },
     methods: {
+        changeOng() {
+            this.data.otraInfo.ong = !this.data.otraInfo.ong;
+        },
+        changeImplementacion() {
+            this.data.otraInfo.ImplementacionAnt = !this.data.otraInfo
+                .ImplementacionAnt;
+        },
         perdirDatosPerfil() {
             axios
                 .post(this.routePerfil, {

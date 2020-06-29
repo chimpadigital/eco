@@ -1964,6 +1964,12 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    changeOng: function changeOng() {
+      this.data.otraInfo.ong = !this.data.otraInfo.ong;
+    },
+    changeImplementacion: function changeImplementacion() {
+      this.data.otraInfo.ImplementacionAnt = !this.data.otraInfo.ImplementacionAnt;
+    },
     perdirDatosPerfil: function perdirDatosPerfil() {
       var _this = this;
 
@@ -44591,8 +44597,34 @@ var render = function() {
                       },
                       [
                         _vm.data.otraInfo.ong
-                          ? _c("span", { staticClass: "mr-1" }, [_vm._v("SI")])
-                          : _c("span", { staticClass: "mr-1" }, [_vm._v("NO")]),
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "mr-1",
+                                staticStyle: { cursor: "pointer" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.changeOng($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("SI")]
+                            )
+                          : _c(
+                              "span",
+                              {
+                                staticClass: "mr-1",
+                                staticStyle: { cursor: "pointer" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.changeOng($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("NO")]
+                            ),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -44703,8 +44735,34 @@ var render = function() {
                       },
                       [
                         _vm.data.otraInfo.ImplementacionAnt
-                          ? _c("span", { staticClass: "mr-1" }, [_vm._v("SI")])
-                          : _c("span", { staticClass: "mr-1" }, [_vm._v("NO")]),
+                          ? _c(
+                              "span",
+                              {
+                                staticClass: "mr-1",
+                                staticStyle: { cursor: "pointer" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.changeImplementacion($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("SI")]
+                            )
+                          : _c(
+                              "span",
+                              {
+                                staticClass: "mr-1",
+                                staticStyle: { cursor: "pointer" },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.changeImplementacion($event)
+                                  }
+                                }
+                              },
+                              [_vm._v("NO")]
+                            ),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
