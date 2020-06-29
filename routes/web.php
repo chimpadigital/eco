@@ -23,7 +23,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Rutas Admin
-Route::prefix('admin')->middleware('role:Administrator','auth')->group(function(){
+Route::namespace('Admin')->prefix('admin')->group(function(){
+    Route::get('auth','AuthController@auth');
+    Route::get('/login','AuthController@showAdminLoginForm');
+    Route::post('/login','AuthController@adminLogin')->name('admin.post.login');
+    Route::post('/logout','AuthController@logout')->name('admin.post.logout');
+    
+});
+Route::prefix('admin')->middleware('auth:admin','role:Administrator')->group(function(){
+    
     Route::get('/','Admin\AdminDashController@index')->name('admin.index.home');
     //Rutas Users
     Route::prefix('users')->group(function(){

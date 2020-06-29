@@ -39,7 +39,15 @@
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">
-                    <a href="#" class="dropdown-item"><i class="icon-user-lock"></i> Salir</a>
+                    <a href="#" class="dropdown-item"  href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                                  document.getElementById('logout-form').submit();"><i class="icon-user-lock"></i> Salir</a>
+                    
+                
+
+                                    <form id="logout-form" action="{{ route('admin.post.logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
                     {{-- <a href="#" class="dropdown-item"><i class="icon-statistics"></i> Analytics</a> --}}
                     {{-- <a href="#" class="dropdown-item"><i class="icon-accessibility"></i> Accessibility</a> --}}
                     {{-- <div class="dropdown-divider"></div> --}}
