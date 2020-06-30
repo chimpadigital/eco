@@ -80,8 +80,8 @@ class MercadoPagoController extends Controller
         );
         $preference->auto_return = "all";
         
-        $preference->notification_url = "https://cf70c28836e6.ngrok.io/mp/notification/webhook";
-        // $preference->notification_url = route('notification.mp');
+        //$preference->notification_url = "https://cf70c28836e6.ngrok.io/mp/notification/webhook";
+        $preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
