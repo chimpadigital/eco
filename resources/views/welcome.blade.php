@@ -110,7 +110,9 @@
         </div>
     </div>
     <div class="container text-center">
-        <button type="submit" class="btn-green-apple handbook-btn">Descargar</button>
+        <a href="#eco-inversion">
+            <button type="submit" class="btn-green-apple handbook-btn">Descargar</button>
+        </a>
     </div>
 </section>
 
@@ -138,11 +140,11 @@
                             
                             <div class="form-group mt-4">
                             
-                                <input type="text" class="form-control input-custom" name="name" value="{{ old('name') }}" placeholder="Nombre" required>
+                                <input type="text" class="form-control input-custom" name="name" value="{{ old('name') }}" placeholder="Nombre" required @error('name') autofocus @enderror>
                                 
                                 @error('name')
                                     
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" style="display: block;">
                                     
                                         <strong>{{ $message }}</strong>
                                     
@@ -159,11 +161,11 @@
                         
                             <div class="form-group">
                         
-                                <input type="text" class="form-control input-custom" name="lastname" value="{{ old('lastname') }}" placeholder="Apellido" required>
+                                <input type="text" class="form-control input-custom" name="lastname" value="{{ old('lastname') }}" placeholder="Apellido" required  @error('lastname') autofocus @enderror>
                                 
                                 @error('lastname')
                                     
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" style="display: block;">
                                     
                                         <strong>{{ $message }}</strong>
                                     
@@ -187,11 +189,11 @@
                                 
                                 </button>
                         
-                                <input type="email" class="form-control input-custom" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required>
+                                <input type="email" class="form-control input-custom" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required @error('email') autofocus @enderror>
                                 
                                 @error('email')
                                     
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" style="display: block;">
                                     
                                         <strong>{{ $message }}</strong>
                                     
@@ -208,11 +210,11 @@
                         
                             <div class="form-group">
                         
-                                <input type="text" class="form-control input-custom" name="phone" value="{{ old('phone') }}" placeholder="Teléfono" required>
+                                <input type="text" class="form-control input-custom" name="phone" value="{{ old('phone') }}" placeholder="Teléfono" required  @error('phone') autofocus @enderror>
                                 
                                 @error('phone')
                                     
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" style="display: block;">
                                     
                                         <strong>{{ $message }}</strong>
                                     
@@ -228,11 +230,11 @@
                         
                             <div class="form-group">
                         
-                                <input type="text" class="form-control input-custom" name="city" value="{{ old('city') }}" placeholder="Ciudad" required>
+                                <input type="text" class="form-control input-custom" name="city" value="{{ old('city') }}" placeholder="Ciudad" required  @error('city') autofocus @enderror>
                                 
                                 @error('city')
                                     
-                                    <span class="invalid-feedback" role="alert">
+                                    <span class="invalid-feedback" role="alert" style="display: block;">
                                     
                                         <strong>{{ $message }}</strong>
                                     
@@ -246,13 +248,13 @@
                         
                         <div class="col p-0">
                         
-                            <select class="custom-select" name="country_id" required>
+                            <select class="custom-select" name="country_id" required  @error('country_id') autofocus @enderror>
                         
                                 <option selected disabled>País de residencia</option>
                                 
                                 @forelse ($countries as $country)
                                 
-                                    <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                    <option {{ $country->id == old('country_id') ? 'selected' : '' }} value="{{ $country->id }}">{{ $country->name }}</option>
                                 
                                 @empty
                                     
@@ -262,7 +264,7 @@
 
                             @error('country_id')
                                     
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert" style="display: block;">
                                 
                                     <strong>{{ $message }}</strong>
                                 
@@ -278,6 +280,8 @@
                             </label>
                         </div>
                         <button type="submit" class="btn-green-apple">Comenzar</button>
+                        <hr>
+                        <p>Puedes leer más sobre la Política de Protección de datos <a href="{{route('policies')}}">aquí</a></p>
                     </form>
                 </div>
             </div>
@@ -317,7 +321,7 @@
 
 
 <footer class="footer-landing">
-    <div class="container d-flex">
+    <div class="container d-lg-flex">
         <img src="{{ asset('site_assets/img/logo-white.svg') }}" alt="Logo Eco Inclusión">
         <p>Puedes consultar sobre los proyectos de la Fundación accediendo al <a href="">Banco de Causas</a> de nuestra web y así conocer nuestro trabajo en territorio.</p>
     </div>

@@ -45,6 +45,8 @@ class PaymentMethodController extends Controller
     
     function paymentPending()
     {
+        $user = auth()->user();
+        
         if($user->can('verifyPaymentPending',PaymentMethod::class)){
             return view('payments.paymentPending');
         }

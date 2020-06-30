@@ -51,6 +51,7 @@
     $('.step2').addClass("visited");
     $('.step3').addClass("visited");
     $('.step4').addClass("visited");
+    $('.paso-mobile').text("Sesiones de asistencia");
 </script>
     
 @endsection

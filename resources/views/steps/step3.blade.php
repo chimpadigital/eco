@@ -2,10 +2,10 @@
 
 
 @section('content')
-
+@include('steps.modal')
 @include('steps.step_bar')
 
-<div class="container">
+<div class="container d-lg-block d-none">
     <div class="row">
         <div class="col-md-12">
             <div class="box-next-step float-right">
@@ -49,7 +49,7 @@
     
                             @if ($downloadControl->element_1)
     
-                                <img src="assets/img/icon-check-download.svg">
+                                <img class="check-download" src="assets/img/icon-check-download.svg">
     
                             @else
     
@@ -81,7 +81,7 @@
     
                             @if ($downloadControl->element_2)
     
-                                <img src="assets/img/icon-check-download.svg">
+                                <img class="check-download" src="assets/img/icon-check-download.svg">
     
                             @else
     
@@ -114,7 +114,7 @@
     
                             @if ($downloadControl->element_3)
     
-                                <img src="assets/img/icon-check-download.svg">
+                                <img class="check-download" src="assets/img/icon-check-download.svg">
     
                             @else
     
@@ -147,7 +147,7 @@
     
                             @if ($downloadControl->element_4)
     
-                                <img src="assets/img/icon-check-download.svg">
+                                <img class="check-download" src="assets/img/icon-check-download.svg">
     
                             @else
     
@@ -207,6 +207,7 @@
 
     $('.step1').addClass("visited");
     $('.step2').addClass("visited");
+    $('.paso-mobile').text("Descarga de manual");
     $('.step3').addClass("active");
 
     $('#a1').click(function() {

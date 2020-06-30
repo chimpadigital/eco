@@ -53,7 +53,7 @@
         </div>
         <div class="col-12">
             <div class="paso-mobile">
-                Pago del manual
+                
             </div>
         </div>
     </div>
@@ -86,7 +86,7 @@
                                 <path id="Trazado_8" data-name="Trazado 8" d="M18.079,7.539A3.039,3.039,0,1,1,15.039,4.5,3.039,3.039,0,0,1,18.079,7.539Z" transform="translate(-8.961 -4.5)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
                             </g>
                         </svg>
-                    </span>Perfil replicado
+                    </span>Perfil replicador
                     <span class="icon-arrow">
                         <svg  xmlns="http://www.w3.org/2000/svg" width="10.305" height="17.61" viewBox="0 0 10.305 17.61">
                             <path id="Icon_feather-chevron-down" data-name="Icon feather-chevron-down" d="M0,0,6.684,6.684,13.368,0" transform="translate(2.121 15.489) rotate(-90)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>

@@ -25,7 +25,7 @@
   </head>
   <body>
     <div style="visibility:hidden;" class="loader-page"></div>
-    <div class="{{ (request()->is('payments/*')) ? 'background-pago-manual' : '' }}">
+
         <nav class="navbar navbar-expand-lg navbar-light custom-bar">
             <div class="container">
             
@@ -65,9 +65,10 @@
                                 <img src="{{ asset('site_') }}assets/img/icon-feather-home.svg">
                             </a>
                         </li>
+                        
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Español <img src="{{ asset('site_') }}assets/img/idioma1.svg">
+                            <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            Español <img src="{{ asset('site_') }}assets/img/idioma1.svg"> <img class="" src="{{asset('site_')}}assets/img/icon-ionic-ios-arrow-down.svg">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="#">English <img src="{{ asset('site_') }}assets/img/idioma2.svg"></a>
@@ -82,7 +83,7 @@
     
        @yield('content')
        @include('cookieConsent::index')
-    </div>
+   
     
     <script
     type="text/javascript"
@@ -108,7 +109,7 @@
   ></script>
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script  src="{{asset('/')}}assets/js/custom.js"></script>
+  <script  src="{{asset('/site_')}}assets/js/custom.js"></script>
     
   @include('sweet::alert')
     

@@ -197,7 +197,7 @@ $('#discount_code').on('change keyup copy paste cut',function(e){
 
         document.getElementById('error_code').innerHTML = `
         <span class="invalid-feedback" role="alert" style="display:block;">
-          Código inválido
+          El cupón ingresado no es válido o ha expirado
         </span>`;
 
       }

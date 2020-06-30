@@ -81,12 +81,6 @@
                 </ol>
             </li>
         </ol>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-            <label class="form-check-label" for="defaultCheck1">
-                <a href="">ACEPTO TÉRMINOS Y CONDICIONES DE USO</a>
-            </label>
-        </div>
         <a class="btn-blue" href="{{ route('/') }}"><img src="{{asset('site_')}}assets/img/icon-feather-chevron-left.png"> Volver</a>
     </div>
 </section>

@@ -3,10 +3,11 @@
 @section('content')
 
 @include('steps.step_bar')
+<section id="pago-manual">
 
 <div class="container">
   <div class="row">
-      <div class="col-md-6 align-self-center">
+      <div class="col-md-6 align-self-center d-none d-md-block">
           <div class="manual-text">
               <div class="icon-manual"><img src="{{ asset('site_assets/img/education.svg') }}" alt="icon manual"></div>
               <h2>ADQUIRIR MANUAL</h2>
@@ -14,6 +15,9 @@
                   otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
                   Banco de Causas.</p>
           </div>
+      </div>
+      <div class="col-md-6 d-md-none center-text">
+         <h2 class="">ADQUIRIR MANUAL</h2>
       </div>
       <div class="col-md-6 d-flex flex-row-reverse">
           <div class="box-pay">
@@ -35,14 +39,16 @@
                       <label class="form-check-label" for="exampleRadios1">
                           MercadoPago
                       </label>
-                      <object data="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" type="image/svg+xml"></object>
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago para personas que residen en Argentina.</b>">
+
                   </div>
                   <div class="form-check">
                       <input class="form-check-input paymentMethod" type="radio" name="paymentMethod" id="paypal-method" value="paypal">
                       <label class="form-check-label" for="exampleRadios2">
                           PayPal
                       </label>
-                      <object data="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" type="image/svg+xml"></object>
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago internacional.</b>">
+                      
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code" autocomplete="off">
@@ -74,10 +80,17 @@
             </form>
           </div>
       </div>
+      <div class="col-md-6 d-lg-none">
+            <div class="manual-text">
+                <p>El importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y 
+                    otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
+                    Banco de Causas.</p>
+            </div>
+      </div>
   </div>
 </div>
  
-  
+</section>
 @endsection
 
 @section('scripts')
@@ -98,6 +111,7 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
     const URL_DICOUNT_CODE = "{{ route('get.promo.code') }}";
 
     $('.step1').addClass("active");
+    $('.paso-mobile').text("Pago del manual");
     
 
 </script>
