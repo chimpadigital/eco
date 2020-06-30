@@ -67,7 +67,7 @@
                         </li>
                         
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                             Español <img src="{{ asset('site_') }}assets/img/idioma1.svg"> <img class="" src="{{asset('site_')}}assets/img/icon-ionic-ios-arrow-down.svg">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
