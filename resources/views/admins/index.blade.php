@@ -27,7 +27,7 @@
                         <div class="container-fluid my-2">
                         <div class="row ">
                             <div class="col-12 justify-content-center d-flex align-items-center">
-                                <button class="btn bg-white">Lista de replicadores</button>
+                                <a  href="/admin/users" class="btn bg-white">Lista de replicadores</a>
                             </div>
                         </div>
                             {{-- <div id="members-online"></div> --}}
