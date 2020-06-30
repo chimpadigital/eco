@@ -896,6 +896,7 @@ h1 {
     right: 10px;
     position: absolute;
     cursor: pointer;
+    z-index: 1;
 }
 
 .btn-orange {
