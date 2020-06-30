@@ -1769,6 +1769,8 @@ h1 {
     #pago-manual .pay-now .btn-green-apple {
         font-size: 24px;
         margin: 20px 0;
+        display: block;
+        width: 100%;
     }
     
     .banner-download {
