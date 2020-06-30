@@ -24,4 +24,9 @@ class Payment extends Model
     public function status_payment(){
         return $this->belongsTo('App\Models\StatusPayment');
     }
+
+    public function promocode()
+    {
+        return $this->belongsTo(PromoCode::class,'promo_code_id','id');
+    }
 }

@@ -10,6 +10,8 @@ use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Models\Country;
+
 
 class User extends Authenticatable
 {
@@ -21,8 +23,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'country_id', 'city', 'lastname', 'phone', 'birth_date', 'city',
-        'country_id'
+        'name', 'email', 'password', 'country_id', 'city', 'lastname', 'phone', 'birth_date',
+        
     ];
 
     /**
@@ -61,6 +63,13 @@ class User extends Authenticatable
     public function download()
     {
         return $this->hasOne(DownloadControl::class);
+    }
+
+    
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+
     }
 
    

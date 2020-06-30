@@ -36,15 +36,27 @@ class UsersController extends Controller
 
         $users = collect();
         foreach($usersAll as $key => $user){
+               //procesando el cupon
+                if(isset($user->invoice)){
+                    if($user->invoice->payment->promocode){
+                        $cupon = $user->invoice->payment->promocode->code_name;
+                    }else{
+                    $cupon = '';
+
+                    }    
+                }else{
+                    $cupon = '';
+                }
+                ///end
             if($user->userInformation){
                 $data = [
                     'id' => $user->id,
                     'nombre' => $user->name,
                     'apellido' => $user->lastname,
                     'email' => $user->email,
-                    'telefono' => $user->userInformation->phone,
-                    'pais' => $user->userInformation->country->name,
-                    'descuento' => '',
+                    'telefono' => $user->phone,
+                    'pais' => $user->country->name,
+                    'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
                 ];
@@ -54,11 +66,12 @@ class UsersController extends Controller
                     'nombre' => $user->name,
                     'apellido' => $user->lastname,
                     'email' => $user->email,
-                    'telefono' => '',
-                    'pais' => '',
-                    'descuento' => '',
+                    'telefono' => $user->phone,
+                    'pais' => isset($user->country) ? $user->country->name:'',
+                    'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
+                    
                 ];
             }
             
@@ -86,12 +99,28 @@ class UsersController extends Controller
         //end 
         //Controlador de descargar
             $descarga = $user->download;
-            if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
-               $descargarManuales = true; 
+            if($descarga){
+                if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
+                    $descargarManuales = true; 
+                 }else{
+                     $descargarManuales = false;
+                 }
             }else{
                 $descargarManuales = false;
             }
         //end
+        //procesando el cupon
+        if(isset($user->invoice)){
+            if($user->invoice->payment->promocode){
+                $cupon = $user->invoice->payment->promocode->code_name;
+            }else{
+            $cupon = '';
+
+            }    
+        }else{
+            $cupon = '';
+        }
+        ///emd
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => isset($user->invoice)?true:false,
@@ -106,16 +135,18 @@ class UsersController extends Controller
 
                 'condicionesGenerales' => true,
                 'acuerdoConfidencialidad' => true,
+
+                'cupon' => $cupon
             ],
             'inforPerfil' => [
                 'id' => $user->id,
                 'nombre' => $user->name,
                 'apellido' => $user->lastname,
                 'email' => $user->email,
-                'telefono' => $user->userInformation == null ? '': $user->userInformation->phone,
+                'telefono' =>$user->phone,
                 'fechaNacimiento' => $user->userInformation == null ? '': $user->userInformation->birth_date,
-                'ciudad' => $user->userInformation == null ? '': $user->userInformation->city,
-                'pais' => $user->userInformation == null ? '': $user->userInformation->country_id,
+                'ciudad' => $user->city,
+                'pais' => $user->country_id,
                 'ocupacion' => $user->userInformation == null ? '': $user->userInformation->occupation,
             ],
             'redes' => [
@@ -152,7 +183,12 @@ class UsersController extends Controller
         User::whereId($request->id)->update([
             'name' => $request->data['inforPerfil']['nombre'],
             'lastname' => $request->data['inforPerfil']['apellido'],
-            'email' => $request->data['inforPerfil']['email']
+            'email' => $request->data['inforPerfil']['email'],
+            'phone' => $request->data['inforPerfil']['telefono'],
+            'city' =>       $request->data['inforPerfil']['ciudad'],
+            'country_id' =>    $request->data['inforPerfil']['pais'],
+            'birth_date' => $request->data['inforPerfil']['fechaNacimiento'],
+
         ]);
 
         $user = User::whereId($request->id)->first();
@@ -160,10 +196,8 @@ class UsersController extends Controller
             'user_id' => $user->id,
         ],[
             // otraInfo
-            'phone' => $request->data['inforPerfil']['telefono'],
-            'birth_date' => $request->data['inforPerfil']['fechaNacimiento'],
-            'city' =>       $request->data['inforPerfil']['ciudad'],
-            'country_id' =>    $request->data['inforPerfil']['pais'],
+            
+            
             'occupation' => $request->data['inforPerfil']['ocupacion'],
             'facebook' =>   $request->data['redes']['facebook'],
             'linkedin' =>   $request->data['redes']['linkedin'],

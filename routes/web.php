@@ -2,6 +2,18 @@
 
 use Illuminate\Support\Facades\Route;
 
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
 
 Route::get('/', 'SiteController@index')->name("/");
 
@@ -67,7 +79,6 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     
     
         Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
-        Route::get('/pending','PaymentMethodController@paymentPending')->name('payment.pending');
         Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
 
     });
