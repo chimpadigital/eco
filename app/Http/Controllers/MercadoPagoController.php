@@ -86,7 +86,7 @@ class MercadoPagoController extends Controller
         $preference->back_urls = array(
             "success" => route('payment.success'),
             "failure" => route('payment.cancel'),
-            "pending" => route('/'),
+            "pending" => route('payment.pending'),
         );
 
         # Save and posting preference
