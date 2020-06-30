@@ -45,10 +45,10 @@
                       <object data="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" type="image/svg+xml"></object>
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code">
+                    <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code" autocomplete="off">
                   </div>
               <div class="subtotal-pay">
-                  <p>Inversión</p>    
+                  <p>Subtotal</p>    
                   <p id="amount_payment2">150 U$D</p>
               </div>
               <div class="agreement-pay">

@@ -127,7 +127,7 @@
                                         
                                         <div class="form-group mt-4">
                                         
-                                            <input type="text" class="form-control input-custom" name="name" value="{{ old('name') }}" placeholder="Nombre">
+                                            <input type="text" class="form-control input-custom" name="name" value="{{ old('name') }}" placeholder="Nombre" required>
                                             
                                             @error('name')
                                                 
@@ -148,7 +148,7 @@
                                     
                                         <div class="form-group">
                                     
-                                            <input type="text" class="form-control input-custom" name="lastname" value="{{ old('lastname') }}" placeholder="Apellido">
+                                            <input type="text" class="form-control input-custom" name="lastname" value="{{ old('lastname') }}" placeholder="Apellido" required>
                                             
                                             @error('lastname')
                                                 
@@ -176,7 +176,7 @@
                                     
                                             </button>
                                     
-                                            <input type="email" class="form-control input-custom" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico">
+                                            <input type="email" class="form-control input-custom" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required>
                                             
                                             @error('email')
                                                 
@@ -197,7 +197,7 @@
                                     
                                         <div class="form-group">
                                     
-                                            <input type="text" class="form-control input-custom" name="phone" value="{{ old('phone') }}" placeholder="Teléfono">
+                                            <input type="text" class="form-control input-custom" name="phone" value="{{ old('phone') }}" placeholder="Teléfono" required>
                                             
                                             @error('phone')
                                                 
@@ -217,7 +217,7 @@
                                     
                                         <div class="form-group">
                                     
-                                            <input type="text" class="form-control input-custom" name="city" value="{{ old('city') }}" placeholder="Ciudad">
+                                            <input type="text" class="form-control input-custom" name="city" value="{{ old('city') }}" placeholder="Ciudad" required>
                                             
                                             @error('city')
                                                 
@@ -261,7 +261,7 @@
                                     </div>
 
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
                                         <label class="form-check-label" for="defaultCheck1">
                                             <a href="{{route('terms')}}">Acepto las Condiciones Generales de Uso</a>
                                         </label>
