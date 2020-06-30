@@ -18,6 +18,10 @@ class StepsController extends Controller
         {
             return $this->step1();
             
+        }elseif ($user->can('verifyPaymentPending',PaymentMethod::class)) {
+            
+            return redirect()->route('payment.pending');
+            
         }elseif ($user->can('verifyUserInformation',UserInformation::class)) {
 
             return $this->step2();

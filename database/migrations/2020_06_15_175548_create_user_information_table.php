@@ -15,11 +15,6 @@ class CreateUserInformationTable extends Migration
     {
         Schema::create('user_information', function (Blueprint $table) {
             $table->id();
-            $table->string('phone')->nullable();
-            $table->date('birth_date')->nullable();
-            $table->string('city')->nullable();
-            $table->bigInteger('country_id')->unsigned()->nullable();
-            $table->foreign('country_id')->references('id')->on('countries');
             $table->string('occupation')->nullable();
             $table->string('facebook')->nullable();
             $table->string('linkedin')->nullable();

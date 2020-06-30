@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Models\Invoice;
 use App\Models\Payment;
 use Sample\PayPalClient;
@@ -239,6 +240,7 @@ class PayPalController extends Controller
                     'payment_id'=>$capture->id,
                     'order_id'=>$response->result->id,
                     'payment_method_id'=>$this->paymentMethod->id,
+                    'promo_code_id'=>isset($promoCode->id) ? $promoCode->id : null,
                 ];
 
                 $this->createPaymentOrUpdate($data,$status);

@@ -10,7 +10,7 @@
         <div class="col-md-12">
             <div class="box-next-step float-right">
                 <span>Siguiente paso</span>
-            <a href="{{ route('steps') }}" type="submit" class="btn-green-apple">Registrar sesiones <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></a>
+            <a href="{{ route('steps') }}" class="btn-green-apple next-step">Registrar sesiones <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></a>
             </div>
         </div>
     </div>

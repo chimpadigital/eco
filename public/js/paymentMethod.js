@@ -116,7 +116,7 @@ function changeButtonPayment(){
         
         document.querySelector('#btn-payment').style.display = "block";
         
-        document.getElementById('amount_payment1').innerText = `${amountMP} U$D`;
+        document.getElementById('amount_payment1').innerText = `${constAmountMP} U$D`;
         document.getElementById('amount_payment2').innerText = `${amountMP} U$D`;
         
         document.querySelector('#paypal-button-container').style.display = "none";
@@ -125,7 +125,7 @@ function changeButtonPayment(){
     else if ($result == 'paypal'){
         document.querySelector('#btn-payment').style.display = "none";
         
-        document.getElementById('amount_payment1').innerText = `${amountPaypal} U$D`;
+        document.getElementById('amount_payment1').innerText = `${constAmountPaypal} U$D`;
         document.getElementById('amount_payment2').innerText = `${amountPaypal} U$D`;
         
         document.querySelector('#paypal-button-container').style.display = "block";
@@ -158,14 +158,20 @@ for (var i = 0 ; i < method.length; i++) {
 
 
 
-document.querySelector('#discount_code').addEventListener('keyup',function(e){
+$('#discount_code').on('change keyup copy paste cut',function(e){
+  
+  document.getElementById('error_code').innerHTML = ``;
 
-  if(e.target.value.length > 2){
-
+  amountPaypal = constAmountPaypal;
+  amountMP = constAmountMP;
+  changeButtonPayment();
+  console.log('hola');
+  if(e.target.value.length > 3){
+    console.log(e.target.value);
     fetch(URL_DICOUNT_CODE, {
       method: 'post',
       body: JSON.stringify({
-        discount_code: document.getElementById('discount_code').value
+        discount_code: e.target.value
       }),
       headers: {
         'content-type': 'application/json',
@@ -180,23 +186,28 @@ document.querySelector('#discount_code').addEventListener('keyup',function(e){
       }
 
     }).then(function(data){
-      
-      amountPaypal = constAmountPaypal;
-      amountMP = constAmountMP;
 
       if(!isEmpty(data)){
 
-      
-        amountPaypal -= data.amount;
-        amountMP -= data.amount;
-      
+        console.log(data);
+        amountPaypal = amountPaypal - data.amount;
+        amountMP = amountMP - data.amount;
+        
+      }else{
+
+        document.getElementById('error_code').innerHTML = `
+        <span class="invalid-feedback" role="alert" style="display:block;">
+          Código inválido
+        </span>`;
+
       }
 
       changeButtonPayment();
 
-    })
+    })    
   }
 
+  
 });
 
 

@@ -101,7 +101,6 @@ h1 {
 }
 
 .custom-bar {
-    height: 99px;
     -webkit-box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
         -moz-box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
             box-shadow: 3px 4px 4px 0px rgba(0,0,0,0.07);
@@ -214,7 +213,7 @@ h1 {
     margin: 100px 0;
     border-radius: 17px;
     background: #F5F5F5;
-    padding: 47px 34px 40px 36px;
+    padding: 50px 35px 40px 35px;
 }
 
 .box-pay h3 {
@@ -370,6 +369,7 @@ h1 {
     line-height: normal;
     border-radius: 50px;
     background: #00B49D;
+
 }
 
 .btn-green:hover {
@@ -663,7 +663,7 @@ h1 {
 
 .jalendar-extended .jalendar-date p:last-child {
     margin: 0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .jalendar-extended .jalendar-hour p {
@@ -1264,7 +1264,7 @@ h1 {
 }
 
 #finalized-payment .banner {
-    padding: 100px 0 20px;
+    padding: 100px 200px 20px;
 }
 
 #finalized-payment .blue-banner {
@@ -1278,6 +1278,13 @@ h1 {
 #finalized-payment .blue-banner p {
     margin: 0;
     color: white;
+}
+
+#finalized-payment .background .btn-green {
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 20px;
+    white-space: break-spaces;
 }
 
 #confidentiality {
@@ -1434,6 +1441,10 @@ h1 {
 
 /* === Landing Mobile === */
 @media (max-width: 600px) {
+    .btn-green {
+        line-break: anywhere;
+        display: block;
+    }
     .alert-light {
         box-shadow: 2px 5px 5px #0000000d;
         width: 90%;
@@ -1598,6 +1609,11 @@ h1 {
     #eco-inversion .center-mobile .btn-orange {
         margin-top: 40px;
     }
+
+    #eco-inversion .center-mobile .btn-orange img {
+        transform: rotate(90deg);
+    }
+    
     #eco-inversion .box-form {
         width: 100%;
         margin: 20px 0 0;
@@ -1661,6 +1677,208 @@ h1 {
         margin: 40px 0 0 !important;
         border-top: 1px solid white;
         border-left: none  !important;
+    }
+
+    #pago-manual {
+        background: none;
+    }
+
+    #pago-manual .box-pay {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    #pago-manual h2 {
+        font-size: 30px;
+        color: #00B49D;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    #pago-manual .manual-text p {
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    #pago-manual .pay-now {
+        text-align: center;
+    }
+
+    #pago-manual .pay-now p {
+        float: none;
+        display: block;
+        text-align: center;
+    }
+
+    #pago-manual .pay-now .btn-green-apple {
+        font-size: 24px;
+        margin: 20px 0;
+    }
+    
+    .banner-download {
+        margin-top: 200px;
+    }
+
+    #download-files {
+        background: none;
+    }
+
+    #download-files .box .icon-download {
+        margin-bottom: 20px;
+    }
+
+    #download-files .box .check-download {
+        margin: 20px 0 80px 0;
+    }
+
+    #download-files .box .btn-download {
+        margin-bottom: 80px;
+    }
+
+    .arrow-green {
+        left: 50%;
+        bottom: 30px;
+        position: absolute;
+        transform: rotate(90deg) translate( 0, 25% );
+    }
+
+    .box-next-step {
+        text-align: center;
+    }
+
+    .box-next-step .btn-green-apple {
+        font-size: 18px;
+    }
+
+    .box-reservation p {
+        font-size: 14px;
+        line-height: 17px;
+        margin-bottom: 30px;
+    }
+
+    #calendar {
+        background: none;
+    }
+    
+    #calendar .btn-green-apple {
+        float: none;
+        font-size: 18px;
+    }
+
+    #calendar .jalendar-extended {
+        margin-bottom: 70px;
+    }
+
+    #calendar .align-self-end {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    #form-perfil-replicador {
+        background: none;
+    }
+
+    #form-perfil-replicador .box-meet h1 {
+        font-size: 30px;
+    }
+
+    #form-perfil-replicador .box-meet p:last-child {
+        font-size: 14px;
+    }
+
+    #form-perfil-replicador .form-meet .center-mobile {
+        text-align: center;
+    }
+
+    #form-perfil-replicador .form-meet .center-mobile .btn-green-apple {
+        float: none;
+        height: 70px;
+        width: 70px;
+    }
+
+    #form-perfil-replicador .form-meet .center-mobile .btn-green-apple img {
+        width: 50%;
+    }
+
+    #encuesta #first-form, #encuesta #second-form, #encuesta #third-form {
+        background: none;
+    }
+
+    #encuesta .box h1 {
+        font-size: 30px;
+    }
+
+    #encuesta .box p {
+        font-size: 14px;
+    }
+    
+    #encuesta .box hr, #encuesta #first-form hr {
+        width: 100%;
+    }
+
+    #encuesta #first-form {
+        margin-top: 50px;
+    }
+
+    #encuesta #first-form h2 {
+        font-size: 14px;
+    }
+
+    #encuesta #first-form hr {
+        margin-bottom: 30px;
+    }
+
+    #encuesta #first-form .form-check-inline {
+        display: block;
+        margin-bottom: 17px;
+    }
+
+    #encuesta #first-form .form-row {
+        display: block;
+    }
+
+    #encuesta .btn-green-apple {
+        float: none;
+        margin-top: 35px;
+    }
+
+    .navbar-light .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .dropdown-item {
+        text-align: center !important;
+    }
+
+    #page-error, #login {
+        height: 100%;
+        position: relative;
+        background: url('../img/background-error-page.png') bottom no-repeat,
+                        url('../img/img-login-mobile.png') bottom  no-repeat;
+    }
+
+    #finalized-payment .background {
+        background: none;
+    }
+
+    #finalized-payment .banner {
+        padding: 110px 20px 20px!important;
+    }
+    
+    .banner {
+        margin-top: 140px;
+
+    }
+
+    #finalized-payment .banner h1 {
+        font-size: 20px;
+        text-decoration: none;
+        border-bottom: 2px solid white;
     }
 }
         /* ===/ /=== */

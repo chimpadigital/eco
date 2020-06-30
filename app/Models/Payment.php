@@ -18,6 +18,7 @@ class Payment extends Model
         'invoice_id',
         'order_id',
         'external_reference',
+        'promo_code_id',
     ];
 
     public function status_payment(){
