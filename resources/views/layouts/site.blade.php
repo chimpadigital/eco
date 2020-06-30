@@ -81,7 +81,7 @@
         
     
        @yield('content')
-
+       @include('cookieConsent::index')
     </div>
     
     <script

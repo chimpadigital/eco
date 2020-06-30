@@ -20,6 +20,7 @@
         "nesbot/carbon": "^2.35",
         "paypal/paypal-checkout-sdk": "^1.0",
         "paypal/rest-api-sdk-php": "^1.14",
+        "spatie/laravel-cookie-consent": "^2.12",
         "spatie/laravel-google-calendar": "^2.6",
         "spatie/laravel-permission": "^3.13",
         "uxweb/sweet-alert": "^2.0"

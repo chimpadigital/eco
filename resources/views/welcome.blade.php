@@ -292,15 +292,6 @@
     </div>
 </div>
 
-<div class="alert-cookie">
-    <div class="container d-flex">
-        <p>Todos tus datos personales serán protegidos acorde a la <a href="">Ley 25.326 de protección de datos personales</a>, regida en la República Argentina, donde se contempla 
-            la facultad de ejercer el derecho de acceso a los mismos en forma gratuita, solicitar el retiro o bloqueo, total o parcial en caso de ser necesario.</p>
-        <div class="align-self-center">
-            <button type="submit" class="btn-green-apple">Acepto</button>
-        </div>
-    </div>
-</div>
 
 <footer class="footer-landing">
     <div class="container d-flex">
