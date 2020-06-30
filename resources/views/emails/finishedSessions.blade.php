@@ -94,7 +94,7 @@ body .full-size img{width:100%; height:auto;}
 												<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border-top-left-radius: 5px; border-top-right-radius: 5px;" class="fullCenter">
 													<tbody><tr>
 														<td width="600" class="full-size" style="line-height: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-															<img src="/images/mail-hero.jpg" alt="" border="0" width="100%" height="auto" class="hover">
+															<img src="http://eco.chimpancedigital.com.ar/images/mail-hero.jpg" alt="" border="0" width="100%" height="auto" class="hover">
 														</td>
 													</tr>
 												</tbody></table>

@@ -144,7 +144,7 @@ class UsersController extends Controller
                 'apellido' => $user->lastname,
                 'email' => $user->email,
                 'telefono' =>$user->phone,
-                'fechaNacimiento' => $user->userInformation == null ? '': $user->userInformation->birth_date,
+                'fechaNacimiento' => $user->birth_date,
                 'ciudad' => $user->city,
                 'pais' => $user->country_id,
                 'ocupacion' => $user->userInformation == null ? '': $user->userInformation->occupation,
