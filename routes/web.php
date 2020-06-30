@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('emails','SiteController@emails');
 
-Route::get('/', 'SiteController@index')->name("/");
 
 Route::view('terminos','term')->name('terms');
 Route::view('condiciones','condition')->name('condition');
