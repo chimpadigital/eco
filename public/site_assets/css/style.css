@@ -1478,7 +1478,7 @@ h1 {
 
     }
     .progress {
-        margin: 34px 0px 80px;
+        margin: 14px 0px 20px;
     }
     #page-error .box, #login .box {
 
@@ -1799,11 +1799,11 @@ h1 {
     }
 
     #download-files .box .check-download {
-        margin: 20px 0 80px 0;
+        margin: 20px 0 40px 0;
     }
 
     #download-files .box .btn-download {
-        margin-bottom: 80px;
+        margin-bottom: 0px;
     }
 
     .arrow-green {
