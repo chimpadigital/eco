@@ -43,6 +43,16 @@ class PaymentMethodController extends Controller
         return redirect()->route('steps');
     }
     
+    function paymentPending()
+    {
+        if($user->can('verifyPaymentPending',PaymentMethod::class)){
+            return view('payments.paymentPending');
+        }
+
+        return redirect()->route('steps');
+        
+    }
+
     /**
      * paymentCancel
      *

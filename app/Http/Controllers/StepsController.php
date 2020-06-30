@@ -20,7 +20,7 @@ class StepsController extends Controller
             
         }elseif ($user->can('verifyPaymentPending',PaymentMethod::class)) {
             
-            return redirect()->route('/');
+            return redirect()->route('payment.pending');
             
         }elseif ($user->can('verifyUserInformation',UserInformation::class)) {
 
