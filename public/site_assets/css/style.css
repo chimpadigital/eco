@@ -382,6 +382,7 @@ h1 {
     height: 100vh;
     background: url('../img/block.png') left no-repeat, 
                         url('../img/mundo.png') right no-repeat;
+                        
 }
 
 /* Pago Exitoso */
@@ -1090,6 +1091,11 @@ h1 {
 /* Responsive */
 
 @media (max-width:1366px){
+    #pago-manual {
+        height: 100vh;
+        background: url(../img/block.png) left no-repeat, url(../img/mundo.png) right no-repeat;
+        background-size: 8%;
+    }
     #handbook {
         background: url(../img/img-bottle-landing.png) left 45% no-repeat, url(../img/img-block-landing.png) 102% 45% no-repeat;
         background-size: 8%;

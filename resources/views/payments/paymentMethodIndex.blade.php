@@ -7,7 +7,7 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-6 align-self-center">
+      <div class="col-md-6 align-self-center d-none d-md-block">
           <div class="manual-text">
               <div class="icon-manual"><img src="{{ asset('site_assets/img/education.svg') }}" alt="icon manual"></div>
               <h2>ADQUIRIR MANUAL</h2>
@@ -15,6 +15,9 @@
                   otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
                   Banco de Causas.</p>
           </div>
+      </div>
+      <div class="col-md-6 d-md-none center-text">
+         <h2 class="">ADQUIRIR MANUAL</h2>
       </div>
       <div class="col-md-6 d-flex flex-row-reverse">
           <div class="box-pay">
@@ -74,6 +77,13 @@
 
             </form>
           </div>
+      </div>
+      <div class="col-md-6 d-lg-none">
+            <div class="manual-text">
+                <p>El importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y 
+                    otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
+                    Banco de Causas.</p>
+            </div>
       </div>
   </div>
 </div>
