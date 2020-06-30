@@ -160,6 +160,8 @@ for (var i = 0 ; i < method.length; i++) {
 
 $('#discount_code').on('change keyup copy paste cut',function(e){
   
+  document.getElementById('error_code').innerHTML = ``;
+
   amountPaypal = constAmountPaypal;
   amountMP = constAmountMP;
   changeButtonPayment();
@@ -191,11 +193,20 @@ $('#discount_code').on('change keyup copy paste cut',function(e){
         amountPaypal = amountPaypal - data.amount;
         amountMP = amountMP - data.amount;
         
+      }else{
+
+        document.getElementById('error_code').innerHTML = `
+        <span class="invalid-feedback" role="alert" style="display:block;">
+          Código inválido
+        </span>`;
+
       }
+
       changeButtonPayment();
 
     })    
   }
+
   
 });
 

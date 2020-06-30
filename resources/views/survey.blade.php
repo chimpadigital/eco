@@ -2,17 +2,17 @@
 
 @section('content')
 
-<section id="encuesta">
-    <form action="">
-        
+<form>
+
+    <section id="encuesta">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="box text-center">
                         <h1>ENCUESTA DE SATISFACCIÓN</h1>
                         <hr>
-                        <p>Esta encuesta nos sirve para valorar el servicio del Manual de Réplica de Fundación </br>Ecoinclusión y 
-                            tu experiencia como usuario después de haber adquirido dichas </br>herramientas. Para nosotros es muy 
+                        <p>Esta encuesta nos sirve para valorar el servicio del Manual de Réplica de Fundación Ecoinclusión y 
+                            tu experiencia como usuario después de haber adquirido dichas herramientas. Para nosotros es muy 
                             importante conocer tu opinión.</p>
                             <p>¡Muchas gracias!</p>
                     </div>
@@ -152,7 +152,7 @@
                         <div class="form">
                             <h2>SOBRE EL CONTENIDO</h2>
                             <hr>
-                            
+                    
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <p>La lectura del Manual fue sencilla y dinámica, los capítulos están integrados entre sí:</p>
@@ -241,7 +241,7 @@
                                         </div>
                                     </div>
                                 </div>
-                        
+                            
                         </div>
                     </div>
                 </div>
@@ -256,7 +256,7 @@
                             <h2>VALORACIÓN POR CAPÍTULOS</h2>
                             <hr>
                             <p class="subtitle">(1 es poco satisfecho, 5 muy satisfecho)</p>
-                    
+                            
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4 mb-4">
                                         <p>Capítulo 1: “Introducción - Prólogo”:</p>
@@ -463,7 +463,7 @@
                         <div class="form">
                             <h2>VALORACIÓN PERSONAL</h2>
                             <hr>
-                        
+                            
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <p>¿Cómo estás de satisfecho/a con el Manual?</p>
@@ -508,15 +508,13 @@
                         </div>
                     </div>
                 </div>
-                <button type="button" class="btn-green-apple">Enviar <img src="assets/img/icon-feather-chevron-left.png"></button>
+                <div class="text-center">
+                    <button type="button" class="btn-green-apple">Enviar <img src="assets/img/icon-feather-chevron-left.png"></button>
+                </div>
             </div>
-            
-        
-        
         </section>
+    </section>
 
     </form>
-    
-</section>
-    
+
 @endsection

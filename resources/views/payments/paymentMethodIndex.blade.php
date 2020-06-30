@@ -46,6 +46,11 @@
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code" autocomplete="off">
+                    
+                    <div id="error_code">
+                        
+                    </div>
+                    
                   </div>
               <div class="subtotal-pay">
                   <p>Subtotal</p>    
