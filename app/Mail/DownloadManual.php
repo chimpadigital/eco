@@ -28,6 +28,6 @@ class DownloadManual extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.downloadManual');
+        return $this->subject('Descarga finalizada')->markdown('emails.downloadManual');
     }
 }

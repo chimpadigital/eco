@@ -28,6 +28,6 @@ class FinishedSessions extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.finishedSessions');
+        return $this->subject('Sesiónes de asistencia finalizadas')->markdown('emails.finishedSessions');
     }
 }
