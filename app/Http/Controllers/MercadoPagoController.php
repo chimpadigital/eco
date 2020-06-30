@@ -80,13 +80,13 @@ class MercadoPagoController extends Controller
         );
         $preference->auto_return = "all";
         
-        //$preference->notification_url = route('notification.mp',$authUser->id);
-        $preference->notification_url = route('notification.mp');
+        $preference->notification_url = "https://cf70c28836e6.ngrok.io/mp/notification/webhook";
+        // $preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
             "failure" => route('payment.cancel'),
-            "pending" => route('payment.cancel'),
+            "pending" => route('/'),
         );
 
         # Save and posting preference
@@ -153,7 +153,7 @@ class MercadoPagoController extends Controller
                 if ($payment->status == 'approved'){
 		            $paid_amount += $payment->transaction_amount;
                 
-                } else if ($payment->status == 'pending') {
+                } else if ($payment->status == 'pending' || $payment->status == 'in_process') {
 
                     $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 

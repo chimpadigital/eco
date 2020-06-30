@@ -42,4 +42,27 @@ class PaymentPolicy
         return true;
 
     }
+
+    public function verifyPaymentPending(){
+        
+        $user = auth()->user();
+
+        $invoice = Invoice::with('payment.status_payment')
+        ->where('user_id',$user->id)
+        ->latest()
+        ->first();
+
+        if( isset($invoice->payment->status_payment->name) ){
+
+            if($invoice->payment->status_payment->name == "pending"){
+            
+                return true;
+            
+            }
+
+        }
+
+        return false;
+
+    }
 }
