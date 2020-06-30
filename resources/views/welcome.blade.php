@@ -110,7 +110,7 @@
         </div>
     </div>
     <div class="container text-center">
-        <a href="#mas-info">
+        <a href="#eco-inversion">
             <button type="submit" class="btn-green-apple handbook-btn">Descargar</button>
         </a>
     </div>
