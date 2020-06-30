@@ -69,11 +69,16 @@
                       </label>
                   </div>
               </div>
-              <div class="pay-now">
-                <p><object data="{{ asset('site_assets/img/icon-feather-lock.svg') }}" type="image/svg+xml"></object> Transacción encriptada</p>
-                  <button id="btn-payment" type="submit" class="btn-green-apple">Pagar ahora</button>
-                  <div id="paypal-button-container" style="display: none;"></div>
-              </div>
+              <div class="pay-now d-lg-none">
+                            <button id="btn-payment" type="button" class="btn-green-apple btn-block">Pagar</button>
+                            <div id="paypal-button-container" style="display: none;"></div>
+                            <p><img src="{{ asset('site_assets/img/icon-feather-lock.svg') }}" type="image/svg+xml"> Transacción encriptada</p>
+                        </div>
+                <div class="pay-now d-none d-md-block">
+                    <p><img src="{{ asset('site_assets/img/icon-feather-lock.svg') }}" type="image/svg+xml"> Transacción encriptada</p>
+                    <button id="btn-payment" type="button" class="btn-green-apple">Pagar ahora</button>
+                    <div id="paypal-button-container" style="display: none;"></div>
+                </div>
 
             </form>
           </div>
