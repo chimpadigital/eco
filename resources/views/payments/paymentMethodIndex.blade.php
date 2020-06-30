@@ -39,14 +39,16 @@
                       <label class="form-check-label" for="exampleRadios1">
                           MercadoPago
                       </label>
-                      <object data="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" type="image/svg+xml"></object>
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago para personas que residen en Argentina.</b>">
+
                   </div>
                   <div class="form-check">
                       <input class="form-check-input paymentMethod" type="radio" name="paymentMethod" id="paypal-method" value="paypal">
                       <label class="form-check-label" for="exampleRadios2">
                           PayPal
                       </label>
-                      <object data="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" type="image/svg+xml"></object>
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago internacional.</b>">
+                      
                   </div>
                   <div class="form-group">
                     <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code" autocomplete="off">
