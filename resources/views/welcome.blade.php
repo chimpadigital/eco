@@ -278,6 +278,8 @@
                             </label>
                         </div>
                         <button type="submit" class="btn-green-apple">Comenzar</button>
+                        <hr>
+                        <p>Puedes leer más sobre la Política de Protección de datos <a href="{{route('policies')}}">aquí</a></p>
                     </form>
                 </div>
             </div>

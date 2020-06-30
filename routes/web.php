@@ -7,6 +7,7 @@ Route::get('/', 'SiteController@index')->name("/");
 
 Route::view('terminos','term')->name('terms');
 Route::view('condiciones','condition')->name('condition');
+Route::view('politicas','policies')->name('policies');
 
 Auth::routes();
 
