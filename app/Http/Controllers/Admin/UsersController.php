@@ -85,8 +85,12 @@ class UsersController extends Controller
         //end 
         //Controlador de descargar
             $descarga = $user->download;
-            if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
-               $descargarManuales = true; 
+            if($descarga){
+                if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
+                    $descargarManuales = true; 
+                 }else{
+                     $descargarManuales = false;
+                 }
             }else{
                 $descargarManuales = false;
             }
