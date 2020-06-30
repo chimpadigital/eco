@@ -92,37 +92,54 @@ class DownloadControlController extends Controller
                     'element_1'=>true,
                 ]);
 
-                $this->downloadManual($this->userAuth->email);
-                
+                $this->sendEmail();
+       
                 return response()->json([],200);
-                break;
+            
             case 2:
                 $this->downloadControl->update([
                     'element_2'=>true,
                 ]);
+
+                $this->sendEmail();
                 return response()->json([],200);
-                break;
+            
             case 3:
                 $this->downloadControl->update([
                     'element_3'=>true,
                 ]);
+
+                $this->sendEmail();
+                
                 return response()->json([],200);
-                break;
+            
             case 4:
                 $this->downloadControl->update([
                     'element_4'=>true,
                 ]);
+                $this->sendEmail();
+                
                 return response()->json([],200);
-                break;
             
             default:
                 return response()->json([],200);
 
-                break;
         }
 
         return response()->json([],200);
 
+    }
+
+    public function sendEmail(){
+        if($this->downloadControl->element_1 &&
+           $this->downloadControl->element_2 &&
+           $this->downloadControl->element_3 &&
+           $this->downloadControl->element_4
+        
+        ){
+            $this->downloadManual($this->userAuth->email);
+        }
+        
     }
 
     
