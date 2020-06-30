@@ -56,14 +56,14 @@
                             </div>
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="date" class="form-control input-custom" name="birth_date" placeholder="Fecha de nacimiento" required>
+                                    <input type="date" class="form-control input-custom" name="birth_date" value="{{ old('birth_date') }}" placeholder="Fecha de nacimiento" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-custom" name="city" placeholder="Ciudad de residencia" required>
+                                <input type="text" class="form-control input-custom" name="city" placeholder="Ciudad de residencia" value="{{ old('city') ? old('city') : $user->city  }}" required>
                                 </div>
                             </div>
                             <div class="col mb-4">
@@ -72,7 +72,7 @@
                                     
                                     @forelse ($countries as $country)
                                     
-                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                        <option {{ $country->id == $user->country_id ? "selected" : "" }} value="{{ $country->id }}">{{ $country->name }}</option>
                                     
                                     @empty
                                         

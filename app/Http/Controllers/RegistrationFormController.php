@@ -35,12 +35,12 @@ class RegistrationFormController extends Controller
         $user = User::where('id',auth()->user()->id)->update([
             'name'=>$request->input('firstname'),
             'lastname'=>$request->input('lastname'),
-        ]);
-
-        $userInformation = UserInformation::where('user_id',auth()->user()->id)->updateOrCreate([
             "birth_date" => $request->input('birth_date'),
             "city" => $request->input('city'),
             "country_id" => $request->input('country_id'),
+        ]);
+
+        $userInformation = UserInformation::where('user_id',auth()->user()->id)->updateOrCreate([
             "occupation" => $request->input('occupation'),
             "facebook" => $request->input('facebook'),
             "linkedin" => $request->input('linkedin'),
