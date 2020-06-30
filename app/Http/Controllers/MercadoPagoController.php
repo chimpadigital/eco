@@ -80,8 +80,8 @@ class MercadoPagoController extends Controller
         );
         $preference->auto_return = "all";
         
-        //$preference->notification_url = "https://cf70c28836e6.ngrok.io/mp/notification/webhook";
-        $preference->notification_url = route('notification.mp');
+        $preference->notification_url = "https://cf70c28836e6.ngrok.io/mp/notification/webhook";
+        //$preference->notification_url = route('notification.mp');
 
         $preference->back_urls = array(
             "success" => route('payment.success'),
@@ -157,7 +157,7 @@ class MercadoPagoController extends Controller
 
                     $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
-                    $data = $this->buildDataForPayment($invoice,$merchant_order);
+                    $data = $this->buildDataForPayment($invoice,$merchant_order,$promoCode);
 
                     $this->createPaymentOrUpdate($data,'pending');  
 
@@ -182,7 +182,7 @@ class MercadoPagoController extends Controller
 
                     $invoice = $this->getInvoice($this->paymentMethod->id,$user,$promoCodeAmount);
 
-                    $data = $this->buildDataForPayment($invoice,$merchant_order);
+                    $data = $this->buildDataForPayment($invoice,$merchant_order,$promoCode);
 
                     $this->createPaymentOrUpdate($data,'approved');  
 
@@ -205,7 +205,7 @@ class MercadoPagoController extends Controller
         }
     }
 
-    public function buildDataForPayment($invoice,$merchant_order){
+    public function buildDataForPayment($invoice,$merchant_order,$promoCode = null){
 
         return [
             'invoice_id'=>$invoice->id,
@@ -213,6 +213,7 @@ class MercadoPagoController extends Controller
             'order_id'=>$merchant_order->id,
             'payment_method_id'=>$this->paymentMethod->id,
             'external_reference'=>$merchant_order->external_reference,
+            'promo_code_id'=>isset($promoCode->id) ? $promoCode->id : null,
         ];
 
     }
