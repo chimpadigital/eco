@@ -9,7 +9,7 @@
           <h4 class="card-title">Perfil {{ "Nombre Apellido" }}</h4>
         </div>
         <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
-          <a href="#" class="btn btn-success">Regresar</a>
+          <a href="/admin/users" class="btn btn-success">Regresar</a>
         </div>
       </div>
     </div>
@@ -101,7 +101,8 @@
         </div>
         <div class="col-12 col-sm-6 col-md-2">
           <label for="cupon_descuento">Cupón Descuento</label>
-          <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" />
+          <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
+          <p>{{data.procesoSesion.cupon}}</p>
         </div>
         <div class="col-12">
           <div class="divider"></div>

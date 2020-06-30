@@ -9,7 +9,7 @@
           <h4 class="card-title">Cupones de descuentos</h4>
         </div>
         <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
-          <a href="#" class="btn btn-info mr-3">Regresar</a>
+          <a href="/admin" class="btn btn-info mr-3">Regresar</a>
           <button class="btn btn-success" @click.prevent="agregarPromo">Agregar</button>
         </div>
       </div>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-2">
           <label for="cantidad_aplicada">Cantidad Aplicada</label>
-          <p>10</p>
+          <p>{{promo.quantity_applied}}</p>
           <!-- <input
             v-model="promo.quantity_applied"
             class="form-control"

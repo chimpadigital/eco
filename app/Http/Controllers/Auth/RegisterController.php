@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Models\UserInformation;
 
 class RegisterController extends Controller
 {
@@ -49,6 +50,8 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        
+        
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'lastname' => ['required', 'string', 'max:255'],
@@ -67,6 +70,8 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
+        // return response()->json();
         $user = User::create([
             'name' => $data['name'],
             'lastname' => $data['lastname'],
@@ -76,9 +81,8 @@ class RegisterController extends Controller
             "city" => $data['city'],
             "country_id" => $data['country_id'],
         ]);
-
         $user->assignRole('User');
-
+       
         return $user; 
     }
 }
