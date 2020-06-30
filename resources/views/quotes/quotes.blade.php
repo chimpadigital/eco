@@ -55,13 +55,13 @@
           </div>
           <div class="jalendar-extended">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 col-4">
                 <div class="jalendar-date">
                   <p>Reservar</p>
                   <p ><span id="dia"></span> de <span id="mes"></span></p>
                 </div>
               </div>
-              <div class="col-md-4 p-0">
+              <div class="col-md-4 col-8 p-lg-0">
                 <div class="jalendar-hour">
                   <p>Horarios disponibles</p>
                   <select id="first_sesion_time" class="custom-select input-custom">
@@ -102,13 +102,13 @@
           </div>
           <div class="jalendar-extended">
             <div class="row">
-              <div class="col-md-4">
+              <div class="col-md-4 col-4">
                 <div class="jalendar-date">
                   <p>Reservar</p>
                   <p ><span id="dia2"></span> de <span id="mes2"></span></p>
                 </div>
               </div>
-              <div class="col-md-4 p-0">
+              <div class="col-md-4 col-8 p-lg-0">
                 <div class="jalendar-hour">
                   <p>Horarios disponibles</p>
                   <select id="second_sesion_time" class="custom-select input-custom">

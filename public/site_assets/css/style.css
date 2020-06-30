@@ -451,7 +451,7 @@ h1 {
     height: 47px;
     font-size: 15px;
     padding: 0 30px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .form-meet .radio-custom {
@@ -1464,9 +1464,15 @@ h1 {
     padding-right: 2rem!important   ;
 }
 
+.progress {
+    margin: 28px 0px 7px;
+}
 
 /* === Landing Mobile === */
 @media (max-width: 600px) {
+    .progress {
+        margin: 34px 0px 80px;
+    }
     #page-error .box, #login .box {
 
         margin-top: 130px;
@@ -1818,16 +1824,16 @@ h1 {
         background: none;
     }
     
-    #calendar .btn-green-apple {
+    div[id^=calendar] .btn-green-apple {
         float: none;
         font-size: 18px;
     }
 
-    #calendar .jalendar-extended {
+    div[id^=calendar] .jalendar-extended {
         margin-bottom: 70px;
     }
 
-    #calendar .align-self-end {
+    div[id^=calendar] .align-self-end {
         margin: 30px 0;
         text-align: center;
     }
@@ -1936,6 +1942,8 @@ h1 {
         font-size: 20px;
         text-decoration: none;
         border-bottom: 2px solid white;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
     }
 }
         /* ===/ /=== */
