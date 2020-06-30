@@ -1831,16 +1831,16 @@ h1 {
         background: none;
     }
     
-    div[id^=calendar] .btn-green-apple {
+    div[id^=Calendar] .btn-green-apple {
         float: none;
         font-size: 18px;
     }
 
-    div[id^=calendar] .jalendar-extended {
+    div[id^=Calendar] .jalendar-extended {
         margin-bottom: 70px;
     }
 
-    div[id^=calendar] .align-self-end {
+    div[id^=Calendar] .align-self-end {
         margin: 30px 0;
         text-align: center;
     }
