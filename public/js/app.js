@@ -44980,7 +44980,7 @@ var render = function() {
             [
               _c(
                 "a",
-                { staticClass: "btn btn-info mr-3", attrs: { href: "#" } },
+                { staticClass: "btn btn-info mr-3", attrs: { href: "/admin" } },
                 [_vm._v("Regresar")]
               ),
               _vm._v(" "),
