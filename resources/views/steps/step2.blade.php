@@ -159,7 +159,9 @@
                             <div class="form-group">
                                 <textarea class="form-control input-custom" name="extra_information" placeholder="Información extra que nos quieras contar">{{old('question_9')}}</textarea>
                             </div>
-                            <button type="submit" class="btn-green-apple"><span class="d-none d-lg-block">Enviar y continuar<span> <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
+                            <button type="submit" class="btn-green-apple">
+                                <span class="d-none d-lg-block">Enviar y continuar</span>
+                                    <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
                         </div>
                     </form>
                 </div>
