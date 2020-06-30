@@ -110,7 +110,9 @@
         </div>
     </div>
     <div class="container text-center">
-        <button type="submit" class="btn-green-apple handbook-btn">Descargar</button>
+        <a href="#mas-info">
+            <button type="submit" class="btn-green-apple handbook-btn">Descargar</button>
+        </a>
     </div>
 </section>
 
@@ -319,7 +321,7 @@
 
 
 <footer class="footer-landing">
-    <div class="container d-flex">
+    <div class="container d-lg-flex">
         <img src="{{ asset('site_assets/img/logo-white.svg') }}" alt="Logo Eco Inclusión">
         <p>Puedes consultar sobre los proyectos de la Fundación accediendo al <a href="">Banco de Causas</a> de nuestra web y así conocer nuestro trabajo en territorio.</p>
     </div>
