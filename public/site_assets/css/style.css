@@ -1027,6 +1027,25 @@ h1 {
     border: 2px solid #F44336;
 }
 
+.color-orange{color: #FAA73F!important;}
+
+#page-error .color-orange.box .icon-banner {
+
+    background: #FAA73F;
+
+}
+
+#page-error .color-orange.box h1 {
+    font-size: 35px;
+    color: #FAA73F;
+}
+
+#page-error .color-orange.box hr {
+    border: 2px solid #FAA73F;
+}
+
+
+
 #page-error .box .btn-green-apple {
     float: none;
     margin-top: 20px;
@@ -1441,6 +1460,35 @@ h1 {
 
 /* === Landing Mobile === */
 @media (max-width: 600px) {
+    #page-error .box, #login .box {
+
+        margin-top: 130px;
+    }
+    .banner .icon-banner {
+        width: 100px;
+        height: 100px;
+        padding: 22px;
+        display: block;
+        text-align: center;
+        border-radius: 100%;
+        margin: -128px auto 0;
+        background: #00B49D;
+    }
+    .banner .icon-banner img{
+        width: 50px;
+        height: auto;
+       
+    }
+    #finalized-payment .icon-banner {
+        padding: 20px 0px;
+    }
+    .banner .back {
+        width: 150px;
+        height: 150px;
+        border-radius: 100%;
+        background: white;
+        margin: -190px auto 0;
+    }
     .btn-green {
         line-break: anywhere;
         display: block;
