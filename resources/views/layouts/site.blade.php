@@ -108,7 +108,7 @@
   ></script>
 
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <script  src="{{asset('site_')}}assets/js/custom.js"></script>
+  <script  src="{{asset('/')}}assets/js/custom.js"></script>
     
   @include('sweet::alert')
     
