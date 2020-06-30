@@ -44079,9 +44079,15 @@ var render = function() {
             })
           ]),
           _vm._v(" "),
-          _vm._m(2),
+          _c("div", { staticClass: "col-12 col-sm-6 col-md-2" }, [
+            _c("label", { attrs: { for: "cupon_descuento" } }, [
+              _vm._v("Cupón Descuento")
+            ]),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.cupon))])
+          ]),
           _vm._v(" "),
-          _vm._m(3)
+          _vm._m(2)
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "row" }, [
@@ -44919,26 +44925,13 @@ var staticRenderFns = [
           "col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end"
       },
       [
-        _c("a", { staticClass: "btn btn-success", attrs: { href: "#" } }, [
-          _vm._v("Regresar")
-        ])
+        _c(
+          "a",
+          { staticClass: "btn btn-success", attrs: { href: "/admin/users" } },
+          [_vm._v("Regresar")]
+        )
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-2" }, [
-      _c("label", { attrs: { for: "cupon_descuento" } }, [
-        _vm._v("Cupón Descuento")
-      ]),
-      _vm._v(" "),
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", name: "cupon_descuento", id: "cupon_descuento" }
-      })
-    ])
   },
   function() {
     var _vm = this
@@ -45099,7 +45092,13 @@ var render = function() {
                 })
               ]),
               _vm._v(" "),
-              _vm._m(1, true),
+              _c("div", { staticClass: "col-12 col-sm-6 col-md-2" }, [
+                _c("label", { attrs: { for: "cantidad_aplicada" } }, [
+                  _vm._v("Cantidad Aplicada")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(promo.quantity_applied))])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -45157,7 +45156,7 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
-              _vm._m(2, true)
+              _vm._m(1, true)
             ])
           }),
           _vm._v(" "),
@@ -45208,18 +45207,6 @@ var staticRenderFns = [
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-12 col-sm-6 col-md-2" }, [
-      _c("label", { attrs: { for: "cantidad_aplicada" } }, [
-        _vm._v("Cantidad Aplicada")
-      ]),
-      _vm._v(" "),
-      _c("p", [_vm._v("10")])
-    ])
   },
   function() {
     var _vm = this

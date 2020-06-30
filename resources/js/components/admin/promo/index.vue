@@ -42,7 +42,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-2">
           <label for="cantidad_aplicada">Cantidad Aplicada</label>
-          <p>10</p>
+          <p>{{promo.quantity_applied}}</p>
           <!-- <input
             v-model="promo.quantity_applied"
             class="form-control"
