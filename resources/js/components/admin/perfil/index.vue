@@ -6,7 +6,9 @@
           <div class="icon">
             <span class="icon-user" style="font-size: 3rem;"></span>
           </div>
-          <h4 class="card-title">Perfil {{ data.inforPerfil.nombre+' '+data.inforPerfil.apellido }}</h4>
+          <h4
+            class="card-title"
+          >perfil de: {{ data.inforPerfil.nombre+' '+data.inforPerfil.apellido }}</h4>
         </div>
         <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
           <a href="/admin/users" class="btn btn-success">Regresar</a>

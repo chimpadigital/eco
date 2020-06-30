@@ -43703,7 +43703,7 @@ var render = function() {
               _vm._v(" "),
               _c("h4", { staticClass: "card-title" }, [
                 _vm._v(
-                  "Perfil " +
+                  "perfil de: " +
                     _vm._s(
                       _vm.data.inforPerfil.nombre +
                         " " +
@@ -45478,7 +45478,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("span", { staticClass: "icon-attach_money" }),
+          _c("span", { staticClass: "icon-coin-dollar" }),
           _vm._v("\n                        Descuento\n                      ")
         ]),
         _vm._v(" "),
