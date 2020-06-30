@@ -87,11 +87,12 @@ class DownloadControlController extends Controller
 
         switch ($id) {
             case 1:
-                $this->downloadManual($this->userAuth->email);
-
+                
                 $this->downloadControl->update([
                     'element_1'=>true,
                 ]);
+
+                $this->downloadManual($this->userAuth->email);
                 
                 return response()->json([],200);
                 break;

@@ -36,9 +36,9 @@ trait SendEmailsTrait
         
     }
 
-    public function finishedSessions()
+    public function finishedSessions($email)
     {
-        Mail::to('devsignhost@gmail.com')->send(new FinishedSessions);
+        Mail::to($email)->send(new FinishedSessions);
         return 'success';
     }
 
