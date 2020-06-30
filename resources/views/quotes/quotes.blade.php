@@ -2,6 +2,7 @@
     
 
   @section('content')
+    @include('steps.modal')
     @include('steps.step_bar')
     <div class="container-fluid">
       <div class="row">
@@ -146,6 +147,7 @@
     $('.step2').addClass("visited");
     $('.step3').addClass("visited");
     $('.step4').addClass("active");
+    $('.paso-mobile').text("Sesiones de asistencia");
   
       </script>
       

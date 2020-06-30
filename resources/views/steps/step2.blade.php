@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+@include('steps.modal')
 @include('steps.step_bar')
 
 <div class="container-fluid">
@@ -175,6 +175,7 @@
     
     $('.step1').addClass("visited");
     $('.step2').addClass("active");
+    $('.paso-mobile').text("Perfil replicado");
 </script>
     
 @endsection

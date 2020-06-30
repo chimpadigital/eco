@@ -3,6 +3,7 @@
 @section('content')
 
 @include('steps.step_bar')
+<section id="pago-manual">
 
 <div class="container">
   <div class="row">
@@ -77,7 +78,7 @@
   </div>
 </div>
  
-  
+</section>
 @endsection
 
 @section('scripts')
@@ -98,6 +99,7 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
     const URL_DICOUNT_CODE = "{{ route('get.promo.code') }}";
 
     $('.step1').addClass("active");
+    $('.paso-mobile').text("Pago del manual");
     
 
 </script>

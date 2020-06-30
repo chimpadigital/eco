@@ -2,7 +2,7 @@
 
 
 @section('content')
-
+@include('steps.modal')
 @include('steps.step_bar')
 
 <div class="container">
@@ -207,6 +207,7 @@
 
     $('.step1').addClass("visited");
     $('.step2').addClass("visited");
+    $('.paso-mobile').text("Descarga de manual");
     $('.step3').addClass("active");
 
     $('#a1').click(function() {

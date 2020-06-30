@@ -53,7 +53,7 @@
         </div>
         <div class="col-12">
             <div class="paso-mobile">
-                Pago del manual
+                
             </div>
         </div>
     </div>
