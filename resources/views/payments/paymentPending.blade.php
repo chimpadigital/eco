@@ -9,7 +9,7 @@
                 <div class="box color-orange">
                     <div class="back"></div>
                     <div class="icon-banner">
-                        <img src="{{assset('site_')}}assets/img/pendiente.svg" alt="">
+                        <img src="{{asset('site_')}}assets/img/pendiente.svg" alt="">
                     </div>
                     <h1>ESTAMOS PROCESANDO EL PAGO</h1>
                     <hr>
