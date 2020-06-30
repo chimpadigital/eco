@@ -79,6 +79,7 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     
     
         Route::get('/success','PaymentMethodController@paymentSuccess')->name('payment.success');
+        Route::get('/pending','PaymentMethodController@paymentPending')->name('payment.pending');
         Route::get('/cancel','PaymentMethodController@paymentCancel')->name('payment.cancel');
 
     });
