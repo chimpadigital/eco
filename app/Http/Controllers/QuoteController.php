@@ -8,9 +8,12 @@ use Carbon\Carbon;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 use Auth;
+use App\Traits\SendEmailsTrait;
 
 class QuoteController extends Controller
 {
+    use SendEmailsTrait;
+
     public function index()
     {
         $user = auth()->user();
@@ -164,8 +167,9 @@ class QuoteController extends Controller
         
         if($sessions){
             if($sessions->first_session != null && $sessions->second_session != null){
-                
-                 return response()->json(['finish' => true]);
+                $user = Auth::user();
+                $this->sesionesReserved($user->email,$sessions);
+                 return response()->json(['finish' => false]);
             }else{
              return response()->json(['finish' => false]);
 
