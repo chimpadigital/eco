@@ -56,6 +56,7 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
+                                    <label for="date" class="d-lg-none" style="margin-top:30px; margin-bottom:12px">Fecha de nacimiento</label>
                                     <input type="date" class="form-control input-custom" name="birth_date" value="{{ old('birth_date') }}" placeholder="Fecha de nacimiento" required>
                                 </div>
                             </div>
