@@ -323,7 +323,7 @@
 <footer class="footer-landing">
     <div class="container d-lg-flex">
         <img src="{{ asset('site_assets/img/logo-white.svg') }}" alt="Logo Eco Inclusión">
-        <p>Puedes consultar sobre los proyectos de la Fundación accediendo al <a href="">Banco de Causas</a> de nuestra web y así conocer nuestro trabajo en territorio.</p>
+        <p>Puedes consultar sobre los proyectos de la Fundación accediendo al <a href="https://ecoinclusion.org/causas/" target="_blank">Banco de Causas</a> de nuestra web y así conocer nuestro trabajo en territorio.</p>
     </div>
 </footer>
 @endsection
