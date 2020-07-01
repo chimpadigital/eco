@@ -8,7 +8,7 @@
         </div>
         
         <div class="col-lg-4">
-
+            <img src="{{ asset('site_') }}assets/img/logo.svg" width="150" alt="logo">
         </div>
         <div class="col-lg-8">
             <div class="navbar-collapse collapse justify-content-lg-end" id="navbar-navigation">
