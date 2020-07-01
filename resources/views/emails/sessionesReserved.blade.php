@@ -174,7 +174,8 @@ body .full-size img{width:100%; height:auto;}
 																</tr>
 																<tr>
 																	<td valign="middle" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 20px; color: #333; line-height: 30px;" class="fullCenter">
-																		20/07/2020 10:00 am 
+																		{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$first_session)->format('d-m-Y H:i A')}}
+																		
 																	</td>
 																	
 																</tr>
@@ -205,7 +206,8 @@ body .full-size img{width:100%; height:auto;}
 																</tr>
 																<tr>
 																	<td valign="middle" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 20px; color: #333; line-height: 30px;" class="fullCenter">
-																		20/07/2020 10:00 am 
+																		{{Carbon\Carbon::createFromFormat('Y-m-d H:i:s',$second_session)->format('d-m-Y H:i A')}}
+
 																	</td>
 																	
 																</tr>
