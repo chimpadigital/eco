@@ -91,9 +91,7 @@ class User extends Authenticatable
 
     public function scopePhone($q,$value){
         if(isset($value)){
-            $q->whereHas('userInformation',function($query) use ($value){
-                return $query->where('phone','LIKE','%'.$value.'%');
-            });
+            $q->where('phone','LIKE','%'.$value.'%');
         }
 
     }

@@ -18,10 +18,8 @@ class AuthController extends Controller
          
         public function __construct() 
          { 
-             $this->middleware('guest')->except('logout'); 
-             $this->middleware('guest:admin')->except('login'); 
-             $this->middleware('guest:admin')->except('logout'); 
-            //  $this->middleware('guest:blogger')->except('logout'); 
+             $this->middleware('auth:admin')->except(['showAdminLoginForm','adminLogin','logout']); 
+      
         } 
         
         public function showAdminLoginForm() 
@@ -41,6 +39,8 @@ class AuthController extends Controller
 
         public function logout(Request $request)
         {
+            Auth::guard('admin')->logout();
+            // return $request->all();
             $this->guard('admin')->logout();
     
             $request->session()->invalidate();
