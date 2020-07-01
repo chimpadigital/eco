@@ -169,7 +169,7 @@ class QuoteController extends Controller
             if($sessions->first_session != null && $sessions->second_session != null){
                 $user = Auth::user();
                 $this->sesionesReserved($user->email,$sessions);
-                 return response()->json(['finish' => false]);
+                 return response()->json(['finish' => true]);
             }else{
              return response()->json(['finish' => false]);
 
