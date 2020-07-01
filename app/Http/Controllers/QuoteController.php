@@ -20,6 +20,7 @@ class QuoteController extends Controller
     public function consultarFecha(Request $request)
     {
         
+        
         // return response()->json($fecha->format('Y-m-d H:i:s'));
         $horarios_disponibles = collect();
         // $quotes = Quote;
@@ -49,6 +50,21 @@ class QuoteController extends Controller
            );
 
        if($request->date){
+            $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->date);
+            $user = Auth::user();
+            $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
+            if($limiteFecha == 30){
+                return response()->json([
+                    'error' => true,
+                    'errorText' => 'La reserva no puede ser mayor a los 30 Días'
+                ]);
+            }
+            if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
+                return response()->json([
+                    'error' => true,
+                    'errorText' => 'No puedes reservar este Dia'
+                ]);
+            }
         $consulta_fecha = $request->date;
         foreach($horarios as $key  => $horario){
             
@@ -65,8 +81,26 @@ class QuoteController extends Controller
             }
             
         }
-        return response()->json($horarios_disponibles);
+        return response()->json([
+            'horarios' => $horarios_disponibles,
+            'error' => false,
+        ]);
        }else{
+        $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->second_date);
+        $user = Auth::user();
+        $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
+        if($limiteFecha == 30){
+            return response()->json([
+                'error' => true,
+                'errorText' => 'La reserva no puede ser mayor a los 30 Días'
+            ]);
+        }
+        if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
+            return response()->json([
+                'error' => true,
+                'errorText' => 'No puedes reservar este Dia'
+            ]);
+        }
         foreach($horarios as $key  => $horario){
         $consulta_fecha = $request->second_date;
             
@@ -82,7 +116,10 @@ class QuoteController extends Controller
                 $horarios_disponibles->push(['horario' => $horario['horario'],'hora' => $horario['hora']]);
             }
         }
-        return response()->json($horarios_disponibles);
+        return response()->json([
+            'horarios' => $horarios_disponibles,
+            'error' => false,
+        ]);
        }
 
         
