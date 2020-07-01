@@ -13,6 +13,11 @@ class QuoteController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
+
+        if(!$user->can('VerifyQuote',Quote::class)){
+            return redirect()->route('steps');
+        }
         $reservas = Quote::all();
         return View('quotes.quotes',compact('reservas'));
     }
@@ -91,6 +96,11 @@ class QuoteController extends Controller
     
     public function reservarFecha(Request $request)
     {
+        $user = auth()->user();
+        
+        if(!$user->can('VerifyQuote',Quote::class)){
+            return response()->json("access denied",403);
+        }
         $userAuth =  Auth::user();
 
         if ($request->fecha) {

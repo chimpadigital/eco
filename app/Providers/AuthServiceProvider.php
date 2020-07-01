@@ -16,6 +16,7 @@ class AuthServiceProvider extends ServiceProvider
         'App\Models\PaymentMethod' => 'App\Policies\PaymentPolicy',
         'App\Models\UserInformation' => 'App\Policies\UserInformationPolicy',
         'App\Models\DownloadControl' => 'App\Policies\DownloadControlPolicy',
+        'App\Models\Quote' => 'App\Policies\QuotesPolicy',
     ];
 
     /**

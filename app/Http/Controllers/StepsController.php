@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Quote;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
@@ -30,8 +31,10 @@ class StepsController extends Controller
 
             return $this->step3();
         
-        } else { 
+        } elseif($user->can('VerifyQuote',Quote::class)) { 
             return redirect()->route('quotes');
+        } else{
+            return redirect('/finalizar');
         }
 
     }
