@@ -164,7 +164,7 @@ class UsersController extends Controller
                 'nombreOgn' =>$user->userInformation == null ? '': $user->userInformation->name_ogn,
                 'paginaWeb' =>$user->userInformation == null ? '': $user->userInformation->web_page,
                 'aliadosParaImplementar' =>$user->userInformation == null ? '': $user->userInformation->allies_to_implement,
-                'ImplementacionAnt' =>$user->userInformation == null ? '': $user->userInformation->implementation_ant,
+                'ImplementacionAnt' =>$user->userInformation == null ? '': boolval($user->userInformation->implementation_ant),
                 'ImplementacionName' =>$user->userInformation == null ? '': $user->userInformation->implementation_name,
             ],
             'cladeDeInpacto' =>$user->userInformation == null ? '': $user->userInformation->impact_class,
