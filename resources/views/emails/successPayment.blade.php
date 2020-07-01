@@ -189,7 +189,7 @@ body .full-size img{width:100%; height:auto;}
 												<table border="0" cellpadding="0" cellspacing="0" align="center">
 													<tbody><tr>
 														<td align="center" height="38" bgcolor="#80C342" style="border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; padding-left: 25px; padding-right: 25px; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; color: #ffffff; background-color: #80C342; font-size: 14px;">
-															<a href="https://eco.chimpancedigital.com.ar/login" target="_blank" style="color: #ffffff; font-size: 14px; text-decoration: none; line-height: 34px; width: 100%;">Continuar</a>
+															<a href="https://eco.chimpancedigital.com.ar/steps" target="_blank" style="color: #ffffff; font-size: 14px; text-decoration: none; line-height: 34px; width: 100%;">Continuar</a>
 														</td>
 													</tr>
 												</tbody></table>
