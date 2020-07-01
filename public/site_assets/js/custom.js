@@ -33,7 +33,7 @@ $(function() {
         dayColor: "#515150",
         titleColor: "#0097D6",
         weekColor: "#00B49D",
-        todayColor: "#fff",
+        todayColor: "#333",
         done: function() {
             var fechaSelect = $("#Calendar-1 input.data1").val();
             fecha = parseDate(fechaSelect);
@@ -53,7 +53,7 @@ $(function() {
         dayColor: "#515150",
         titleColor: "#0097D6",
         weekColor: "#00B49D",
-        todayColor: "#fff",
+        todayColor: "#333",
         done: function() {
             var fechaSelect = $("#Calendar-2 input.data1").val();
             fecha = parseDate(fechaSelect);

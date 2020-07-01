@@ -53,7 +53,7 @@
     
                             @else
     
-                                <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">Descargar Manuales
+                                <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">Descargar Manual
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             

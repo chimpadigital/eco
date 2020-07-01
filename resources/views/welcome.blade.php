@@ -64,7 +64,7 @@
                                     <div class="block-icon">
                                         <img src="{{ asset('site_') }}assets/img/icon-feather-book-blue.svg">
                                     </div>
-                                    <p>Documento del <br>
+                                    <p>Documento del Manual<br>
                                         completo</p>
                                 </div>
                             </div>
