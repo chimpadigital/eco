@@ -45342,7 +45342,11 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Buscar")]
+                        [
+                          _vm._v(
+                            "\n                                            Buscar\n                                        "
+                          )
+                        ]
                       )
                     ])
                   ])
@@ -45374,7 +45378,13 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.primerSesion))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.segundaSesion))]),
+                          _c("td", [
+                            _vm._v(
+                              "\n                                                " +
+                                _vm._s(item.segundaSesion) +
+                                "\n                                            "
+                            )
+                          ]),
                           _vm._v(" "),
                           _c("td", { staticClass: "d-flex flex-column" }, [
                             _c(
@@ -45391,33 +45401,10 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                          Ver perfil\n                          "
+                                  "\n                                                    Ver perfil\n                                                    "
                                 ),
                                 _c("i", {
                                   staticClass: "icon-eye",
-                                  attrs: { "aria-hidden": "true" }
-                                })
-                              ]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "a",
-                              {
-                                staticClass: "btn btn-danger my-1",
-                                attrs: { href: "#" },
-                                on: {
-                                  click: function($event) {
-                                    $event.preventDefault()
-                                    return _vm.eliminarUsuario(item)
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                          Borrar\n                          "
-                                ),
-                                _c("i", {
-                                  staticClass: "icon-bin",
                                   attrs: { "aria-hidden": "true" }
                                 })
                               ]
@@ -45454,45 +45441,57 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [
           _c("span", { staticClass: "icon-user" }),
-          _vm._v("\n                        Nombre\n                      ")
+          _vm._v(
+            "\n                                                Nombre\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-user" }),
-          _vm._v("\n                        Apellido\n                      ")
+          _vm._v(
+            "\n                                                Apellido\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-envelop" }),
-          _vm._v("\n                        Email\n                      ")
+          _vm._v(
+            "\n                                                Email\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-phone" }),
-          _vm._v("\n                        Telefono\n                      ")
+          _vm._v(
+            "\n                                                Telefono\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-earth" }),
-          _vm._v("\n                        Pais\n                      ")
+          _vm._v(
+            "\n                                                Pais\n                                            "
+          )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-coin-dollar" }),
-          _vm._v("\n                        Descuento\n                      ")
-        ]),
-        _vm._v(" "),
-        _c("th", [
-          _c("span", { staticClass: "icon-calendar" }),
           _vm._v(
-            "\n                        Primer Sesion\n                      "
+            "\n                                                Descuento\n                                            "
           )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-calendar" }),
           _vm._v(
-            "\n                        Segunda Sesion\n                      "
+            "\n                                                Primer Sesion\n                                            "
+          )
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("span", { staticClass: "icon-calendar" }),
+          _vm._v(
+            "\n                                                Segunda Sesion\n                                            "
           )
         ]),
         _vm._v(" "),
