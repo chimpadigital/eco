@@ -11,9 +11,9 @@
                     <div class="icon-banner">
                         <img src="{{asset('site_')}}assets/img/pendiente.svg" alt="">
                     </div>
-                    <h1>ESTAMOS PROCESANDO EL PAGO</h1>
+                    <h1>@lang('payment.payment_pending.title_1')</h1>
                     <hr>
-                    <p>Una vez aprobado recibirá un mail para continuar con el proceso de descarga del manual</p>
+                    <p>@lang('payment.payment_pending.p_1')</p>
                     
                 </div>
             </div>

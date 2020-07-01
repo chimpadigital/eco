@@ -4,84 +4,59 @@
 
 <section id="terms-of-use">
     <div class="container">
-        <h1>CONDICIONES GENERALES</h1>
-        <p><strong>Para acceder al Servicio del Manual de replicación de Fundación Ecoinclusión, declaras ser mayor de edad y tener capacidad legal de obrar de acuerdo a tu ley nacional.</strong></p>
-        <p>El Usuario deberá leer atentamente los siguientes términos y condiciones, antes de adquirir el manual.</p>
+        <h1>@lang('terms.title_1')</h1>
+        <p><strong>@lang('terms.p_1')</strong></p>
+        <p>@lang('terms.p_2')</p>
         
-        <h2>TÉRMINOS Y CONDICIONES</h2>
-        <p>El Usuario al acceder, navegar en este sitio web y/o descargar el “manual de replicación” (en adelante el “manual”), declara entender y aceptar los términos y condiciones que aquí se acuerdan. 
-            La adquisición del manual se realiza en los términos y alcances de las cláusulas desarrolladas en el presente acuerdo:</p>
+        <h2>@lang('terms.title_2')</h2>
+        <p>@lang('terms.p_3')</p>
 
         
         <ol>
-            <li><h2>Uso del manual</h2>
+            <li><h2>@lang('terms.title_3')</h2>
                 <ol>
-                    <li>La adquisición del manual solo otorga el derecho al Usuario a utilizarlo para la fabricación de ecoladrillos ecológicos con fines de satisfacción de una necesidad social, 
-                        sin intenciones de lucro ni de uso personal. El usuario reconoce y declara que el manual es de propiedad exclusiva de Fundación Ecoinclusión. Queda prohibido al usuario: 
-                        cederlo, ceder su posición contractual, reproducirlo, exhibirlo públicamente, publicarlo por cualquier medio, enajenarlo o realizar cualquier acto jurídico cuyo objeto sea 
-                        el manual, a cualquier título. El usuario NO adquiere el derecho a usar ni exhibir marca, logo y/o demás insignias de ECOINCLUSION. Estas se encuentran registradas y 
-                        protegidas por la normativa aplicable en materia de propiedad intelectual.
+                    <li>@lang('terms.p_4')
                     </li>
-                    <li>En el manual se detallan los procedimientos que integran el proceso de producción del ecoladrillo y se anexa la patente de invención en el cual se basa.
-                        El usuario deberá leer íntegramente este último documento previo a la producción de los ecoladrillos
+                    <li>@lang('terms.p_5')
                     </li>
-                    <li>El manual de Fundación Ecoinclusión fue realizado en base a la normativa legal Argentina. El Usuario debe, previo a la fabricación y utilización del ecoladrillo, 
-                        asegurarse de que este cumpla con la normativa vigente en su país. Asimismo, deberá tomar todos los recaudos en lo relativo a seguridad e higiene conforme a la normativa vigente en su país.
+                    <li>@lang('terms.p_6')
                     </li>
                 </ol>
             </li>
-            <li><h2>Uso de la página web y proceso de descarga</h2>
+            <li><h2>@lang('terms.title_4')</h2>
                 <ol>
-                    <li>El acceso, navegación y descarga del manual, requieren el uso de un hardware, software y acceso a Internet acorde a dichos procesos. El Usuario deberá contar con 
-                        los mismos, como así también con herramientas de prevención de riesgos.
+                    <li>@lang('terms.p_7')
                     </li>
-                    <li>El Usuario usa este sitio bajo su entera y exclusiva responsabilidad, a sabiendas que la Fundación Ecoinclusión bajo ninguna circunstancia, ni siquiera por
-                         negligencia, será responsable de pérdidas, daños, u obligaciones ni gastos que se pretendan, ocasionados o sufridos como resultado del uso de este Sitio, con 
-                         inclusión, sin que la siguiente enumeración sea taxativa, de cualquier falla, error, omisión, interrupción o demora con respecto a tal uso.
+                    <li>@lang('terms.p_8')
                     </li>
                 </ol>
             </li>
-            <li><h2>Responsabilidad</h2>
+            <li><h2>@lang('terms.title_5')</h2>
                 <ol>
-                    <li>Fundación Ecoinclusión NO es responsable, bajo ninguna circunstancia, por los daños que pudiere ocasionar el uso del ecoladrillo, tanto en forma directa, como indirecta,
-                         ni por las discrepancias entre lo establecido en el manual y el producto obtenido,  ni por los daños que pudieren acaecer en su proceso de producción tanto sobre el propio 
-                         usuario o sus bienes, o sobre terceros o sus bienes, ni por las sanciones que la autoridad competente en el territorio en que lo desarrolle el usuario pudiere aplicarle con 
-                         motivo del mismo, ni por acciones de evicción, ni por cualquier otro hecho que tenga como causa la utilización del manual, la producción del ecoladrillo o su utilización.
+                    <li>@lang('terms.p_9')
                     </li>
-                    <li>Fundación Ecoinclusión se reserva el derecho de alterar, suspender, remover o deshabilitar el acceso a cualquier contenido u otros materiales que sean ofrecidos por el 
-                        Servicio del Manual, en cualquier momento, sin previo aviso. En ningún caso, Fundación Ecoinclusión será responsable por estas acciones. Fundación Ecoinclusión puede, 
-                        igualmente, imponer límites a la utilización o al acceso a determinadas funcionalidades o partes del servicio, en cualquier caso y sin previo aviso o responsabilidad.
+                    <li>@lang('terms.p_10')
                     </li>
-                    <li>El usuario es responsable por los daños ocasionados por el incumplimiento de los presentes términos y condiciones, incluyendo, especialmente, los daños causados 
-                        por el uso indebido del manual o de lo que se produzca con él.
+                    <li>@lang('terms.p_11')
                     </li>
                 </ol>
             </li>
-            <li><h2>Protección de datos personales</h2>
+            <li><h2>@lang('terms.title_6')s</h2>
                 <ol>
-                    <li>El Usuario titular de los datos personales proveídos durante la adquisición del Manual, tiene la facultad de ejercer el derecho de acceso a los mismos en forma gratuita a 
-                        intervalos no inferiores a seis meses, salvo que se acredite un interés legítimo al efecto conforme lo establecido en el artículo 14 , inc. 3 de la Ley Argentina N° 25.326.
-                         Asimismo, el titular podrá solicitar el retiro o bloqueo, total o parcial, de su nombre de la base de datos (art. 27 ley 25.326 y Decreto 1558/2001). LA DIRECCIÓN NACIONAL 
-                         DE PROTECCIÓN DE DATOS PERSONALES, Órgano de Control de la Ley Argentina N° 25.326, tiene la atribución de atender las denuncias y reclamos que se interpongan con relación al 
-                         incumplimiento de las normas sobre protección de datos personales.
+                    <li>@lang('terms.p_12')
                     </li>
                 </ol>
             </li>
-            <li><h2>Jurisdicción y derecho aplicable</h2>
+            <li><h2>@lang('terms.title_7')</h2>
                 <ol>
-                    <li>Para dirimir las controversias que pudieren surgir con motivo de la celebración y ejecución del presente contrato, como así también con el acceso y navegación en la página web, 
-                        será de aplicación el derecho privado interno de la República Argentina, excluyendo la aplicación de cualquier otra normativa interna de otros países o internacional, y excluyendo,
-                         además, la aplicación de la normativa interna la República Argentina en materia de consumo.
+                    <li>@lang('terms.p_13')
                     </li>
-                    <li>Los conflictos que surgieran con motivo de la celebración y ejecución del presente contrato, como así también con motivo del acceso y navegación del usuario en la página 
-                        esta página web, se dirimirán exclusivamente en los tribunales del fuero ordinario de la ciudad de Alta Gracia, Provincia de Córdoba, Argentina, renunciando expresamente al fuero
-                         federal de este país y a la competencia que cualquier otro tribunal de otro país pudiere pretender. Por tal razón, el usuario renuncia al derecho a interponer cualquier acción 
-                         judicial en otro tribunal que no sea el ordinario de la ciudad de Alta Gracia, Provincia de Córdoba, Argentina.
+                    <li>@lang('terms.p_14')
                     </li>
                 </ol>
             </li>
         </ol>
-        <a class="btn-blue" href="{{ route('/') }}"><img src="{{asset('site_')}}assets/img/icon-feather-chevron-left.png"> Volver</a>
+        <a class="btn-blue" href="{{ route('/') }}"><img src="{{asset('site_')}}assets/img/icon-feather-chevron-left.png"> @lang('terms.btn')</a>
     </div>
 </section>
     

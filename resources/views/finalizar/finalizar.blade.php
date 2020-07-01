@@ -13,10 +13,8 @@
                     <div class="icon-banner">
                         <img src="assets/img/icon-feather-heart.svg">
                     </div>
-                    <h1>¡TUS SESIONES DE ASISTENCIAS VIRTUALES YA HAN SIDO AGENDADAS CON ÉXITO!</h1>
-                    <p>Desde la fundación te enviamos un correo con las fechas y horarios de cada sesión,
-                        recomendamos utilizar<br> algún recordatorio para ese día, y poner atención especial
-                        con el uso horario de Argentina</p>
+                    <h1>@lang('finalize.title_1')</h1>
+                    <p>@lang('finalize.p_1')</p>
                 </div>
             </div>
         </div>
@@ -27,14 +25,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-center mt-5">
-                        <p>Para nosotros es muy importante que se expanda el proyecto así que<br> muchas gracias por ayudarnos a llevarlo a cabo.</p>
+                        <p>@lang('finalize.p_2')</p>
                     </div>
                     <div class="blue-banner">
-                        <p>En el transcurso del año, te contactaremos nuevamente para que nos cuentes cómo va el 
-                            proyecto, tus logros y qué dificultades te has encontrado en el camino. </p>
+                        <p>@lang('finalize.p_3')</p>
                     </div>
                     <div class=" text-center">
-                        <a href="http://ecoinclusion.org/" class="btn-green">TE INVITAMOS A VER NUESTRO SITIO</a>
+                        <a href="http://ecoinclusion.org/" class="btn-green">@lang('finalize.btn')</a>
                     </div>
                 </div>
             </div>
@@ -51,7 +48,7 @@
     $('.step2').addClass("visited");
     $('.step3').addClass("visited");
     $('.step4').addClass("visited");
-    $('.paso-mobile').text("Sesiones de asistencia");
+    $('.paso-mobile').text("{{ __('layout.nav_bar_steps.step4') }}");
 </script>
     
 @endsection

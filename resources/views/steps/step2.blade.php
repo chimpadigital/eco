@@ -13,7 +13,7 @@
                 <div class="icon-banner">
                     <img src="{{ asset('assets/img/icon-check-pago.svg') }}">
                 </div>
-                <h1>PAGO EXITOSO</h1>
+                <h1>@lang('payment.payment_ok')</h1>
             </div>
         </div>
     </div>
@@ -23,53 +23,52 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="box-meet">
-                    <p>Antes de continuar</p>
-                    <h2>¡Queremos conocerte!</h2>
-                    <p>Para la fundación es muy importante saber quienes son los replicadores </br>
-                        de nuestro proyecto en todo el mundo, por eso queremos conocerte.</p>
+                    <p>@lang('profile.p_1')</p>
+                    <h2>@lang('profile.title_1')</h2>
+                    <p>@lang('profile.p_2')</p>
                 </div>
             </div>
         </div>
         <div class="row justify-content-md-center">
             <div class="col-md-8 mb-5">
                 <div class="form-meet">
-                    <p><img src="{{ asset('site_assets/img/icon-users.svg') }}">Datos Personales</p>
+                    <p><img src="{{ asset('site_assets/img/icon-users.svg') }}">@lang('profile.form_section_1')</p>
                     <form method="POST" action="{{ route('inscription.form') }}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-custom" value="{{ $user->name }}" name="firstname" placeholder="Nombre" required>
+                                    <input type="text" class="form-control input-custom" value="{{ $user->name }}" name="firstname" placeholder="@lang('profile.form.input_1')" required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                    <input type="text" class="form-control input-custom" value="{{ $user->lastname }}" name="lastname" placeholder="Apellido" required>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <input type="email" class="form-control input-custom" name="email" value="{{ $user->email }}" placeholder="Correo Electrónico" value="{{ $user->email }}" readonly>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-12">
-                                <div class="form-group">
-                                    <label for="date" class="d-lg-none" style="margin-top:30px; margin-bottom:12px">Fecha de nacimiento</label>
-                                    <input type="date" class="form-control input-custom" name="birth_date" value="{{ old('birth_date') }}" placeholder="Fecha de nacimiento" required>
+                                    <input type="text" class="form-control input-custom" value="{{ $user->lastname }}" name="lastname" placeholder="@lang('profile.form.input_2')" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-md-6 col-12">
                                 <div class="form-group">
-                                <input type="text" class="form-control input-custom" name="city" placeholder="Ciudad de residencia" value="{{ old('city') ? old('city') : $user->city  }}" required>
+                                    <input type="email" class="form-control input-custom" name="email" value="{{ $user->email }}" placeholder="@lang('profile.form.input_3')" value="{{ $user->email }}" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                    <label for="date" class="d-lg-none" style="margin-top:30px; margin-bottom:12px">@lang('profile.form.input_4')</label>
+                                    <input type="date" class="form-control input-custom" name="birth_date" value="{{ old('birth_date') }}" placeholder="@lang('profile.form.input_4')" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <div class="form-group">
+                                <input type="text" class="form-control input-custom" name="city" placeholder="@lang('profile.form.input_5')" value="{{ old('city') ? old('city') : $user->city  }}" required>
                                 </div>
                             </div>
                             <div class="col-md-6 col-12 mb-4">
                                 <select class="custom-select" name="country_id" required>
-                                    <option selected disabled>País de residencia</option>
+                                    <option selected disabled>@lang('profile.form.input_6')</option>
                                     
                                     @forelse ($countries as $country)
                                     
@@ -83,23 +82,23 @@
                             </div>
                         </div>
                     
-                        <p><img src="{{ asset('site_assets/img/icon-bag.svg') }}">Ocupación</p>
+                        <p><img src="{{ asset('site_assets/img/icon-bag.svg') }}">@lang('profile.form_section_2')</p>
                     
                         <div class="form-group mb-4">
                             <select class="custom-select" name="occupation">
-                                <option selected>Elegir opción</option>
-                                <option value="estudiante">Estudiante</option>
-                                <option value="emprendedor">Emprendedor</option>
-                                <option value="profesional autónomo">Profesional autónomo</option>
-                                <option value="docente">Docente</option>
-                                <option value="representante de una organización">Representante de una organización</option>
-                                <option value="miembro de una empresa">Miembro de una empresa</option>
-                                <option value="miembro del estado">Miembro del estado</option>
-                                <option value="otro (s)">otro (s)</option>
+                                <option selected>@lang('profile.form.input_7.option0')</option>
+                                <option value="estudiante">@lang('profile.form.input_7.option1')</option>
+                                <option value="emprendedor">@lang('profile.form.input_7.option2')</option>
+                                <option value="profesional autónomo">@lang('profile.form.input_7.option3')</option>
+                                <option value="docente">@lang('profile.form.input_7.option4')</option>
+                                <option value="representante de una organización">@lang('profile.form.input_7.option5')</option>
+                                <option value="miembro de una empresa">@lang('profile.form.input_7.option6')</option>
+                                <option value="miembro del estado">@lang('profile.form.input_7.option7')</option>
+                                <option value="otro (s)">@lang('profile.form.input_7.option8')</option>
                             </select>
                         </div>
                     
-                        <p><img src="{{ asset("site_assets/img/icon-cursor.svg") }}">Redes sociales (opcional)</p>
+                        <p><img src="{{ asset("site_assets/img/icon-cursor.svg") }}">@lang('profile.form_section_3')</p>
                 
                         <div class="form-group">
                             <input type="text" class="form-control input-custom" name="facebook" value="{{ old('facebook') }}" placeholder="Facebook">
@@ -111,57 +110,57 @@
                             <input type="text" class="form-control input-custom" name="instagram" value="{{ old('instagram') }}" placeholder="Instagram">
                         </div>
                         <div class="form-group mb-5">
-                            <input type="text" class="form-control input-custom" name="others" value="{{ old('others') }}" placeholder="Otras">
+                            <input type="text" class="form-control input-custom" name="others" value="{{ old('others') }}" placeholder="@lang('profile.form.input_11')">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control input-custom" name="motivation" placeholder="¿Por qué estás interesado en fabricar eco-ladrillos? ¿Cuál es tu motivación?">{{ old('question1') }}</textarea>
+                            <textarea class="form-control input-custom" name="motivation" placeholder="@lang('profile.form.input_12')">{{ old('question1') }}</textarea>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control input-custom" name="did_you_know_foundation" placeholder="¿Ya conocías a la fundación previamente?">{{ old('question_2') }}</textarea>
+                            <textarea class="form-control input-custom" name="did_you_know_foundation" placeholder="@lang('profile.form.input_13')">{{ old('question_2') }}</textarea>
                         </div>
 
                         <div class="center-mobile">
 
-                            <small>¿Perteneces a alguna asociación, ONG, empresa o entidad estatal?</small>
+                            <small>@lang('profile.form.input_14')</small>
                             
                             <br>
 
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="ong" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Sí</label>
+                                <label class="form-check-label" for="inlineRadio1">@lang('profile.form.yes')</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="ong" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">No</label>
+                                <label class="form-check-label" for="inlineRadio2">@lang('profile.form.no')</label>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control input-custom" name="name_ogn" value="{{old('name_ogn')}}" placeholder="En caso afirmativo ¿Cuál?">
+                                <input type="text" class="form-control input-custom" name="name_ogn" value="{{old('name_ogn')}}" placeholder="@lang('profile.form.input_15')">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control input-custom" name="web_page" value="{{old('web_page')}}" placeholder="¿Tiene página web?">
+                                <input type="text" class="form-control input-custom" name="web_page" value="{{old('web_page')}}" placeholder="@lang('profile.form.input_16')">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom"  name="allies_to_implement" placeholder="Para implementar este proyecto ¿Tienes aliados?  (Organización, comunidad, empresa, grupo de interés, etc)">{{old('allies_to_implement')}}</textarea>
+                                <textarea class="form-control input-custom"  name="allies_to_implement" placeholder="@lang('profile.form.input_17')">{{old('allies_to_implement')}}</textarea>
                             </div>
                 
-                            <small>¿Con anterioridad ya has implementado algún proyecto en tu comunidad?</small>
+                            <small>@lang('profile.form.input_18')</small>
                             <br>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="implementation_ant" id="inlineRadio1" value="option1">
-                                <label class="form-check-label" for="inlineRadio1">Sí</label>
+                                <label class="form-check-label" for="inlineRadio1">@lang('profile.form.yes')</label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="radio" name="implementation_ant" id="inlineRadio2" value="option2">
-                                <label class="form-check-label" for="inlineRadio2">No</label>
+                                <label class="form-check-label" for="inlineRadio2">@lang('profile.form.no')</label>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom"  name="impact_class" placeholder="¿De qué tipo? ¿Qué clase de impacto tuvo?">{{old('question_8')}}</textarea>
+                                <textarea class="form-control input-custom"  name="impact_class" placeholder="@lang('profile.form.input_19')">{{old('question_8')}}</textarea>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom" name="extra_information" placeholder="Información extra que nos quieras contar">{{old('question_9')}}</textarea>
+                                <textarea class="form-control input-custom" name="extra_information" placeholder="@lang('profile.form.input_20')">{{old('question_9')}}</textarea>
                             </div>
                             <button type="submit" class="btn-green-apple">
-                                <span class="d-none d-lg-block">Enviar y continuar</span>
+                                <span class="d-none d-lg-block">@lang('profile.form.btn')</span>
                                     <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
                         </div>
                     </form>
@@ -181,7 +180,7 @@
     
     $('.step1').addClass("visited");
     $('.step2').addClass("active");
-    $('.paso-mobile').text("Perfil replicado");
+    $('.paso-mobile').text("{{ __('layout.nav_bar_steps.step2') }}");
 </script>
     
 @endsection

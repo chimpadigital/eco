@@ -29,7 +29,7 @@ $(function() {
     $("#Calendar-1").jalendar({
         type: "selector",
         color: "#FBF9F9",
-        lang: "ES",
+        lang: document.documentElement.lang,
         sundayStart: true,
         dayWithZero: false,
         dayColor: "#515150",
@@ -52,7 +52,7 @@ $(function() {
     $("#Calendar-2").jalendar({
         type: "selector",
         color: "#FBF9F9",
-        lang: "ES",
+        lang: document.documentElement.lang,
         sundayStart: true,
         dayWithZero: false,
         dayColor: "#515150",

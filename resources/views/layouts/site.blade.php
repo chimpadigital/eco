@@ -42,7 +42,7 @@
                             <a class="nav-link" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
-                                Cerrar sesión
+                                @lang('layout.nav_bar.close_session')
                                 <img src="{{ asset('site_') }}assets/img/icon-open-account-login-green.svg">
                             </a>
 
@@ -54,14 +54,14 @@
                         @endauth
                         @guest
                             <li class="nav-item active landing-active">
-                                <a class="nav-link" href="{{ route('login') }}" active>Ingresar
+                                <a class="nav-link" href="{{ route('login') }}" active>@lang('layout.nav_bar.init_session')
                                     <img src="{{ asset('site_') }}assets/img/icon-open-account-login-green.svg">
                                 </a>
                             </li>
                         @endguest
                         
                         <li class="nav-item">
-                            <a class="nav-link icon-nav" href="{{ route('/') }}">Volver al sitio
+                            <a class="nav-link icon-nav" href="{{ route('/') }}">@lang('layout.nav_bar.back_site')
                                 <img src="{{ asset('site_') }}assets/img/icon-feather-home.svg">
                             </a>
                         </li>

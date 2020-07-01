@@ -9,14 +9,13 @@
                     <div class="icon-banner">
                         <img src="{{ asset('site_assets/img/icon-open-account-login-lg.svg') }}" alt="">
                     </div>
-                    <h1>INGRESAR</h1>
-                    <p>Si no pudiste completar alguno de los pasos ingresá con tu correo electrónico que utilizaste en el primer formulario y 
-                        continua con el proceso para convertirte en replicador</p>
+                    <h1>@lang('login.title_1')</h1>
+                    <p>@lang('login.p_1')</p>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
                         
-                         <input type="text" class="form-control input-custom @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Correo Electrónico" required autocomplete="email" autofocus>
+                         <input type="text" class="form-control input-custom @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="@lang('login.input_1')" required autocomplete="email" autofocus>
                             
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -48,7 +47,7 @@
                             
                         </div> --}}
                     
-                        <button type="submit" class="btn-green-apple">Ingresar</button>
+                        <button type="submit" class="btn-green-apple">@lang('login.btn')</button>
 
                         {{-- @if (Route::has('password.request'))
                             <br>

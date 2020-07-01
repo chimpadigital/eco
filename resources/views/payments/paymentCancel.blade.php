@@ -11,12 +11,11 @@
                     <div class="icon-banner">
                         <img src="{{asset('site_')}}assets/img/icon-shapes-and-symbols.svg" alt="">
                     </div>
-                    <h1>NO SE PUDO PROCESAR EL PAGO </h1>
+                    <h1>@lang('payment.payment_cancel.title_1')</h1>
                     <hr>
-                    <p>Para volver a intentarlo regrese al paso anterior haciendo click 
-                    en el siguiente botón</p>
+                    <p>@lang('payment.payment_cancel.p_1')</p>
                     <a href="{{ route('steps') }}">
-                        <button type="submit" class="btn-green-apple">Volver a pagar</button>
+                        <button type="submit" class="btn-green-apple">@lang('payment.payment_cancel.btn')</button>
                     </a>
                 </div>
             </div>

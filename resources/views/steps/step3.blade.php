@@ -9,8 +9,8 @@
     <div class="row">
         <div class="col-md-12">
             <div class="box-next-step float-right">
-                <span>Siguiente paso</span>
-            <a href="{{ route('steps') }}" class="btn-green-apple next-step">Registrar sesiones <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></a>
+                <span>@lang('download.p_2')</span>
+                <a href="{{ route('steps') }}" class="btn-green-apple next-step">@lang('download.button_1')<img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></a>
             </div>
         </div>
     </div>
@@ -27,9 +27,8 @@
                 <div class="icon-banner icon-download">
                     <img src="{{ asset('site_') }}assets/img/icon-download.svg" alt="">
                 </div>
-                <h1>DESCARGAR MANUAL</h1>
-                <p>Una vez descargados los 4 elementos que conforman el manual</br>
-                    podrás continuar para registrar tus sesiones de asistencia virtual</p>
+                <h1>@lang('download.title_1')</h1>
+                <p>@lang('download.p_1')</p>
             </div>
         </div>
     </div>
@@ -53,7 +52,7 @@
     
                             @else
     
-                                <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">Descargar Manuales
+                                <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">@lang('download.download1')
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -85,7 +84,7 @@
     
                             @else
     
-                                <a href="#" id="a2" data-filename="download2.deb" class="service btn btn-download">Descargar Videos
+                                <a href="#" id="a2" data-filename="download2.deb" class="service btn btn-download">@lang('download.download2')
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -118,7 +117,7 @@
     
                             @else
     
-                                <a href="#" id="a3" data-filename="download3.deb" class="service btn btn-download">Descargar FAQs
+                                <a href="#" id="a3" data-filename="download3.deb" class="service btn btn-download">@lang('download.download3')
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -151,7 +150,7 @@
     
                             @else
     
-                                <a href="#" id="a4" data-filename="download4.deb" class="service btn btn-download">Descargar anexos
+                                <a href="#" id="a4" data-filename="download4.deb" class="service btn btn-download">@lang('download.download4')
                         
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -186,8 +185,8 @@
     <div class="row mb-5">
         <div class="col-md-12">
             <div class="box-next-step float-right">
-                <span>Siguiente paso</span>
-                <a href="{{ route('steps') }}" class="btn-green-apple next-step">Registrar sesiones <img src="{{ asset('site_') }}assets/img/icon-feather-chevron-down-white.svg"></a>
+                <span>@lang('download.p_2')</span>
+                <a href="{{ route('steps') }}" class="btn-green-apple next-step">@lang('download.button_1') <img src="{{ asset('site_') }}assets/img/icon-feather-chevron-down-white.svg"></a>
             </div>
         </div>
     </div>
@@ -207,7 +206,7 @@
 
     $('.step1').addClass("visited");
     $('.step2').addClass("visited");
-    $('.paso-mobile').text("Descarga de manual");
+    $('.paso-mobile').text("{{ __('layout.nav_bar_steps.step3') }}");
     $('.step3').addClass("active");
 
     $('#a1').click(function() {
@@ -255,6 +254,8 @@
     });
 
     const URL_VERIFICATION_STEP = "{{ route('step.verify',3) }}";
+    const title_2 = "{{ __('download.title_2') }}";
+    const p_3 = "{{ __('download.p_3') }}";
 </script>
 <script src="{{ asset('js/downloadFiles.js') }}"></script>
     

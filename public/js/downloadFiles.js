@@ -94,7 +94,7 @@ $('.next-step').click(function(e) {
         if(res.status == 200 ){
             window.location.href = e.target.href;
         }else{
-            swal("Alerta!", "Descarga todo el material para continuar!", "error");
+            swal(title_2, p_3, "error");
         }
 
     })

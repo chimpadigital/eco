@@ -10,14 +10,12 @@
       <div class="col-md-6 align-self-center d-none d-md-block">
           <div class="manual-text">
               <div class="icon-manual"><img src="{{ asset('site_assets/img/education.svg') }}" alt="icon manual"></div>
-              <h2>ADQUIRIR MANUAL</h2>
-              <p>El importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y 
-                  otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
-                  Banco de Causas.</p>
+              <h2>@lang('payment.title_1')</h2>
+              <p>@lang('payment.p_1')</p>
           </div>
       </div>
       <div class="col-md-6 d-md-none center-text">
-         <h2 class="">ADQUIRIR MANUAL</h2>
+         <h2 class="">@lang('payment.title_1')</h2>
       </div>
       <div class="col-md-6 d-flex flex-row-reverse">
           <div class="box-pay">
@@ -25,21 +23,21 @@
               <div class="icon-business">
                   <img src="{{ asset('site_assets/img/icon-business.svg') }}" alt="">
               </div>
-              <h3>Pagar</h3>
+              <h3>@lang('payment.form.title_1')</h3>
               <div class="content-pay">
-                  <p>Inversión</p>
+                  <p>@lang('payment.form.investment')</p>
                   <p id="amount_payment1">150 U$D</p>
               </div>
               
               <form action="{{ route('mercado.pago.create.order') }}" method="GET">
                   @csrf
-                  <p>Formas de pago</p>
+                  <p>@lang('payment.form.payment_method')</p>
                   <div class="form-check">
                       <input class="form-check-input paymentMethod" type="radio" name="paymentMethod" id="exampleRadios1" value="mercadoPago" checked>
                       <label class="form-check-label" for="exampleRadios1">
                           MercadoPago
                       </label>
-                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago para personas que residen en Argentina.</b>">
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="@lang('payment.form.tooltip_mp')">
 
                   </div>
                   <div class="form-check">
@@ -47,11 +45,11 @@
                       <label class="form-check-label" for="exampleRadios2">
                           PayPal
                       </label>
-                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="<b>Método de pago internacional.</b>">
+                      <img src="{{ asset('site_assets/img/icon-awesome-info-circle.svg') }}" class="btn-tooltip" data-toggle="tooltip" data-placement="top"  data-html="true" title="@lang('payment.form.tooltip_pp')">
                       
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="Código de descuento (opcional)" name="discount_code" autocomplete="off">
+                    <input type="text" class="form-control input-custom" id="discount_code" aria-describedby="emailHelp" placeholder="@lang('payment.form.promo_code')" name="discount_code" autocomplete="off">
                     
                     <div id="error_code">
                         
@@ -63,17 +61,17 @@
                   <p id="amount_payment2">150 U$D</p>
               </div>
               <div class="agreement-pay">
-                  <p>Para poder continuar debes leer y aceptar el <a href="{{route('condition')}}" target="_blank">Acuerdo de Confidencialidad</a></p>
+                  <p>@lang('payment.form.condition')</p>
                   <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="terms_conditions" required>
                       <label class="form-check-label" for="terms_conditions">
-                          Acepto el Acuerdo de Confidencialidad
+                        @lang('payment.form.agree')
                       </label>
                   </div>
               </div>
               <div class="pay-now">
-                <p><object data="{{ asset('site_assets/img/icon-feather-lock.svg') }}" type="image/svg+xml"></object> Transacción encriptada</p>
-                  <button id="btn-payment" type="submit" class="btn-green-apple">Pagar ahora</button>
+                <p><object data="{{ asset('site_assets/img/icon-feather-lock.svg') }}" type="image/svg+xml"></object> @lang('payment.form.secure')</p>
+                  <button id="btn-payment" type="submit" class="btn-green-apple">@lang('payment.form.button')</button>
                   <div id="paypal-button-container" style="display: none;"></div>
               </div>
 
@@ -82,9 +80,7 @@
       </div>
       <div class="col-md-6 d-lg-none">
             <div class="manual-text">
-                <p>El importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y 
-                    otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el 
-                    Banco de Causas.</p>
+                <p>@lang('payment.p_2')</p>
             </div>
       </div>
   </div>
@@ -111,7 +107,7 @@ src="https://www.paypal.com/sdk/js?client-id={{ env('CLIENT_ID') }}"> // Require
     const URL_DICOUNT_CODE = "{{ route('get.promo.code') }}";
 
     $('.step1').addClass("active");
-    $('.paso-mobile').text("Pago del manual");
+    $('.paso-mobile').text("{{ __('layout.nav_bar_steps.step1') }}");
     
 
 </script>

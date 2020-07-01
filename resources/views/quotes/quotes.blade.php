@@ -12,7 +12,7 @@
             <div class="icon-banner">
               <img src="{{asset('/')}}assets/img/icon-professions-and-jobs.svg" />
             </div>
-            <h1>RESERVAR DÍA Y HORA</h1>
+            <h1>@lang('quote.title_1')</h1>
           </div>
         </div>
       </div>
@@ -23,11 +23,7 @@
         <div class="col-md-12">
           <div class="box-reservation">
             <p>
-              Al momento de reservar las asistencias virtuales, por favor tener
-              en consideración que los horarios que figuran disponibles
-              corresponden a la zona horaria Argentina (ART), UTC-3.
-              Recomendamos revisar previamente la compatibilidad horaria con la
-              localidad donde te encuentras!
+              @lang('quote.p_1')
             </p>
           </div>
         </div>
@@ -37,9 +33,9 @@
       <div class="row">
         <div class="col-md-6">
           <div class="jalendar-title">
-            <h1>1ra</h1>
-            <h2>Sesión</h2>
-            <p>de asistencia virtual</p>
+            <h1>1{{__('quote.st')}}</h1>
+            <h2>@lang('quote.session')</h2>
+            <p>@lang('quote.p_2')</p>
           </div>
           
           <div id="Calendar-1" class="jalendar">
@@ -57,13 +53,13 @@
             <div class="row">
               <div class="col-md-4 col-4">
                 <div class="jalendar-date">
-                  <p>Reservar</p>
+                  <p>@lang('quote.title_2')</p>
                   <p ><span id="dia"></span> de <span id="mes"></span></p>
                 </div>
               </div>
               <div class="col-md-4 col-8 p-lg-0">
                 <div class="jalendar-hour">
-                  <p>Horarios disponibles</p>
+                  <p>@lang('quote.p_3')</p>
                   <select id="first_sesion_time" class="custom-select input-custom">
                     <option selected value="10:00">10:00 am</option>
                     <option value="11:00">11:00 am</option>
@@ -75,7 +71,7 @@
               </div>
               <div class="col-md-4 align-self-end">
                 <button type="button" id="guardar_reserva_1" class="btn-green-apple">
-                  Reservar sesión
+                  @lang('quote.btn_1')
                 </button>
               </div>
             </div>
@@ -83,9 +79,9 @@
         </div>
         <div class="col-md-6">
           <div class="jalendar-title">
-            <h1>2da</h1>
-            <h2>Sesión</h2>
-            <p>de asistencia virtual</p>
+            <h1>2{{__('quote.nd')}}</h1>
+            <h2>@lang('quote.session')</h2>
+            <p>@lang('quote.p_2')</p>
           </div>
           <div id="Calendar-2" class="jalendar">
             @foreach ($reservas as $item)
@@ -104,13 +100,13 @@
             <div class="row">
               <div class="col-md-4 col-4">
                 <div class="jalendar-date">
-                  <p>Reservar</p>
+                  <p>@lang('quote.title_2')</p>
                   <p ><span id="dia2"></span> de <span id="mes2"></span></p>
                 </div>
               </div>
               <div class="col-md-4 col-8 p-lg-0">
                 <div class="jalendar-hour">
-                  <p>Horarios disponibles</p>
+                  <p>@lang('quote.p_3')</p>
                   <select id="second_sesion_time" class="custom-select input-custom">
                     <option selected value="10:00">10:00 am</option>
                     <option value="11:00">11:00 am</option>
@@ -122,7 +118,7 @@
               </div>
               <div class="col-md-4 align-self-end">
                 <button type="button" id="guardar_reserva_2" class="btn-green-apple">
-                  Reservar sesión
+                  @lang('quote.btn_1')
                 </button>
               </div>
             </div>
@@ -130,7 +126,7 @@
         </div>
         <div class="col-md-12 mb-5 mt-5">
           <button type="button" id="finalizarReserva" class="btn-green-apple">
-            Finalizar
+            @lang('quote.btn_2')
             <img src="{{asset('/')}}assets/img/icon-feather-chevron-down-white.svg" />
 
           </button>
@@ -147,7 +143,7 @@
     $('.step2').addClass("visited");
     $('.step3').addClass("visited");
     $('.step4').addClass("active");
-    $('.paso-mobile').text("Sesiones de asistencia");
+    $('.paso-mobile').text("{{ __('layout.nav_bar_steps.step4') }}");
   
       </script>
       
