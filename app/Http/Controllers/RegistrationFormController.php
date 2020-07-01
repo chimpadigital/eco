@@ -10,6 +10,7 @@ class RegistrationFormController extends Controller
 {
     public function store(Request $request){
 
+        // return $request->all();
         $request->validate([
             "firstname" => ['required','string','max:255'],
             "lastname" => ['required','string','max:255'],
@@ -48,10 +49,10 @@ class RegistrationFormController extends Controller
             "others" => $request->input('others'),
             "motivation" => $request->input('motivation'),
             "did_you_know_foundation" => $request->input('did_you_know_foundation'),
-            "ong" => $request->input('ong') == 'option1'?true:false,
+            "ong" => $request->input('ong') == 'option1'?1:0,
             "name_ogn" => $request->input('name_ogn'),
             "web_page" => $request->input('web_page'),
-            'implementation_ant' =>$request->input('implementation_ant') == 'option1'?true:false,
+            'implementation_ant' =>$request->input('implementation_ant') == 'option1'?1:0,
             "allies_to_implement" => $request->input('allies_to_implement'),
             "impact_class" => $request->input('impact_class'),
             "extra_information" => $request->input('extra_information'),

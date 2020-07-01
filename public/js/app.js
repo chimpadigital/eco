@@ -43702,7 +43702,14 @@ var render = function() {
               _vm._m(0),
               _vm._v(" "),
               _c("h4", { staticClass: "card-title" }, [
-                _vm._v("Perfil " + _vm._s("Nombre Apellido"))
+                _vm._v(
+                  "perfil de: " +
+                    _vm._s(
+                      _vm.data.inforPerfil.nombre +
+                        " " +
+                        _vm.data.inforPerfil.apellido
+                    )
+                )
               ])
             ]
           ),
@@ -45471,7 +45478,7 @@ var staticRenderFns = [
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("span", { staticClass: "icon-attach_money" }),
+          _c("span", { staticClass: "icon-coin-dollar" }),
           _vm._v("\n                        Descuento\n                      ")
         ]),
         _vm._v(" "),

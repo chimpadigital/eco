@@ -66,7 +66,7 @@
                           Pais
                         </th>
                         <th>
-                          <span class="icon-attach_money"></span>
+                          <span class="icon-coin-dollar"></span>
                           Descuento
                         </th>
                         <th>
