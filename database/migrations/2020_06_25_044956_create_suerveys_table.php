@@ -15,38 +15,38 @@ class CreateSuerveysTable extends Migration
     {
         Schema::create('suerveys', function (Blueprint $table) {
             $table->id();
-            $table->string('how_did_you_know_manual');
-            $table->string('process_download');
-            $table->string('virtual_assists_boolean');
-            $table->string('virtual_assists');
-            $table->string('call_time_boolean');
-            $table->string('call_time');
-            $table->string('quality_advice_boolean');
-            $table->string('quality_advice');
-            $table->string('attention');
-            $table->string('suggestions');
+            $table->string('how_did_you_know_manual')->nullable();
+            $table->string('process_download')->nullable();
+            $table->string('virtual_assists_boolean')->nullable();
+            $table->string('virtual_assists')->nullable();
+            $table->string('call_time_boolean')->nullable();
+            $table->string('call_time')->nullable();
+            $table->string('quality_advice_boolean')->nullable();
+            $table->string('quality_advice')->nullable();
+            $table->string('attention')->nullable();
+            $table->string('suggestions')->nullable();
             //content
-            $table->string('content_option_1');
-            $table->string('content_option_2');
-            $table->string('content_option_3');
-            $table->string('content_option_4');
-            $table->string('content_option_5');
-            $table->string('content_option_6');
+            $table->string('content_option_1')->nullable();
+            $table->string('content_option_2')->nullable();
+            $table->string('content_option_3')->nullable();
+            $table->string('content_option_4')->nullable();
+            $table->string('content_option_5')->nullable();
+            $table->string('content_option_6')->nullable();
             //chapters
-            $table->string('chapter_1');
-            $table->string('chapter_2');
-            $table->string('chapter_3');
-            $table->string('chapter_4');
-            $table->string('chapter_5');
-            $table->string('chapter_6');
-            $table->string('chapter_7');
-            $table->string('chapter_8');
+            $table->string('chapter_1')->nullable();
+            $table->string('chapter_2')->nullable();
+            $table->string('chapter_3')->nullable();
+            $table->string('chapter_4')->nullable();
+            $table->string('chapter_5')->nullable();
+            $table->string('chapter_6')->nullable();
+            $table->string('chapter_7')->nullable();
+            $table->string('chapter_8')->nullable();
             
             //personal assessment
-            $table->string('satisfied');
-            $table->string('suggestions_2');
-            $table->string('would_you_recommend');
-            $table->string('like');
+            $table->string('satisfied')->nullable();
+            $table->string('suggestions_2')->nullable();
+            $table->string('would_you_recommend')->nullable();
+            $table->string('like')->nullable();
             
             //relations
             $table->unsignedBigInteger('user_id');

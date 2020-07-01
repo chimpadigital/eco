@@ -24,13 +24,18 @@ Route::view('politicas','policies')->name('policies');
 
 Auth::routes();
 
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 //Rutas Admin
-Route::namespace('Admin')->prefix('admin')->group(function(){
-    Route::get('auth','AuthController@auth');
-    Route::get('/login','AuthController@showAdminLoginForm');
-    Route::post('/login','AuthController@adminLogin')->name('admin.post.login');
-    Route::post('/logout','AuthController@logout')->name('admin.post.logout');
+Route::prefix('admin')->group(function(){
+    Route::get('auth','Admin\AuthController@auth');
+    Route::get('/login','Admin\AuthController@showAdminLoginForm');
+    Route::post('/login','Admin\AuthController@adminLogin')->name('admin.post.login');
+    Route::post('logout','Admin\AuthController@logout')->name('admin.post.logout');
     
 });
 Route::prefix('admin')->middleware('auth:admin','role:Administrator')->group(function(){
@@ -111,6 +116,7 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     //Encuesta
 
     Route::get('survey','SurveyController@create')->name('survey.create');
+    Route::post('survey','SurveyController@store')->name('survey.store');
       
 
 });
