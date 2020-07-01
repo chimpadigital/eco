@@ -276,12 +276,12 @@
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" required>
                             <label class="form-check-label" for="defaultCheck1">
-                                <a href="{{route('terms')}}">Acepto las Condiciones Generales de Uso</a>
+                                <a href="{{route('terms')}}" target="_blank">Acepto las Condiciones Generales de Uso</a>
                             </label>
                         </div>
                         <button type="submit" class="btn-green-apple">Comenzar</button>
                         <hr>
-                        <p>Puedes leer más sobre la Política de Protección de datos <a href="{{route('policies')}}">aquí</a></p>
+                        <p>Puedes leer más sobre la Política de Protección de datos <a href="{{route('policies')}}" target="_blank">aquí</a></p>
                     </form>
                 </div>
             </div>
