@@ -24,6 +24,11 @@ Route::view('politicas','policies')->name('policies');
 
 Auth::routes();
 
+Route::get('locale/{locale}', function ($locale){
+    Session::put('locale', $locale);
+    return redirect()->back();
+});
+
 Route::get('/home', 'HomeController@index')->name('home');
 //Rutas Admin
 Route::namespace('Admin')->prefix('admin')->group(function(){
@@ -111,6 +116,7 @@ Route::group(['middleware' => ['role:User','auth']],function(){
     //Encuesta
 
     Route::get('survey','SurveyController@create')->name('survey.create');
+    Route::post('survey','SurveyController@store')->name('survey.store');
       
 
 });

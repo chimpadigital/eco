@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ app()->getLocale() }}">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -67,12 +67,24 @@
                         </li>
                         
                         <li class="nav-item dropdown">
+                            @if (app()->getLocale() =="es")
+
                             <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                            Español <img src="{{ asset('site_') }}assets/img/idioma1.svg"> <img class="" src="{{asset('site_')}}assets/img/icon-ionic-ios-arrow-down.svg">
+                                Español <img src="{{ asset('site_') }}assets/img/idioma1.svg"> <img class="" src="{{asset('site_')}}assets/img/icon-ionic-ios-arrow-down.svg">
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">English <img src="{{ asset('site_') }}assets/img/idioma2.svg"></a>
+                                <a class="dropdown-item" href="{{ url('locale/en') }}">English <img src="{{ asset('site_') }}assets/img/idioma2.svg"></a>
                             </div>
+                            @else
+
+                            <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                English <img src="{{ asset('site_') }}assets/img/idioma2.svg"> <img class="" src="{{asset('site_')}}assets/img/icon-ionic-ios-arrow-down.svg">
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ url('locale/es') }}">Español <img src="{{ asset('site_') }}assets/img/idioma1.svg"></a>
+                            </div>
+
+                            @endif
                         </li> 
                     </ul>
                     
