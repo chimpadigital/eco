@@ -187,8 +187,8 @@
   color: #333 !important;
 }
 .jalendar .jalendar-container .jalendar-pages .days .day.this-month.selected span {
-  background-color: #ffffff;
-  color: #333;
+  background-color: #00b49d;
+  color: #fff!important;
 }
 .jalendar .jalendar-container .jalendar-pages .days .day span {
   box-sizing: border-box;

@@ -7,6 +7,7 @@ use App\Mail\SuccessPayment;
 use Illuminate\Http\Request;
 use App\Mail\WithoutSessions;
 use App\Mail\FinishedSessions;
+use App\Mail\SesionesReserved;
 use Illuminate\Support\Facades\Mail;
 
 
@@ -40,6 +41,13 @@ trait SendEmailsTrait
     {
         Mail::to($email)->send(new FinishedSessions);
         return 'success';
+    }
+
+    public function sesionesReserved($email,$dates)
+    {
+        Mail::to($email)->send(new SesionesReserved($dates));
+        return 'success';
+
     }
 
 }

@@ -160,8 +160,10 @@
                                 <textarea class="form-control input-custom" name="extra_information" placeholder="@lang('profile.form.input_20')">{{old('question_9')}}</textarea>
                             </div>
                             <button type="submit" class="btn-green-apple">
+
                                 <span class="d-none d-lg-block">@lang('profile.form.btn')</span>
-                                    <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
+
+                                <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
                         </div>
                     </form>
                 </div>

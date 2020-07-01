@@ -52,7 +52,9 @@
     
                             @else
     
+
                                 <a href="#" id="a1" data-filename="download1.deb" class="service btn btn-download">@lang('download.download1')
+
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             

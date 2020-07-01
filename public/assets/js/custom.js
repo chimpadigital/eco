@@ -86,48 +86,52 @@ $(function() {
             type: "POST",
             data: { date: fechaSelect },
             success: function(res) {
-                $.each(res, function(i, item) {
-                    console.log(item, i);
-                    $("#first_sesion_time").append(
-                        new Option(item.hora, item.horario)
-                    );
-                });
+                if (res.error) {
+                    toastr.error("No puedes reservar este Dia");
+                    $("#guardar_reserva_1").prop("disabled", true);
+                } else {
+                    $.each(res.horarios, function(i, item) {
+                        $("#first_sesion_time").append(
+                            new Option(item.hora, item.horario)
+                        );
+                    });
+                }
             }
         });
     }
     // Consultando Fechas Disponibles Calendario 2;
-    function QueryDateSecond() {
-        $("#second_sesion_time")
-            .find("option")
-            .remove()
-            .end();
-        var fechaSelect = $("#Calendar-2 input.data1").val();
-        $.ajaxSetup({
-            headers: {
-                "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-            }
-        });
-        $.ajax({
-            url: "/quotes/consulta-fecha",
-            type: "POST",
-            data: { second_date: fechaSelect },
-            success: function(res) {
-                $.each(res, function(i, item) {
-                    console.log(item, i);
-                    $("#second_sesion_time").append(
-                        new Option(item.hora, item.horario)
-                    );
-                });
-            }
-        });
-    }
+    // function QueryDateSecond() {
+    //     $("#second_sesion_time")
+    //         .find("option")
+    //         .remove()
+    //         .end();
+    //     var fechaSelect = $("#Calendar-2 input.data1").val();
+    //     $.ajaxSetup({
+    //         headers: {
+    //             "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+    //         }
+    //     });
+    //     $.ajax({
+    //         url: "/quotes/consulta-fecha",
+    //         type: "POST",
+    //         data: { second_date: fechaSelect },
+    //         success: function(res) {
+    //             $.each(res, function(i, item) {
+    //                 console.log(item, i);
+    //                 $("#second_sesion_time").append(
+    //                     new Option(item.hora, item.horario)
+    //                 );
+    //             });
+    //         }
+    //     });
+    // }
 
     // Guardando la reserva
     $("#guardar_reserva_1").click(function(e) {
         e.preventDefault();
         var fechaSelect = $("#Calendar-1 input.data1").val();
         var horario = $("#first_sesion_time").val();
-        console.log($("#first_sesion_time").val());
+        // console.log($("#first_sesion_time").val());
         var fecha_reserva = fechaSelect + " " + horario;
         $.ajax({
             url: "/quotes/reservar-fecha",
@@ -135,7 +139,7 @@ $(function() {
             data: { fecha: fecha_reserva },
             success: function(res) {
                 toastr.success("Fecha Reservada");
-                console.log(res);
+                // console.log(res);
             }
         });
     });
@@ -151,7 +155,7 @@ $(function() {
             data: { segunda_fecha: fecha_reserva },
             success: function(res) {
                 toastr.success("Fecha Reservada");
-                console.log(res);
+                // console.log(res);
             }
         });
     });
@@ -179,45 +183,42 @@ $(function() {
     });
 });
 
-
-$(function(){
-
-    $('#Calendar-1').jalendar({
-        color: '#FBF9F9',
-        lang: 'ES',
+$(function() {
+    $("#Calendar-1").jalendar({
+        color: "#FBF9F9",
+        lang: "ES",
         sundayStart: true,
         dayWithZero: false,
-        dayColor: '#515150',
-        titleColor: '#0097D6',
-        weekColor: '#00B49D',
-        todayColor: '#fff'
+        dayColor: "#515150",
+        titleColor: "#0097D6",
+        weekColor: "#00B49D",
+        todayColor: "#fff"
     });
 
-    $('#Calendar-2').jalendar({
-        color: '#FBF9F9',
-        lang: 'ES',
+    $("#Calendar-2").jalendar({
+        color: "#FBF9F9",
+        lang: "ES",
         sundayStart: true,
         dayWithZero: false,
-        dayColor: '#515150',
-        titleColor: '#0097D6',
-        weekColor: '#00B49D',
-        todayColor: '#fff'
+        dayColor: "#515150",
+        titleColor: "#0097D6",
+        weekColor: "#00B49D",
+        todayColor: "#fff"
     });
-
 });
 
 $('[data-toggle="tooltip"]').tooltip();
 
 $(document).ready(function() {
     $('a[href^="#"]').click(function() {
-      var destino = $(this.hash);
-      if (destino.length == 0) {
-        destino = $('a[name="' + this.hash.substr(1) + '"]');
-      }
-      if (destino.length == 0) {
-        destino = $('html');
-      }
-      $('html, body').animate({ scrollTop: destino.offset().top }, 500);
-      return false;
+        var destino = $(this.hash);
+        if (destino.length == 0) {
+            destino = $('a[name="' + this.hash.substr(1) + '"]');
+        }
+        if (destino.length == 0) {
+            destino = $("html");
+        }
+        $("html, body").animate({ scrollTop: destino.offset().top }, 500);
+        return false;
     });
-  });
+});
