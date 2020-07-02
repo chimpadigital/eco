@@ -9,12 +9,10 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="box text-center">
-                        <h1>ENCUESTA DE SATISFACCIÓN</h1>
+                        <h1>@lang('survey.title_1')</h1>
                         <hr>
-                        <p>Esta encuesta nos sirve para valorar el servicio del Manual de Réplica de Fundación Ecoinclusión y 
-                            tu experiencia como usuario después de haber adquirido dichas herramientas. Para nosotros es muy 
-                            importante conocer tu opinión.</p>
-                            <p>¡Muchas gracias!</p>
+                        <p>@lang('survey.p_1')</p>
+                            <p>@lang('survey.p_2')</p>
                     </div>
                 </div>
             </div>
@@ -25,21 +23,21 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <div class="form">
-                            <h2>SOBRE EL MANUAL Y LAS ASISTENCIAS</h2>
+                            <h2>@lang('survey.title_2')</h2>
                             <hr>
                             
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Cómo conociste o te enteraste del Manual de Réplica?</p>
+                                        <p>@lang('survey.label_1')</p>
                                         <div class="form-group mb-4">
                                             <select class="custom-select" name="how_did_you_know_manual" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Mailing.</option>
-                                                <option value="2">Newsletter.</option>
-                                                <option value="3">Redes Sociales (Facebook, Instagram, etc).</option>
-                                                <option value="4">Sitio Web de la Fundación.</option>
-                                                <option value="5">Amig@s o familiares. </option>
-                                                <option value="6">Otros (indicar)</option>
+                                                <option value="" disabled selected>@lang('survey.input_1.option1')</option>
+                                                <option value="1">@lang('survey.input_1.option2')</option>
+                                                <option value="2">@lang('survey.input_1.option3')</option>
+                                                <option value="3">@lang('survey.input_1.option4')</option>
+                                                <option value="4">@lang('survey.input_1.option5')</option>
+                                                <option value="5">@lang('survey.input_1.option6')</option>
+                                                <option value="6">@lang('survey.input_1.option7')</option>
                                             </select>
                                         </div>
 
@@ -50,26 +48,26 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Cómo te resultó el proceso de descarga? Puedes elegir varias opciones</p>
+                                        <p>@lang('survey.label_2')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="process_download" id="inlineRadio1" value="1" required>
-                                            <label class="form-check-label" for="inlineRadio1">Fácil</label>
+                                            <label class="form-check-label" for="inlineRadio1">@lang('survey.input_2.option1')</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="process_download" id="inlineRadio2" value="2">
-                                            <label class="form-check-label" for="inlineRadio2">Rápido</label>
+                                            <label class="form-check-label" for="inlineRadio2">@lang('survey.input_2.option2')</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="process_download" id="inlineRadio3" value="3">
-                                            <label class="form-check-label" for="inlineRadio3">Dificultoso</label>
+                                            <label class="form-check-label" for="inlineRadio3">@lang('survey.input_2.option3')</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="process_download" id="inlineRadio4" value="4">
-                                            <label class="form-check-label" for="inlineRadio4">Lento</label>
+                                            <label class="form-check-label" for="inlineRadio4">@lang('survey.input_2.option4')</label>
                                         </div>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="process_download" id="inlineRadio5" value="5">
-                                            <label class="form-check-label" for="inlineRadio5">No tengo comentarios</label>
+                                            <label class="form-check-label" for="inlineRadio5">@lang('survey.input_2.option5')</label>
                                         </div>
 
                                         @error('process_download')
@@ -81,15 +79,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Utilizaste dos asistencias virtuales?</p>
+                                        <p>@lang('survey.label_3')</p>
                                         <div class="form-row radio-input mb-4">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="virtual_assists_boolean" id="inlineRadio1" value="1" required>
-                                                <label class="form-check-label" for="inlineRadio1">Sí</label>
+                                                <label class="form-check-label" for="inlineRadio1">@lang('survey.yes')</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="virtual_assists_boolean" id="inlineRadio2" value="0">
-                                                <label class="form-check-label" for="inlineRadio2">No</label>
+                                                <label class="form-check-label" for="inlineRadio2">@lang('survey.no')</label>
                                             </div>
 
                                             @error('virtual_assists_boolean')
@@ -99,7 +97,7 @@
                                             @enderror
 
                                             <div class="form-group flex-fill">
-                                                <input type="text" class="form-control input-custom w-100" name="virtual_assists" placeholder="¿Por qué no?">
+                                                <input type="text" class="form-control input-custom w-100" name="virtual_assists" placeholder="@lang('survey.input_3')">
                                             </div>
 
                                             @error('virtual_assists')
@@ -111,15 +109,15 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Fue útil el tiempo de la llamada?</p>
+                                        <p>@lang('survey.label_4')</p>
                                         <div class="form-row radio-input mb-4">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="call_time_boolean" id="inlineRadio1" value="1" required>
-                                                <label class="form-check-label" for="inlineRadio1">Sí</label>
+                                                <label class="form-check-label" for="inlineRadio1">@lang('survey.yes')</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="call_time_boolean" id="inlineRadio2" value="0">
-                                                <label class="form-check-label" for="inlineRadio2">No</label>
+                                                <label class="form-check-label" for="inlineRadio2">@lang('survey.no')</label>
                                             </div>
 
                                             @error('call_time_boolean')
@@ -129,7 +127,7 @@
                                             @enderror
 
                                             <div class="form-group flex-fill">
-                                                <input type="text" class="form-control input-custom w-100" name="call_time" placeholder="¿Por qué no?">
+                                                <input type="text" class="form-control input-custom w-100" name="call_time" placeholder="@lang('survey.input_4')">
                                             </div>
 
                                             @error('call_time')
@@ -142,15 +140,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿El asesoramiento fue de calidad, es decir, sirvió para evacuar dudas?</p>
+                                        <p>@lang('survey.label_5')</p>
                                         <div class="form-row radio-input mb-4">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="quality_advice_boolean" id="inlineRadio1" value="1" required>
-                                                <label class="form-check-label" for="inlineRadio1">Sí</label>
+                                                <label class="form-check-label" for="inlineRadio1">@lang('survey.yes')</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input radio-custom" type="radio" name="quality_advice_boolean" id="inlineRadio2" value="0">
-                                                <label class="form-check-label" for="inlineRadio2">No</label>
+                                                <label class="form-check-label" for="inlineRadio2">@lang('survey.no')</label>
                                             </div>
 
                                             @error('quality_advice_boolean')
@@ -160,7 +158,7 @@
                                             @enderror
 
                                             <div class="form-group flex-fill">
-                                                <input type="text" class="form-control input-custom w-100" name="quality_advice" placeholder="¿Por qué no?">
+                                                <input type="text" class="form-control input-custom w-100" name="quality_advice" placeholder="@lang('survey.input_5')">
                                             </div>
 
                                             @error('quality_advice')
@@ -171,14 +169,14 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Cómo fue la atención para resolver tus dudas?</p>
+                                        <p>@lang('survey.label_6')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="attention" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Rápida, pues contestaron dentro de las 72 hs.</option>
-                                                <option value="2">Tuve que esperar algunos días, pero contestaron.</option>
-                                                <option value="3">Lenta, no me contestaron hasta pasada una semana hábil.</option>
-                                                <option value="4">Insuficiente, pues no recibí respuesta.</option>
+                                                <option value="" disabled selected>@lang('survey.input_6.option1')</option>
+                                                <option value="1">@lang('survey.input_6.option2')</option>
+                                                <option value="2">@lang('survey.input_6.option3')</option>
+                                                <option value="3">@lang('survey.input_6.option4')</option>
+                                                <option value="4">@lang('survey.input_6.option5')</option>
                                             </select>
 
                                             @error('attention')
@@ -192,7 +190,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <textarea class="form-control input-custom" name="suggestions" placeholder="Sugerencias"></textarea>
+                                            <textarea class="form-control input-custom" name="suggestions" placeholder="@lang('survey.input_7')"></textarea>
                                         </div>
                                         @error('suggestions')
                                             <span class="invalid-feedback" role="alert" style="display:block;">
@@ -213,20 +211,20 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <div class="form">
-                            <h2>SOBRE EL CONTENIDO</h2>
+                            <h2>@lang('survey.title_3')</h2>
                             <hr>
                     
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>La lectura del Manual fue sencilla y dinámica, los capítulos están integrados entre sí:</p>
+                                        <p>@lang('survey.label_7')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_1" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             @error('content_option_1')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
@@ -237,15 +235,15 @@
                                     </div>
 
                                     <div class="col-sm-12 col-md-6">
-                                        <p>Los objetivos están claramente definidos:</p>
+                                        <p>@lang('survey.label_8')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_2" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             
                                             @error('content_option_2')
@@ -258,16 +256,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>Se describe en detalle la composición y fabricación del producto final
-                                            (Eco-ladrillo) del proyecto:</p>
+                                        <p>@lang('survey.label_9')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_3" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             
                                             @error('content_option_3')
@@ -278,16 +275,15 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>Se observa una clara relación entre las actividades a
-                                            desarrollar en el proyecto:</p>
+                                        <p>@lang('survey.label_10')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_4" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             
                                             @error('content_option_4')
@@ -300,16 +296,15 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>Se detallan todos los pasos a seguir y la secuencia temporal
-                                            es detallada, coherente y factible:</p>
+                                        <p>@lang('survey.label_11')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_5" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             
                                             @error('content_option_5')
@@ -320,16 +315,15 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>Se utiliza información y materiales suficientes para hacer del proyecto
-                                            comprensible y significativo:</p>
+                                        <p>@lang('survey.label_12')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_6" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Totalmente de acuerdo.</option>
-                                                <option value="2">De acuerdo.</option>
-                                                <option value="3">Ni de acuerdo ni en desacuerdo.</option>
-                                                <option value="4">En desacuerdo.</option>
-                                                <option value="5">Totalmente en desacuerdo.</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
+                                                <option value="1">@lang('survey.input_8.option2')</option>
+                                                <option value="2">@lang('survey.input_8.option3')</option>
+                                                <option value="3">@lang('survey.input_8.option4')</option>
+                                                <option value="4">@lang('survey.input_8.option5')</option>
+                                                <option value="5">@lang('survey.input_8.option6')</option>
                                             </select>
                                             
                                             @error('content_option_6')
@@ -352,13 +346,13 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <div class="form">
-                            <h2>VALORACIÓN POR CAPÍTULOS</h2>
+                            <h2>@lang('survey.title_4')</h2>
                             <hr>
-                            <p class="subtitle">(1 es poco satisfecho, 5 muy satisfecho)</p>
+                            <p class="subtitle">@lang('survey.p_3')</p>
                             
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 1: “Introducción - Prólogo”:</p>
+                                        <p>@lang('survey.label_13')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_1" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -388,7 +382,7 @@
 
                                     </div>
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 2: “Objetivos del Manual”:</p>
+                                        <p>@lang('survey.label_14')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_2" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -417,7 +411,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 3: “Usos y lineamientos”:</p>
+                                        <p>@lang('survey.label_15')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_3" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -448,7 +442,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 4: “Sobre Fundación Ecoinclusión”:</p>
+                                        <p>@lang('survey.label_16')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_4" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -477,7 +471,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 5: “Proceso”:</p>
+                                        <p>@lang('survey.label_17')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_5" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -506,7 +500,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-12 col-md-4 mb-4">
-                                        <p>Capítulo 6: “Sistema Constructivo”:</p>
+                                        <p>@lang('survey.label_18')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_6" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -537,7 +531,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6 mb-4">
-                                        <p>Capítulo 7: “Tu proyecto. Técnica de Gestión de proyectos de desarrollo”:</p>
+                                        <p>@lang('survey.label_19')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_7" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -566,7 +560,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-12 col-md-6 mb-4">
-                                        <p>Capítulo 8: “Conclusiones y recomendaciones”:</p>
+                                        <p>@lang('survey.label_20')</p>
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input radio-custom" type="radio" name="chapter_8" id="inlineRadio1" value="1" required>
                                             <label class="form-check-label" for="inlineRadio1">1</label>
@@ -608,20 +602,20 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <div class="form">
-                            <h2>VALORACIÓN PERSONAL</h2>
+                            <h2>@lang('survey.title_5')</h2>
                             <hr>
                             
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Cómo estás de satisfecho/a con el Manual?</p>
+                                        <p>@lang('survey.label_21')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="satisfied" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Muy satisfecho/a.</option>
-                                                <option value="2">Satisfecho/a.</option>
-                                                <option value="3">Normal.</option>
-                                                <option value="4">Insatisfecho/a.</option>
-                                                <option value="5">Muy insatisfecho/a.</option>
+                                                <option value="" disabled selected>@lang('survey.input_9.option1')</option>
+                                                <option value="1">@lang('survey.input_9.option2')</option>
+                                                <option value="2">@lang('survey.input_9.option3')</option>
+                                                <option value="3">@lang('survey.input_9.option4')</option>
+                                                <option value="4">@lang('survey.input_9.option5')</option>
+                                                <option value="5">@lang('survey.input_9.option6')</option>
                                             </select>
                                             @error('satisfied')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
@@ -631,15 +625,15 @@
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
-                                        <p>¿Recomendarías el Manual a otras personas?</p>
+                                        <p>@lang('survey.label_22')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="suggestions_2" required>
-                                                <option value="" disabled selected>Elegir opción</option>
-                                                <option value="1">Definitivamente si.</option>
-                                                <option value="2">Probablemente si.</option>
-                                                <option value="3">No lo sé.</option>
-                                                <option value="4">Probablemente no.</option>
-                                                <option value="5">Seguramente no.</option>
+                                                <option value="" disabled selected>@lang('survey.input_10.option1')</option>
+                                                <option value="1">@lang('survey.input_10.option2')</option>
+                                                <option value="2">@lang('survey.input_10.option3')</option>
+                                                <option value="3">@lang('survey.input_10.option4')</option>
+                                                <option value="4">@lang('survey.input_10.option5')</option>
+                                                <option value="5">@lang('survey.input_10.option6')</option>
                                             </select>
                                             @error('suggestions_2')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
@@ -652,7 +646,7 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control input-custom" name="would_you_recommend" placeholder="Sugerencias"></textarea>
+                                            <textarea class="form-control input-custom" name="would_you_recommend" placeholder="@lang('survey.input_7')"></textarea>
                                             @error('would_you_recommend')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
                                                     <strong>{{ $message }}</strong>
@@ -662,7 +656,7 @@
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control input-custom" name="like" placeholder="¿Qué fue lo que más te gustó del Manual?"></textarea>
+                                            <textarea class="form-control input-custom" name="like" placeholder="@lang('survey.input_11')"></textarea>
                                             @error('like')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
                                                     <strong>{{ $message }}</strong>
@@ -676,7 +670,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn-green-apple">Enviar <img src="assets/img/icon-feather-chevron-left.png"></button>
+                    <button type="submit" class="btn-green-apple">@lang('survey.button') <img src="assets/img/icon-feather-chevron-left.png"></button>
                 </div>
             </div>
         </section>
