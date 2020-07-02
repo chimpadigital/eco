@@ -161,7 +161,7 @@
                             </div>
                             <button type="submit" class="btn-green-apple">
 
-                                <span class="d-none d-lg-block">@lang('profile.form.btn')</span>
+                                <span class="d-none d-lg-inline-flex">@lang('profile.form.btn')</span>
 
                                 <img src="{{ asset('site_assets/img/icon-feather-chevron-down-white.svg') }}"></button>
                         </div>
