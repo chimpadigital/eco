@@ -41,23 +41,9 @@
 	<!-- /page header -->
 		
 
-	<!-- Page content -->
-	<div class="page-content pt-0" id="app">
-
-		<!-- Main content -->
-		<div class="content-wrapper">
-
-			<!-- Content area -->
-			<div class="content mt-5">
+	
                 @yield('content')
-			</div>
-			<!-- /content area -->
 
-		</div>
-		<!-- /main content -->
-
-	</div>
-	<!-- /page content -->
 
 
 	<!-- Footer -->

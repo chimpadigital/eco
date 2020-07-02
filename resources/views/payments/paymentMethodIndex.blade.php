@@ -7,8 +7,8 @@
 
 <div class="container">
   <div class="row">
-      <div class="col-md-6 align-self-center d-none d-md-block">
-          <div class="manual-text">
+      <div class="col-md-6 align-self-center medium d-none d-md-block">
+          <div class="manual-text mt-5">
               <div class="icon-manual"><img src="{{ asset('site_assets/img/education.svg') }}" alt="icon manual"></div>
               <h2>@lang('payment.title_1')</h2>
               <p>@lang('payment.p_1')</p>

@@ -2,7 +2,16 @@
 @section('title','Users')
 
 @section('content')
-<div class="row justify-content-center">
+<!-- Page content -->
+<div class="page-content pt-0" id="app">
+
+<!-- Main content -->
+<div class="content-wrapper">
+
+<!-- Content area -->
+<div class="content mt-5">
+
+<div class="row justify-content-center" id="dashboard">
     <div class="col-8">
       <div class="card">
           <div class="card-body">
@@ -40,4 +49,13 @@
       </div>
     </div>
 </div>
+
+</div>
+<!-- /content area -->
+
+</div>
+<!-- /main content -->
+
+</div>
+<!-- /page content -->
 @endsection

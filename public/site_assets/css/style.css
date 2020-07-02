@@ -303,6 +303,11 @@ h1 {
     text-decoration: underline;
 }
 
+a:hover {
+    color: #0056b3;
+    text-decoration: none;
+}
+
 .agreement-pay a:hover, .box-form a:hover, .footer-landing a:hover, .alert-cookie a:hover  {
     color: #0097D6;
 }
@@ -603,11 +608,11 @@ h1 {
     width: 8px !important;
     height: 8px !important;
     right: -3px !important;    
-    background: #00B49D !important;
+    background: #fbf9f9 !important;
 }
 
 .jalendar .jalendar-container .jalendar-pages .total-bar {
-    background: #00B49D !important;
+    background: #fbf9f9 !important;
 }
 
 .jalendar .jalendar-container .jalendar-pages .total-bar {
@@ -1091,6 +1096,11 @@ h1 {
 /* Responsive */
 
 @media (max-width:1366px){
+
+    .medium.align-self-center{
+        align-self: flex-start!important;
+        margin-top: 4rem;
+    }
     #pago-manual {
         height: 100vh;
         background: url(../img/block.png) left no-repeat, url(../img/mundo.png) right no-repeat;
