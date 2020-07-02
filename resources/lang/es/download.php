@@ -6,7 +6,7 @@ return [
     podrás continuar para registrar tus sesiones de asistencia virtual',
     'button_1'=>'Registrar sesiones',
     'p_2'=>'Siguiente paso',
-    'download1'=>'Descargar Manuales',
+    'download1'=>'Descargar Manual',
     'download2'=>'Descargar Videos',
     'download3'=>'Descargar FAQs',
     'download4'=>'Descargar anexos',

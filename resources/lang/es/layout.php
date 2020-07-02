@@ -11,7 +11,7 @@ return [
         'step1'=>'Pago del manual',
         'step2'=>'Perfil replicador',
         'step3'=>'Descarga de manual',
-        'step4'=>'Sesiones de asitencia',
+        'step4'=>'Sesiones de asistencia',
     ],
 
 ];
