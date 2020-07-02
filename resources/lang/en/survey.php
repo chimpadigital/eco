@@ -69,7 +69,7 @@ return [
     ],
     'input_9'=>[
         'option1' =>'Choose option',
-        'option2' =>'MVery satisfied.',
+        'option2' =>'Very satisfied.',
         'option3' =>'Satisfied.',
         'option4' =>'Normal.',
         'option5' =>'Unsatisfied.',
