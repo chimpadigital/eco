@@ -10,7 +10,7 @@ return [
         'tooltip_mp'=>'<b>Método de pago para personas que residen en Argentina.</b>',
         'tooltip_pp'=>'<b>Método de pago internacional.</b>',
         'promo_code'=>'Código de descuento (opcional)',
-        'condition'=>'Para poder continuar debes leer y aceptar el <a href="condition" target="_blank">Acuerdo de Confidencialidad</a>',
+        'condition'=>'Para poder continuar debes leer y aceptar el <a href="'.route('condition').'" target="_blank">Acuerdo de Confidencialidad</a>',
         'agree'=>'Acepto el Acuerdo de Confidencialidad',
         'secure'=>'Transacción encriptada',
         'button'=>'Pagar ahora',
