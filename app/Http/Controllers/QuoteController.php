@@ -65,13 +65,13 @@ class QuoteController extends Controller
             if($limiteFecha == 30){
                 return response()->json([
                     'error' => true,
-                    'errorText' => 'La reserva no puede ser mayor a los 30 Días'
+                    'errorText' => \Lang::get('auth.alert_1')
                 ]);
             }
             if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
                 return response()->json([
                     'error' => true,
-                    'errorText' => 'No puedes reservar este Dia'
+                    'errorText' => \Lang::get('auth.alert_2')
                 ]);
             }
         $consulta_fecha = $request->date;
@@ -101,13 +101,13 @@ class QuoteController extends Controller
         if($limiteFecha == 30){
             return response()->json([
                 'error' => true,
-                'errorText' => 'La reserva no puede ser mayor a los 30 Días'
+                'errorText' => \Lang::get('auth.alert_1')
             ]);
         }
         if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
             return response()->json([
                 'error' => true,
-                'errorText' => 'No puedes reservar este Dia'
+                'errorText' => \Lang::get('auth.alert_2')
             ]);
         }
         foreach($horarios as $key  => $horario){

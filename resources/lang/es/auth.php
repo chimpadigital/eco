@@ -14,6 +14,8 @@ return [
 	*/
 
     'failed' => 'Las credenciales introducidas son incorrectas.',
-    'throttle' => 'Demasiados intentos de acceso. Inténtelo de nuevo en :seconds segundos.',
+	'throttle' => 'Demasiados intentos de acceso. Inténtelo de nuevo en :seconds segundos.',
+	'alert_1'=>'La reserva no puede ser mayor a los 30 Días',
+	'alert_2'=>'No puedes reservar este Dia',
 
 ];

@@ -15,5 +15,7 @@ return [
 
     'failed' => 'These credentials do not match our records.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'alert_1' => 'The reservation cannot be longer than 30 Days',
+    'alert_2' => 'You cannot reserve this Day',
 
 ];
