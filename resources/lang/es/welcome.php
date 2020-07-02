@@ -12,7 +12,7 @@ return [
         'title_1'=>'MANUAL DE RÉPLICA',
         'p_1'=>'Este Manual contiene todos los pasos necesarios, información y contenidos requeridos para reproducir el proyecto en otros lugares del mundo.',
         'p_2'=>'El archivo completo contiene 4 bloques',
-        'b_1'=>'Documento del <br> completo',
+        'b_1'=>'Documento del <br> manual completo',
         'b_2'=>'Vídeo explicativo paso a paso del proceso de producción del Eco-ladrillo',
         'b_3'=>'Documento de Preguntas Frecuentes. (FAQS)',
         'b_4'=>'3 Anexos técnicos que completan la información del Manual',
