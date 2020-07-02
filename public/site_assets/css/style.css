@@ -1096,6 +1096,11 @@ a:hover {
 /* Responsive */
 
 @media (max-width:1366px){
+
+    .medium.align-self-center{
+        align-self: flex-start!important;
+        margin-top: 4rem;
+    }
     #pago-manual {
         height: 100vh;
         background: url(../img/block.png) left no-repeat, url(../img/mundo.png) right no-repeat;
