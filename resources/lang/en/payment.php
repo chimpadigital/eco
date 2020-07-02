@@ -21,13 +21,12 @@ return [
     Banco de Causas.',
     'payment_ok'=>'SUCCESSFUL PAYMENT',
     'payment_pending'=>[
-        'title_1'=>'ESTAMOS PROCESANDO EL PAGO',
-        'p_1'=>'Una vez aprobado recibirá un mail para continuar con el proceso de descarga del manual',
+        'title_1' => 'WE ARE PROCESSING THE PAYMENT',
+        'p_1' => 'Once approved you will receive an email to continue with the manual download process',
     ],
     'payment_cancel'=>[
-        'title_1'=>'NO SE PUDO PROCESAR EL PAGO ',
-        'p_1'=>'Para volver a intentarlo regrese al paso anterior haciendo click 
-        en el siguiente botón',
-        'btn'=>'Volver a pagar'
+        'title_1' => 'PAYMENT COULD NOT BE PROCESSED',
+        'p_1' => 'To try again, go back to the previous step by clicking on the next button ',
+        'btn' => 'Re-pay'
     ],
 ];
