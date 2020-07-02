@@ -10,6 +10,7 @@ use App\Models\Quote;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Traits\SendEmailsTrait;
+use Illuminate\Support\Facades\Lang;
 
 class QuoteController extends Controller
 {
@@ -65,13 +66,13 @@ class QuoteController extends Controller
             if($limiteFecha == 30){
                 return response()->json([
                     'error' => true,
-                    'errorText' => \Lang::get('auth.alert_1')
+                    'errorText' => Lang::get('auth.alert_1')
                 ]);
             }
             if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
                 return response()->json([
                     'error' => true,
-                    'errorText' => \Lang::get('auth.alert_2')
+                    'errorText' => Lang::get('auth.alert_2')
                 ]);
             }
         $consulta_fecha = $request->date;
@@ -101,13 +102,13 @@ class QuoteController extends Controller
         if($limiteFecha == 30){
             return response()->json([
                 'error' => true,
-                'errorText' => \Lang::get('auth.alert_1')
+                'errorText' => Lang::get('auth.alert_1')
             ]);
         }
         if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
             return response()->json([
                 'error' => true,
-                'errorText' => \Lang::get('auth.alert_2')
+                'errorText' => Lang::get('auth.alert_2')
             ]);
         }
         foreach($horarios as $key  => $horario){
