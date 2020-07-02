@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSuerveysTable extends Migration
+class CreateSurveysTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSuerveysTable extends Migration
      */
     public function up()
     {
-        Schema::create('suerveys', function (Blueprint $table) {
+        Schema::create('surveys', function (Blueprint $table) {
             $table->id();
             $table->string('how_did_you_know_manual')->nullable();
             $table->string('process_download')->nullable();
@@ -63,6 +63,6 @@ class CreateSuerveysTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('suerveys');
+        Schema::dropIfExists('surveys');
     }
 }

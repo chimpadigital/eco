@@ -65,4 +65,27 @@ class PaymentPolicy
         return false;
 
     }
+
+    public function verifyPaymentApproved(){
+        
+        $user = auth()->user();
+
+        $invoice = Invoice::with('payment.status_payment')
+        ->where('user_id',$user->id)
+        ->latest()
+        ->first();
+
+        if( isset($invoice->payment->status_payment->name) ){
+
+            if($invoice->payment->status_payment->name == "approved"){
+            
+                return true;
+            
+            }
+
+        }
+
+        return false;
+
+    }
 }

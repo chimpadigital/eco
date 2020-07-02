@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Suervey extends Model
+class Survey extends Model
 {
     protected $fillable = [
         'how_did_you_know_manual',

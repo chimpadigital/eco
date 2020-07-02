@@ -2,18 +2,34 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Suervey;
+use App\Models\Survey;
 use Illuminate\Http\Request;
+use App\Models\PaymentMethod;
 
 class SurveyController extends Controller
 {
     public function create(){
+        
+        $user = auth()->user();
+        
+        if(!$user->can('verifySurvey',Survey::class) || !$user->can('verifyPaymentApproved',PaymentMethod::class))
+        {
+            return redirect()->route('/');
+        }
 
         return view('survey');
     }
 
     public function store(Request $request)
     {
+        $user = auth()->user();
+        
+        if(!$user->can('verifySurvey',Survey::class) || !$user->can('verifyPaymentApproved',PaymentMethod::class)){
+        
+            return redirect()->route('/');
+        
+        }
+
         $request->validate([
             'how_did_you_know_manual'=>['required','numeric','min:1','max:6'],
             'process_download'=>['required','numeric','min:1','max:5'],
@@ -49,9 +65,18 @@ class SurveyController extends Controller
         
         $data['user_id'] = auth()->user()->id;
         
-        Suervey::create($data);
+        Survey::create($data);
+        if (app()->getLocale() =="es"){
 
-        return "exito";
+            alert()->success('Encuesta enviada con éxito','Éxito')->autoclose(3000);
+
+        }else{
+
+            alert()->success('Survey sent successfully', 'Success')->autoclose(3000);
+
+        }
+        
+        return redirect()->route('/');
         
     }
 }

@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use DateTime;
+use Auth;
 
+use DateTime;
 use Carbon\Carbon;
 use App\Models\Quote;
 use Illuminate\Http\Request;
-use Auth;
+use App\Models\PaymentMethod;
 use App\Traits\SendEmailsTrait;
 
 class QuoteController extends Controller
@@ -17,8 +18,8 @@ class QuoteController extends Controller
     public function index()
     {
         $user = auth()->user();
-
-        if(!$user->can('VerifyQuote',Quote::class)){
+        
+        if(!$user->can('VerifyQuote',Quote::class) || !$user->can('verifyPaymentApproved',PaymentMethod::class)){
             return redirect()->route('steps');
         }
         $reservas = Quote::all();
@@ -138,7 +139,7 @@ class QuoteController extends Controller
     {
         $user = auth()->user();
         
-        if(!$user->can('VerifyQuote',Quote::class)){
+        if(!$user->can('VerifyQuote',Quote::class) || !$user->can('verifyPaymentApproved',PaymentMethod::class)){
             return response()->json("access denied",403);
         }
         $userAuth =  Auth::user();
