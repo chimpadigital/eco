@@ -1,3 +1,14 @@
+let translations = {
+    es:{},    
+    en:{},    
+};
+translations.es.alert_1 = 'Fecha Reservada';
+translations.es.alert_2 = 'No se ha reservado las sesiones';
+translations.en.alert_1 = 'Date Reserved';
+translations.en.alert_2 = 'Sessions have not been reserved';
+const lang = document.documentElement.lang;
+
+
 $(function() {
 
     //Configuración Moment
@@ -134,7 +145,7 @@ $(function() {
             type: "POST",
             data: { fecha: fecha_reserva },
             success: function(res) {
-                toastr.success("Fecha Reservada");
+                toastr.success(translations[lang]['alert_1']);
                 console.log(res);
             }
         });
@@ -149,7 +160,7 @@ $(function() {
             type: "POST",
             data: { segunda_fecha: fecha_reserva },
             success: function(res) {
-                toastr.success("Fecha Reservada");
+                toastr.success(translations[lang]['alert_1']);
                 console.log(res);
             }
         });
@@ -170,7 +181,7 @@ $(function() {
                 if (res.finish) {
                     location.href = "/finalizar";
                 } else {
-                    toastr.error("No se ha reservado las sesiones");
+                    toastr.error(translations[lang]['alert_2']);
                 }
             }
         });
@@ -193,3 +204,6 @@ $(document).ready(function() {
         return false;
     });
 });
+
+
+
