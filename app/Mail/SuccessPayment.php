@@ -28,6 +28,6 @@ class SuccessPayment extends Mailable
      */
     public function build()
     {
-        return $this->subject('Pago exitoso')->markdown('emails.successPayment');
+        return $this->subject(\Lang::get('emails.email_subject_4'))->markdown('emails.successPayment');
     }
 }

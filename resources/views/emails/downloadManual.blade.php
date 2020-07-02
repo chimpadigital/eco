@@ -95,7 +95,7 @@ body .full-size img{width:100%; height:auto;}
 												<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border-top-left-radius: 5px; border-top-right-radius: 5px;" class="fullCenter">
 													<tbody><tr>
 														<td width="600" class="full-size" style="line-height: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-															<img src="http://eco.chimpancedigital.com.ar/images/mail-hero.jpg" alt="" border="0" width="100%" height="auto" class="hover">
+															<img src="{{asset('images/mail-hero.jpg')}}" alt="" border="0" width="100%" height="auto" class="hover">
 														</td>
 													</tr>
 												</tbody></table>
@@ -118,7 +118,7 @@ body .full-size img{width:100%; height:auto;}
 												<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tbody><tr>
 														<td align="center" valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 26px; color: #80C342; line-height: 34px; font-weight: 600;" class="fullCenter">
-															¡Gracias por colaborar con el proyecto de la Fundación Ecoinclusión!
+															@lang('emails.email_3.title_1')
 														</td>
 													</tr>
 												</tbody></table>
@@ -141,7 +141,7 @@ body .full-size img{width:100%; height:auto;}
 													<tbody>
 														<tr>
 															<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
-																Anhelamos disfrutes de la lectura del Manual de Réplica. Para completar la información brindada, tienes a disposición <span style="color:#80C342">2 sesiones virtuales</span> con un miembro del equipo para asesorarte en las posibles dudas o consultas que puedan surgir en el proceso.
+																@lang('emails.email_3.p_1')
 															</td>
 														</tr>
 														
@@ -166,7 +166,7 @@ body .full-size img{width:100%; height:auto;}
 														
 														<tr>
 															<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px; font-weight: bold;" class="fullCenter">
-																Para reservar tus sesiones haz click en el siguiente botón e ingresá con esta casilla de correo para registrar tus fechas
+																@lang('emails.email_3.p_2')
 															</td>
 														</tr>
 												</tbody></table>
@@ -189,7 +189,7 @@ body .full-size img{width:100%; height:auto;}
 												<table border="0" cellpadding="0" cellspacing="0" align="center">
 													<tbody><tr>
 														<td align="center" height="38" bgcolor="#80C342" style="border-top-left-radius: 45px; border-top-right-radius: 45px; border-bottom-right-radius: 45px; border-bottom-left-radius: 45px; padding-left: 25px; padding-right: 25px; font-weight: 600; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; color: #ffffff; background-color: #80C342; font-size: 14px;">
-															<a href="https://eco.chimpancedigital.com.ar/steps" target="_blank" style="color: #ffffff; font-size: 14px; text-decoration: none; line-height: 34px; width: 100%;">Registrar sesiones</a>
+															<a href="{{route('steps')}}" target="_blank" style="color: #ffffff; font-size: 14px; text-decoration: none; line-height: 34px; width: 100%;">@lang('emails.email_3.btn')</a>
 														</td>
 													</tr>
 												</tbody></table>

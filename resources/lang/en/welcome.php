@@ -7,6 +7,7 @@ return [
         'p_1'=>'Become a community replicator',
         'button_1'=>'More information',
         'button_2'=>'Access',
+        'button_3'=>'More info',
     ],
     'section_2'=>[
         'title_1'=>'REPLICATION MANUAL',

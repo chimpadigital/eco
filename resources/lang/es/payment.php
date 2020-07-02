@@ -2,7 +2,7 @@
 
 return [
     'title_1'=>'ADQUIRIR MANUAL',
-    'p_1'=>'ADQUIRIR MANUALEl importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el Banco de Causas.',
+    'p_1'=>'El importe del Manual se destina, en parte, para cubrir los gastos asociados a la elaboración, diseño y descarga del manual; y otra parte se dona para continuar con las construcciones sociales que realiza la fundación con los Eco-ladrillos, mediante el Banco de Causas.',
     'form'=>[
         'title_1'=>'Pagar',
         'investment'=>'Inversión',

@@ -28,6 +28,6 @@ class WithoutSessions extends Mailable
      */
     public function build()
     {
-        return $this->subject('Han pasado 30 días - Servicio de asistencias caducado')->markdown('emails.withoutSessions');
+        return $this->subject(\Lang::get('emails.email_subject_5'))->markdown('emails.withoutSessions');
     }
 }

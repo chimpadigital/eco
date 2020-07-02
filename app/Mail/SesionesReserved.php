@@ -30,7 +30,7 @@ class SesionesReserved extends Mailable
      */
     public function build()
     {
-        return $this->subject('Sesiones de asistencia virtual registradas')->markdown('emails.sessionesReserved')
+        return $this->subject(\Lang::get('emails.email_subject_3'))->markdown('emails.sessionesReserved')
         ->with([
             'first_session' => $this->quote->first_session,
             'second_session' => $this->quote->second_session,

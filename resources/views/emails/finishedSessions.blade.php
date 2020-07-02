@@ -94,7 +94,7 @@ body .full-size img{width:100%; height:auto;}
 												<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border-top-left-radius: 5px; border-top-right-radius: 5px;" class="fullCenter">
 													<tbody><tr>
 														<td width="600" class="full-size" style="line-height: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
-															<img src="http://eco.chimpancedigital.com.ar/images/mail-hero.jpg" alt="" border="0" width="100%" height="auto" class="hover">
+															<img src="{{asset('images/mail-hero.jpg')}}" alt="" border="0" width="100%" height="auto" class="hover">
 														</td>
 													</tr>
 												</tbody></table>
@@ -117,7 +117,7 @@ body .full-size img{width:100%; height:auto;}
 												<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tbody><tr>
 														<td align="center" valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 26px; color: #80C342; line-height: 34px; font-weight: 600;" class="fullCenter">
-															¡Gracias por ser protagonista de esta revolución!
+															@lang('emails.email_4.title_1')
 														</td>
 													</tr>
 												</tbody></table>
@@ -141,7 +141,7 @@ body .full-size img{width:100%; height:auto;}
 														<tbody>
 															<tr>
 																<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
-																	Estamos felices de que hayas completado el procedimiento de descarga y asistencia virtual del Manual de Réplica de la Fundación Ecoinclusión. A partir de ahora ya posees la herramienta de conocimiento que te llevará a replicar el Eco-ladrillo en tu comunidad. 
+																	@lang('emails.email_4.p_1')
 
 												
 																</td>
@@ -170,7 +170,7 @@ body .full-size img{width:100%; height:auto;}
 															
 															<tr>
 																<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px; font-weight: bold;" class="fullCenter">
-																	En el transcurso del año, te contactaremos nuevamente para que nos cuentes cómo va el proyecto, tus logros y qué dificultades te has encontrado en el camino. 
+																	@lang('emails.email_4.p_2')
 																</td>
 															</tr>
 														</tbody>
@@ -197,7 +197,7 @@ body .full-size img{width:100%; height:auto;}
 													<tbody>
 														<tr>
 															<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
-																Para nosotros es muy importante que se expanda el proyecto así que muchas gracias por ayudarnos a llevarlo a cabo.	
+																@lang('emails.email_4.p_3')	
 															</td>
 														</tr>
 														
@@ -231,9 +231,9 @@ body .full-size img{width:100%; height:auto;}
 															
 															<tr>
 																<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 12px; color: #333; line-height: 18px;" class="fullCenter">
-																	<p>¿Tienes alguna pregunta? Escríbenos a replicadores@ecoinclusion.org o consulta el documento de “Preguntas Frecuentes”. Trataremos siempre de contestarte dentro de las 72 h después del envío de tu consulta.</p>
+																	<p>@lang('emails.email_4.p_4')</p>
 																	<p>
-																		Política de Privacidad: Nuestra política de privacidad online te proporciona seguridad a la hora de realizar las sesiones. Para consultar íntegramente nuestra política de privacidad haz <a href="link-a-politicas-de-privacidad" style="font-weight:bold;text-decoration: underline;">click aquí</a>.
+																		@lang('emails.email_4.p_5') <a href="{{route('policies')}}" style="font-weight:bold;text-decoration: underline;">@lang('emails.email_4.btn')</a>.
 																	</p>
 																</td>
 															</tr>

@@ -7,6 +7,7 @@ return [
         'p_1'=>'Convertite en un replicador comunitario',
         'button_1'=>'Más información',
         'button_2'=>'Acceder',
+        'button_3'=>'Más info',
     ],
     'section_2'=>[
         'title_1'=>'MANUAL DE RÉPLICA',

@@ -23,7 +23,7 @@
                     
                         </a>
                         <a href="{{ route('login') }}">
-                            <button type="submit" class="btn-green-apple btn-secondary">@lang('welcome.section_1.button_2')</button>
+                            <button type="submit" class="btn-green-apple btn-secondary">@lang('welcome.section_1.button_3')</button>
                         </a>
                     </div>
                 </div>
