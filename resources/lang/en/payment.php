@@ -10,7 +10,7 @@ return [
         'tooltip_mp'=>'<b>Payment method for people residing in Argentina.</b>',
         'tooltip_pp'=>'<b>International payment method.</b>',
         'promo_code'=>'Coupon Code (optional)',
-        'condition'=>'To continue you must read and accept the <a href="condition" target="_blank">Confidentiality Agreement</a>',
+        'condition'=>'To continue you must read and accept the <a href="'.route('condition').'" target="_blank">Confidentiality Agreement</a>',
         'agree'=>'I accept the Confidentiality Agreement',
         'secure'=>'Encrypted Transaction',
         'button'=>'Pay',
