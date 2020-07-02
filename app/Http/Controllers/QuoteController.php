@@ -63,7 +63,7 @@ class QuoteController extends Controller
             $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->date);
             $user = Auth::user();
             $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
-            if($limiteFecha == 30){
+            if($limiteFecha >= 30){
                 return response()->json([
                     'error' => true,
                     'errorText' => Lang::get('auth.alert_1')
@@ -99,10 +99,10 @@ class QuoteController extends Controller
         $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->second_date);
         $user = Auth::user();
         $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
-        if($limiteFecha == 30){
+        if($limiteFecha >= 30){
             return response()->json([
                 'error' => true,
-                'errorText' => Lang::get('auth.alert_1')
+                'errorText' => ZLang::get('auth.alert_1')
             ]);
         }
         if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
