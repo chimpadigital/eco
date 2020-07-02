@@ -102,7 +102,7 @@ class QuoteController extends Controller
         if($limiteFecha >= 30){
             return response()->json([
                 'error' => true,
-                'errorText' => ZLang::get('auth.alert_1')
+                'errorText' => Lang::get('auth.alert_1')
             ]);
         }
         if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
