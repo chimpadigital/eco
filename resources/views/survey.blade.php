@@ -31,13 +31,13 @@
                                         <p>@lang('survey.label_1')</p>
                                         <div class="form-group mb-4">
                                             <select class="custom-select" name="how_did_you_know_manual" required>
-                                                <option value="" disabled selected>@lang('survey.input_1.option1')</option>
-                                                <option value="1">@lang('survey.input_1.option2')</option>
-                                                <option value="2">@lang('survey.input_1.option3')</option>
-                                                <option value="3">@lang('survey.input_1.option4')</option>
-                                                <option value="4">@lang('survey.input_1.option5')</option>
-                                                <option value="5">@lang('survey.input_1.option6')</option>
-                                                <option value="6">@lang('survey.input_1.option7')</option>
+                                                <option value="" disabled selected>@lang('survey.input_1.option0')</option>
+                                                <option value="1">@lang('survey.input_1.option1')</option>
+                                                <option value="2">@lang('survey.input_1.option2')</option>
+                                                <option value="3">@lang('survey.input_1.option3')</option>
+                                                <option value="4">@lang('survey.input_1.option4')</option>
+                                                <option value="5">@lang('survey.input_1.option5')</option>
+                                                <option value="6">@lang('survey.input_1.option6')</option>
                                             </select>
                                         </div>
 
@@ -172,11 +172,11 @@
                                         <p>@lang('survey.label_6')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="attention" required>
-                                                <option value="" disabled selected>@lang('survey.input_6.option1')</option>
-                                                <option value="1">@lang('survey.input_6.option2')</option>
-                                                <option value="2">@lang('survey.input_6.option3')</option>
-                                                <option value="3">@lang('survey.input_6.option4')</option>
-                                                <option value="4">@lang('survey.input_6.option5')</option>
+                                                <option value="" disabled selected>@lang('survey.input_6.option0')</option>
+                                                <option value="1">@lang('survey.input_6.option1')</option>
+                                                <option value="2">@lang('survey.input_6.option2')</option>
+                                                <option value="3">@lang('survey.input_6.option3')</option>
+                                                <option value="4">@lang('survey.input_6.option4')</option>
                                             </select>
 
                                             @error('attention')
@@ -219,12 +219,12 @@
                                         <p>@lang('survey.label_7')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_1" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             @error('content_option_1')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
@@ -238,12 +238,12 @@
                                         <p>@lang('survey.label_8')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_2" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             
                                             @error('content_option_2')
@@ -259,12 +259,12 @@
                                         <p>@lang('survey.label_9')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_3" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             
                                             @error('content_option_3')
@@ -278,12 +278,12 @@
                                         <p>@lang('survey.label_10')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_4" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             
                                             @error('content_option_4')
@@ -299,12 +299,12 @@
                                         <p>@lang('survey.label_11')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_5" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             
                                             @error('content_option_5')
@@ -318,12 +318,12 @@
                                         <p>@lang('survey.label_12')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="content_option_6" required>
-                                                <option value="" disabled selected>@lang('survey.input_8.option1')</option>
-                                                <option value="1">@lang('survey.input_8.option2')</option>
-                                                <option value="2">@lang('survey.input_8.option3')</option>
-                                                <option value="3">@lang('survey.input_8.option4')</option>
-                                                <option value="4">@lang('survey.input_8.option5')</option>
-                                                <option value="5">@lang('survey.input_8.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_8.option0')</option>
+                                                <option value="1">@lang('survey.input_8.option1')</option>
+                                                <option value="2">@lang('survey.input_8.option2')</option>
+                                                <option value="3">@lang('survey.input_8.option3')</option>
+                                                <option value="4">@lang('survey.input_8.option4')</option>
+                                                <option value="5">@lang('survey.input_8.option5')</option>
                                             </select>
                                             
                                             @error('content_option_6')
@@ -610,12 +610,12 @@
                                         <p>@lang('survey.label_21')</p>
                                         <div class="form-group">
                                             <select class="custom-select" name="satisfied" required>
-                                                <option value="" disabled selected>@lang('survey.input_9.option1')</option>
-                                                <option value="1">@lang('survey.input_9.option2')</option>
-                                                <option value="2">@lang('survey.input_9.option3')</option>
-                                                <option value="3">@lang('survey.input_9.option4')</option>
-                                                <option value="4">@lang('survey.input_9.option5')</option>
-                                                <option value="5">@lang('survey.input_9.option6')</option>
+                                                <option value="" disabled selected>@lang('survey.input_9.option0')</option>
+                                                <option value="1">@lang('survey.input_9.option1')</option>
+                                                <option value="2">@lang('survey.input_9.option2')</option>
+                                                <option value="3">@lang('survey.input_9.option3')</option>
+                                                <option value="4">@lang('survey.input_9.option4')</option>
+                                                <option value="5">@lang('survey.input_9.option5')</option>
                                             </select>
                                             @error('satisfied')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
@@ -627,15 +627,15 @@
                                     <div class="col-sm-12 col-md-6">
                                         <p>@lang('survey.label_22')</p>
                                         <div class="form-group">
-                                            <select class="custom-select" name="suggestions_2" required>
-                                                <option value="" disabled selected>@lang('survey.input_10.option1')</option>
-                                                <option value="1">@lang('survey.input_10.option2')</option>
-                                                <option value="2">@lang('survey.input_10.option3')</option>
-                                                <option value="3">@lang('survey.input_10.option4')</option>
-                                                <option value="4">@lang('survey.input_10.option5')</option>
-                                                <option value="5">@lang('survey.input_10.option6')</option>
+                                            <select class="custom-select" name="would_you_recommend" required>
+                                                <option value="" disabled selected>@lang('survey.input_10.option0')</option>
+                                                <option value="1">@lang('survey.input_10.option1')</option>
+                                                <option value="2">@lang('survey.input_10.option2')</option>
+                                                <option value="3">@lang('survey.input_10.option3')</option>
+                                                <option value="4">@lang('survey.input_10.option4')</option>
+                                                <option value="5">@lang('survey.input_10.option5')</option>
                                             </select>
-                                            @error('suggestions_2')
+                                            @error('would_you_recommend')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -646,8 +646,8 @@
                                 <div class="row">
                                     <div class="col-sm-12 col-md-6">
                                         <div class="form-group">
-                                            <textarea class="form-control input-custom" name="would_you_recommend" placeholder="@lang('survey.input_7')"></textarea>
-                                            @error('would_you_recommend')
+                                            <textarea class="form-control input-custom" name="suggestions_2" placeholder="@lang('survey.input_7')"></textarea>
+                                            @error('suggestions_2')
                                                 <span class="invalid-feedback" role="alert" style="display:block;">
                                                     <strong>{{ $message }}</strong>
                                                 </span>

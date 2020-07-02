@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Survey;
+use App\Mail\SurveyEmail;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
+use Illuminate\Support\Facades\Mail;
 
 class SurveyController extends Controller
 {
@@ -56,8 +58,8 @@ class SurveyController extends Controller
             'chapter_7'=>['required','numeric','min:1','max:5'],
             'chapter_8'=>['required','numeric','min:1','max:5'],
             'satisfied'=>['required','numeric','min:1','max:5'],
-            'suggestions_2'=>['required','numeric','min:1','max:5'],
-            'would_you_recommend'=>['nullable','string'],
+            'suggestions_2'=>['nullable','string'],
+            'would_you_recommend'=>['required','numeric','min:1','max:5'],
             'like'=>['nullable','string'],
         ]);
         
@@ -65,7 +67,10 @@ class SurveyController extends Controller
         
         $data['user_id'] = auth()->user()->id;
         
-        Survey::create($data);
+        $survey = Survey::create($data);
+
+        Mail::to(env('EMAIL_SURVEY'))->send(new SurveyEmail($survey));
+
         if (app()->getLocale() =="es"){
 
             alert()->success('Encuesta enviada con éxito','Éxito')->autoclose(3000);
