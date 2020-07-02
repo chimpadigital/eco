@@ -24,6 +24,10 @@ Route::view('politicas','policies')->name('policies');
 
 Auth::routes();
 
+Route::get('register', function(){
+    return redirect()->route('/');
+})->name("register");
+
 Route::get('locale/{locale}', function ($locale){
     Session::put('locale', $locale);
     return redirect()->back();
