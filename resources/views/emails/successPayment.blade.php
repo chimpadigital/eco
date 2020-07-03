@@ -70,31 +70,31 @@ body .full-size img{width:100%; height:auto;}
 						
 			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 				<tbody><tr>
-					<td width="100%" valign="middle" class="logo" align="center">
+					<td width="600px" valign="middle" class="logo" align="center">
 					
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
 							<tbody><tr>
-								<td width="600" height="50"></td>
+								<td width="600px" height="50"></td>
 							</tr>
 						</tbody></table>
 						
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
 							<tbody><tr>
-								<td width="600" height="50"></td>
+								<td width="600px" height="50"></td>
 							</tr>
 						</tbody></table>
 					
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#ffffff" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -moz-box-shadow:0 0 10px #dedede; -webkit-box-shadow:0 0 10px #dedede; box-shadow:0 0 10px #dedede; background-color: #ffffff;">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#ffffff" style="-webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; -moz-box-shadow:0 0 10px #dedede; -webkit-box-shadow:0 0 10px #dedede; box-shadow:0 0 10px #dedede; background-color: #ffffff;">
 							<tbody><tr>
-								<td width="600" align="center">
+								<td width="600px" align="center">
                       
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="full">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center">
+											<td width="600px" valign="middle" align="center">
 											
-												<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border-top-left-radius: 5px; border-top-right-radius: 5px;" class="fullCenter">
+												<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; border-top-left-radius: 5px; border-top-right-radius: 5px;" class="fullCenter">
 													<tbody><tr>
-														<td width="600" class="full-size" style="line-height: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+														<td width="600px" class="full-size" style="line-height: 1px; border-top-left-radius: 5px; border-top-right-radius: 5px;">
 															<img src="{{ asset('images/mail-hero.jpg') }}" alt="" border="0" width="100%" height="auto" class="hover">
 														</td>
 													</tr>
@@ -104,20 +104,20 @@ body .full-size img{width:100%; height:auto;}
 										</tr>
 									</tbody></table>
 							
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center" height="40">
+											<td width="600px" valign="middle" align="center" height="40">
 											</td>
 										</tr>
 									</tbody></table>
 							
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center">
+											<td width="600px" valign="middle" align="center">
 									
-												<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
+												<table width="500px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tbody><tr>
-														<td align="center" valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 26px; color: #80C342; line-height: 34px; font-weight: 600;" class="fullCenter">
+														<td align="center" valign="middle" width="500px" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 26px; color: #80C342; line-height: 34px; font-weight: 600px;" class="fullCenter">
 															@lang('emails.email_1.title_1')
 														</td>
 													</tr>
@@ -127,20 +127,20 @@ body .full-size img{width:100%; height:auto;}
 										</tr>
 									</tbody></table>
 									
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center" height="30" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+											<td width="600px" valign="middle" align="center" height="30" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
 										</tr>
 									</tbody></table>
                         
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center">
+											<td width="600px" valign="middle" align="center">
 									
-												<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
+												<table width="500px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tbody>
 														<tr>
-															<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
+															<td valign="middle" width="500px" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
 																@lang('emails.email_1.p_1')
 															</td>
 														</tr>
@@ -151,21 +151,21 @@ body .full-size img{width:100%; height:auto;}
 										</tr>
 									</tbody></table>
 									
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center" height="40">
+											<td width="600px" valign="middle" align="center" height="40">
 											</td>
 										</tr>
 									</tbody></table>
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center">
+											<td width="600px" valign="middle" align="center">
 									
-												<table width="500" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
+												<table width="500px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt;" class="fullCenter">
 													<tbody>
 														
 														<tr>
-															<td valign="middle" width="500" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
+															<td valign="middle" width="500px" style="text-align: center; font-family: Helvetica, Arial, sans-serif, 'Open Sans'; font-size: 14px; color: #333; line-height: 24px;" class="fullCenter">
 																@lang('emails.email_1.p_2')
 															</td>
 														</tr>
@@ -175,16 +175,16 @@ body .full-size img{width:100%; height:auto;}
 										</tr>
 									</tbody></table>
 									
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center" height="40">
+											<td width="600px" valign="middle" align="center" height="40">
 											</td>
 										</tr>
 									</tbody></table>
 									
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center">
+											<td width="600px" valign="middle" align="center">
 									
 												<table border="0" cellpadding="0" cellspacing="0" align="center">
 													<tbody><tr>
@@ -198,9 +198,9 @@ body .full-size img{width:100%; height:auto;}
 										</tr>
 									</tbody></table>
 									
-									<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+									<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 										<tbody><tr>
-											<td width="600" valign="middle" align="center" height="50">
+											<td width="600px" valign="middle" align="center" height="50">
 											</td>
 										</tr>
 									</tbody></table>
@@ -209,27 +209,27 @@ body .full-size img{width:100%; height:auto;}
 							</tr>
 						</tbody></table>
 						
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
 							<tbody><tr>
-								<td width="600" valign="middle" align="center" height="30">
+								<td width="600px" valign="middle" align="center" height="30">
 								</td>
 							</tr>
 						</tbody></table>
 						
 						
 						
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
 							<tbody><tr>
-								<td width="600" height="50"></td>
+								<td width="600px" height="50"></td>
 							</tr>
 						</tbody></table>
 						
-						<table width="600" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
+						<table width="600px" border="0" cellpadding="0" cellspacing="0" align="center" style="text-align: center; border-collapse: collapse;" class="fullCenter">
 							<tbody><tr>
-								<td width="600" height="50"></td>
+								<td width="600px" height="50"></td>
 							</tr>
 							<tr>
-								<td width="600" height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
+								<td width="600px" height="1" style="font-size: 1px; line-height: 1px;">&nbsp;</td>
 							</tr>
 						</tbody></table>
 													
