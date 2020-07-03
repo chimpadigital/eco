@@ -6,7 +6,7 @@ return [
     'session'=>'Session',
     'st'=>'st',
     'nd'=>'nd',
-    'p_2'=>' Virtual assistance session',
+    'p_2'=>' virtual assistance session',
     'title_2'=>'Schedule',
     'p_3'=>' Available hours ',
     'btn_1'=>'Close reservations ',
