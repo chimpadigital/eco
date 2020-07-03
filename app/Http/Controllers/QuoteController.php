@@ -144,17 +144,38 @@ class QuoteController extends Controller
             return response()->json("access denied",403);
         }
         $userAuth =  Auth::user();
+        $quote = Quote::where('user_id', $userAuth->id)->first();
 
         if ($request->fecha) {
-            $fecha_reserva = Carbon::createFromFormat('d-m-Y H:i:s',$request->fecha)->format('Y-m-d H:i:s');
+            $fecha_reserva = Carbon::createFromFormat('d-m-Y H:i:s',$request->fecha);
+            if($quote){
+                if($quote->second_session){
+                    $fecha_sesion_2 = Carbon::createFromFormat('Y-m-d H:i:s',$quote->second_session);
+                   if($fecha_reserva->greaterThan($fecha_sesion_2)){
+
+                       return response()->json(['success' => false]);
+                   }
+                }
+            }
             Quote::updateOrCreate(['user_id' => $userAuth->id],[
-                'first_session' => $fecha_reserva,
+                'first_session' => $fecha_reserva->format('Y-m-d H:i:s'),
                 
             ]);
         }else{
-            $fecha_reserva = Carbon::createFromFormat('d-m-Y H:i:s',$request->segunda_fecha)->format('Y-m-d H:i:s');
+            $fecha_reserva = Carbon::createFromFormat('d-m-Y H:i:s',$request->segunda_fecha);
+            if($quote){
+                if($quote->first_session){
+                    $fecha_sesion_1 = Carbon::createFromFormat('Y-m-d H:i:s',$quote->first_session);
+                    $comparando_fecha = $fecha_reserva->greaterThan($fecha_sesion_1);
+
+                   if(!$fecha_reserva->greaterThan($fecha_sesion_1)){
+
+                       return response()->json(['success' => false]);
+                   }
+                }
+            }
             Quote::updateOrCreate(['user_id' => $userAuth->id],[
-                'second_session' => $fecha_reserva,
+                'second_session' => $fecha_reserva->format('Y-m-d H:i:s'),
                 
             ]);
         }

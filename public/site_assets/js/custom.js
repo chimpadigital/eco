@@ -1,16 +1,21 @@
 let translations = {
-    es:{},    
-    en:{},    
+    es: {},
+    en: {}
 };
-translations.es.alert_1 = 'Fecha Reservada';
-translations.es.alert_2 = 'No se ha reservado las sesiones';
-translations.en.alert_1 = 'Date Reserved';
-translations.en.alert_2 = 'Sessions have not been reserved';
+translations.es.alert_1 = "Fecha Reservada";
+translations.es.alert_2 = "No se ha reservado las sesiones";
+translations.en.alert_1 = "Date Reserved";
+translations.en.alert_2 = "Sessions have not been reserved";
+//es
+translations.es.alert_date_1 = "Elija una fecha inferior a la Sesion 2";
+translations.es.alert_date_2 = "Elija una fecha superior a la Sesion 1";
+//en
+translations.en.alert_date_1 = "Choose a date before Session 2";
+translations.en.alert_date_2 = "Choose a date higher than Session 1";
+
 const lang = document.documentElement.lang;
 
-
 $(function() {
-
     //Configuración Moment
     moment.locale("es-us");
     //Fecha Actual
@@ -145,8 +150,11 @@ $(function() {
             type: "POST",
             data: { fecha: fecha_reserva },
             success: function(res) {
-                toastr.success(translations[lang]['alert_1']);
-                console.log(res);
+                if (res.success) {
+                    toastr.success(translations[lang]["alert_1"]);
+                } else {
+                    toastr.error(translations[lang]["alert_date_1"]);
+                }
             }
         });
     });
@@ -160,8 +168,11 @@ $(function() {
             type: "POST",
             data: { segunda_fecha: fecha_reserva },
             success: function(res) {
-                toastr.success(translations[lang]['alert_1']);
-                console.log(res);
+                if (res.success) {
+                    toastr.success(translations[lang]["alert_1"]);
+                } else {
+                    toastr.error(translations[lang]["alert_date_2"]);
+                }
             }
         });
     });
@@ -181,12 +192,11 @@ $(function() {
                 if (res.finish) {
                     location.href = "/finalizar";
                 } else {
-                    toastr.error(translations[lang]['alert_2']);
+                    toastr.error(translations[lang]["alert_2"]);
                 }
             }
         });
     });
-
 });
 
 $('[data-toggle="tooltip"]').tooltip();
@@ -204,6 +214,3 @@ $(document).ready(function() {
         return false;
     });
 });
-
-
-
