@@ -27,16 +27,16 @@ html{ background-color:#ffffff; width: 100%;}
 body img {user-drag: none; -moz-user-select: none; -webkit-user-drag: none;}
 
 
-body .image77 img {width: 77px; height: auto;}
+/* body .image77 img {width: 77px; height: auto;}
 body .icon18 img {width: 18px; height: auto;}
 body .icon61 img {width: 61px; height: auto;}
 body .logo img {width: 75px; height: auto;}
 body .icon18 img {width: 18px; height: auto;}
-body .circle-image img{width:104px; height:104px;}
-body .full-size img{width:100%; height:auto;}
+body .circle-image img{width:104px; height:104px;} */
+body .full-size img{width:600px; min-width:100!important; height:auto;}
 
 </style>
-
+<!-- 
 <style type="text/css">@media only screen and (max-width: 640px){
 		body body{width:auto!important;}
 		body table[class=full2] {width: 100%!important; clear: both; }
@@ -59,16 +59,16 @@ body .full-size img{width:100%; height:auto;}
 		body td[class=pad15] {width: 100%!important; padding-left: 15px; padding-right: 15px; clear: both;}
 		body .erase {display: none;}
 		body .break {width: 100%!important; display: table-cell; margin:0; padding-bottom: 10px!important;}
-}</style>
+}</style> -->
 
 </head>
 <body style='margin: 0; padding: 0;'>
 
-<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#f3f7f8" style="background-color: #FAFFF5;">
+<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="full" bgcolor="#f3f7f8" style="background-color: #FAFFF5;min-width:100%!important ">
 	<tbody><tr>
 		<td align="center">
 						
-			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile">
+			<table width="100%" border="0" cellpadding="0" cellspacing="0" align="center" class="mobile" style="min-width:100%!important">
 				<tbody><tr>
 					<td width="600px" valign="middle" class="logo" align="center">
 					
