@@ -47,7 +47,7 @@ class PayPalController extends Controller
 
         $this->apiContext->setConfig(
             array(
-              'mode' => 'sandbox',
+              'mode' => env('PAYPAL_ENVIROMENT'),
             )
         );
 
