@@ -30,9 +30,9 @@ trait SendEmailsTrait
         
     }
 
-    public function withoutSessions()
+    public function withoutSessions($email)
     {
-        Mail::to('devsignhost@gmail.com')->send(new WithoutSessions);
+        Mail::to($email)->send(new WithoutSessions);
         return 'success';
         
     }
