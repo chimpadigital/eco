@@ -147,7 +147,11 @@ class MercadoPagoController extends Controller
 
             }
 
-            $payment = $paymentNotification;
+            /*
+            Coemntar la linea de asignacion y descomentar el foreach antes de ir a produccion
+            */
+
+            $payment = $paymentNotification; 
 		    //foreach ($merchant_order->payments as $payment) {
                 
                 if ($payment->status == 'approved'){

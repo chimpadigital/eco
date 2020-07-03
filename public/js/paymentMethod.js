@@ -178,6 +178,10 @@ $('#discount_code').on('change keyup copy paste cut',function(e){
         'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
       }
     }).then(function(res) {
+
+      amountPaypal = constAmountPaypal;
+      amountMP = constAmountMP;
+      changeButtonPayment();
       
       if (res.ok) {
 
