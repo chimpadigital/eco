@@ -3,14 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use MercadoPago\SDK;
 use App\Models\Invoice;
 use App\Models\Payment;
 use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
-use App\Traits\PaymentMethodTrait;
 use App\Traits\SendEmailsTrait;
+use App\Traits\PaymentMethodTrait;
 
 class MercadoPagoController extends Controller
 {
@@ -49,6 +50,7 @@ class MercadoPagoController extends Controller
 
         $promoCode = PromoCode::where('code_name',$request->input('discount_code'))
         ->where('state',true)
+        ->where('expiration_date','>=',Carbon::now())
         ->first();
 
         if($promoCode){

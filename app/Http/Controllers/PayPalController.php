@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Carbon\Carbon;
 use App\Models\Invoice;
 use App\Models\Payment;
 use Sample\PayPalClient;
@@ -66,6 +67,7 @@ class PayPalController extends Controller
 
         $promoCode = PromoCode::where('code_name',$request->input('discount_code'))
         ->where('state',true)
+        ->where('expiration_date','>=',Carbon::now())
         ->first();
 
         if($promoCode){

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\PromoCode;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
@@ -67,7 +68,7 @@ class PaymentMethodController extends Controller
 
     public function getDicountCode(Request $request){
 
-        $code = PromoCode::where('state',true)->where('code_name',$request->input('discount_code'))->first();
+        $code = PromoCode::where('state',true)->where('expiration_date','>=',Carbon::now())->where('code_name',$request->input('discount_code'))->first();
 
         return response()->json($code,200);
 
