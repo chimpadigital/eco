@@ -53,7 +53,7 @@
                             @else
     
 
-                                <a id="a1" data-filename="download1.deb" class="service btn btn-download">@lang('download.download1')
+                                <a id="a1" data-filename="manual.pdf" class="service btn btn-download">@lang('download.download1')
 
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
@@ -86,7 +86,7 @@
     
                             @else
     
-                                <a id="a2" data-filename="download2.deb" class="service btn btn-download">@lang('download.download2')
+                                <a id="a2" data-filename="video.mp4" class="service btn btn-download">@lang('download.download2')
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -119,7 +119,7 @@
     
                             @else
     
-                                <a id="a3" data-filename="download3.deb" class="service btn btn-download">@lang('download.download3')
+                                <a id="a3" data-filename="preguntas_questions.pdf" class="service btn btn-download">@lang('download.download3')
                             
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
@@ -152,7 +152,7 @@
     
                             @else
     
-                                <a id="a4" data-filename="download4.deb" class="service btn btn-download">@lang('download.download4')
+                                <a id="a4" data-filename="anexos.zip" class="service btn btn-download">@lang('download.download4')
                         
                                     <img src="{{ asset('site_assets/img/icon-download-interface.svg') }}">
                             
