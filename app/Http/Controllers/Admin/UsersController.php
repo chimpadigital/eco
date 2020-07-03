@@ -196,8 +196,6 @@ class UsersController extends Controller
             'user_id' => $user->id,
         ],[
             // otraInfo
-            
-            
             'occupation' => $request->data['inforPerfil']['ocupacion'],
             'facebook' =>   $request->data['redes']['facebook'],
             'linkedin' =>   $request->data['redes']['linkedin'],
@@ -216,20 +214,23 @@ class UsersController extends Controller
         ]);
 
 
-        $user->quote()->updateOrCreate(
-            [
-            'user_id' => $user->id,
-            ],
-            [
-                'first_session_assistance' => $request->data['procesoSesion']['primerSesion'],
-                'second_session_assistance' => $request->data['procesoSesion']['segunSesion'],
+        if($user->quote){
+            $user->quote()->updateOrCreate([
+            
+                'user_id' => $user->id,
+                ],
+                [
+                    'first_session_assistance' => $request->data['procesoSesion']['primerSesion'],
+                    'second_session_assistance' => $request->data['procesoSesion']['segunSesion'],
+    
+                ]);
+    
+                if($request->data['procesoSesion']['segunSesion']){
+    
+                    $this->finishedSessions($user->email);
+                }
+        }
 
-            ]
-            );
-            if($request->data['procesoSesion']['segunSesion']){
-
-                $this->finishedSessions($user->email);
-            }
 
         return response()->json(['success' => true]);
     }
