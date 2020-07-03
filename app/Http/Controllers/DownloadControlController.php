@@ -50,22 +50,22 @@ class DownloadControlController extends Controller
                 switch ($id) {
                     case 1:
                         if($this->downloadControl->element_1 != true){
-                            return Storage::disk('local')->download('downloads/google.deb');
+                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/manual.pdf');
                         }
                         break;
                     case 2:
                         if($this->downloadControl->element_2 != true){
-                            return Storage::disk('local')->download('downloads/google.deb');
+                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/video.mp4');
                         }
                         break;
                     case 3:
                         if($this->downloadControl->element_3 != true){
-                            return Storage::disk('local')->download('downloads/google.deb');
+                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/preguntas_questions.pdf');
                         }
                         break;
                     case 4:
                         if($this->downloadControl->element_4 != true){
-                            return Storage::disk('local')->download('downloads/google.deb');
+                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/anexos.zip');
                         }
                         break;
                     
