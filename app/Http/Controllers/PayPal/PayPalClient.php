@@ -1,6 +1,6 @@
 <?php
 
-namespace Sample;
+namespace App\Http\Controllers\PayPal\PayPalClient;
 
 use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\ProductionEnvironment;
