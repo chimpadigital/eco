@@ -6,8 +6,8 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
     req.open("POST", page_url, true);
     req.addEventListener("progress", function (evt) {
         if(evt.lengthComputable) {
-            console.log(req.getResponseHeader("size-file"));
-            var percentComplete = evt.loaded / evt.total;
+           
+            var percentComplete = evt.loaded / req.getResponseHeader("size-file");
             percentComplete.toFixed(2);   
             
 
