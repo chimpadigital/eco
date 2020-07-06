@@ -5,8 +5,9 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
     var req = new XMLHttpRequest();   
     req.open("POST", page_url, true);
     req.addEventListener("progress", function (evt) {
-        if(true) {
-            var percentComplete = evt.loaded / evt.getResponseHeader('size-file');
+        if(evt.lengthComputable) {
+            console.log(req.getAllResponseHeaders());
+            var percentComplete = evt.loaded / evt.total;
             percentComplete.toFixed(2);   
             
 
@@ -17,7 +18,7 @@ function donwloadFile(that, page_url, urlNotification,elementProgress) {
             elementProgress.css('width', percentComplete+'%').attr('aria-valuenow', percentComplete).text(percentComplete+'%');
             
             
-            console.log(percentComplete);
+            
         }
     }, false);
 
