@@ -3,7 +3,7 @@
 namespace App;
 
 use App\Models\Quote;
-use App\Models\Invoice;
+use App\Models\Invioice;
 use App\Models\DownloadControl;
 use App\Models\UserInformation;
 use Spatie\Permission\Traits\HasRoles;
