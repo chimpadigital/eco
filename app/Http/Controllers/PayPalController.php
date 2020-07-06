@@ -6,7 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Invoice;
 use App\Models\Payment;
-use App\Http\Controller\PayPal\PayPalClient;
+use App\Http\Controllers\PayPal\PayPalClient;
 use App\Models\PromoCode;
 use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
