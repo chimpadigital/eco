@@ -50,7 +50,9 @@ class DownloadControlController extends Controller
                 switch ($id) {
                     case 1:
                         if($this->downloadControl->element_1 != true){
-                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/manual.pdf');
+                            $size = Storage::disk('local')->size('downloads/'.app()->getLocale().'/manual.pdf');
+
+                            return Storage::disk('local')->download('downloads/'.app()->getLocale().'/manual.pdf','manual.pdf',['size-file'=>$size]);
                         }
                         break;
                     case 2:
