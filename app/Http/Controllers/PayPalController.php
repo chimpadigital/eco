@@ -6,7 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Invoice;
 use App\Models\Payment;
-use Sample\PayPalClient;
+use App\Http\Controller\PayPal\PayPalClient;
 use App\Models\PromoCode;
 use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
@@ -22,6 +22,7 @@ use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
 class PayPalController extends Controller
 {
     use PaymentMethodTrait,SendEmailsTrait;
+
 
     public $paymentMethod;
 
