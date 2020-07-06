@@ -6,7 +6,6 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Invoice;
 use App\Models\Payment;
-use App\Http\Controllers\PayPal\PayPalClient;
 use App\Models\PromoCode;
 use PayPal\Rest\ApiContext;
 use Illuminate\Http\Request;
@@ -18,6 +17,7 @@ use PayPal\Auth\OAuthTokenCredential;
 use PayPal\Api\VerifyWebhookSignature;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
+use App\Http\Controllers\PayPal\PayPalClient;
 
 class PayPalController extends Controller
 {
