@@ -1,0 +1,88 @@
+@font-face {
+    font-family: 'VAG';
+    src: url('/site_assets/lib/fonts/vagroundedbt-regular.woff2') format('woff2'),
+            url('/site_assets/lib/fonts/vagroundedbt-regular.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DIN Pro';
+    src: url('site_assets/lib/fonts/DINPro-Medium.otf') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{ background-color: #ffffff;}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6{
+    font-family: 'VAG';
+    color: #00B49D;
+}
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+}
+h4 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.5rem;
+}
+
+p{
+    font-family: 'DIN Pro';
+}
+
+h5.home {
+    font-family: 'DIN Pro';
+}
+.din-pro {
+    font-family: 'DIN Pro';
+}
+
+/* BOTONES */
+
+.btn {
+   border-radius: 100rem;
+}
+
+.btn-info {
+    background-color: #0097D6;
+}
+
+.color-verde{
+    color: #00B49D;
+}
+
+.bg-teal-400 {
+    background-color: #00B49D;
+}
+
+.form-control {
+    border-radius: 1.1875rem;
+}
+
+.dashboard-icon{
+    width: 100px;
+    margin-top: -70px;
+    margin-bottom: 20px;
+}
+
+.dashboard{
+    position: relative;
+    background: url(../img/background-error-page.png) bottom no-repeat, url(../img/img-error-page-01.png) left no-repeat, url(../img/img-error-page-02.png) right no-repeat;
+}
+.logo{
+    width: 80px;margin-top: 5px;
+}
+.card{
+    box-shadow: 3px 3px 11px rgba(0,0,0,.05);
+    border-radius: 30px;
+    border: 0px solid rgba(0,0,0,.125);
+}

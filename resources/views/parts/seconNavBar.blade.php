@@ -8,26 +8,23 @@
         </div>
         
         <div class="col-lg-4">
-            <img src="{{ asset('site_') }}assets/img/logo.svg" width="150" alt="logo">
+            <img src="{{ asset('site_') }}assets/img/logo.svg" class="logo" width="80" alt="logo">
         </div>
         <div class="col-lg-8">
             <div class="navbar-collapse collapse justify-content-lg-end" id="navbar-navigation">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a href="{{route('admin.index.home')}}" class="navbar-nav-link active">
-                            <i class="icon-home4 mr-2"></i>
                             Inicio
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('admin.index.users')}}" class="navbar-nav-link">
-                            <i class="icon-home4 mr-2"></i>
                             Replicadores
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{route('admin.index.promo')}}" class="navbar-nav-link">
-                            <i class="icon-home4 mr-2"></i>
                             Cupón de descuento
                         </a>
                     </li>

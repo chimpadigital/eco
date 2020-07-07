@@ -6,5 +6,6 @@
 <link href="{{asset('')}}assets/css/layout.min.css" rel="stylesheet" type="text/css">
 <link href="{{asset('')}}assets/css/components.min.css" rel="stylesheet" type="text/css">
 <link href="{{asset('')}}assets/css/colors.min.css" rel="stylesheet" type="text/css">
+<link href="{{asset('')}}assets/css/admin.css" rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
 
