@@ -169,6 +169,39 @@ class UsersController extends Controller
             ],
             'cladeDeInpacto' =>$user->userInformation == null ? '': $user->userInformation->impact_class,
             'informacionExtra' =>$user->userInformation == null ? '': $user->userInformation->extra_information,
+            'encuestaUser' => [
+                'how_did_you_know_manual' => isset($user->survey)?$user->survay->how_did_you_know_manual:'',
+                'process_download' => isset($user->survey)?$user->survay->process_download:'',
+                'virtual_assists_boolean' => isset($user->survey)?$user->survay->virtual_assists_boolean:'',
+                'virtual_assists' => isset($user->survey)?$user->survay->virtual_assists:'',
+                'call_time_boolean' => isset($user->survey)?$user->survay->call_time_boolean:'',
+                'call_time' => isset($user->survey)?$user->survay->call_time:'',
+                'quality_advice_boolean' => isset($user->survey)?$user->survay->quality_advice_boolean:'',
+                'quality_advice' => isset($user->survey)?$user->survay->quality_advice:'',
+                'attention' => isset($user->survey)?$user->survay->attention:'',
+                'suggestions' => isset($user->survey)?$user->survay->suggestions:'',
+                //Content
+                'content_option_1' => isset($user->survey)?$user->survey->content_option_1:'',
+                'content_option_2' => isset($user->survey)?$user->survey->content_option_2:'',
+                'content_option_3' => isset($user->survey)?$user->survey->content_option_3:'',
+                'content_option_4' => isset($user->survey)?$user->survey->content_option_4:'',
+                'content_option_5' => isset($user->survey)?$user->survey->content_option_5:'',
+                'content_option_6' => isset($user->survey)?$user->survey->content_option_6:'',
+                //chapters
+                'chapter_1' => isset($user->survey)?$user->survey->chapter_1:'',
+                'chapter_2' => isset($user->survey)?$user->survey->chapter_2:'',
+                'chapter_3' => isset($user->survey)?$user->survey->chapter_3:'',
+                'chapter_4' => isset($user->survey)?$user->survey->chapter_4:'',
+                'chapter_5' => isset($user->survey)?$user->survey->chapter_5:'',
+                'chapter_6' => isset($user->survey)?$user->survey->chapter_6:'',
+                'chapter_7' => isset($user->survey)?$user->survey->chapter_7:'',
+                'chapter_8' => isset($user->survey)?$user->survey->chapter_8:'',
+                //assessment
+                'satisfied' => isset($user->survey)?$user->survey->satisfied:'',
+                'suggestions_2' => isset($user->survey)?$user->survey->suggestions_2:'',
+                'would_you_recommend' => isset($user->survey)?$user->survey->would_you_recommend:'',
+                'like' => isset($user->survey)?$user->survey->like:'',
+            ]
 
         ];
 

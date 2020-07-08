@@ -3,14 +3,15 @@
 namespace App;
 
 use App\Models\Quote;
-use App\Models\Invioice;
+use App\Models\Survey;
+use App\Models\Country;
+use App\Models\Invoice;
 use App\Models\DownloadControl;
 use App\Models\UserInformation;
 use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Models\Country;
 
 
 class User extends Authenticatable
@@ -70,6 +71,11 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Country::class);
 
+    }
+
+    public function survey()
+    {
+        return $this->hasOne(Survey::class);
     }
 
    
