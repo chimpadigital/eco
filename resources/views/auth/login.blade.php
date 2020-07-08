@@ -45,7 +45,7 @@
                                     </label>
                                 </div>
                             
-                        </div> --}}
+                        </div> 
                     
                         <button type="submit" class="btn-green-apple">@lang('login.btn')</button>
 
