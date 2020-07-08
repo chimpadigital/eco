@@ -2,7 +2,7 @@
     <div class="users">
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="">
                     <div class="card-header card-elements-inline">
                         <h4 class="card-title">Replicadores</h4>
                     </div>

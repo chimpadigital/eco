@@ -1,14 +1,14 @@
 <div >
     <div class="navbar navbar-expand-md navbar-light">
+        
+        <div class="col-lg-4 text-center text-lg-left">
+            <img src="{{ asset('site_') }}assets/img/logo.svg" class="logo" width="80" alt="logo">
+        </div>
         <div class="text-center d-md-none w-100">
             <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-navigation">
                 <i class="icon-unfold mr-2"></i>
                 Navigation
             </button>
-        </div>
-        
-        <div class="col-lg-4">
-            <img src="{{ asset('site_') }}assets/img/logo.svg" class="logo" width="80" alt="logo">
         </div>
         <div class="col-lg-8">
             <div class="navbar-collapse collapse justify-content-lg-end" id="navbar-navigation">
@@ -36,8 +36,8 @@
         
                     <li class="nav-item dropdown">
                         <a href="#" class="navbar-nav-link dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-cog3"></i>
-                            <span class="d-md-none ml-2">Configuración</span>
+                            <i class="icon-user color-blue"></i>
+                            <span class="d-md-none ml-2">Perfil</span>
                         </a>
         
                         <div class="dropdown-menu dropdown-menu-right">

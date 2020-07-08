@@ -8,7 +8,7 @@
 
 @font-face {
     font-family: 'DIN Pro';
-    src: url('site_assets/lib/fonts/DINPro-Medium.otf') format('woff2');
+    src: url('/site_assets/lib/fonts/DINPro-Medium.otf') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
@@ -59,6 +59,9 @@ h5.home {
 .color-verde{
     color: #00B49D;
 }
+.color-blue{
+    color: #0097D6;
+}
 
 .bg-teal-400 {
     background-color: #00B49D;
@@ -85,4 +88,20 @@ h5.home {
     box-shadow: 3px 3px 11px rgba(0,0,0,.05);
     border-radius: 30px;
     border: 0px solid rgba(0,0,0,.125);
+}
+.replicadores{padding: 0px 0px 20px;}
+
+.content {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-left: 4.625rem;
+    margin-right: 4.625rem;
+}
+@media (max-width:768px){
+    .replicadores{
+        margin-top: 80px;
+    }
+    .dashboard {
+        background: url(../img/background-error-page.png) bottom no-repeat;
+    }
 }

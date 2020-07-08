@@ -12,9 +12,9 @@
 <div class="content mt-5">
 
 <div class="align-content-center h-100 justify-content-center row" id="dashboard">
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-8 col-xl-7">
       <div class="card">
-          <div class="card-body p-5 border-radius">
+          <div class="card-body p-4 p-lg-5 border-radius">
             <div class="row justify-content-center">
                 <div class="col-lg-7 col-12 d-flex flex-column">
                     <img src="{{ asset('site_') }}assets/img/logo.svg" class="align-self-lg-start mb-4" alt="logo">
@@ -26,12 +26,12 @@
                         <div class="card-body">
                             <div class="">
                                 <img src="{{ asset('') }}assets/img/dashboard-icon.svg" class="dashboard-icon" alt="logo">
-                                <h2 class="font-weight-semibold mb-0 din-pro">{{count($users)}}</h2>
+                                <h2 class="font-weight-semibold mb-0 din-pro text-white">{{count($users)}}</h2>
                                 <span class="badge bg-teal-800 badge-pill align-self-center ml-auto"></span>
                             </div>
                             
                             <div>
-                                <h4 class="din-pro">
+                                <h4 class="din-pro text-white">
                                     Replicadores
                                 </h4>
                                 {{-- <div class="font-size-sm opacity-75">489 avg</div> --}}
