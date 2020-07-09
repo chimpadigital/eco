@@ -2121,25 +2121,76 @@ __webpack_require__.r(__webpack_exports__);
 var url = "/admin/users/";
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["routePerfil"],
+  computed: {
+    isActived: function isActived() {
+      return this.pagination.current_page;
+    },
+    //Calcula los elementos de la paginación
+    pagesNumber: function pagesNumber() {
+      if (!this.pagination.to) {
+        return [];
+      }
+
+      var from = this.pagination.current_page - this.offset;
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      var to = from + this.offset * 2;
+
+      if (to >= this.pagination.last_page) {
+        to = this.pagination.last_page;
+      }
+
+      var pagesArray = [];
+
+      while (from <= to) {
+        pagesArray.push(from);
+        from++;
+      }
+
+      return pagesArray;
+    }
+  },
   data: function data() {
     return {
       typeFiltro: 1,
       search: "",
-      users: []
+      users: [],
+      pagination: {
+        total: 0,
+        current_page: 0,
+        per_page: 0,
+        last_page: 0,
+        from: 0,
+        to: 0
+      },
+      offset: 3
     };
   },
   methods: {
     filtrarUsers: function filtrarUsers() {
       this.getUsers(this.typeFiltro, this.search);
     },
+    cambiarPagina: function cambiarPagina(page) {
+      var me = this; //Actualiza la página actual
+
+      me.pagination.current_page = page; //Envia la petición para visualizar la data de esa página
+
+      me.getUsers(this.typeFiltro, this.search, page);
+    },
     getUsers: function getUsers(typeFiltro, search) {
       var _this = this;
 
+      var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
       axios.post(url + "list-users", {
         typeFiltro: typeFiltro,
-        search: search
+        search: search,
+        page: page
       }).then(function (res) {
-        _this.users = res.data.users;
+        _this.pagination = res.data.pagination;
+        _this.users = res.data.users.data;
       });
     },
     redirecAPerfil: function redirecAPerfil(item) {
@@ -44141,6 +44192,22 @@ var render = function() {
               _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.cupon))])
             ]),
             _vm._v(" "),
+            _c("div", { staticClass: "col-12 col-sm-6 col-md-2 mt-2" }, [
+              _c("label", { attrs: { for: "cupon_descuento" } }, [
+                _vm._v("Metodo de pago")
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.method))])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-12 col-sm-6 col-md-2 mt-2" }, [
+              _c("label", { attrs: { for: "cupon_descuento" } }, [
+                _vm._v("Referencia")
+              ]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.ref))])
+            ]),
+            _vm._v(" "),
             _vm._m(2)
           ]),
           _vm._v(" "),
@@ -46468,11 +46535,7 @@ var render = function() {
                             }
                           }
                         },
-                        [
-                          _vm._v(
-                            "\n                                            Buscar\n                                        "
-                          )
-                        ]
+                        [_vm._v("Buscar")]
                       )
                     ])
                   ])
@@ -46490,13 +46553,17 @@ var render = function() {
                       "tbody",
                       _vm._l(_vm.users, function(item, i) {
                         return _c("tr", { key: i }, [
+                          _c("td", [_vm._v(_vm._s(item.id))]),
+                          _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.nombre))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.apellido))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.email))]),
                           _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(item.telefono))]),
+                          _c("td", [_vm._v(_vm._s(item.registro))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(item.ult_descarga))]),
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.pais))]),
                           _vm._v(" "),
@@ -46504,13 +46571,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(item.primerSesion))]),
                           _vm._v(" "),
-                          _c("td", [
-                            _vm._v(
-                              "\n                                                " +
-                                _vm._s(item.segundaSesion) +
-                                "\n                                            "
-                            )
-                          ]),
+                          _c("td", [_vm._v(_vm._s(item.segundaSesion))]),
                           _vm._v(" "),
                           _c("td", { staticClass: "d-flex flex-column" }, [
                             _c(
@@ -46527,7 +46588,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                                    Ver perfil\n                                                    "
+                                  "\n                          Ver perfil\n                          "
                                 ),
                                 _c("i", {
                                   staticClass: "icon-eye",
@@ -46539,6 +46600,86 @@ var render = function() {
                         ])
                       }),
                       0
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-12 my-3" }, [
+                  _c("nav", [
+                    _c(
+                      "ul",
+                      {
+                        staticClass:
+                          "pagination pagination-flat pagination-rounded align-self-center"
+                      },
+                      [
+                        _vm.pagination.current_page > 1
+                          ? _c("li", { staticClass: "page-item" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "page-link",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.cambiarPagina(
+                                        _vm.pagination.current_page - 1
+                                      )
+                                    }
+                                  }
+                                },
+                                [_vm._v("←   Prev")]
+                              )
+                            ])
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.pagesNumber, function(page) {
+                          return _c(
+                            "li",
+                            {
+                              key: page,
+                              staticClass: "page-item",
+                              class: [page == _vm.isActived ? "active" : ""]
+                            },
+                            [
+                              _c("a", {
+                                staticClass: "page-link",
+                                attrs: { href: "#" },
+                                domProps: { textContent: _vm._s(page) },
+                                on: {
+                                  click: function($event) {
+                                    $event.preventDefault()
+                                    return _vm.cambiarPagina(page)
+                                  }
+                                }
+                              })
+                            ]
+                          )
+                        }),
+                        _vm._v(" "),
+                        _vm.pagination.current_page < _vm.pagination.last_page
+                          ? _c("li", { staticClass: "page-item" }, [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "page-link",
+                                  attrs: { href: "#" },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      return _vm.cambiarPagina(
+                                        _vm.pagination.current_page + 1
+                                      )
+                                    }
+                                  }
+                                },
+                                [_vm._v("Next   →")]
+                              )
+                            ])
+                          : _vm._e()
+                      ],
+                      2
                     )
                   ])
                 ])
@@ -46567,57 +46708,57 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", [
           _c("span", { staticClass: "icon-user" }),
-          _vm._v(
-            "\n                                                Nombre\n                                            "
-          )
+          _vm._v("\n                        ID\n                      ")
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-user" }),
-          _vm._v(
-            "\n                                                Apellido\n                                            "
-          )
+          _vm._v("\n                        Nombre\n                      ")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("span", { staticClass: "icon-user" }),
+          _vm._v("\n                        Apellido\n                      ")
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-envelop" }),
-          _vm._v(
-            "\n                                                Email\n                                            "
-          )
+          _vm._v("\n                        Email\n                      ")
         ]),
         _vm._v(" "),
         _c("th", [
-          _c("span", { staticClass: "icon-phone" }),
+          _c("span", { staticClass: "icon-calendar" }),
+          _vm._v("\n                        Registro\n                      ")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("span", { staticClass: "icon-calendar" }),
           _vm._v(
-            "\n                                                Telefono\n                                            "
+            "\n                        Ultima Descarga\n                      "
           )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-earth" }),
-          _vm._v(
-            "\n                                                Pais\n                                            "
-          )
+          _vm._v("\n                        Pais\n                      ")
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-coin-dollar" }),
+          _vm._v("\n                        Descuento\n                      ")
+        ]),
+        _vm._v(" "),
+        _c("th", [
+          _c("span", { staticClass: "icon-calendar" }),
           _vm._v(
-            "\n                                                Descuento\n                                            "
+            "\n                        Primer Sesion\n                      "
           )
         ]),
         _vm._v(" "),
         _c("th", [
           _c("span", { staticClass: "icon-calendar" }),
           _vm._v(
-            "\n                                                Primer Sesion\n                                            "
-          )
-        ]),
-        _vm._v(" "),
-        _c("th", [
-          _c("span", { staticClass: "icon-calendar" }),
-          _vm._v(
-            "\n                                                Segunda Sesion\n                                            "
+            "\n                        Segunda Sesion\n                      "
           )
         ]),
         _vm._v(" "),
