@@ -74,13 +74,30 @@ export default {
                 item.apellido.trim();
         },
         eliminarUsuario(item) {
-            axios
-                .post(url + "delete-user", {
-                    id: item.id
-                })
-                .then(res => {
-                    this.getUsers(this.typeFiltro, this.search);
-                });
+            Swal.fire({
+                title: "Confirmar",
+                text: "Esta seguro de eliminar este usuario?",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si eliminar!"
+            }).then(result => {
+                if (result.value) {
+                    axios
+                        .post(url + "delete-user", {
+                            id: item.id
+                        })
+                        .then(res => {
+                            this.$notify({
+                                group: "userdelete",
+                                title: "Exito!",
+                                text: "Usuario Eliminado Exitosamente!"
+                            });
+                            this.getUsers(this.typeFiltro, this.search);
+                        });
+                }
+            });
         }
     },
     mounted() {

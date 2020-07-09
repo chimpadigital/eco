@@ -109,14 +109,14 @@
                             Ver perfil
                             <i class="icon-eye" aria-hidden="true"></i>
                           </a>
-                          <!-- <a
+                          <a
                             href="#"
                             class="btn btn-danger my-1"
                             @click.prevent="eliminarUsuario(item)"
-                        >
+                          >
                             Borrar
                             <i class="icon-bin" aria-hidden="true"></i>
-                          </a>-->
+                          </a>
                         </td>
                       </tr>
                     </tbody>
@@ -162,7 +162,13 @@
         </div>
       </div>
     </div>
+    <notifications group="userdelete" />
   </div>
 </template>
 
 <script src="./scripts.component.js"></script>
+<style >
+.swal2-icon.swal2-warning {
+  font-size: 1rem !important;
+}
+</style>
