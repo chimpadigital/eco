@@ -108,6 +108,16 @@
             <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
             <p>{{data.procesoSesion.cupon}}</p>
           </div>
+          <div class="col-12 col-sm-6 col-md-2 mt-2">
+            <label for="cupon_descuento">Metodo de pago</label>
+            <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
+            <p>{{data.procesoSesion.method}}</p>
+          </div>
+          <div class="col-12 col-sm-6 col-md-2 mt-2">
+            <label for="cupon_descuento">Referencia</label>
+            <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
+            <p>{{data.procesoSesion.ref}}</p>
+          </div>
           <div class="col-12">
             <div class="divider"></div>
           </div>

@@ -6,10 +6,11 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Country;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-
 use App\Traits\SendEmailsTrait;
+
+
+use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UsersController extends Controller
 {
@@ -22,7 +23,7 @@ class UsersController extends Controller
     public function listUsers(Request $request)
     {
         
-
+        $page = $request->page;
         if($request->typeFiltro == 1){
             $usersAll = User::email($request->search)
         ->get();
@@ -55,10 +56,13 @@ class UsersController extends Controller
                     'apellido' => $user->lastname,
                     'email' => $user->email,
                     'telefono' => $user->phone,
+                    'registro' => Carbon::parse($user->created_at)->format('d-m-Y'),
                     'pais' => $user->country->name,
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
+                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+
                 ];
             }else{
                 $data = [
@@ -67,16 +71,35 @@ class UsersController extends Controller
                     'apellido' => $user->lastname,
                     'email' => $user->email,
                     'telefono' => $user->phone,
+                    'registro' => Carbon::parse($user->created_at)->format('d-m-Y'),
                     'pais' => isset($user->country) ? $user->country->name:'',
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
+                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+
                     
                 ];
             }
             
             $users->push($data);
         };
+
+        $items = $users;
+        $total = $users->count();
+        $perPage = 5;
+        $itemsPage = $items->forPage($page,$perPage);
+
+        $paginateUsers = new LengthAwarePaginator(
+            $itemsPage,
+            $total,
+            $perPage,
+            $page
+        );
+        return [
+            'pagination' => $paginateUsers,
+            'users' => $paginateUsers
+        ];
         return response()->json([
             'users' => $users,
         ]);
@@ -120,10 +143,26 @@ class UsersController extends Controller
         }else{
             $cupon = '';
         }
-        ///emd
+        ///end
+        //procesando el pago
+        if(isset($user->invoice)){
+            if($user->invoice->payment_method_id == 2){
+               $metho = $user->invoice->payment->payment_method->name;
+               $ref = $user->invoice->payment->order_id;
+            }else{
+                $metho = $user->invoice->payment->payment_method->name;
+                $ref = $user->invoice->payment->order_id;
+            }    
+        }else{
+            $metho = '';
+            $ref = '';
+        }
+        ///end
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => isset($user->invoice)?true:false,
+                'method' => $metho,
+                'ref' => $ref,
                 'descargar' => $descargarManuales,
                 'descuento' => false,
 

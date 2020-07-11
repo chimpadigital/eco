@@ -15,5 +15,8 @@
 
 <script src="{{asset('')}}assets/js/app.js"></script>
 <script src="{{asset('')}}js/demo_pages/dashboard.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 <script src="{{asset('')}}js/app.js"></script>
 <!-- /theme JS files -->
