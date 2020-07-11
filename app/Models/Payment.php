@@ -29,4 +29,8 @@ class Payment extends Model
     {
         return $this->belongsTo(PromoCode::class,'promo_code_id','id');
     }
+    public function payment_method()
+    {
+        return $this->belongsTo(PaymentMethod::class);
+    }
 }

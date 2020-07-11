@@ -6,10 +6,11 @@ use App\User;
 use Carbon\Carbon;
 use App\Models\Country;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-
-
 use App\Traits\SendEmailsTrait;
+
+
+use App\Http\Controllers\Controller;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class UsersController extends Controller
 {
@@ -22,7 +23,7 @@ class UsersController extends Controller
     public function listUsers(Request $request)
     {
         
-
+        $page = $request->page;
         if($request->typeFiltro == 1){
             $usersAll = User::email($request->search)
         ->get();
@@ -55,10 +56,13 @@ class UsersController extends Controller
                     'apellido' => $user->lastname,
                     'email' => $user->email,
                     'telefono' => $user->phone,
+                    'registro' => Carbon::parse($user->created_at)->format('d-m-Y'),
                     'pais' => $user->country->name,
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
+                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+
                 ];
             }else{
                 $data = [
@@ -67,16 +71,35 @@ class UsersController extends Controller
                     'apellido' => $user->lastname,
                     'email' => $user->email,
                     'telefono' => $user->phone,
+                    'registro' => Carbon::parse($user->created_at)->format('d-m-Y'),
                     'pais' => isset($user->country) ? $user->country->name:'',
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
+                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+
                     
                 ];
             }
             
             $users->push($data);
         };
+
+        $items = $users;
+        $total = $users->count();
+        $perPage = 5;
+        $itemsPage = $items->forPage($page,$perPage);
+
+        $paginateUsers = new LengthAwarePaginator(
+            $itemsPage,
+            $total,
+            $perPage,
+            $page
+        );
+        return [
+            'pagination' => $paginateUsers,
+            'users' => $paginateUsers
+        ];
         return response()->json([
             'users' => $users,
         ]);
@@ -120,10 +143,26 @@ class UsersController extends Controller
         }else{
             $cupon = '';
         }
-        ///emd
+        ///end
+        //procesando el pago
+        if(isset($user->invoice)){
+            if($user->invoice->payment_method_id == 2){
+               $metho = $user->invoice->payment->payment_method->name;
+               $ref = $user->invoice->payment->order_id;
+            }else{
+                $metho = $user->invoice->payment->payment_method->name;
+                $ref = $user->invoice->payment->order_id;
+            }    
+        }else{
+            $metho = '';
+            $ref = '';
+        }
+        ///end
         $jsonFormate = [
             'procesoSesion'=> [
                 'pago' => isset($user->invoice)?true:false,
+                'method' => $metho,
+                'ref' => $ref,
                 'descargar' => $descargarManuales,
                 'descuento' => false,
 
@@ -170,16 +209,16 @@ class UsersController extends Controller
             'cladeDeInpacto' =>$user->userInformation == null ? '': $user->userInformation->impact_class,
             'informacionExtra' =>$user->userInformation == null ? '': $user->userInformation->extra_information,
             'encuestaUser' => [
-                'how_did_you_know_manual' => isset($user->survey)?$user->survay->how_did_you_know_manual:'',
-                'process_download' => isset($user->survey)?$user->survay->process_download:'',
-                'virtual_assists_boolean' => isset($user->survey)?$user->survay->virtual_assists_boolean:'',
-                'virtual_assists' => isset($user->survey)?$user->survay->virtual_assists:'',
-                'call_time_boolean' => isset($user->survey)?$user->survay->call_time_boolean:'',
-                'call_time' => isset($user->survey)?$user->survay->call_time:'',
-                'quality_advice_boolean' => isset($user->survey)?$user->survay->quality_advice_boolean:'',
-                'quality_advice' => isset($user->survey)?$user->survay->quality_advice:'',
-                'attention' => isset($user->survey)?$user->survay->attention:'',
-                'suggestions' => isset($user->survey)?$user->survay->suggestions:'',
+                'how_did_you_know_manual' => isset($user->survey)?$user->survey->how_did_you_know_manual:'',
+                'process_download' => isset($user->survey)?$user->survey->process_download:'',
+                'virtual_assists_boolean' => isset($user->survey)?$user->survey->virtual_assists_boolean:'',
+                'virtual_assists' => isset($user->survey)?$user->survey->virtual_assists:'',
+                'call_time_boolean' => isset($user->survey)?$user->survey->call_time_boolean:'',
+                'call_time' => isset($user->survey)?$user->survey->call_time:'',
+                'quality_advice_boolean' => isset($user->survey)?$user->survey->quality_advice_boolean:'',
+                'quality_advice' => isset($user->survey)?$user->survey->quality_advice:'',
+                'attention' => isset($user->survey)?$user->survey->attention:'',
+                'suggestions' => isset($user->survey)?$user->survey->suggestions:'',
                 //Content
                 'content_option_1' => isset($user->survey)?$user->survey->content_option_1:'',
                 'content_option_2' => isset($user->survey)?$user->survey->content_option_2:'',
