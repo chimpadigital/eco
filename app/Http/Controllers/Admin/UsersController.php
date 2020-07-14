@@ -146,13 +146,17 @@ class UsersController extends Controller
         ///end
         //procesando el pago
         if(isset($user->invoice)){
-            if($user->invoice->payment_method_id == 2){
-               $metho = $user->invoice->payment->payment_method->name;
-               $ref = $user->invoice->payment->payment_id;
-            }else{
+            if($user->invoice->payment->payment_method_id == 1)
+            {
                 $metho = $user->invoice->payment->payment_method->name;
                 $ref = $user->invoice->payment->external_reference;
-            }    
+
+            } 
+            if($user->invoice->payment->payment_method_id == 2){
+               $metho = $user->invoice->payment->payment_method->name;
+                $ref = $user->invoice->payment->payment_id;
+            }
+               
         }else{
             $metho = '';
             $ref = '';
