@@ -51,9 +51,11 @@ export default {
             //Actualiza la página actual
             me.pagination.current_page = page;
             //Envia la petición para visualizar la data de esa página
-            me.getUsers(this.typeFiltro, this.search, page);
+            this.$store.commit("nextPage", page);
+            me.getUsers(this.typeFiltro, this.search);
         },
-        getUsers(typeFiltro, search, page = 1) {
+        getUsers(typeFiltro, search) {
+            let page = this.$store.getters.page;
             axios
                 .post(url + "list-users", {
                     typeFiltro: typeFiltro,
