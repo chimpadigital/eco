@@ -16,7 +16,7 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
     plugins: [vuexLocalStorage.plugin],
     state: {
-        count: 0,
+        count: 1,
         perfil: {
             id: null
         }
@@ -24,12 +24,18 @@ const store = new Vuex.Store({
     getters: {
         perfil: state => {
             return state.perfil;
+        },
+        page: state => {
+            return state.count;
         }
     },
 
     mutations: {
         setIdPerfil(state, payload) {
             state.perfil.id = payload;
+        },
+        nextPage(state, payload) {
+            state.count = payload;
         }
     }
 });

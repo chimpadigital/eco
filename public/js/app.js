@@ -2178,12 +2178,13 @@ var url = "/admin/users/";
 
       me.pagination.current_page = page; //Envia la petición para visualizar la data de esa página
 
-      me.getUsers(this.typeFiltro, this.search, page);
+      this.$store.commit("nextPage", page);
+      me.getUsers(this.typeFiltro, this.search);
     },
     getUsers: function getUsers(typeFiltro, search) {
       var _this = this;
 
-      var page = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1;
+      var page = this.$store.getters.page;
       axios.post(url + "list-users", {
         typeFiltro: typeFiltro,
         search: search,
@@ -61927,7 +61928,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuex__WEBPACK_IMPORTED_MODULE_1__
 var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   plugins: [vuexLocalStorage.plugin],
   state: {
-    count: 0,
+    count: 1,
     perfil: {
       id: null
     }
@@ -61935,11 +61936,17 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
   getters: {
     perfil: function perfil(state) {
       return state.perfil;
+    },
+    page: function page(state) {
+      return state.count;
     }
   },
   mutations: {
     setIdPerfil: function setIdPerfil(state, payload) {
       state.perfil.id = payload;
+    },
+    nextPage: function nextPage(state, payload) {
+      state.count = payload;
     }
   }
 });
