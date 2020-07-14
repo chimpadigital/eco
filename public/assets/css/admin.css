@@ -97,6 +97,15 @@ h5.home {
     margin-left: 4.625rem;
     margin-right: 4.625rem;
 }
+
+@media (min-width: 1600px){
+    .col-xl-8 {
+        -ms-flex: 0 0 55.66667%;
+        flex: 0 0 55.66667%;
+        max-width: 55.66667%;
+    }
+}
+
 @media (max-width:768px){
     .replicadores{
         margin-top: 80px;

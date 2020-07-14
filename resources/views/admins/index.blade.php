@@ -12,7 +12,7 @@
 <div class="content mt-5">
 
 <div class="align-content-center h-100 justify-content-center row" id="dashboard">
-    <div class="col-12 col-lg-8 col-xl-7">
+    <div class="col-12 col-lg-8 col-xl-8">
       <div class="card">
           <div class="card-body p-4 p-lg-5 border-radius">
             <div class="row justify-content-center">
