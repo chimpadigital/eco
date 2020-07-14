@@ -426,7 +426,7 @@
                     class="form-control"
                   />
                 </div>
-                <div class="col-12 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3 d-flex flex-column justify-content-between">
                   <label for>Los objetivos están claramente definidos:</label>
                   <input
                     v-model="data.encuestaUser.content_option_2"
@@ -456,7 +456,7 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-12 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-4 d-flex flex-column justify-content-between">
                   <label
                     for
                   >Se detallan todos los pasos a seguir y la secuencia temporal es detallada, coherente y factible:</label>

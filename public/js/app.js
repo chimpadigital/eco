@@ -45562,39 +45562,46 @@ var render = function() {
                       })
                     ]),
                     _vm._v(" "),
-                    _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
-                      _c("label", { attrs: { for: "" } }, [
-                        _vm._v("Los objetivos están claramente definidos:")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.data.encuestaUser.content_option_2,
-                            expression: "data.encuestaUser.content_option_2"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        attrs: { type: "text" },
-                        domProps: {
-                          value: _vm.data.encuestaUser.content_option_2
-                        },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "col-12 col-sm-6 col-md-3 d-flex flex-column justify-content-between"
+                      },
+                      [
+                        _c("label", { attrs: { for: "" } }, [
+                          _vm._v("Los objetivos están claramente definidos:")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.data.encuestaUser.content_option_2,
+                              expression: "data.encuestaUser.content_option_2"
                             }
-                            _vm.$set(
-                              _vm.data.encuestaUser,
-                              "content_option_2",
-                              $event.target.value
-                            )
+                          ],
+                          staticClass: "form-control",
+                          attrs: { type: "text" },
+                          domProps: {
+                            value: _vm.data.encuestaUser.content_option_2
+                          },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(
+                                _vm.data.encuestaUser,
+                                "content_option_2",
+                                $event.target.value
+                              )
+                            }
                           }
-                        }
-                      })
-                    ]),
+                        })
+                      ]
+                    ),
                     _vm._v(" "),
                     _c("div", { staticClass: "col-12 col-sm-6 col-md-3" }, [
                       _c("label", { attrs: { for: "" } }, [
@@ -45671,41 +45678,48 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group row" }, [
-                  _c("div", { staticClass: "col-12 col-sm-6 col-md-4" }, [
-                    _c("label", { attrs: { for: "" } }, [
-                      _vm._v(
-                        "Se detallan todos los pasos a seguir y la secuencia temporal es detallada, coherente y factible:"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.data.encuestaUser.content_option_5,
-                          expression: "data.encuestaUser.content_option_5"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: { type: "text" },
-                      domProps: {
-                        value: _vm.data.encuestaUser.content_option_5
-                      },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "col-12 col-sm-6 col-md-4 d-flex flex-column justify-content-between"
+                    },
+                    [
+                      _c("label", { attrs: { for: "" } }, [
+                        _vm._v(
+                          "Se detallan todos los pasos a seguir y la secuencia temporal es detallada, coherente y factible:"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.data.encuestaUser.content_option_5,
+                            expression: "data.encuestaUser.content_option_5"
                           }
-                          _vm.$set(
-                            _vm.data.encuestaUser,
-                            "content_option_5",
-                            $event.target.value
-                          )
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text" },
+                        domProps: {
+                          value: _vm.data.encuestaUser.content_option_5
+                        },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.$set(
+                              _vm.data.encuestaUser,
+                              "content_option_5",
+                              $event.target.value
+                            )
+                          }
                         }
-                      }
-                    })
-                  ]),
+                      })
+                    ]
+                  ),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-12 col-sm-6 col-md-4" }, [
                     _c("label", { attrs: { for: "" } }, [
