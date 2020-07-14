@@ -87,7 +87,7 @@ class UsersController extends Controller
 
         $items = $users;
         $total = $users->count();
-        $perPage = 5;
+        $perPage = 10;
         $itemsPage = $items->forPage($page,$perPage);
 
         $paginateUsers = new LengthAwarePaginator(
@@ -151,7 +151,7 @@ class UsersController extends Controller
                $ref = $user->invoice->payment->payment_id;
             }else{
                 $metho = $user->invoice->payment->payment_method->name;
-                $ref = $user->invoice->payment->payment_id;
+                $ref = $user->invoice->payment->external_reference;
             }    
         }else{
             $metho = '';
