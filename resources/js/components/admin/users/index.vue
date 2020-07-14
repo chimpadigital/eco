@@ -3,16 +3,20 @@
     <div class="row">
       <div class="col-12">
         <div class="card">
-          <div class="card-header card-elements-inline">
-            <h4 class="card-title">Replicadores</h4>
-          </div>
+          
           <div class="card-body">
             <!-- buscador -->
             <div class="row justify-content-end my-3">
               <div class="col-12 col-md-6">
-                <form action="#">
-                  <div class="form-group row">
-                    <div class="col-4">
+                  <img src="/assets/img/replicadores.svg" class="mb-3" alt="">
+                  <div class="card-elements-inline">
+                    <h4 class="card-title">Replicadores</h4>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 align-self-center">
+                <form action="#" class="p-3 filtro">
+                  <div class="form-group mb-0 row">
+                    <div class="col-lg-4 col-12 mb-2">
                       <select
                         name="optionsFilter"
                         id="options-filter"
@@ -24,10 +28,10 @@
                         <option value="3">Apellido</option>
                       </select>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6 col-12">
                       <input v-model="search" type="text" class="form-control" />
                     </div>
-                    <div class="col-2">
+                    <div class="col-12 col-lg-2 d-flex justify-content-around">
                       <button
                         class="btn btn-success"
                         @click.prevent="filtrarUsers"
@@ -93,7 +97,7 @@
                         <td>{{ item.id }}</td>
                         <td>{{ item.nombre }}</td>
                         <td>{{ item.apellido }}</td>
-                        <td>{{ item.email }}</td>
+                        <td >{{ item.email }}</td>
                         <td>{{ item.registro }}</td>
                         <td>{{ item.ult_descarga }}</td>
                         <td>{{ item.pais }}</td>
@@ -124,13 +128,13 @@
                 </div>
                 <div class="col-12 my-3">
                   <nav>
-                    <ul class="pagination pagination-flat pagination-rounded align-self-center">
+                    <ul class="pagination pagination-flat pagination-rounded align-self-center justify-content-end">
                       <li class="page-item" v-if="pagination.current_page > 1">
                         <a
                           href="#"
                           @click.prevent="cambiarPagina(pagination.current_page - 1)"
                           class="page-link"
-                        >&larr; &nbsp; Prev</a>
+                        ><img src="/assets/img/pag-left.svg" alt=""></a>
                       </li>
                       <li
                         class="page-item"
@@ -151,7 +155,7 @@
                           href="#"
                           @click.prevent="cambiarPagina(pagination.current_page + 1)"
                           class="page-link"
-                        >Next &nbsp; &rarr;</a>
+                        ><img src="/assets/img/pag-right.svg" alt=""></a>
                       </li>
                     </ul>
                   </nav>

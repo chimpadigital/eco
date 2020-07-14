@@ -6,24 +6,24 @@
         </div>
         <div class="text-center d-md-none w-100">
             <button type="button" class="navbar-toggler dropdown-toggle" data-toggle="collapse" data-target="#navbar-navigation">
-                <i class="icon-unfold mr-2"></i>
-                Navigation
+                
+                Menú
             </button>
         </div>
         <div class="col-lg-8">
             <div class="navbar-collapse collapse justify-content-lg-end" id="navbar-navigation">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="{{route('admin.index.home')}}" class="navbar-nav-link active">
+                    <li class="nav-item {{ (request()->is('admin')) ? 'active' : '' }}">
+                        <a href="{{route('admin.index.home')}}" class="navbar-nav-link">
                             Inicio
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('admin/users*')) ? 'active' : '' }}">
                         <a href="{{route('admin.index.users')}}" class="navbar-nav-link">
                             Replicadores
                         </a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item {{ (request()->is('admin/promo*')) ? 'active' : '' }}">
                         <a href="{{route('admin.index.promo')}}" class="navbar-nav-link">
                             Cupón de descuento
                         </a>

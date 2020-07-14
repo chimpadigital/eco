@@ -4,18 +4,18 @@
       <div class="row justify-content-between">
         <div class="col-12 col-sm-6 col-md-3 d-flex flex-column">
           <div class="icon">
-            <span class="icon-user" style="font-size: 3rem;"></span>
+             <img src="/assets/img/cupon.svg" class="mb-3" alt="">
           </div>
           <h4 class="card-title">Cupones de descuentos</h4>
         </div>
-        <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
-          <a href="/admin" class="btn btn-info mr-3">Regresar</a>
-          <button class="btn btn-success" @click.prevent="agregarPromo">Agregar</button>
+        <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-center justify-content-lg-end align-items-end mt-3 mt-lg-0">
+          <a href="/admin" class="btn btn-info mr-3"><img src="/assets/img/back.svg" class="mr-1" alt=""> Volver</a>
+          <button class="btn btn-success" @click.prevent="agregarPromo">Agregar <img src="/assets/img/plus.svg" class="mr-1" alt=""></button>
         </div>
       </div>
     </div>
     <div class="card-body">
-      <div class="row" v-for="(promo,i) in promos" :key="i">
+      <div class="row form-group" v-for="(promo,i) in promos" :key="i">
         <div class="col-12 col-sm-6 col-md-2">
           <label for="nombre">Nombre</label>
           <input
@@ -73,8 +73,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-2">
-          <button class="btn btn-success" @click.prevent="guardarPromo">Guardar</button>
+        <div class="col-12 d-flex justify-content-end">
+          <button class="btn btn-success" @click.prevent="guardarPromo">Guardar <img src="/assets/img/save.svg" alt=""></button>
         </div>
       </div>
     </div>

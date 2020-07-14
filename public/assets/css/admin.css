@@ -67,8 +67,32 @@ h5.home {
     background-color: #00B49D;
 }
 
+.form-group{margin-bottom: 2.25rem;}
+
 .form-control {
-    border-radius: 1.1875rem;
+    display: block;
+    width: 100%;
+    height: calc(1.5385em + .875rem + 2px);
+    padding: .4375rem .875rem;
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5385;
+    color: #333;
+    background-color: rgb(0,151,214,.1);
+    background-clip: padding-box;
+    border: 1px solid #0097D6;
+    border-radius: 24px 24px 5px 24px;
+    box-shadow: 0 0 0 0 transparent;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.group-inputs span{
+    cursor: pointer;
+    background-color: rgb(0,151,214,.1);
+    background-clip: padding-box;
+    border: 1px solid #0097D6;
+    padding: 8px;
+    border-radius: 100px;
 }
 
 .dashboard-icon{
@@ -97,6 +121,99 @@ h5.home {
     margin-left: 4.625rem;
     margin-right: 4.625rem;
 }
+.navbar-light {
+    color: rgba(51,51,51,.85);
+    background-color: #F2F5F7;
+    border-bottom-color: rgba(0,0,0,0);
+}
+
+.active a.navbar-nav-link {
+    color: #80C342!important;
+    background: transparent!important;
+    /* font-weight: 600; */
+}
+
+.navbar-nav-link {
+    font-family: 'DIN pro';
+}
+.pagination-flat.pagination-rounded .page-link {
+    font-size: 20px;
+}
+.pagination-flat .page-item.active .page-link {
+    background-color: #ffffff;
+    color: #00B49D;
+    text-decoration: underline;
+    border-color: transparent;
+}
+.filtro{
+    background: #EEEEEE;
+    border-radius: 100px;
+}
+
+.btn{
+    font-size: 1rem;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #00B49D;
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: #006558;
+}
+
+input[type=checkbox].css-checkbox {
+	position:absolute; z-index:-1000; left:-1000px; overflow: hidden; clip: rect(0 0 0 0); height:1px; width:1px; margin:-1px; padding:0; border:0;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+	padding-left:55px;
+	height:50px; 
+	display:inline-block;
+	line-height:50px;
+	background-repeat:no-repeat;
+	background-position: 0 0;
+	font-size:50px;
+	vertical-align:middle;
+	cursor:pointer;
+
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+	background-position: 0 -50px;
+}
+
+label.css-label {
+	background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_6a85234bd18e936e19750515adec25ca.png);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.fechas{
+    background: #EEEEEE;
+    padding: 8px 10px;
+    border-radius: 100px;
+    margin-bottom: 0px;
+    height: 36px;
+    margin-right: 6px;
+}
+input[type=checkbox]{
+    width: 40px;
+}
+th span{
+    color: #0097D6;
+    padding-right: 5px;
+}
+
+.capitulo{
+    width: calc(1.5385em + .875rem + 2px);
+    border-radius: 100px;
+}
 
 @media (min-width: 1600px){
     .col-xl-8 {
@@ -105,8 +222,65 @@ h5.home {
         max-width: 55.66667%;
     }
 }
+@media (min-width: 768px) and (max-width:1366px){
+    .table-responsive {
+        display: block;
+        width: 87%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    td.d-flex.flex-column{    
+    position: absolute;
+    width: 163px;
+    right: 0;
+    background: white;
+    }
+    tr{height: 115px;}
+    thead tr{height: auto;}
+    thead tr th:last-child{
+        position: absolute;
+        width: 163px;
+        right: 0;
+        background: white;
+        top: 0px;
+        height: 85px;
+        display: flex;
+        align-items: center;
+    }
+}
 
 @media (max-width:768px){
+    h1 {
+        font-size: 3rem;
+    }
+    h5 {
+        font-size: 1.3rem;
+    }
+
+    .form-group [class*=col-md-]:not([class*=col-form-label])+[class*=col-] {
+        margin-top: 2.25rem;
+    }
+
+    [class*=" icon-"], [class^=icon-] {
+        text-align: left;
+        display: block;
+    }
+    
+    td.d-flex{
+        display: inline-block;
+        width: 170px;
+    }
+    td.d-flex a i{
+        display: inline-block;
+    }
+
+    .filtro {
+        border-radius: 17px;
+    }
+    .content {
+        margin-left: 0.625rem;
+        margin-right: 0.625rem;
+    }
     .replicadores{
         margin-top: 80px;
     }

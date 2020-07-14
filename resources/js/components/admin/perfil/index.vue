@@ -4,22 +4,22 @@
     <div class="card text-left">
       <div class="card-header">
         <div class="row justify-content-between">
-          <div class="col-12 col-sm-6 col-md-3 d-flex flex-column">
+          <div class="col-12 col-sm-6 col-md-3 d-flex flex-column order-lg-1 order-2">
             <div class="icon">
-              <span class="icon-user" style="font-size: 3rem;"></span>
+              <img src="/assets/img/replicadores.svg" class="mb-3" alt="">
             </div>
             <h4
               class="card-title"
-            >perfil de: {{ data.inforPerfil.nombre+' '+data.inforPerfil.apellido }}</h4>
+            >Perfil de: {{ data.inforPerfil.nombre+' '+data.inforPerfil.apellido }}</h4>
           </div>
-          <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end">
-            <a href="/admin/users" class="btn btn-success">Regresar</a>
+          <div class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end order-lg-2 order-1">
+            <a href="/admin/users" class="btn btn-success"><img src="/assets/img/back.svg" class="mr-1" alt="">Volver</a>
           </div>
         </div>
       </div>
       <div class="card-body">
         <div class="row">
-          <div class="col-12 col-sm-6 col-md-1">
+          <div class="col-12 col-sm-6 col-md-1 mb-4">
             <label for="pago">Pago</label>
             <input
               v-model="data.procesoSesion.pago"
@@ -29,7 +29,7 @@
               id="pago"
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-1">
+          <div class="col-12 col-sm-6 col-md-1 mb-4">
             <label for="descargas">Descargas</label>
             <input
               v-model="data.procesoSesion.descargar"
@@ -39,10 +39,10 @@
               id="descargas"
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
+          <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4">
             <div class="input-fecha" style="margin-right:2px;">
               <label for="primer_sesion">Primer Sesión</label>
-              <p style="width: 154px;">{{data.procesoSesion.primerSesionFecha}}</p>
+              <p style="width: 154px;" class="fechas">{{data.procesoSesion.primerSesionFecha}}</p>
               <!-- <input
               class="form-control"
               :value="data.procesoSesion.primerSesionFecha"
@@ -61,10 +61,10 @@
             />
           </div>
 
-          <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end">
+          <div class="col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4">
             <div class="input-fecha" style="margin-right:2px;">
               <label for="segunda_sesion">Segunda Sesión</label>
-              <p style="width: 154px;">{{data.procesoSesion.segunSesionFecha}}</p>
+              <p style="width: 154px;" class="fechas">{{data.procesoSesion.segunSesionFecha}}</p>
 
               <!-- <input
               class="form-control"
@@ -83,7 +83,7 @@
             />
           </div>
 
-          <div class="col-12 col-sm-6 col-md-2">
+          <div class="col-12 col-sm-6 col-md-2 mb-4">
             <label for="condiciones_uso">Condiciones Generales de Uso</label>
             <input
               class="form-control"
@@ -93,7 +93,7 @@
               id="condiciones_uso"
             />
           </div>
-          <div class="col-12 col-sm-6 col-md-2">
+          <div class="col-12 col-sm-6 col-md-2 mb-4">
             <label for="acuerdo_confidencialidad">Acuerdo de Confidencialidad</label>
             <input
               class="form-control"
@@ -106,14 +106,14 @@
           <div class="col-12 col-sm-6 col-md-2">
             <label for="cupon_descuento">Cupón Descuento</label>
             <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
-            <p>{{data.procesoSesion.cupon}}</p>
+            <p class="fechas">{{data.procesoSesion.cupon}}</p>
           </div>
-          <div class="col-12 col-sm-6 col-md-2 mt-2">
+          <div class="col-12 col-sm-6 col-md-2 mt-4">
             <label for="cupon_descuento">Metodo de pago</label>
             <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
             <p>{{data.procesoSesion.method}}</p>
           </div>
-          <div class="col-12 col-sm-6 col-md-2 mt-2">
+          <div class="col-12 col-sm-6 col-md-3 mt-4">
             <label for="cupon_descuento">Referencia</label>
             <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
             <p>{{data.procesoSesion.ref}}</p>
@@ -210,7 +210,7 @@
                 </div>
               </div>
               <div class="form-group row justify-content-center">
-                <div class="col-12 col-sm-6">
+                <div class="col-12 col-sm-6 col-md-">
                   <label for>
                     ¿Por qué estas interesado en frabricar
                     eco-ladrillos? ¿Cual es tu Motivación?
@@ -222,7 +222,7 @@
                     placeholder
                   />
                 </div>
-                <div class="col-12 col-sm-6 justify-content-end">
+                <div class="col-12 col-sm-6 col-md- justify-content-end">
                   <label for>¿Ya conocías a la fundación previamente?</label>
                   <input
                     v-model="
@@ -235,24 +235,24 @@
                 </div>
               </div>
               <div class="form-group row justify-content-center">
-                <div class="col-6 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label>Pertenece a una ONG</label>
                   <div class="group-inputs d-flex flex-row align-items-center">
                     <span
                       style="cursor:pointer"
                       v-if="data.otraInfo.ong"
-                      class="mr-1"
+                      class="mr-1 si-no"
                       @click.prevent="changeOng"
                     >SI</span>
                     <span style="cursor:pointer" v-else class="mr-1" @click.prevent="changeOng">NO</span>
                     <input v-model="data.otraInfo.nombreOgn" type="text" class="form-control" />
                   </div>
                 </div>
-                <div class="col-6 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label>Tienes página web?</label>
                   <input v-model="data.otraInfo.paginaWeb" type="text" class="form-control" />
                 </div>
-                <div class="col-6 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label>
                     Tienes aliados para implementar este
                     proyecto?
@@ -265,13 +265,13 @@
                     class="form-control"
                   />
                 </div>
-                <div class="col-6 col-sm-6 col-md-3">
+                <div class="col-12 col-sm-6 col-md-3">
                   <label>Implementación anterior de proyectos</label>
                   <div class="group-inputs d-flex flex-row align-items-center">
                     <span
                       style="cursor:pointer"
                       v-if="data.otraInfo.ImplementacionAnt"
-                      class="mr-1"
+                      class="mr-1 si-no"
                       @click.prevent="changeImplementacion"
                     >SI</span>
                     <span
@@ -307,8 +307,8 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-2">
-                  <button class="btn btn-success" @click.prevent="guardar" type="button">Guardar</button>
+                <div class="col-12 d-flex justify-content-end">
+                  <button class="btn btn-success" @click.prevent="guardar" type="button">Guardar <img src="/assets/img/save.svg" alt=""></button>
                 </div>
               </div>
             </form>
@@ -345,7 +345,7 @@
                   />
                 </div>
                 <div class="col-12 col-sm-6 col-md-3">
-                  <label for>¿Cómo te resultó el proceso de descarga? Puedes elegir varias opciones</label>
+                  <label for>¿Cómo te resultó el proceso de descarga?</label>
                   <input
                     v-model="data.encuestaUser.process_download"
                     type="text"
@@ -455,7 +455,7 @@
                   />
                 </div>
               </div>
-              <div class="form-group row justify-content-center">
+              <div class="form-group row">
                 <div class="col-12 col-sm-6 col-md-4">
                   <label
                     for
@@ -483,37 +483,37 @@
                 </div>
               </div>
               <div class="form-group row">
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 1</label>
-                  <input v-model="data.encuestaUser.chapter_1" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_1" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 2</label>
-                  <input v-model="data.encuestaUser.chapter_2" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_2" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 3</label>
-                  <input v-model="data.encuestaUser.chapter_3" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_3" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 4</label>
-                  <input v-model="data.encuestaUser.chapter_4" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_4" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 5</label>
-                  <input v-model="data.encuestaUser.chapter_5" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_5" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 6</label>
-                  <input v-model="data.encuestaUser.chapter_6" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_6" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 7</label>
-                  <input v-model="data.encuestaUser.chapter_7" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_7" type="text" class="form-control capitulo" />
                 </div>
-                <div class="col-12 col-sm-1">
+                <div class="col-6 col-sm-1 mb-3 mb-lg-0">
                   <label for>Capítulo 8</label>
-                  <input v-model="data.encuestaUser.chapter_8" type="text" class="form-control" />
+                  <input v-model="data.encuestaUser.chapter_8" type="text" class="form-control capitulo" />
                 </div>
               </div>
               <div class="row">
@@ -522,7 +522,7 @@
                 </div>
               </div>
               <div class="form-group row justify-content-center">
-                <div class="col-6 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-4">
                   <div class="inputs">
                     <label>¿Cómo estás de satisfecho/a con el Manual?</label>
                     <input
@@ -532,7 +532,7 @@
                       placeholder
                     />
                   </div>
-                  <div class="inputs">
+                  <div class="inputs mt-3">
                     <label>¿Recomendarías el Manual a otras personas?</label>
                     <input
                       v-model="data.encuestaUser.would_you_recommend"
@@ -542,13 +542,18 @@
                     />
                   </div>
                 </div>
-                <div class="col-6 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-4">
                   <label>Sugerencias</label>
                   <textarea v-model="data.encuestaUser.suggestions_2" class="form-control" rows="5"></textarea>
                 </div>
-                <div class="col-6 col-sm-6 col-md-4">
+                <div class="col-12 col-sm-6 col-md-4">
                   <label>¿Qué fue lo que más te gustó del Manual?</label>
                   <textarea v-model="data.encuestaUser.like" class="form-control" rows="5"></textarea>
+                </div>
+              </div>
+              <div class="form-group row mt-3">
+                <div class="col-12 d-flex justify-content-end">
+                  <button class="btn btn-success" @click.prevent="guardar" type="button">Guardar <img src="/assets/img/save.svg" alt=""></button>
                 </div>
               </div>
             </form>
