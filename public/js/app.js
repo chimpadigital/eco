@@ -43849,7 +43849,7 @@ var render = function() {
               "div",
               {
                 staticClass:
-                  "col-12 col-sm-6 col-md-3 d-flex flex-column order-lg-1 order-2"
+                  "col-12 col-sm-6 col-md-6 d-flex flex-column order-lg-1 order-2"
               },
               [
                 _vm._m(0),
@@ -43874,7 +43874,7 @@ var render = function() {
         _vm._v(" "),
         _c("div", { staticClass: "card-body" }, [
           _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-12 col-sm-6 col-md-1 mb-4" }, [
+            _c("div", { staticClass: "col-12 col-sm-6 col-md-1 mb-4 col1" }, [
               _c("label", { attrs: { for: "pago" } }, [_vm._v("Pago")]),
               _vm._v(" "),
               _c("input", {
@@ -43886,7 +43886,7 @@ var render = function() {
                     expression: "data.procesoSesion.pago"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass: "form-control css-checkbox",
                 attrs: { type: "checkbox", name: "pago", id: "pago" },
                 domProps: {
                   checked: Array.isArray(_vm.data.procesoSesion.pago)
@@ -43921,10 +43921,12 @@ var render = function() {
                     }
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c("label", { staticClass: "css-label", attrs: { for: "pago" } })
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12 col-sm-6 col-md-1 mb-4" }, [
+            _c("div", { staticClass: "col-12 col-sm-6 col-md-1 mb-4 col1" }, [
               _c("label", { attrs: { for: "descargas" } }, [
                 _vm._v("Descargas")
               ]),
@@ -43938,7 +43940,7 @@ var render = function() {
                     expression: "data.procesoSesion.descargar"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass: "form-control css-checkbox",
                 attrs: { type: "checkbox", name: "descargas", id: "descargas" },
                 domProps: {
                   checked: Array.isArray(_vm.data.procesoSesion.descargar)
@@ -43973,14 +43975,18 @@ var render = function() {
                     }
                   }
                 }
+              }),
+              _vm._v(" "),
+              _c("label", {
+                staticClass: "css-label",
+                attrs: { for: "descargas" }
               })
             ]),
             _vm._v(" "),
             _c(
               "div",
               {
-                staticClass:
-                  "col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4"
+                staticClass: "col-12 col-sm-6 col-md-2 d-flex mb-4 col-fechas"
               },
               [
                 _c(
@@ -44020,7 +44026,7 @@ var render = function() {
                       expression: "data.procesoSesion.primerSesion"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control align-self-center mt-lg-3",
                   attrs: {
                     type: "checkbox",
                     name: "descargas",
@@ -44066,8 +44072,7 @@ var render = function() {
             _c(
               "div",
               {
-                staticClass:
-                  "col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4"
+                staticClass: "col-12 col-sm-6 col-md-2 d-flex mb-4 col-fechas"
               },
               [
                 _c(
@@ -44107,7 +44112,7 @@ var render = function() {
                       expression: "data.procesoSesion.segunSesion"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control align-self-center mt-lg-3",
                   attrs: {
                     type: "checkbox",
                     name: "descargas",
@@ -44164,7 +44169,7 @@ var render = function() {
                     expression: "data.procesoSesion.condicionesGenerales"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass: "form-control css-checkbox",
                 attrs: {
                   type: "checkbox",
                   name: "condiciones_uso",
@@ -44212,6 +44217,11 @@ var render = function() {
                     }
                   }
                 }
+              }),
+              _vm._v(" "),
+              _c("label", {
+                staticClass: "css-label",
+                attrs: { for: "condiciones_uso" }
               })
             ]),
             _vm._v(" "),
@@ -44221,7 +44231,7 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("input", {
-                staticClass: "form-control",
+                staticClass: "form-control css-checkbox",
                 attrs: {
                   type: "checkbox",
                   name: "acuerdo_confidencialidad",
@@ -44230,6 +44240,11 @@ var render = function() {
                 domProps: {
                   checked: _vm.data.procesoSesion.acuerdoConfidencialidad
                 }
+              }),
+              _vm._v(" "),
+              _c("label", {
+                staticClass: "css-label",
+                attrs: { for: "acuerdo_confidencialidad" }
               })
             ]),
             _vm._v(" "),
@@ -44243,21 +44258,29 @@ var render = function() {
               ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12 col-sm-6 col-md-2 mt-4" }, [
-              _c("label", { attrs: { for: "cupon_descuento" } }, [
-                _vm._v("Metodo de pago")
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.method))])
-            ]),
+            _c(
+              "div",
+              { staticClass: "col-12 col-sm-6 col-md-2 mt-4 mt-lg-0" },
+              [
+                _c("label", { attrs: { for: "cupon_descuento" } }, [
+                  _vm._v("Metodo de pago")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.method))])
+              ]
+            ),
             _vm._v(" "),
-            _c("div", { staticClass: "col-12 col-sm-6 col-md-3 mt-4" }, [
-              _c("label", { attrs: { for: "cupon_descuento" } }, [
-                _vm._v("Referencia")
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.ref))])
-            ]),
+            _c(
+              "div",
+              { staticClass: "col-12 col-sm-6 col-md-3 mt-4 mt-lg-0" },
+              [
+                _c("label", { attrs: { for: "cupon_descuento" } }, [
+                  _vm._v("Referencia")
+                ]),
+                _vm._v(" "),
+                _c("p", [_vm._v(_vm._s(_vm.data.procesoSesion.ref))])
+              ]
+            ),
             _vm._v(" "),
             _vm._m(2)
           ]),
@@ -46576,7 +46599,7 @@ var staticRenderFns = [
       "div",
       {
         staticClass:
-          "col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end order-lg-2 order-1"
+          "col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end order-1 order-lg-2 order-md-2 order-sm-2"
       },
       [
         _c(
@@ -62476,8 +62499,8 @@ var store = new vuex__WEBPACK_IMPORTED_MODULE_1__["default"].Store({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\eco\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\eco\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laragon\www\eco\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laragon\www\eco\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

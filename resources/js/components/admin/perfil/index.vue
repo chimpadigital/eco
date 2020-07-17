@@ -5,7 +5,7 @@
             <div class="card-header">
                 <div class="row justify-content-between">
                     <div
-                        class="col-12 col-sm-6 col-md-3 d-flex flex-column order-lg-1 order-2"
+                        class="col-12 col-sm-6 col-md-6 d-flex flex-column order-lg-1 order-2"
                     >
                         <div class="icon">
                             <img
@@ -24,7 +24,7 @@
                         </h4>
                     </div>
                     <div
-                        class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end order-lg-2 order-1"
+                        class="col-12 col-sm-6 col-md-2 d-flex justify-content-end align-items-end order-1 order-lg-2 order-md-2 order-sm-2"
                     >
                         <a href="/admin/users" class="btn btn-success"
                             ><img
@@ -38,28 +38,30 @@
             </div>
             <div class="card-body">
                 <div class="row">
-                    <div class="col-12 col-sm-6 col-md-1 mb-4">
+                    <div class="col-12 col-sm-6 col-md-1 mb-4 col1">
                         <label for="pago">Pago</label>
                         <input
                             v-model="data.procesoSesion.pago"
-                            class="form-control"
+                            class="form-control css-checkbox"
                             type="checkbox"
                             name="pago"
                             id="pago"
                         />
+                        <label for="pago" class="css-label"></label>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-1 mb-4">
+                    <div class="col-12 col-sm-6 col-md-1 mb-4 col1">
                         <label for="descargas">Descargas</label>
                         <input
                             v-model="data.procesoSesion.descargar"
-                            class="form-control"
+                            class="form-control css-checkbox"
                             type="checkbox"
                             name="descargas"
                             id="descargas"
                         />
+                        <label for="descargas" class="css-label"></label>
                     </div>
                     <div
-                        class="col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4"
+                        class="col-12 col-sm-6 col-md-2 d-flex mb-4 col-fechas"
                     >
                         <div class="input-fecha" style="margin-right:2px;">
                             <label for="primer_sesion">Primer Sesión</label>
@@ -76,7 +78,7 @@
               />-->
                         </div>
                         <input
-                            class="form-control"
+                            class="form-control align-self-center mt-lg-3"
                             v-model="data.procesoSesion.primerSesion"
                             type="checkbox"
                             name="descargas"
@@ -85,7 +87,7 @@
                     </div>
 
                     <div
-                        class="col-12 col-sm-6 col-md-2 d-flex align-items-end mb-4"
+                        class="col-12 col-sm-6 col-md-2 d-flex mb-4 col-fechas"
                     >
                         <div class="input-fecha" style="margin-right:2px;">
                             <label for="segunda_sesion">Segunda Sesión</label>
@@ -102,7 +104,7 @@
               />-->
                         </div>
                         <input
-                            class="form-control"
+                            class="form-control align-self-center mt-lg-3"
                             v-model="data.procesoSesion.segunSesion"
                             type="checkbox"
                             name="descargas"
@@ -115,12 +117,13 @@
                             >Condiciones Generales de Uso</label
                         >
                         <input
-                            class="form-control"
+                            class="form-control css-checkbox"
                             v-model="data.procesoSesion.condicionesGenerales"
                             type="checkbox"
                             name="condiciones_uso"
                             id="condiciones_uso"
                         />
+                        <label for="condiciones_uso" class="css-label"></label>
                     </div>
                     <div class="col-12 col-sm-6 col-md-2 mb-4">
                         <label for="acuerdo_confidencialidad"
@@ -134,7 +137,7 @@
               id="acuerdo_confidencialidad"
             /> -->
                         <input
-                            class="form-control"
+                            class="form-control css-checkbox"
                             type="checkbox"
                             :checked="
                                 data.procesoSesion.acuerdoConfidencialidad
@@ -142,18 +145,19 @@
                             name="acuerdo_confidencialidad"
                             id="acuerdo_confidencialidad"
                         />
+                        <label for="acuerdo_confidencialidad" class="css-label"></label>
                     </div>
                     <div class="col-12 col-sm-6 col-md-2">
                         <label for="cupon_descuento">Cupón Descuento</label>
                         <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
                         <p class="fechas">{{ data.procesoSesion.cupon }}</p>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-2 mt-4">
+                    <div class="col-12 col-sm-6 col-md-2 mt-4 mt-lg-0">
                         <label for="cupon_descuento">Metodo de pago</label>
                         <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
                         <p>{{ data.procesoSesion.method }}</p>
                     </div>
-                    <div class="col-12 col-sm-6 col-md-3 mt-4">
+                    <div class="col-12 col-sm-6 col-md-3 mt-4 mt-lg-0">
                         <label for="cupon_descuento">Referencia</label>
                         <!-- <input class="form-control" type="text" name="cupon_descuento" id="cupon_descuento" /> -->
                         <p>{{ data.procesoSesion.ref }}</p>
