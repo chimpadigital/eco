@@ -39,8 +39,15 @@ class UsersController extends Controller
         foreach($usersAll as $key => $user){
                //procesando el cupon
                 if(isset($user->invoice)){
-                    if($user->invoice->payment->promocode){
-                        $cupon = $user->invoice->payment->promocode->code_name;
+                    // return $user->invoice->payment->promocode;
+                    if($user->invoice->payment){
+                        if($cupon = $user->invoice->payment->promocode){
+
+                            $cupon = $user->invoice->payment->promocode->code_name;
+                        }else{
+                         $cupon = '';
+
+                        }
                     }else{
                     $cupon = '';
 
