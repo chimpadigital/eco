@@ -55,6 +55,17 @@ class UsersController extends Controller
                 }else{
                     $cupon = '';
                 }
+                //Descarga
+                $descarga = $user->download;
+                if($descarga){
+                    if($descarga->element_1 && $descarga->element_2 && $descarga->element_3 && $descarga->element_4 ){
+                        $descargarManuales = true; 
+                    }else{
+                        $descargarManuales = false;
+                    }
+                }else{
+                    $descargarManuales = false;
+                }
                 ///end
             if($user->userInformation){
                 $data = [
@@ -68,7 +79,7 @@ class UsersController extends Controller
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
-                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+                    'ult_descarga' => $descargarManuales ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
 
                 ];
             }else{
@@ -83,7 +94,7 @@ class UsersController extends Controller
                     'descuento' => $cupon,
                     'primerSesion' => isset($user->quote->first_session) ? $user->quote->first_session : "",
                     'segundaSesion' => isset($user->quote->second_session) ? $user->quote->second_session : "",
-                    'ult_descarga' => isset($user->download) ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
+                    'ult_descarga' => $descargarManuales ? Carbon::parse($user->download->updated_at)->format('d-m-Y'): "",
 
                     
                 ];
@@ -141,8 +152,15 @@ class UsersController extends Controller
         //end
         //procesando el cupon
         if(isset($user->invoice)){
-            if($user->invoice->payment->promocode){
-                $cupon = $user->invoice->payment->promocode->code_name;
+            // return $user->invoice->payment->promocode;
+            if($user->invoice->payment){
+                if($cupon = $user->invoice->payment->promocode){
+
+                    $cupon = $user->invoice->payment->promocode->code_name;
+                }else{
+                 $cupon = '';
+
+                }
             }else{
             $cupon = '';
 
@@ -153,16 +171,21 @@ class UsersController extends Controller
         ///end
         //procesando el pago
         if(isset($user->invoice)){
-            if($user->invoice->payment->payment_method_id == 1)
-            {
-                $metho = $user->invoice->payment->payment_method->name;
-                $ref = $user->invoice->payment->external_reference;
+           if($user->invoice->payment){
+                if($user->invoice->payment->payment_method_id == 1)
+                {
+                    $metho = $user->invoice->payment->payment_method->name;
+                    $ref = $user->invoice->payment->external_reference;
 
-            } 
-            if($user->invoice->payment->payment_method_id == 2){
-               $metho = $user->invoice->payment->payment_method->name;
-                $ref = $user->invoice->payment->payment_id;
-            }
+                } 
+                if($user->invoice->payment->payment_method_id == 2){
+                    $metho = $user->invoice->payment->payment_method->name;
+                    $ref = $user->invoice->payment->payment_id;
+                }
+           }else{
+            $metho = '';
+            $ref = '';
+           }
                
         }else{
             $metho = '';
