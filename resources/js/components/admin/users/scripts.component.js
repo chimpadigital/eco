@@ -44,6 +44,8 @@ export default {
     },
     methods: {
         filtrarUsers() {
+            this.$store.commit("nextPage", 1);
+            this.pagination.current_page = 1;
             this.getUsers(this.typeFiltro, this.search);
         },
         cambiarPagina(page) {
