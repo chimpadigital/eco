@@ -62,7 +62,7 @@ class QuoteController extends Controller
        if($request->date){
             $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->date);
             $user = Auth::user();
-            $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
+            $limiteFecha = $DiasSunSat->diffInDays($user->download->updated_at);
             if($limiteFecha >= 30){
                 return response()->json([
                     'error' => true,
@@ -98,7 +98,7 @@ class QuoteController extends Controller
        }else{
         $DiasSunSat = Carbon::createFromFormat('d-m-Y',$request->second_date);
         $user = Auth::user();
-        $limiteFecha = $DiasSunSat->diffInDays($user->created_at);
+        $limiteFecha = $DiasSunSat->diffInDays($user->download->updated_at);
         if($limiteFecha >= 30){
             return response()->json([
                 'error' => true,
