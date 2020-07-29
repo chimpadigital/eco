@@ -116,7 +116,7 @@
                             <textarea class="form-control input-custom" name="motivation" maxlength="250" placeholder="@lang('profile.form.input_12')">{{ old('question1') }}</textarea>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control input-custom" name="did_you_know_foundation" placeholder="@lang('profile.form.input_13')">{{ old('question_2') }}</textarea>
+                            <textarea class="form-control input-custom" name="did_you_know_foundation" maxlength="250" placeholder="@lang('profile.form.input_13')">{{ old('question_2') }}</textarea>
                         </div>
 
                         <div class="center-mobile">
@@ -140,7 +140,7 @@
                                 <input type="text" class="form-control input-custom" name="web_page" value="{{old('web_page')}}" placeholder="@lang('profile.form.input_16')">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom"  name="allies_to_implement" placeholder="@lang('profile.form.input_17')">{{old('allies_to_implement')}}</textarea>
+                                <textarea class="form-control input-custom"  name="allies_to_implement" maxlength="250" placeholder="@lang('profile.form.input_17')">{{old('allies_to_implement')}}</textarea>
                             </div>
                 
                             <small>@lang('profile.form.input_18')</small>
@@ -154,10 +154,10 @@
                                 <label class="form-check-label" for="inlineRadio2">@lang('profile.form.no')</label>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom"  name="impact_class" placeholder="@lang('profile.form.input_19')">{{old('question_8')}}</textarea>
+                                <textarea class="form-control input-custom"  name="impact_class" maxlength="250" placeholder="@lang('profile.form.input_19')">{{old('question_8')}}</textarea>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control input-custom" name="extra_information" placeholder="@lang('profile.form.input_20')">{{old('question_9')}}</textarea>
+                                <textarea class="form-control input-custom" name="extra_information" maxlength="250" placeholder="@lang('profile.form.input_20')">{{old('question_9')}}</textarea>
                             </div>
                             <button type="submit" class="btn-green-apple">
 
