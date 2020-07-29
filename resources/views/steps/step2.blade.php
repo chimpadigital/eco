@@ -113,7 +113,7 @@
                             <input type="text" class="form-control input-custom" name="others" value="{{ old('others') }}" placeholder="@lang('profile.form.input_11')">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control input-custom" name="motivation" placeholder="@lang('profile.form.input_12')">{{ old('question1') }}</textarea>
+                            <textarea class="form-control input-custom" name="motivation" maxlength="250" placeholder="@lang('profile.form.input_12')">{{ old('question1') }}</textarea>
                         </div>
                         <div class="form-group">
                             <textarea class="form-control input-custom" name="did_you_know_foundation" placeholder="@lang('profile.form.input_13')">{{ old('question_2') }}</textarea>
