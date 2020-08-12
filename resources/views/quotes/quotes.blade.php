@@ -25,6 +25,12 @@
             <p>
               @lang('quote.p_1')
             </p>
+            <p>
+              @lang('quote.p_4')
+            </p>
+            <p>
+              @lang('quote.p_despedida')
+            </p>
           </div>
         </div>
       </div>
