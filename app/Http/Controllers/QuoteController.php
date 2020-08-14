@@ -104,7 +104,7 @@ class QuoteController extends Controller
                 'errorText' => Lang::get('auth.alert_1')
             ]);
         }
-        if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat'){
+        if($DiasSunSat->format('D') == 'Sun' || $DiasSunSat->format('D') == 'Sat' || $DiasSunSat->format('D') == 'Mon' || $DiasSunSat->format('D') == 'Wed' || $DiasSunSat->format('D') == 'Fri'){
             return response()->json([
                 'error' => true,
                 'errorText' => Lang::get('auth.alert_2')
